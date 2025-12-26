@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carousel Generator – Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #e3f0dd;
+      margin: 0;
+      padding: 32px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 720px;
+      width: 100%;
+      background: #f7fbf2;
+      border-radius: 16px;
+      padding: 24px 28px 32px 28px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+      border: 1px solid #c6d9b7;
+    }
+    h1 {
+      margin-top: 0;
+      margin-bottom: 4px;
+      font-size: 24px;
+    }
+    p {
+      margin-top: 0;
+      color: #4a4a4a;
+      font-size: 14px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin: 16px 0 4px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #333;
+    }
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid #c6d9b7;
+      font-size: 14px;
+      box-sizing: border-box;
+      background: #ffffff;
+    }
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+    .row {
+      display: flex;
+      gap: 12px;
+    }
+    .row > div {
+      flex: 1;
+    }
+    select {
+      cursor: pointer;
+    }
+    button {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      background: #111;
+      color: #f7fbf2;
+    }
+    button#testPlanBtn,
+    button#previewFirstBtn {
+      background: #4a4a4a;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+    .status {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #555;
+    }
+    .status.error {
+      color: #b00020;
+    }
+    small {
+      display: block;
+      font-size: 12px;
+      color: #666;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Carousel Generator</h1>
+    <p>Enter the topic, concept, and optional image URLs. The server will generate the full LinkedIn carousel.</p>
+
+    <form id="carouselForm">
+      <label for="topic">Topic</label>
+      <input id="topic" name="topic" type="text" required placeholder="e.g. Vary your LinkedIn content to avoid burnout" />
+
+      <label for="concept">Concept / Description</label>
+      <textarea id="concept" name="concept" required placeholder="1–3 sentences explaining what this carousel should teach or show."></textarea>
+
+      <div class="row">
+        <div>
+          <label for="audience">Audience (optional)</label>
+          <input id="audience" name="audience" type="text" placeholder="e.g. solo creators, SaaS founders" />
+        </div>
+        <div>
+          <label for="tone">Tone</label>
+          <select id="tone" name="tone">
+            <option value="">Select tone...</option>
+            <option value="informational">Informational</option>
+            <option value="tongue_in_cheek">Tongue in cheek</option>
+            <option value="conversational">Conversational</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Image URLs (optional)</label>
+      <small>These will map to slides 1–4 in order. Leave blank to let the system generate prompts.</small>
+
+      <div class="row">
+        <div>
+          <input id="image1" name="image1" type="text" placeholder="Image 1 URL (slide 1)" />
+        </div>
+        <div>
+          <input id="image2" name="image2" type="text" placeholder="Image 2 URL (slide 2)" />
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <input id="image3" name="image3" type="text" placeholder="Image 3 URL (slide 3)" />
+        </div>
+        <div>
+          <input id="image4" name="image4" type="text" placeholder="Image 4 URL (slide 4)" />
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <button type="button" id="testPlanBtn">Test Plan Input</button>
+        <button type="button" id="previewFirstBtn">Preview First Slide</button>
+        <button type="submit">Generate Carousel</button>
+      </div>
+      <div id="status" class="status"></div>
+      <pre id="plan-output" style="margin-top: 16px; padding: 12px; background: #fff; border: 1px solid #c6d9b7; border-radius: 8px; font-size: 12px; max-height: 200px; overflow: auto; display: none;"></pre>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("carouselForm");
+    const statusEl = document.getElementById("status");
+    const planOutputEl = document.getElementById("plan-output");
+    const testPlanBtn = document.getElementById("testPlanBtn");
+    const previewFirstBtn = document.getElementById("previewFirstBtn");
+
+    // Test Plan Input button handler
+    testPlanBtn.addEventListener("click", async () => {
+      statusEl.textContent = "Testing plan input...";
+      statusEl.classList.remove("error");
+      planOutputEl.style.display = "none";
+
+      const topic = document.getElementById("topic").value.trim();
+      const concept = document.getElementById("concept").value.trim();
+      const tone = document.getElementById("tone").value || "";
+      const images = [
+        document.getElementById("image1").value.trim(),
+        document.getElementById("image2").value.trim(),
+        document.getElementById("image3").value.trim(),
+        document.getElementById("image4").value.trim()
+      ].filter(Boolean);
+
+      if (!topic || !concept) {
+        alert("Topic and concept are required");
+        statusEl.textContent = "";
+        return;
+      }
+
+      const payload = { topic, concept, tone, images };
+
+      try {
+        const res = await fetch("/api/carousel/plan", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        
+        if (!res.ok) {
+          statusEl.textContent = "Plan endpoint error: " + (data.error || res.status);
+          statusEl.classList.add("error");
+          return;
+        }
+
+        console.log("Plan input echo:", data);
+        planOutputEl.textContent = JSON.stringify(data, null, 2);
+        planOutputEl.style.display = "block";
+        statusEl.textContent = "Plan input normalized (see below).";
+        statusEl.classList.remove("error");
+      } catch (err) {
+        statusEl.textContent = "Network error testing plan endpoint.";
+        statusEl.classList.add("error");
+        console.error(err);
+      }
+    });
+
+    // Preview First Slide button handler
+    previewFirstBtn.addEventListener("click", async () => {
+      statusEl.textContent = "Generating first slide preview...";
+      statusEl.classList.remove("error");
+      planOutputEl.style.display = "none";
+
+      const topic = document.getElementById("topic").value.trim();
+      const concept = document.getElementById("concept").value.trim();
+      const tone = document.getElementById("tone").value || "";
+      const images = [
+        document.getElementById("image1").value.trim(),
+        document.getElementById("image2").value.trim(),
+        document.getElementById("image3").value.trim(),
+        document.getElementById("image4").value.trim()
+      ].filter(Boolean);
+
+      if (!topic || !concept) {
+        alert("Topic and concept are required");
+        statusEl.textContent = "";
+        return;
+      }
+
+      const payload = { topic, concept, tone, images };
+
+      try {
+        const res = await fetch("/api/carousel/first-slide-preview", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) {
+          const msg = await res.text().catch(() => "");
+          statusEl.textContent = "Preview error: " + (msg || res.status);
+          statusEl.classList.add("error");
+          return;
+        }
+
+        const html = await res.text();
+        statusEl.textContent = "Opening first slide preview in new tab...";
+        statusEl.classList.remove("error");
+
+        const blob = new Blob([html], { type: "text/html" });
+        const url = URL.createObjectURL(blob);
+        window.open(url, "_blank");
+      } catch (err) {
+        statusEl.textContent = "Network error previewing first slide.";
+        statusEl.classList.add("error");
+        console.error(err);
+      }
+    });
+
+    // Original Generate Carousel handler
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      statusEl.textContent = "Generating carousel...";
+      statusEl.classList.remove("error");
+      const button = form.querySelector("button[type='submit']");
+      button.disabled = true;
+
+      const topic = document.getElementById("topic").value.trim();
+      const concept = document.getElementById("concept").value.trim();
+      const audience = document.getElementById("audience").value.trim();
+      const tone = document.getElementById("tone").value.trim();
+      const images = [
+        document.getElementById("image1").value.trim(),
+        document.getElementById("image2").value.trim(),
+        document.getElementById("image3").value.trim(),
+        document.getElementById("image4").value.trim()
+      ].filter(Boolean);
+
+      if (!topic || !concept) {
+        statusEl.textContent = "Topic and concept are required.";
+        statusEl.classList.add("error");
+        button.disabled = false;
+        return;
+      }
+
+      const payload = {
+        topic,
+        concept,
+        audience: audience || undefined,
+        tone: tone || undefined,
+        images: images.length ? images : undefined
+      };
+
+      try {
+        const res = await fetch("/api/carousel/from-form", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) {
+          const msg = await res.text().catch(() => "");
+          statusEl.textContent = "Error: " + (msg || res.status);
+          statusEl.classList.add("error");
+          button.disabled = false;
+          return;
+        }
+
+        const html = await res.text();
+        statusEl.textContent = "Opening carousel preview in a new tab...";
+        statusEl.classList.remove("error");
+
+        const blob = new Blob([html], { type: "text/html" });
+        const url = URL.createObjectURL(blob);
+        window.open(url, "_blank");
+      } catch (err) {
+        statusEl.textContent = "Network or server error. Check console.";
+        statusEl.classList.add("error");
+        console.error(err);
+      } finally {
+        button.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
+
