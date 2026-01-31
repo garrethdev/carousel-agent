@@ -112,6 +112,9 @@
       <label for="concept">Concept / Description</label>
       <textarea id="concept" name="concept" required placeholder="1–3 sentences explaining what this carousel should teach or show."></textarea>
 
+      <label for="userContext">User Context (primary source)</label>
+      <textarea id="userContext" name="userContext" placeholder="Paste any bullets, examples, constraints (e.g., focus on Reddit over Quora, don’t mention XYZ)."></textarea>
+
       <div class="row">
         <div>
           <label for="audience">Audience (optional)</label>
@@ -173,7 +176,9 @@
 
       const topic = document.getElementById("topic").value.trim();
       const concept = document.getElementById("concept").value.trim();
+      const userContext = document.getElementById("userContext").value.trim();
       const tone = document.getElementById("tone").value || "";
+      const audience = document.getElementById("audience").value.trim() || "";
       const images = [
         document.getElementById("image1").value.trim(),
         document.getElementById("image2").value.trim(),
@@ -187,7 +192,7 @@
         return;
       }
 
-      const payload = { topic, concept, tone, images };
+      const payload = { topic, concept, audience, tone, userContext, images };
 
       try {
         const res = await fetch("/api/carousel/plan", {
@@ -224,7 +229,9 @@
 
       const topic = document.getElementById("topic").value.trim();
       const concept = document.getElementById("concept").value.trim();
+      const userContext = document.getElementById("userContext").value.trim();
       const tone = document.getElementById("tone").value || "";
+      const audience = document.getElementById("audience").value.trim() || "";
       const images = [
         document.getElementById("image1").value.trim(),
         document.getElementById("image2").value.trim(),
@@ -238,7 +245,7 @@
         return;
       }
 
-      const payload = { topic, concept, tone, images };
+      const payload = { topic, concept, audience, tone, userContext, images };
 
       try {
         const res = await fetch("/api/carousel/first-slide-preview", {
@@ -280,6 +287,7 @@
       const concept = document.getElementById("concept").value.trim();
       const audience = document.getElementById("audience").value.trim();
       const tone = document.getElementById("tone").value.trim();
+      const userContext = document.getElementById("userContext").value.trim();
       const images = [
         document.getElementById("image1").value.trim(),
         document.getElementById("image2").value.trim(),
@@ -299,6 +307,7 @@
         concept,
         audience: audience || undefined,
         tone: tone || undefined,
+        userContext: userContext || undefined,
         images: images.length ? images : undefined
       };
 

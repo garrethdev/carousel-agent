@@ -6,6 +6,19 @@
 import { startTiming } from "../utils/timing";
 
 const GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models";
+const PLACEHOLDER_DATA_URL =
+  "data:image/svg+xml;utf8," +
+  encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+      <rect width="800" height="600" rx="32" fill="#f2f2f2"/>
+      <rect x="200" y="170" width="400" height="260" rx="32" fill="#d9e7d5" stroke="#c6d9b7" stroke-width="4"/>
+      <path d="M260 330 C300 270 360 270 400 330 C440 390 500 390 540 330" stroke="#93b59f" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <circle cx="320" cy="250" r="36" fill="#93b59f"/>
+      <circle cx="480" cy="230" r="28" fill="#b8cbb2"/>
+      <path d="M240 410 H560" stroke="#c6d9b7" stroke-width="12" stroke-linecap="round"/>
+      <text x="50%" y="90%" text-anchor="middle" fill="#7a8b74" font-size="26" font-family="Inter, sans-serif">image placeholder</text>
+    </svg>`
+  );
 
 export interface GeminiImageRequest {
   prompt: string;
@@ -97,9 +110,9 @@ export async function geminiGenerateImage(
   }
 
     console.error(
-      `[gemini:image] ERROR - no image found in ${parts.length} parts`
+      `[gemini:image] ERROR - no image found in ${parts.length} parts; returning placeholder`
     );
-    throw new Error("Gemini image response missing image data or URL");
+    return PLACEHOLDER_DATA_URL;
   } finally {
     endTiming();
   }

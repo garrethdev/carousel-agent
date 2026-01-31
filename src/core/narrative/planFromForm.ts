@@ -5,7 +5,9 @@ import { startTiming } from "../../utils/timing";
 export interface NarrativeFormInput {
   topic: string;
   concept: string;
+  audience?: string;
   tone?: string;
+  userContext?: string;
   images?: string[];
 }
 
@@ -23,29 +25,60 @@ export async function planNarrativeFromForm(
 ): Promise<NarrativePlan> {
   const endTiming = startTiming("planNarrativeFromForm");
   try {
-    const { topic, concept, tone, images = [] } = input;
+    const { topic, concept, audience, tone, userContext = "", images = [] } = input;
 
     const systemPrompt = [
-    "You are planning a 6-slide LinkedIn carousel.",
-    "You must output a JSON object that describes the PLAN only, not the final copy.",
-    "There are always exactly 6 slides with fixed roles:",
-    "  1 = hook (big promise or pattern break)",
-    "  2 = nudge (clarify what this is really about and why it matters)",
-    "  3 = body (first key idea)",
-    "  4 = body (second key idea)",
-    "  5 = body (third key idea or example)",
-    "  6 = outro (call to action / wrap up).",
-    "",
-    "For each slide, you must provide:",
-    "- index: number 1–6.",
-    "- role: one of hook, nudge, body, outro.",
-    "- goal: one sentence describing what this slide is meant to accomplish.",
-    "- textIntent: one or two sentences describing what kind of text should appear (no actual phrases, just description).",
-    "- imageIntent: one sentence describing the visual metaphor or subject (may be empty for slide 6).",
-    "",
-    "Do NOT write the actual headline or body copy; only describe intent.",
-    "The output must be valid JSON and nothing else."
-  ].join(" ");
+      "You are a narrative planner for 6-slide LinkedIn carousels.",
+    "Map slide indices to meanings:",
+    "- Slide 1: HOOK (bold promise, handled elsewhere).",
+    "- Slide 2: REHOOK / PREMISE (continuation of hook; why this matters).",
+    "- Slide 3: STEP 1.",
+    "- Slide 4: STEP 2.",
+    "- Slide 5: STEP 3 or RULE.",
+    "- Slide 6: RECAP / CTA.",
+      "",
+      "Your job:",
+      "- Take a topic, a concept, an audience, a desired tone, and rich user-provided context.",
+      "- Do a bit of internal \"research\" using your general knowledge:",
+      "  - common pain points",
+      "  - typical mistakes",
+      "  - obvious examples",
+      "  - simple frameworks",
+      "- Then design a 6-slide structure that works like high-performing TikTok / LinkedIn slideshows:",
+      "  - Slide 1: HOOK — bold promise + specific angle.",
+      "  - Slide 2: REHOOK / CLAIM — continuation of hook, why this matters.",
+      "  - Slides 3–5: BODY — each slide is ONE sharp step/rule with a tiny example.",
+      "  - Slide 6: OUTRO — recap + CTA / next step.",
+      "",
+      "Constraints:",
+      "- Treat the user’s context as PRIMARY. Do NOT contradict it.",
+      "- Use your own knowledge only to sharpen the examples, pain points, and angle.",
+      "- Slides must be distinct; no duplicate points with slightly different wording.",
+      "- Each slide must have:",
+      "  - goal: what this slide is trying to achieve (in plain English).",
+      "  - textIntent: what kind of text should appear (hook, list item, example, warning, etc.).",
+      "  - imageIntent: a simple description of the visual metaphor or scene for that slide.",
+      "",
+      "Output:",
+      "Return valid JSON with this exact shape:",
+      "",
+      "{",
+      '  "topic": string,',
+      '  "concept": string,',
+      '  "tone": string,',
+      '  "images": string[],              // leave as [] for now',
+      '  "slides": [',
+      '    { "index": 1, "role": "hook",  "goal": string, "textIntent": string, "imageIntent": string },',
+      '    { "index": 2, "role": "nudge", "goal": string, "textIntent": string, "imageIntent": string },',
+      '    { "index": 3, "role": "body",  "goal": string, "textIntent": string, "imageIntent": string },',
+      '    { "index": 4, "role": "body",  "goal": string, "textIntent": string, "imageIntent": string },',
+      '    { "index": 5, "role": "body",  "goal": string, "textIntent": string, "imageIntent": string },',
+      '    { "index": 6, "role": "outro", "goal": string, "textIntent": string, "imageIntent": string }',
+      "  ]",
+      "}",
+      "",
+      "No extra keys, no explanations outside the JSON."
+    ].join(" ");
 
   const imagesSummary =
     images.length > 0
@@ -56,29 +89,23 @@ export async function planNarrativeFromForm(
 
   const userPrompt = [
     `Topic: ${topic}`,
-    `Concept (full explanation): ${concept}`,
-    tone ? `Tone: ${tone}` : "",
-    imagesSummary,
+    `Concept: ${concept}`,
+    `Audience: ${audience || "not specified"}`,
+    `Desired tone: ${tone || "direct, practical, slightly conversational"}`,
     "",
-    "Return JSON in this shape:",
-    "{",
-    '  "topic": "string",',
-    '  "concept": "string",',
-    '  "tone": "string or empty",',
-    '  "images": ["array of strings"],',
-    '  "slides": [',
-    "    {",
-    '      "index": 1,',
-    '      "role": "hook",',
-    '      "goal": "one sentence",',
-    '      "textIntent": "one or two sentences",',
-    '      "imageIntent": "one sentence or empty string"',
-    "    },",
-    "    ... 5 more slide objects ...",
-    "  ]",
-    "}",
+    "User context (primary source of truth):",
+    userContext && userContext.trim().length > 0
+      ? userContext
+      : "No extra context provided.",
     "",
-    "Do not include any explanation or comments; only the JSON object."
+    "Using the instructions in the system prompt, plan a 6-slide carousel narrative.",
+    "Remember:",
+    "- Slide 1: hook",
+    "- Slide 2: nudge / stakes",
+    "- Slides 3–5: body",
+    "- Slide 6: outro / CTA",
+    "",
+    "Return ONLY the JSON narrative plan."
   ]
     .filter(Boolean)
     .join("\n");
@@ -93,10 +120,23 @@ export async function planNarrativeFromForm(
     max_tokens: 512
   });
 
+  const extractJson = (text: string): any => {
+    let t = text.trim();
+    // Strip code fences if present
+    t = t.replace(/```json/gi, "```").replace(/```/g, "");
+    const firstBrace = t.indexOf("{");
+    const lastBrace = t.lastIndexOf("}");
+    if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+      t = t.slice(firstBrace, lastBrace + 1);
+    }
+    return JSON.parse(t);
+  };
+
   let parsed: any;
   try {
-    parsed = JSON.parse(raw);
-  } catch {
+    parsed = extractJson(raw);
+  } catch (err) {
+    console.error("[planNarrativeFromForm] Failed to parse narrative plan JSON. Raw:", raw);
     throw new Error("Failed to parse narrative plan JSON from LLM.");
   }
 

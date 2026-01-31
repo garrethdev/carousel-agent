@@ -11,17 +11,21 @@ import {
   NarrativeFormInput
 } from "../core/narrative/planFromForm";
 
-interface PlanInputPayload {
+  interface PlanInputPayload {
   topic: string;
   concept: string;
+  audience?: string;
   tone?: string;
+  userContext?: string;
   images?: string[];
 }
 
-interface FirstSlidePreviewInput {
+  interface FirstSlidePreviewInput {
   topic: string;
   concept: string;
+  audience?: string;
   tone?: string;
+  userContext?: string;
   images?: string[];
 }
 
@@ -111,6 +115,7 @@ export function registerCarouselRoutes(app: Express): void {
    */
   app.post("/api/carousel", async (req: Request, res: Response) => {
     try {
+      console.log("[route] POST /api/carousel");
       const body = req.body;
       if (
         !Array.isArray(body) ||
@@ -121,7 +126,16 @@ export function registerCarouselRoutes(app: Express): void {
       }
 
       const payload = body as RawCarouselPayload;
-      const finalCarousel = await orchestrateCarouselGeneration(payload);
+      // 1) Generate text for all slides
+      let finalCarousel = await orchestrateCarouselGeneration(payload);
+
+      // 2) Generate hook image (slide 1) using the same pipeline as first-slide preview
+      finalCarousel = await generateFirstSlideImage(finalCarousel);
+
+      // 3) Generate images for slides 2–5 (skips any user-provided images)
+      finalCarousel = await generateImagesForCarousel(finalCarousel);
+
+      // 4) Render full carousel
       const html = renderCarouselHtml(finalCarousel);
 
       res.type("html").status(200).send(html);
@@ -179,7 +193,8 @@ export function registerCarouselRoutes(app: Express): void {
    */
   app.post("/api/carousel/from-form", async (req: Request, res: Response) => {
     try {
-      const { topic, concept, audience, tone, images } = req.body;
+      console.log("[route] POST /api/carousel/from-form");
+      const { topic, concept, audience, tone, userContext, images } = req.body;
       
       if (!concept || typeof concept !== "string") {
         return res.status(400).json({ error: "concept is required" });
@@ -189,8 +204,10 @@ export function registerCarouselRoutes(app: Express): void {
       const payload: RawCarouselPayload = [
         {
           overview: concept,
+          topic: topic || concept,
           audience: audience || undefined,
-          tone: tone || undefined
+          tone: tone || undefined,
+          userContext: userContext || ""
         },
         { slide1_text1: "", slide1_text2: "", slide1_text3: "", slide1_img1: images?.[0] || "" },
         { slide2_text1: "", slide2_text2: "", slide2_text3: "", slide2_img1: images?.[1] || "" },
@@ -199,7 +216,16 @@ export function registerCarouselRoutes(app: Express): void {
         { slide5_text1: "", slide5_text2: "", slide5_text3: "" }
       ];
 
-      const finalCarousel = await orchestrateCarouselGeneration(payload);
+      // 1) Generate text
+      let finalCarousel = await orchestrateCarouselGeneration(payload);
+
+      // 2) Generate hook image (slide 1) using the same pipeline as preview
+      finalCarousel = await generateFirstSlideImage(finalCarousel);
+
+      // 3) Generate images for slides 2–5 (skips user-provided images)
+      finalCarousel = await generateImagesForCarousel(finalCarousel);
+
+      // 4) Render
       const html = renderCarouselHtml(finalCarousel);
 
       res.type("html").status(200).send(html);
@@ -278,6 +304,7 @@ export function registerCarouselRoutes(app: Express): void {
    */
   app.post("/api/carousel/plan", async (req: Request, res: Response) => {
     try {
+      console.log("[route] POST /api/carousel/plan");
       const body = req.body as NarrativeFormInput;
 
       if (!body || typeof body.topic !== "string" || typeof body.concept !== "string") {
@@ -286,10 +313,20 @@ export function registerCarouselRoutes(app: Express): void {
 
       const topic = body.topic.trim();
       const concept = body.concept.trim();
+      const audience = typeof body.audience === "string" ? body.audience : undefined;
       const tone = typeof body.tone === "string" ? body.tone : undefined;
+      const userContext =
+        typeof body.userContext === "string" ? body.userContext : "";
       const images = Array.isArray(body.images) ? body.images.filter(Boolean) : [];
 
-      const plan = await planNarrativeFromForm({ topic, concept, tone, images });
+      const plan = await planNarrativeFromForm({
+        topic,
+        concept,
+        audience,
+        tone,
+        userContext,
+        images
+      });
 
       res.status(200).json(plan);
     } catch (err) {
@@ -341,6 +378,7 @@ export function registerCarouselRoutes(app: Express): void {
    */
   app.post("/api/carousel/first-slide-preview", async (req: Request, res: Response) => {
     try {
+      console.log("[route] POST /api/carousel/first-slide-preview");
       const body = req.body as FirstSlidePreviewInput;
 
       if (!body || typeof body.topic !== "string" || typeof body.concept !== "string") {
@@ -348,7 +386,10 @@ export function registerCarouselRoutes(app: Express): void {
       }
 
       const concept = body.concept.trim();
+      const audience = typeof body.audience === "string" ? body.audience : undefined;
       const tone = typeof body.tone === "string" ? body.tone : "";
+      const userContext =
+        typeof body.userContext === "string" ? body.userContext : "";
       const images = Array.isArray(body.images) ? body.images.filter(Boolean) : [];
 
       // Build a minimal RawCarouselPayload:
@@ -356,7 +397,7 @@ export function registerCarouselRoutes(app: Express): void {
       // - slide 1 gets image[0] if present
       // - slides 2–5 are empty stubs
       const payload: RawCarouselPayload = [
-        { overview: concept, tone },
+        { overview: concept, topic: body.topic, audience, tone, userContext },
         {
           slide1_text1: "",
           slide1_text2: "",

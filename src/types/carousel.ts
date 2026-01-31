@@ -10,8 +10,10 @@ export type SlideRole =
 
 export interface RawOverview {
   overview: string; // what the carousel is about
+  topic?: string; // optional short topic label
   audience?: string; // optional (e.g. “solo SaaS founders”)
   tone?: string; // optional (e.g. “direct, practical”)
+  userContext?: string; // optional rich context from user form
 }
 
 export interface RawSlideInput {
@@ -43,8 +45,10 @@ export interface PreparedSlide {
 
 export interface PreparedCarousel {
   overview: string;
+  topic?: string;
   audience?: string;
   tone?: string;
+  userContext?: string;
   slides: [
     PreparedSlide,
     PreparedSlide,

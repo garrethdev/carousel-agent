@@ -1,10 +1,11 @@
 import { FinalCarousel, RawCarouselPayload } from "../../types/carousel";
 import { buildPreparedCarousel } from "./buildPreparedCarousel";
 import { generateHookSlideText, applyHookSlideText } from "../text/hookGenerator";
-import { collectMissingTextSlots } from "../text/textSlots";
-import { generateMissingText } from "../text/textGenerator";
+import { generateBodySlidesFromPlan } from "../text/textGenerator";
 import { mergeGeneratedText } from "./mergeText";
 import { startTiming } from "../../utils/timing";
+import { planNarrativeFromForm } from "../narrative/planFromForm";
+import { NarrativePlan } from "../../types/narrative";
 
 /**
  * Main text-generation orchestrator for a carousel.
@@ -23,16 +24,37 @@ export async function orchestrateCarouselGeneration(
 ): Promise<FinalCarousel> {
   const endTiming = startTiming("orchestrateCarouselGeneration");
   try {
+    const meta = raw[0];
+
+    // Stage 1: narrative plan from meta + user context
+    const narrativePlan: NarrativePlan = await planNarrativeFromForm({
+      topic: meta.topic ?? meta.overview,
+      concept: meta.overview,
+      audience: meta.audience,
+      tone: meta.tone,
+      userContext: meta.userContext,
+      images: []
+    });
+
     // Step 1: normalize raw into prepared slides
     let prepared = buildPreparedCarousel(raw);
 
     // Step 2: generate hook slide text (slide 1 only)
-    const hookText = await generateHookSlideText(prepared);
+    const hookPlan = narrativePlan.slides.find((s) => s.index === 1);
+    const hookText = await generateHookSlideText(
+      prepared,
+      hookPlan,
+      meta.userContext,
+      meta.topic ?? meta.overview
+    );
     prepared = applyHookSlideText(prepared, hookText);
 
-    // Step 3: fill missing fields for slides 2–5
-    const slots = collectMissingTextSlots(prepared);
-    const generated = await generateMissingText(slots);
+    // Step 3: generate body/outro slides 2–6 using narrative plan
+    const generated = await generateBodySlidesFromPlan(
+      prepared,
+      narrativePlan,
+      meta.userContext
+    );
     const finalCarousel = mergeGeneratedText(prepared, generated);
 
     // Step 4: return final deck (slide 6 remains static)
@@ -55,9 +77,25 @@ export async function orchestrateHookOnly(
 ): Promise<FinalCarousel> {
   const endTiming = startTiming("orchestrateHookOnly");
   try {
+    const meta = raw[0];
+    const narrativePlan: NarrativePlan = await planNarrativeFromForm({
+      topic: meta.topic ?? meta.overview,
+      concept: meta.overview,
+      audience: meta.audience,
+      tone: meta.tone,
+      userContext: meta.userContext,
+      images: []
+    });
+
     let prepared = buildPreparedCarousel(raw);
 
-    const hookText = await generateHookSlideText(prepared);
+    const hookPlan = narrativePlan.slides.find((s) => s.index === 1);
+    const hookText = await generateHookSlideText(
+      prepared,
+      hookPlan,
+      meta.userContext,
+      meta.topic ?? meta.overview
+    );
     prepared = applyHookSlideText(prepared, hookText);
 
     // No body text generation here; we return as-is.

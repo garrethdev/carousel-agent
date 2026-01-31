@@ -240,6 +240,69 @@ body {
   margin-top: auto;
 }
 
+/* Split layout used for body/nudge slides (2–5) */
+.split-layout {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+/* Image column for split layouts - more "card-like" */
+.split-image {
+  flex: 0 0 45%;             /* image takes ~45% of card width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.split-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;       /* more square (4:3), not a long strip */
+  object-fit: cover;         /* crop to fill */
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.split-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Headline inside split layouts (NOT the cover title) */
+.split-text .txt-title {
+  font-size: 24px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  max-width: 90%;
+  margin-bottom: 8px;
+
+  /* Optional: visually clamp to ~2 lines for overly long titles */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Footer/caption inside split layouts - short-looking line under image */
+.split-text .txt-footer {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.3;
+  max-width: 95%;
+  opacity: 0.9;
+
+  /* Visually limit to 2 lines with ellipsis if text is long */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .txt-cover-bottom {
   font-family: var(--font-head);
   font-size: 46px;

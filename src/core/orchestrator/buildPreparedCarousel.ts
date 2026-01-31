@@ -68,9 +68,11 @@ export function buildPreparedCarousel(raw: RawCarouselPayload): PreparedCarousel
   const slide5 = makeSlide(5, s5);
 
   return {
+    topic: meta.topic,
     overview: meta.overview,
     audience: meta.audience,
     tone: meta.tone,
+    userContext: meta.userContext,
     slides: [slide1, slide2, slide3, slide4, slide5, OUTRO_SLIDE]
   };
 }

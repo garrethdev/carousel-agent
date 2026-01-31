@@ -45,28 +45,50 @@ function stripOverlappingWords(
   };
 }
 
-const HOOK_DRAFT_SYSTEM_PROMPT = [
-  "You are brainstorming HOOK copy for the FIRST slide of a LinkedIn carousel.",
-  "The layout has TWO text elements OVER an image:",
-  "1) subtitle – small top label in WHITE at the very top, 2–3 words, <= 24 characters.",
-  "2) title – the MAIN hook in MINT just below the subtitle, 3–4 strong words, <= 32 characters.",
-  "",
-  "Style:",
-  "- The copy must be PUNCHY and high-impact.",
-  "- Use strong action verbs where possible: Beat, Outrank, Steal, Hijack, Crush, Win, Unlock.",
-  "- Avoid generic, weak words: improve, optimize, better, tips, insights, guide, strategy, tutorial.",
-  "- Subtitle should give context (e.g. \"SEO Hack\", \"Reddit Playbook\", \"Ranking Trick\").",
-  "- Title should state a bold promise (e.g. \"Outrank Big Brands\", \"Steal Traffic From Giants\").",
-  "",
-  "Rules:",
-  "- No hashtags. No emojis.",
-  "- Use short, punchy phrases, not full sentences.",
-  "- The subtitle and title in each option must NOT reuse the same key nouns or verbs.",
-  "- Footer for slide 1 is always empty; do not generate footer content.",
-  "",
-  "You must propose EXACTLY THREE different hook options.",
-  "Return ONLY JSON with an 'options' array; no explanations outside the JSON."
-].join(" ");
+export const HOOK_DRAFT_SYSTEM_PROMPT = `
+You are brainstorming HOOK copy for the FIRST slide of a LinkedIn carousel.
+
+The layout has THREE text elements OVER an image:
+1) subtitle – small top label in WHITE at the very top.
+2) title – the MAIN hook in MINT just below the subtitle.
+3) footer – ONE short supporting line under the image.
+
+Your job is to propose strong hook options that:
+- Stop the scroll in the feed.
+- Make a bold, specific promise.
+- Set up the rest of the carousel.
+
+LAYOUT & LIMITS
+- subtitle: 3–4 words, <= 32 characters.
+- title: 4–7 strong words, <= 48 characters, no punctuation at the end.
+- footer: ONE short sentence, 10–16 words, max 90 characters.
+
+STYLE
+- The copy must be PUNCHY and high-impact.
+- Use strong action verbs where possible: Beat, Outrank, Steal, Hijack, Crush, Win, Unlock.
+- Avoid weak filler words: improve, optimize, better, tips, insights, guide, strategy, tutorial.
+- Subtitle should give context (e.g. "SEO Hack", "Reddit Playbook", "Ranking Trick").
+- Title should state a bold promise (e.g. "Beat Google With Reddit", "Steal Traffic From Giants").
+- Titles must be complete phrases, not fragments. Do NOT end a title with connector words like "in", "with", "for", "to", "from", "by", "just".
+- Footer should be a single sharp claim or framing line, NOT a paragraph.
+
+LENGTH BIAS
+- When choosing the wording, aim for the UPPER END of the allowed word ranges:
+  - subtitle: usually 4 words.
+  - title: usually 6–7 words.
+  - footer: usually 14–16 words.
+
+RULES
+- No hashtags. No emojis.
+- Use short, punchy phrases, not full sentences for subtitle and title.
+- Subtitle, title, and footer must NOT reuse the same key nouns or verbs.
+- Footer must add new information (e.g. "Reddit is Google's blindspot in AI search"), not restate the title.
+
+OUTPUT
+You must propose EXACTLY THREE different hook options.
+
+Return ONLY JSON with an "options" array; no explanations outside the JSON.
+`;
 
 async function draftHookCandidates(
   overview: string,
@@ -74,32 +96,7 @@ async function draftHookCandidates(
 ): Promise<HookCandidate[]> {
   const systemPrompt = HOOK_DRAFT_SYSTEM_PROMPT;
 
-  const userPrompt = [
-    `Concept / overview: ${overview}`,
-    tone ? `Tone: ${tone}` : "",
-    "",
-    "You must propose EXACTLY THREE different hook options.",
-    "Each option MUST have:",
-    "- subtitle: 2–3 word white top label that does NOT reuse any key word from the title.",
-    "- title: 3–4 word mint hook phrase stating the main promise.",
-    "- footer: always empty string.",
-    "",
-    "Return JSON in this shape:",
-    "{",
-    '  "options": [',
-    "    {",
-    '      "subtitle": "short top label",',
-    '      "title": "main hook phrase",',
-    '      "footer": "",',
-    '      "rationale": "one sentence about why this hook works"',
-    "    },",
-    "    { ... },",
-    "    { ... }",
-    "  ]",
-    "}"
-  ]
-    .filter(Boolean)
-    .join("\n");
+  const userPrompt = buildHookDraftUserPrompt(overview, tone);
 
   const raw = await openRouterChat({
     model: "meta-llama/llama-3.1-70b-instruct",
@@ -148,27 +145,95 @@ async function draftHookCandidates(
   return candidates;
 }
 
-const HOOK_REFINE_SYSTEM_PROMPT = [
-  "You are refining HOOK copy for the FIRST slide of a LinkedIn carousel.",
-  "You are given several candidate options (subtitle, title).",
-  "",
-  "Your job is to pick ONE and lightly edit it so that:",
-  "- It is as PUNCHY and high-impact as possible.",
-  "- It feels like a bold promise, not a vague statement.",
-  "- It uses at least one strong action verb if appropriate (Beat, Outrank, Steal, Hijack, Crush, Win, Unlock).",
-  "- It avoids weak filler words (improve, optimize, better, tips, insights, guide, strategy).",
-  "",
-  "Layout and limits:",
-  "- subtitle: 2–3 words, <= 24 characters, context label (e.g. \"SEO Hack\", \"Reddit Playbook\").",
-  "- title: 3–4 words, <= 32 characters, main promise (e.g. \"Outrank Big Brands Fast\").",
-  "- The footer for slide 1 is always empty; do not produce any footer content.",
-  "",
-  "IMPORTANT:",
-  "- Subtitle and title in the final choice must NOT reuse the same key nouns or verbs.",
-  "- If the subtitle repeats words from the title, adjust or replace it.",
-  "",
-  "Return ONLY JSON with keys: subtitle, title, footer (footer must be an empty string)."
-].join(" ");
+export const HOOK_REFINE_SYSTEM_PROMPT = `
+You are refining HOOK copy for the FIRST slide of a LinkedIn carousel.
+
+You are given several candidate options (subtitle, title, footer).
+
+Your job is to pick ONE and lightly edit it so that:
+- It is as PUNCHY and high-impact as possible.
+- It feels like a bold promise, not a vague statement.
+- It uses at least one strong action verb if appropriate (Beat, Outrank, Steal, Hijack, Crush, Win, Unlock).
+- It avoids weak filler words (improve, optimize, better, tips, insights, guide, strategy).
+
+LAYOUT & LIMITS
+- subtitle: 3–4 words, <= 32 characters.
+- title: 4–7 words, <= 48 characters.
+- footer: ONE short supporting line, 10–16 words, max 90 characters.
+
+RULES
+- No hashtags. No emojis.
+- Subtitle, title, and footer must NOT reuse the same key nouns or verbs.
+- Footer must add a new angle or claim, not restate the title.
+
+Quality rules:
+- The final title must be a complete, self-contained phrase. It should make sense on its own.
+- The title must NOT end with connector words like: "in", "with", "for", "to", "from", "by", "just", "using", "via", "through".
+- Avoid patterns like "in just" unless you fully complete the idea within the phrase. Prefer "Triple Your Conversion Rate" over "Triple Conversions In Just".
+- If a candidate ends in one of those connector words, rewrite it so it stands alone.
+
+LENGTH BIAS
+- Prefer the longer option as long as it stays punchy.
+- If an option is too short, expand it toward the upper word limit without adding fluff.
+
+OUTPUT
+Return ONLY JSON with keys: subtitle, title, footer.
+`;
+
+export function buildHookDraftUserPrompt(overview: string, tone?: string): string {
+  return `
+Concept / overview: ${overview}
+${tone ? `Tone: ${tone}` : ""}
+
+You must propose EXACTLY THREE different hook options.
+
+Each option MUST have:
+- subtitle: 3–4 word white top label that does NOT reuse any key word from the title.
+- title: 4–7 word mint hook phrase stating the main promise.
+- footer: ONE short support line (10–16 words) with a sharp claim.
+
+Return JSON in this shape:
+{
+  "options": [
+    {
+      "subtitle": "short top label",
+      "title": "main hook phrase",
+      "footer": "one short supporting claim",
+      "rationale": "one sentence about why this hook works"
+    },
+    { ... },
+    { ... }
+  ]
+}
+`.trim();
+}
+
+function buildHookRefineUserPrompt(
+  overview: string,
+  optionsText: string,
+  tone?: string
+): string {
+  return `
+Concept / overview: ${overview}
+${tone ? `Tone: ${tone}` : ""}
+
+Here are the candidate hook options:
+${optionsText}
+
+Choose ONE option and polish it within the length constraints.
+
+- subtitle: 3–4 words, white label at top.
+- title: 4–7 words, bold hook phrase.
+- footer: ONE short supporting line (10–16 words) with a sharp, concrete claim.
+
+Return JSON in this shape:
+{
+  "subtitle": "final subtitle",
+  "title": "final title",
+  "footer": "final supporting claim"
+}
+`.trim();
+}
 
 async function refineHookChoice(
   overview: string,
@@ -191,26 +256,7 @@ async function refineHookChoice(
     })
     .join("\n\n");
 
-  const userPrompt = [
-    `Concept / overview: ${overview}`,
-    tone ? `Tone: ${tone}` : "",
-    "",
-    "Here are the candidate hook options:",
-    optionsText,
-    "",
-    "Choose ONE option and polish it within the length constraints.",
-    "- subtitle: 2-3 words, white label at top.",
-    "- title: 3-4 words, mint hook phrase.",
-    "",
-    "Return JSON in this shape:",
-    "{",
-    '  "subtitle": "final subtitle",',
-    '  "title": "final title",',
-    '  "footer": ""',
-    "}"
-  ]
-    .filter(Boolean)
-    .join("\n");
+  const userPrompt = buildHookRefineUserPrompt(overview, optionsText, tone);
 
   const raw = await openRouterChat({
     model: "meta-llama/llama-3.1-70b-instruct",
@@ -261,22 +307,40 @@ async function refineHookChoice(
  * @returns HookSlideText with subtitle, title, and empty footer.
  */
 export async function generateHookSlideText(
-  prepared: PreparedCarousel
+  prepared: PreparedCarousel,
+  hookPlan?: { goal: string; textIntent: string },
+  userContext?: string,
+  topic?: string
 ): Promise<HookSlideText> {
   const endTiming = startTiming("generateHookSlideText");
   try {
     const overview = prepared.overview;
+    const audience = prepared.audience;
     const tone = prepared.tone;
+    const extraContext = [
+      topic ? `Topic: ${topic}` : "",
+      audience ? `Audience: ${audience}` : "",
+      hookPlan
+        ? `Hook plan: goal="${hookPlan.goal}", textIntent="${hookPlan.textIntent}"`
+        : "",
+      userContext ? `User context: ${userContext}` : ""
+    ]
+      .filter(Boolean)
+      .join("\n");
 
     // STEP 1: brainstorm multiple candidates
-    const candidates = await draftHookCandidates(overview, tone);
+    const candidates = await draftHookCandidates(
+      [overview, extraContext].filter(Boolean).join("\n\n"),
+      tone
+    );
 
     // STEP 2: refine and select the best one
     const refined = await refineHookChoice(overview, tone, candidates);
 
-    // Final normalization and clamping
-    let rawSubtitle = typeof refined.subtitle === "string" ? refined.subtitle : "";
-    let rawTitle = typeof refined.title === "string" ? refined.title : "";
+  // Final normalization and clamping
+  let rawSubtitle = typeof refined.subtitle === "string" ? refined.subtitle : "";
+  let rawTitle = typeof refined.title === "string" ? refined.title : "";
+  let rawFooter = typeof refined.footer === "string" ? refined.footer : "";
 
     // Remove overlapping words between subtitle and title
     ({ subtitle: rawSubtitle, title: rawTitle } = stripOverlappingWords(
@@ -284,16 +348,17 @@ export async function generateHookSlideText(
       rawTitle
     ));
 
-    // Word-level clamps
-    rawSubtitle = clampWords(rawSubtitle, 3); // 2–3 words max
-    rawTitle = clampWords(rawTitle, 4); // 3–4 words max
+  // Word-level clamps (match prompt ranges upper bound)
+  rawSubtitle = clampWords(rawSubtitle, 4); // subtitle target 3–4 words
+  rawTitle = clampWords(rawTitle, 7); // title target 4–7 words
+  rawFooter = clampWords(rawFooter, 16); // footer target 10–16 words
 
-    // Character-level clamps
-    const subtitle = clampWithEllipsis(rawSubtitle, 24);
-    const title = clampWithEllipsis(rawTitle, 32);
-    const footer = ""; // slide 1 does not use footer on the cover
+  // Character-level clamps (match prompt caps)
+  const subtitle = clampWithEllipsis(rawSubtitle, 32);
+  const title = clampWithEllipsis(rawTitle, 48);
+  const footer = clampWithEllipsis(rawFooter, 90);
 
-    return { subtitle, title, footer };
+  return { subtitle, title, footer };
   } finally {
     endTiming();
   }

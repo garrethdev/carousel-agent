@@ -14,17 +14,20 @@ export async function generateFirstSlideImage(
 ): Promise<FinalCarousel> {
   const endTiming = startTiming("generateFirstSlideImage");
   try {
+    console.log("[images] start generateFirstSlideImage");
     // 1) Get prompts for all slides (existing behavior)
     const allPrompts = await generateImagePromptsForCarousel(finalCarousel);
 
     // 2) Filter for slideIndex === 1
     const hookPrompt = allPrompts.find((p) => p.slideIndex === 1);
     if (!hookPrompt) {
+      console.log("[images] no hook prompt found for slide 1, skipping generation");
       return finalCarousel;
     }
 
     // 3) Call Gemini once for the hook prompt
-    console.log(`[images] generating slide 1 only (hook image)`);
+    console.log(`[IMAGE PROMPT] slide 1: ${hookPrompt.prompt}`);
+    console.log(`[images] generating slide 1 only (hook image) | promptPreview="${hookPrompt.prompt.slice(0, 80)}..."`);
     const imageDataUrl = await geminiGenerateImage({ prompt: hookPrompt.prompt });
 
     const updatedSlides = finalCarousel.slides.map((slide) => {
@@ -66,40 +69,44 @@ export async function generateImagesForCarousel(
       `[images] generating prompts for carousel (Gemini Nano banana) | overview="${finalCarousel.overview}"`
     );
     const prompts = await generateImagePromptsForCarousel(finalCarousel);
-  const slideImages: Record<number, string> = {};
-
-  for (const item of prompts) {
     console.log(
-      `[images] generating slide ${item.slideIndex} via Gemini Nano banana`
+      `[images] prompts collected for slides: ${prompts.map((p) => p.slideIndex).join(", ")}`
     );
-    try {
-      const imageData = await geminiGenerateImage({
-        prompt: item.prompt
-      });
-      slideImages[item.slideIndex] = imageData;
-      console.log(`[images] slide ${item.slideIndex} generated (${imageData.slice(0, 50)}...)`);
-    } catch (err) {
-      console.error(
-        `[images] failed slide ${item.slideIndex}`,
-        err
+    const slideImages: Record<number, string> = {};
+
+    for (const item of prompts) {
+      console.log(
+        `[images] generating slide ${item.slideIndex} via Gemini Nano banana | promptPreview="${item.prompt.slice(0, 80)}..."`
       );
-      throw err;
+      console.log(`[IMAGE PROMPT] slide ${item.slideIndex}: ${item.prompt}`);
+      try {
+        const imageData = await geminiGenerateImage({
+          prompt: item.prompt
+        });
+        slideImages[item.slideIndex] = imageData;
+        console.log(`[images] slide ${item.slideIndex} generated (${imageData.slice(0, 50)}...)`);
+      } catch (err) {
+        console.error(
+          `[images] failed slide ${item.slideIndex}`,
+          err
+        );
+        throw err;
+      }
     }
-  }
 
-  console.log(
-    `[images] generated images for slides: ${Object.keys(slideImages).join(", ")}`
-  );
+    console.log(
+      `[images] generated images for slides: ${Object.keys(slideImages).join(", ")}`
+    );
 
-  const slides = finalCarousel.slides.map((slide) => {
-    if (slideImages[slide.index]) {
-      return {
-        ...slide,
-        image: slideImages[slide.index]
-      };
-    }
-    return slide;
-  }) as FinalCarousel["slides"];
+    const slides = finalCarousel.slides.map((slide) => {
+      if (slideImages[slide.index]) {
+        return {
+          ...slide,
+          image: slideImages[slide.index]
+        };
+      }
+      return slide;
+    }) as FinalCarousel["slides"];
 
     return { ...finalCarousel, slides };
   } finally {

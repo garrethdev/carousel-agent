@@ -6,22 +6,31 @@ export interface SlideImagePrompt {
   prompt: string;
 }
 
-const HOOK_IMAGE_BASE_PROMPT = `
-Photorealistic 4:5 vertical studio photograph. A single, large matte white card is shown in a close-up, slightly tilted toward the viewer, filling most of the lower two-thirds of the frame. Its top edge rises close to the middle of the image so it sits just beneath where a headline would go. The background is a dark charcoal, slightly textured wall with a soft vignette. The front of the card shows a printed [SUBJECT] layout – a Reddit-style discussion page with a white page, light grey header bar, left column of grey icons and scores, and rows of post titles and "X comments", all text rendered as abstract grey lines, no real logos or readable words. Behind the card is a strong but controlled pale mint-green halo, tightly wrapped around the card and the area immediately below it, creating a bright ring of light that quickly fades into the charcoal background and does not reach the top third of the image. The upper third of the frame remains mostly clean, dark space so bold typography can sit above the card and feel visually connected to it. Lighting is soft and cinematic with gentle grain so it looks like a real product photo, not a 3D render. No other objects, no on-image text.
+const BASE_PHOTO_STYLE_PROMPT = `
+Photorealistic 4:5 vertical studio poster image. Dark charcoal textured background with a soft vignette. Subtle film grain. Soft cinematic studio lighting. Realistic shadows. Minimal props. Single hero object placed slightly below center.
 `.trim();
 
-function buildHookSubjectDescription(
-  slide: PreparedSlide,
-  overview: string
-): string {
-  const title = slide.text?.title?.trim();
-  if (title && title.length > 0) {
-    // Emphasize that we are visualizing the idea of the hook
-    return `a page layout that visually represents "${title}"`;
-  }
-  const shortOverview =
-    overview.length > 80 ? overview.slice(0, 77).trimEnd() + "…" : overview;
-  return `a page layout that symbolizes ${shortOverview}`;
+const CENTER_SAFEZONE_PROMPT = `
+Designed for centered typography overlay: keep the central 40% of the frame clean, low-contrast, and uncluttered.
+`.trim();
+
+const INLINE_NEGATIVE_PROMPT = `
+No readable text, no letters, no words, no logos, no watermarks. No UI with real text; only abstract grey lines if needed. No cartoon style, no flat vector, no illustration, no clipart. No busy backgrounds, no clutter, no multiple focal objects. Avoid high-contrast detail in the center area reserved for text overlay.
+`.trim();
+
+const HOOK_IMAGE_BASE_PROMPT = `
+A single, large matte white card is shown in a close-up, slightly tilted toward the viewer, filling most of the lower two-thirds of the frame. Its top edge rises close to the middle of the image so it sits just beneath where a headline would go. The front of the card shows a printed generic Reddit-style discussion layout — a white page with a light grey header bar, a left column of grey icons and scores, and rows of post titles and "X comments", all rendered as abstract grey lines with no readable words or letters. Behind the card is a strong but controlled pale mint-green halo, tightly wrapped around the card and the area immediately below it, creating a bright ring of light that quickly fades into the charcoal background and does not reach the top third of the image. The upper third of the frame remains mostly clean, dark space so bold typography can sit above the card and feel visually connected to it. Absolutely no real words, letters, or readable text anywhere in the image; all interface text is just abstract grey lines.
+`.trim();
+
+function validatePrompt(prompt: string, fallback: string): string {
+  const required = [
+    "4:5",
+    "Photorealistic",
+    CENTER_SAFEZONE_PROMPT,
+    INLINE_NEGATIVE_PROMPT
+  ];
+  const ok = required.every((r) => prompt.includes(r));
+  return ok ? prompt : `${fallback} ${INLINE_NEGATIVE_PROMPT}`;
 }
 
 /**
@@ -34,74 +43,51 @@ function buildHookSubjectDescription(
  * @returns A deterministic prompt string for the hook visual.
  */
 async function generateHookImagePrompt(
-  slide: PreparedSlide,
-  overview: string,
-  audience?: string
+  _slide: PreparedSlide,
+  _overview: string,
+  _audience?: string
 ): Promise<string> {
-  const subject = buildHookSubjectDescription(slide, overview);
-  const prompt = HOOK_IMAGE_BASE_PROMPT.replace("[SUBJECT]", subject);
+  const prompt = [
+    BASE_PHOTO_STYLE_PROMPT,
+    CENTER_SAFEZONE_PROMPT,
+    HOOK_IMAGE_BASE_PROMPT,
+    INLINE_NEGATIVE_PROMPT
+  ].join(" ");
   return prompt;
 }
 
 /**
  * Generate an image prompt for a BODY slide (2–5).
  */
+function getBodySceneByIndex(slideIndex: SlideIndex): string {
+  if (slideIndex === 2) {
+    return "A single matte off-white rounded carousel cover card, bland and generic, angled slightly toward camera. Abstract grey placeholder lines only. Small red X marker on a corner. Tight pale mint halo behind the card only.";
+  }
+  if (slideIndex === 3) {
+    return "A tall stack of 6–8 off-white rounded cards, compressed and heavy-looking. Top card has dense abstract grey placeholder lines. A few cards slightly skewed. Small red X marker on the stack. Tight pale mint halo behind the stack only.";
+  }
+  if (slideIndex === 4) {
+    return "One clean off-white rounded card with only 2–3 abstract grey lines. Beside it, sleek pruning shears or a craft knife has cut away a messy bundle of thin grey abstract lines pushed to the side. Small green check marker near the clean card. Tight pale mint halo behind the clean card only.";
+  }
+  if (slideIndex === 5) {
+    return "A minimalist off-white rounded blank signboard/panel on a simple stand. A small pale mint megaphone prop points toward the panel. Small green check marker near the panel. Tight pale mint halo behind the panel only.";
+  }
+  return "A single off-white rounded card with abstract grey lines and a subtle pale mint halo behind it. One clear hero object only.";
+}
+
 async function generateBodyImagePrompt(
   slide: PreparedSlide,
   overview: string,
   audience?: string
 ): Promise<string> {
-  const title = slide.text.title ?? "";
-  const subtitle = slide.text.subtitle ?? "";
-  const footer = slide.text.footer ?? "";
-
-  const systemPrompt = [
-    "You write prompts for Google's image generator for BODY slides (2–5) of a LinkedIn carousel.",
-    "These images sit inside a rounded rectangle in the middle of a card, so they must be simple and very clear.",
-    "Brand / style requirements:",
-    "- Horizontal illustration, aspect ratio ~4:3 (wider than tall).",
-    "- ONE clear subject or metaphor that visually matches the slide's title.",
-    "- Flat or semi-flat 2D vector style (no photo, no 3D render).",
-    "- Soft, minimal background with lots of negative space around the subject.",
-    "- Color palette: light mint, cream, and soft neutrals with a few darker accents.",
-    "- No on-image text or lettering. No logos, no UI screens, no watermarks.",
-    "- Composition: main subject centered or slightly off-center, nothing important cropped at edges."
+  const scene = getBodySceneByIndex(slide.index);
+  const prompt = [
+    BASE_PHOTO_STYLE_PROMPT,
+    CENTER_SAFEZONE_PROMPT,
+    `The scene is about ${overview}. ${audience ? `Audience: ${audience}. ` : ""}${scene}`,
+    INLINE_NEGATIVE_PROMPT
   ].join(" ");
-
-  const userPrompt = [
-    `Slide title: ${title}`,
-    subtitle ? `Slide subtitle: ${subtitle}` : "",
-    footer ? `Slide footer: ${footer}` : "",
-    `Carousel overview: ${overview}`,
-    audience ? `Audience: ${audience}` : "",
-    "",
-    "You are designing ONE illustration for this slide.",
-    "Decide internally on a single strong visual metaphor or scene that represents this idea.",
-    "",
-    "Now output ONLY ONE final prompt for Google's image generator that:",
-    "- Describes the main subject or metaphor in concrete detail (who or what is shown, what they are doing).",
-    "- Specifies a horizontal 4:3 illustration, flat/vector 2D style, with a clean, uncluttered background.",
-    "- Mentions a light mint / cream color palette with soft neutral background and a few darker accents.",
-    "- Emphasizes a single clear subject, centered or slightly off-center, with plenty of negative space.",
-    "- Explicitly avoids any on-image text, letters, logos, UI screenshots, or watermarks.",
-    "",
-    "IMPORTANT: Return ONLY the final prompt string, no bullet points, no numbered steps, no explanation."
-  ]
-    .filter(Boolean)
-    .join("\n");
-
-  const content = await openRouterChat({
-    model: "meta-llama/llama-3.1-70b-instruct",
-    messages: [
-      { role: "system", content: systemPrompt },
-      { role: "user", content: userPrompt }
-    ],
-    temperature: 0.5,
-    max_tokens: 80
-  });
-
-  const firstLine = content.split("\n")[0].trim();
-  return firstLine;
+  return validatePrompt(prompt, `${BASE_PHOTO_STYLE_PROMPT} ${CENTER_SAFEZONE_PROMPT} ${INLINE_NEGATIVE_PROMPT}`);
 }
 
 /**
