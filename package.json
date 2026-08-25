@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "ts-node src/server.ts",
     "test:carousel": "ts-node tests/runSampleCarousel.ts",
-    "test:all": "npm run test:carousel"
+    "test:all": "npm run test:carousel",
+    "analyze:hooks": "ts-node tests/analyzeHookPatterns.ts"
   },
   "dependencies": {
     "dotenv": "^16.6.1",

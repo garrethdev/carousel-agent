@@ -92,11 +92,15 @@ Return ONLY JSON with an "options" array; no explanations outside the JSON.
 
 async function draftHookCandidates(
   overview: string,
-  tone?: string
+  tone?: string,
+  patternGuidance?: string
 ): Promise<HookCandidate[]> {
   const systemPrompt = HOOK_DRAFT_SYSTEM_PROMPT;
 
-  const userPrompt = buildHookDraftUserPrompt(overview, tone);
+  const baseUserPrompt = buildHookDraftUserPrompt(overview, tone);
+  const userPrompt = patternGuidance
+    ? `${patternGuidance}\n\n${baseUserPrompt}`
+    : baseUserPrompt;
 
   const raw = await openRouterChat({
     model: "meta-llama/llama-3.1-70b-instruct",
@@ -310,7 +314,8 @@ export async function generateHookSlideText(
   prepared: PreparedCarousel,
   hookPlan?: { goal: string; textIntent: string },
   userContext?: string,
-  topic?: string
+  topic?: string,
+  patternGuidance?: string
 ): Promise<HookSlideText> {
   const endTiming = startTiming("generateHookSlideText");
   try {
@@ -331,7 +336,8 @@ export async function generateHookSlideText(
     // STEP 1: brainstorm multiple candidates
     const candidates = await draftHookCandidates(
       [overview, extraContext].filter(Boolean).join("\n\n"),
-      tone
+      tone,
+      patternGuidance
     );
 
     // STEP 2: refine and select the best one

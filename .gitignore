@@ -1,0 +1,13 @@
+node_modules/
+dist/
+
+# Local secrets — never commit real keys
+.env
+environment.env
+.env.local
+
+# Generated analysis output
+tests/hookPatternReport.json
+
+# OS junk
+.DS_Store
