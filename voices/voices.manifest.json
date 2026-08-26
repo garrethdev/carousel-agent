@@ -1,0 +1,64 @@
+{
+  "_comment": "Voice registry for the Celebrity Peptide Gone Wrong lane. Engine: Higgsfield Seed Audio 1.0 (seed_audio) via MCP. Cloned voices are 'element' type; pass voice_type+voice_id to generate_audio. See cloning_procedure below to add a new voice.",
+  "engine": {
+    "provider": "higgsfield",
+    "model": "seed_audio",
+    "tuning_ranges": {
+      "speech_rate": { "min": -50, "max": 100, "default": 0, "note": "positive = faster; global only" },
+      "pitch_rate": { "min": -12, "max": 12, "default": 0, "note": "negative = more bass/lower pitch" },
+      "loudness_rate": { "min": -50, "max": 100, "default": 0 }
+    }
+  },
+  "active_voice": "character3",
+  "voices": {
+    "character3": {
+      "display_name": "Character 3 Take 2",
+      "voice_type": "element",
+      "voice_id": "e1503ca1-c4e4-4b8c-b6c3-7164f8697e66",
+      "status": "locked",
+      "locked_settings": {
+        "model": "seed_audio",
+        "format": "mp3",
+        "speech_rate": 18,
+        "pitch_rate": -1,
+        "loudness_rate": 0
+      },
+      "source": {
+        "file": "Character 3 Voice Take 2 shortened.mov",
+        "gdrive_id": "1y3odImuNZOr_r6OFOY-lkIdGN3MWcUqj",
+        "extracted_audio": "take2_voice.mp3",
+        "reference_duration_sec": 88,
+        "trained_via": "create_voice_from_confirmed_audio",
+        "audio_media_id": "1bba1a8e-366d-423c-9ee8-bc175e3951ab"
+      },
+      "chosen_from_test": "t2_v5_rate18_bass-1",
+      "notes": "Selected over Take 1 clone (553ef33a...) and the original zero-shot element (d3dddeec...), both of which did not match her."
+    }
+  },
+  "superseded_voices": {
+    "character3_take1_trained": { "voice_id": "553ef33a-2c0c-4bb8-901c-55a308d3f991", "reason": "did not sound like her" },
+    "character3_zeroshot_element": { "voice_id": "d3dddeec-6415-4d44-840c-70625b1a13ec", "reason": "weak zero-shot clone, poor fidelity" }
+  },
+  "delivery_style": {
+    "goal": "candid first-person female creator, blunt, a little fast and rhythmic; natural pauses, rushing in spots.",
+    "speed": "set via speech_rate (locked at 18). Rhythm/pauses come from PUNCTUATION, not the rate param.",
+    "markup_rules": {
+      "breath_pause": "ellipsis (…) — use sparingly, NOT stacked at the very start (avoid front-loaded 'pregnant pauses')",
+      "quick_beat": "comma",
+      "rushed_cut_in": "em dash (—)",
+      "hard_stop": "short standalone sentence",
+      "banned": "do not open with stacked ellipses or repeated openers"
+    },
+    "reference_line": "Okay, this one's bad. You've seen her everywhere lately, right? Everywhere. But nobody's saying what it actually cost her. So look at this. Before, she was fine. Totally fine. And then the shot changed everything."
+  },
+  "cloning_procedure": {
+    "steps": [
+      "1. Get the reference audio (60-120s, clean, single speaker, natural delivery). If it's a video/.mov, extract audio: ffmpeg -i in.mov -vn -ac 1 -ar 44100 -c:a libmp3lame -q:a 2 out.mp3",
+      "2. media_upload(filename, content_type audio/mpeg) -> PUT the bytes to the returned signed upload_url (Content-Type: audio/mpeg).",
+      "3. media_confirm(media_id, type='audio').",
+      "4. create_voice_from_confirmed_audio(audio_media_id, name) -> returns voice_id (element). Wait for status 'completed' & is_audio_eligible true.",
+      "5. Test with generate_audio(model seed_audio, voice_type 'element', voice_id, speech_rate, pitch_rate). Do a speech_rate 0 fidelity check first, then dial speed/bass.",
+      "6. Record the winner's voice_id + settings in this manifest (voices{}) and set active_voice."
+    ]
+  }
+}
