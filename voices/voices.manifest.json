@@ -4,17 +4,31 @@
     "provider": "higgsfield",
     "model": "seed_audio",
     "tuning_ranges": {
-      "speech_rate": { "min": -50, "max": 100, "default": 0, "note": "positive = faster; global only" },
-      "pitch_rate": { "min": -12, "max": 12, "default": 0, "note": "negative = more bass/lower pitch" },
-      "loudness_rate": { "min": -50, "max": 100, "default": 0 }
+      "speech_rate": {
+        "min": -50,
+        "max": 100,
+        "default": 0,
+        "note": "positive = faster; global only"
+      },
+      "pitch_rate": {
+        "min": -12,
+        "max": 12,
+        "default": 0,
+        "note": "negative = more bass/lower pitch"
+      },
+      "loudness_rate": {
+        "min": -50,
+        "max": 100,
+        "default": 0
+      }
     }
   },
   "active_voice": "character3",
   "voices": {
     "character3": {
-      "display_name": "Character 3 Take 2",
+      "display_name": "Character 3 Take 2 (re-clone)",
       "voice_type": "element",
-      "voice_id": "e1503ca1-c4e4-4b8c-b6c3-7164f8697e66",
+      "voice_id": "664a067c-8290-491c-9d99-508fada1c4d7",
       "status": "locked",
       "locked_settings": {
         "model": "seed_audio",
@@ -29,23 +43,39 @@
         "extracted_audio": "take2_voice.mp3",
         "reference_duration_sec": 88,
         "trained_via": "create_voice_from_confirmed_audio",
-        "audio_media_id": "1bba1a8e-366d-423c-9ee8-bc175e3951ab"
+        "audio_media_id": "1bba1a8e-366d-423c-9ee8-bc175e3951ab",
+        "note": "Re-cloned on the current Higgsfield account from the same Take 2 reference. The audio_media_id below belongs to the previous account and cannot be reused."
       },
       "chosen_from_test": "t2_v5_rate18_bass-1",
-      "notes": "Selected over Take 1 clone (553ef33a...) and the original zero-shot element (d3dddeec...), both of which did not match her."
+      "verified_against": {
+        "method": "median F0 + long-term average spectrum vs the approved kandi-burruss front_vo",
+        "ltas_correlation": 0.9836,
+        "f0_delta_hz": 19.4,
+        "verdict": "same speaker; settings carried over unchanged"
+      }
     }
   },
   "superseded_voices": {
-    "character3_take1_trained": { "voice_id": "553ef33a-2c0c-4bb8-901c-55a308d3f991", "reason": "did not sound like her" },
-    "character3_zeroshot_element": { "voice_id": "d3dddeec-6415-4d44-840c-70625b1a13ec", "reason": "weak zero-shot clone, poor fidelity" }
+    "character3_take1_trained": {
+      "voice_id": "553ef33a-2c0c-4bb8-901c-55a308d3f991",
+      "reason": "did not sound like her"
+    },
+    "character3_zeroshot_element": {
+      "voice_id": "d3dddeec-6415-4d44-840c-70625b1a13ec",
+      "reason": "weak zero-shot clone, poor fidelity"
+    },
+    "character3_take2_original_account": {
+      "voice_id": "e1503ca1-c4e4-4b8c-b6c3-7164f8697e66",
+      "reason": "lived on the previous Higgsfield account; after the account switch seed_audio returns 400 'Voice not found'. Kept for provenance only."
+    }
   },
   "delivery_style": {
     "goal": "candid first-person female creator, blunt, a little fast and rhythmic; natural pauses, rushing in spots.",
     "speed": "set via speech_rate (locked at 18). Rhythm/pauses come from PUNCTUATION, not the rate param.",
     "markup_rules": {
-      "breath_pause": "ellipsis (…) — use sparingly, NOT stacked at the very start (avoid front-loaded 'pregnant pauses')",
+      "breath_pause": "ellipsis (\u2026) \u2014 use sparingly, NOT stacked at the very start (avoid front-loaded 'pregnant pauses')",
       "quick_beat": "comma",
-      "rushed_cut_in": "em dash (—)",
+      "rushed_cut_in": "em dash (\u2014)",
       "hard_stop": "short standalone sentence",
       "banned": "do not open with stacked ellipses or repeated openers"
     },
@@ -60,5 +90,6 @@
       "5. Test with generate_audio(model seed_audio, voice_type 'element', voice_id, speech_rate, pitch_rate). Do a speech_rate 0 fidelity check first, then dial speed/bass.",
       "6. Record the winner's voice_id + settings in this manifest (voices{}) and set active_voice."
     ]
-  }
+  },
+  "_account_note": "Cloned voices are per-account. If seed_audio returns 400 'Voice not found', the account changed - re-run cloning_procedure and update voices.character3.voice_id."
 }
