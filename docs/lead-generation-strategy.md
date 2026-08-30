@@ -116,7 +116,7 @@ The order is deliberate: **LinkedIn starts first because it needs no warmup; col
 **Cold email infrastructure — Explee as the sending layer**
 - Volume sending runs through **Explee AutoGTM** (pay-as-you-go AI outbound agent, ~$0.03/email): it researches prospects, writes the personalized emails, and books meetings. At our 15–20k sends/month that's ~$450–600/mo — a fraction of a traditional platform + SDR stack.
 - **Verify with Explee before launch** (their reviews describe the core product as lead data; the deliverability guarantees below are non-negotiable regardless of vendor): whose domains/mailboxes does AutoGTM send from and do we control them; warmup and per-mailbox caps; suppression-list import; replies routed to our master inbox; raw campaign export (leads, scripts, every reply) for forensics; and human approval of email copy before any template goes live — the read-it-aloud test applies to AI-written copy doubly.
-- Keep a reduced owned infrastructure in parallel: ~10 secondary .com domains × 3 quality Google/Microsoft mailboxes (SPF/DKIM/DMARC, 301-redirects, 14–21 days warmup). This is the Tier A hand-sent channel and the fallback if AutoGTM's deliverability answers disappoint. No cheap reseller SMTP, no bargain TLDs — infrastructure failures masquerade as offer failures.
+- No separate owned sending infrastructure — all volume email runs through Explee, which makes the verification checklist above mandatory rather than advisory: there is no fallback channel if their deliverability disappoints. Tier A emails go out one at a time from the founder's real work address (safe and free at that volume); the rest of Tier A coverage shifts to InMail, which now carries a bigger budget.
 
 **LinkedIn**
 - Optimize 2–4 profiles (founder + senior team; SDR profiles added later). Sales Navigator on each.
@@ -145,7 +145,7 @@ The order is deliberate: **LinkedIn starts first because it needs no warmup; col
 
 ### Phase 3 — Cold email engine (Weeks 4–8 ramp, then steady state)
 
-- Begin week 4 post-warmup; ramp to ~15–20k sends/month — enough to multi-touch Tier B every quarter without burning TAM. **Tier B/C volume runs through Explee AutoGTM; Tier A stays human** — hand-finished emails from our own mailboxes, manual booking, InMail. (Sanity check: Explee's own published math is 1,000 emails → ~2–8 warm leads → ~1–2 meetings — almost exactly the Fazio baseline this plan is funded on, so the §5 math and §7 timeline hold unchanged.)
+- Begin week 4 post-warmup; ramp to ~15–20k sends/month — enough to multi-touch Tier B every quarter without burning TAM. **Tier B/C volume runs through Explee AutoGTM; Tier A stays human** — one-at-a-time emails from the founder's real address, manual booking, and InMail as the primary Tier A channel. (Sanity check: Explee's own published math is 1,000 emails → ~2–8 warm leads → ~1–2 meetings — almost exactly the Fazio baseline this plan is funded on, so the §5 math and §7 timeline hold unchanged.)
 - 4-email sequences over ~3 weeks. Plain text, one idea per email, no links in email 1, spec-buyer tone, the offer stated outright. Every email names a peer client.
 - **Script velocity:** 3–5 new script variants per week (Fazio prescribes 5–10; the finite TAM argues for slightly fewer, better-researched tests). Every campaign is labeled by its angle so winners are identifiable as *angles*, not as "email 37."
 - **Angle bank** (each a separately labeled campaign):
@@ -207,18 +207,21 @@ Two sales-cycle warnings from the framework, worth internalizing before the prog
 
 **Judging windows (adapted for finite TAM):** directional reads per angle at 1–2k sends, verdicts at 3–5k (Fazio's 10k-send minimum assumes infinite audience; we compensate for smaller samples by reading raw replies, not just rates — export every campaign's leads, scripts, and responses and analyze the artifacts line by line, per his forensics method). The *offer* gets a minimum 6 weeks of full-effort execution before any strategic verdict. Sub-minimum execution — "sending 17 Loom videos and declaring that personalized outreach doesn't work" — is quitting, not testing.
 
-## 8. Budget shape (revised — leaner program, ~$10–18k/month)
+## 8. Budget shape (revised — tools-only program, ~$4.5–6k/month)
 
-Paid media is deliberately held to retargeting-only until the month-3 review; Explee replaces most of the traditional sending-stack cost.
+Paid media is held to retargeting-only until the month-3 review; all sending runs through Explee; execution labor (reply handling, manual booking, weekly script writing, list QA, content) is handled in-house and is not a program line — but the work itself does not disappear (see note below).
 
 | Line | Monthly | Notes |
 |---|---|---|
 | Data & enrichment (Apollo + Explee AI Search/Database, verification) | $1–2k | Explee Growth plan is $329/mo; front-loaded pulls in months 1–2 |
 | Explee AutoGTM sending (~15–20k emails @ ~$0.03) | $0.45–0.6k | Pay-as-you-go, no subscription |
-| Owned email infrastructure (10 domains, ~30 mailboxes — Tier A + fallback) | $0.4–0.7k | Quality inboxes only |
-| LinkedIn (Sales Nav seats, InMail credits) | $0.5–1k | |
-| Paid media — retargeting only | $1–1.5k | Prospecting ads deferred to the month-3 review as a scale decision, funded only by proven angles |
-| Copy QA, Tier A personalization, manual booking, content, list ops | remainder | Still the largest line — depth per account is the strategy |
+| LinkedIn (Sales Nav seats + expanded InMail budget) | $2k | InMail upgraded to a primary channel for Tier A — several seats plus sponsored message allowance |
+| Paid media — retargeting only | $1–1.5k | Prospecting ads deferred to the month-3 review, funded only by proven angles |
+| **Total** | **~$4.5–6k** | |
+
+Two consequences of this shape, stated plainly:
+- **Explee is now a single point of failure for email.** With no owned sending infrastructure, the pre-launch verification checklist in Phase 0 is a hard gate, not a nice-to-have. If their deliverability answers are weak, the fallback line (~$0.4–0.7k for 10 domains/30 mailboxes) comes back.
+- **The in-house labor still has to happen.** Replies answered within the hour, meetings booked by phone, 3–5 new scripts a week, hand-written InMails, list sampling. Budget roughly 15–20 hours a week of someone's time; if nobody owns it, the meeting math in §5 does not survive contact with reality.
 
 ## 9. Reporting: leading indicators drive, lagging indicators judge
 
