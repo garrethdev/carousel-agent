@@ -113,10 +113,10 @@ The order is deliberate: **LinkedIn starts first because it needs no warmup; col
 - Build the **ROI calculator** the client's team will screen-share on assessment calls: inputs = order volume, average order value, % of orders re-keyed, after-hours order share, rep cost; output = payback on the build. (Also doubles as a lead magnet later.)
 - Positioning line to test: *"eCommerce for 50-year-old manufacturers and distributors. We make your ERP sell."*
 
-**Cold email infrastructure**
-- 20 secondary .com domains (name variants), 3 quality Google/Microsoft mailboxes each → 60 mailboxes, expandable to 90. No cheap reseller SMTP, no bargain TLDs — infrastructure failures masquerade as offer failures and corrupt every test downstream.
-- SPF/DKIM/DMARC on every domain; all secondary domains 301-redirect to the main site.
-- Sending platform + unified master inbox. Warmup runs 14–21 days before a single real send. Non-negotiable.
+**Cold email infrastructure — Explee as the sending layer**
+- Volume sending runs through **Explee AutoGTM** (pay-as-you-go AI outbound agent, ~$0.03/email): it researches prospects, writes the personalized emails, and books meetings. At our 15–20k sends/month that's ~$450–600/mo — a fraction of a traditional platform + SDR stack.
+- **Verify with Explee before launch** (their reviews describe the core product as lead data; the deliverability guarantees below are non-negotiable regardless of vendor): whose domains/mailboxes does AutoGTM send from and do we control them; warmup and per-mailbox caps; suppression-list import; replies routed to our master inbox; raw campaign export (leads, scripts, every reply) for forensics; and human approval of email copy before any template goes live — the read-it-aloud test applies to AI-written copy doubly.
+- Keep a reduced owned infrastructure in parallel: ~10 secondary .com domains × 3 quality Google/Microsoft mailboxes (SPF/DKIM/DMARC, 301-redirects, 14–21 days warmup). This is the Tier A hand-sent channel and the fallback if AutoGTM's deliverability answers disappoint. No cheap reseller SMTP, no bargain TLDs — infrastructure failures masquerade as offer failures.
 
 **LinkedIn**
 - Optimize 2–4 profiles (founder + senior team; SDR profiles added later). Sales Navigator on each.
@@ -127,7 +127,7 @@ The order is deliberate: **LinkedIn starts first because it needs no warmup; col
 
 ### Phase 1 — Data (Weeks 2–4)
 
-- Build the full TAM account list from Apollo (NAICS + keyword + size + geography), then **layer association member directories** — NAHAD, FPDA, PTDA, NAFEM, FEDA, VMA, STAFDA member lists are public, pre-qualified, and give outreach a credible hook.
+- Build the full TAM account list from Apollo (NAICS + keyword + size + geography) cross-referenced with **Explee AI Search** (semantic search over 105M companies with custom AI-enrichment criteria — e.g. "US distributor founded before 1990, 10k+ SKUs, no cart on the website," which automates much of the website-scoring step below), then **layer association member directories** — NAHAD, FPDA, PTDA, NAFEM, FEDA, VMA, STAFDA member lists are public, pre-qualified, and give outreach a credible hook.
 - Enrich 3–4 contacts per account; verify every email (target <2% bounce); capture founded year, brands carried, ERP guess, website state as personalization fields.
 - **Validate the audience before anything sends** — Fazio's forensics, institutionalized: ~60% of "cold email doesn't work" cases are targeting failures. Random-sample 25 accounts from every list segment by hand and confirm they're actually ICP before a single send. Segment by *buying motion*, not just industry (a distributor with 22 branches buys differently than a 60-person valve manufacturer — different sequences).
 - **Tier the market:**
@@ -145,7 +145,7 @@ The order is deliberate: **LinkedIn starts first because it needs no warmup; col
 
 ### Phase 3 — Cold email engine (Weeks 4–8 ramp, then steady state)
 
-- Begin week 4 post-warmup at 20–30 sends/mailbox/day; ramp to 750–1,000 sends/day total by week 8 (~15–20k/month — enough to multi-touch Tier B every quarter without burning TAM).
+- Begin week 4 post-warmup; ramp to ~15–20k sends/month — enough to multi-touch Tier B every quarter without burning TAM. **Tier B/C volume runs through Explee AutoGTM; Tier A stays human** — hand-finished emails from our own mailboxes, manual booking, InMail. (Sanity check: Explee's own published math is 1,000 emails → ~2–8 warm leads → ~1–2 meetings — almost exactly the Fazio baseline this plan is funded on, so the §5 math and §7 timeline hold unchanged.)
 - 4-email sequences over ~3 weeks. Plain text, one idea per email, no links in email 1, spec-buyer tone, the offer stated outright. Every email names a peer client.
 - **Script velocity:** 3–5 new script variants per week (Fazio prescribes 5–10; the finite TAM argues for slightly fewer, better-researched tests). Every campaign is labeled by its angle so winners are identifiable as *angles*, not as "email 37."
 - **Angle bank** (each a separately labeled campaign):
@@ -158,9 +158,9 @@ The order is deliberate: **LinkedIn starts first because it needs no warmup; col
 - **Book meetings manually — never send a cold responder a form or a bare calendar link.** Positive reply → human answer within the hour, propose times directly. Positive-then-silent → cold call and set the appointment live on the phone. Qualification happens in that conversation, not in a Typeform; unqualified-lead volume is fixed upstream in the list, not downstream in a form.
 - **Trigger queue outranks everything:** job postings, leadership changes, PE acquisitions, and (once the site tracker is installed) companies visiting the agency's website get same-week, hand-finished sends.
 
-### Phase 4 — Paid layer (Weeks 6–10, then scale with proof)
+### Phase 4 — Paid layer (reduced: retargeting-only until the month-3 review)
 
-- **Retargeting first** (Meta + LinkedIn): case-study video and carousel creative against site visitors and LinkedIn engagers. Small budget, outsized assist rate — outbound-sourced buyers Google the agency before replying.
+- **Retargeting only at launch, ~$1–1.5k/month** (Meta + LinkedIn): case-study video and carousel creative against site visitors and LinkedIn engagers. Small budget, outsized assist rate — outbound-sourced buyers Google the agency before replying. Everything below this bullet is deferred to the month-3 review and activates only against angles outreach has already proven.
 - **LinkedIn matched audiences:** upload the Tier A+B account list; run thought-leader ads on the founder's best posts plus case-study creative. First stop for incremental paid dollars with this ICP.
 - **The case study funnel** is the prospecting play when we scale paid: this agency has exactly the asset the format needs. Ad → named case-study page → assessment application. (Fazio's benchmarks on a good case-study funnel: opt-ins ~$2, booked calls $100–200 — B2B industrial will run higher, but that's the shape.)
 - **Creative volume rule when prospecting starts:** launch ~30 distinct ads per test — different angle, proof, presenter, format — and expect 1–2 winners; a 10-ad test that fails proves nothing. Make each ad hyper-specific to a segment ("If you run a fluid power distributorship with 10+ branches still quoting by fax…"). When a winner emerges, identify the *angle* that won and build a dedicated landing page around that exact angle before raising budget.
@@ -207,15 +207,18 @@ Two sales-cycle warnings from the framework, worth internalizing before the prog
 
 **Judging windows (adapted for finite TAM):** directional reads per angle at 1–2k sends, verdicts at 3–5k (Fazio's 10k-send minimum assumes infinite audience; we compensate for smaller samples by reading raw replies, not just rates — export every campaign's leads, scripts, and responses and analyze the artifacts line by line, per his forensics method). The *offer* gets a minimum 6 weeks of full-effort execution before any strategic verdict. Sub-minimum execution — "sending 17 Loom videos and declaring that personalized outreach doesn't work" — is quitting, not testing.
 
-## 8. Budget shape (for a $15–25k/month program)
+## 8. Budget shape (revised — leaner program, ~$10–18k/month)
+
+Paid media is deliberately held to retargeting-only until the month-3 review; Explee replaces most of the traditional sending-stack cost.
 
 | Line | Monthly | Notes |
 |---|---|---|
-| Data & enrichment (Apollo/Clay, verification) | $1.5–2.5k | Front-loaded in months 1–2 |
-| Email infrastructure (domains, mailboxes, platform) | $0.7–1.2k | Quality inboxes only — cheap infra invalidates every test run through it |
+| Data & enrichment (Apollo + Explee AI Search/Database, verification) | $1–2k | Explee Growth plan is $329/mo; front-loaded pulls in months 1–2 |
+| Explee AutoGTM sending (~15–20k emails @ ~$0.03) | $0.45–0.6k | Pay-as-you-go, no subscription |
+| Owned email infrastructure (10 domains, ~30 mailboxes — Tier A + fallback) | $0.4–0.7k | Quality inboxes only |
 | LinkedIn (Sales Nav seats, InMail credits) | $0.5–1k | |
-| Paid media | $3–8k | Starts ~$1k retargeting; scales only past the §6 gates |
-| Copy, content, SDR/inbox management, list ops | remainder | The largest line — by design. Depth per account is the strategy. |
+| Paid media — retargeting only | $1–1.5k | Prospecting ads deferred to the month-3 review as a scale decision, funded only by proven angles |
+| Copy QA, Tier A personalization, manual booking, content, list ops | remainder | Still the largest line — depth per account is the strategy |
 
 ## 9. Reporting: leading indicators drive, lagging indicators judge
 
