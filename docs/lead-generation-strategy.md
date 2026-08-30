@@ -1,9 +1,9 @@
 # Lead Generation Blueprint
 
 **Client:** B2B eCommerce agency for established American manufacturers & distributors
-**Prepared:** August 30, 2026
+**Prepared:** August 30, 2026 · Rev 2
 **Scope:** Cold email, LinkedIn outreach, LinkedIn InMail, paid ads (Meta/LinkedIn) — wide-open mandate, large spend
-**Status:** Draft for client review — open questions at the end
+**Framework sources:** the four client case studies; live Apollo market data (Aug 30, 2026); Daniel Fazio's acquisition framework ("How to Get Clients," Client Ascension, Aug 2026) — adopted where it fits, deliberately adapted where this market differs
 
 ---
 
@@ -41,9 +41,19 @@ And the number that shapes all messaging:
 Two consequences:
 
 1. **Write for owners, not marketers.** Peer proof, revenue protection, and operational pain — not "digital transformation" language.
-2. **The TAM is finite.** Roughly 8–12k companies once deduplicated to accounts. A careless volume operation burns the entire market in two quarters and poisons the domain reputation on the way. The large spend goes into *depth per account* (data quality, personalization, multi-channel coverage, more touches) — not raw send volume.
+2. **The TAM is finite** — roughly 8–12k companies once deduplicated to accounts. This is the one place we deliberately break from the standard cold-email playbook: Fazio's "why not send 300,000 emails a month" scaling logic assumes a near-infinite audience. Here, a careless volume operation burns the entire market in two quarters and poisons domain reputation on the way out. The large spend goes into *depth per account* — data quality, personalization, multi-channel coverage, more touches, owned-list nurture — not raw send volume.
 
-## 3. ICP definition
+## 3. The operating framework
+
+Three principles from the Fazio framework govern everything below:
+
+**There are only three acquisition channels — content, ads, and outreach** ("there's no secret fourth channel"). This offer is a strong outreach fit by his own criteria: B2B, a clear financial result, stateable in one sentence ("we build eCommerce that sells from your ERP"), in a category the buyer already understands. And because an offer that works on outreach transfers to ads and content, outreach is the *validation* channel — the cheapest way to find the message — and ads/content are the *amplifiers* once it's found.
+
+**One caveat his framework flags:** a six-figure eCommerce build has demand-capture characteristics — owners buy on their own timeline, often at a triggering event (failed replatform, competitor modernizing, succession). Pure outreach catches them by luck. The design compensates with (a) trigger-based targeting so we arrive *at* the event, and (b) an owned nurture list, because per his 30/70 rule, ~30% of results land near the first touch and ~70% accrue over the following year — but only if we keep showing up.
+
+**The master equation:** right offer × right audience × sufficient traffic × strong follow-up × effective sales. Multiplicative — "if any of them is zero, the whole thing is zero." The phases below exist to make each factor provably non-zero before spending against it.
+
+## 4. ICP definition
 
 **Firmographics**
 - US-headquartered manufacturer or distributor
@@ -69,79 +79,111 @@ Two consequences:
 **Anti-ICP:** digital-native DTC brands, dropshippers, <$10M revenue, companies mid-way through a replatform with another agency (unless the project is visibly failing — the "rescue" angle), job shops with no catalog.
 
 **Personas**
-- **Owner / President / CEO** — the economic buyer at >99% of targets. Cares about: revenue protection, not breaking the counter/branch/distributor business, succession-proofing the company.
+- **Owner / President / CEO** — the economic buyer at >99% of targets. Cares about: revenue protection, not breaking the counter/branch/distributor business, succession-proofing the company. (Fazio's own campaign-forensics example: the same script that died with marketing managers "worked amazingly well" re-aimed at owners. We start there.)
 - **VP Sales** — feels the daily pain: reps re-keying POs, RFQs by email, counter staff answering "is it in stock."
 - **IT Director / Controller** — the gatekeeper. One job: convince them the ERP doesn't get ripped out.
 - **Director of eCommerce** (the 145) — easiest conversation, weakest economics; approach with the failed-replatform/rescue angle.
 
-## 4. Channel architecture and build order
+## 5. The acquisition math, worked backwards
 
-The order below is deliberate: **LinkedIn starts first because it needs no warmup; cold email is the volume engine but needs 3–4 weeks of infrastructure lead time; paid ads come last and start as retargeting** — this ICP does not click cold Meta lead forms, but ads multiply the channels that already work.
+Per the "build your acquisition math" exercise — start from the customers wanted, derive the leading indicators:
+
+| Step | Assumption | Requirement |
+|---|---|---|
+| New clients/month (steady state) | target | **2** |
+| Proposal → close | 25% | 8 proposals/mo |
+| Attended meeting → proposal | 40% | 20 attended meetings/mo |
+| Show rate (owners, manually booked) | 80% | **25 booked meetings/mo** |
+| — from cold email | Fazio base math: 2% reply × 20% positive × ~20–25% of positives to a booked call, lifted by manual phone follow-up | 12–16 meetings from ~15–20k sends/mo |
+| — from LinkedIn + InMail + triggers + inbound assists | balance | 9–13 meetings |
+
+Fazio's baseline: **10,000 emails → ~200 replies → ~40 positive → ~8 calls → ~2 customers, "and that's if everything goes right."** Our per-send numbers should beat baseline (tight ICP, peer-named proof, owner-level targeting), but the plan is funded to work even at baseline. The corollary he insists on: judge the program on **cost per meeting and cost per client**, not on reply rates — if a meeting costs $75–150 in sending costs and a client closes at a four-figure CAC against a six-figure, multi-year LTV, the vanity metrics are irrelevant.
+
+## 6. Channel architecture and build order
+
+The order is deliberate: **LinkedIn starts first because it needs no warmup; cold email is the volume engine but needs 3–4 weeks of infrastructure lead time; paid ads come last** — first as retargeting, then as amplification of angles that outreach has already validated. Fazio's sequencing rule (outreach validates → ads scale) applied to an agency that already has cash flow and proof.
 
 ### Phase 0 — Foundation (Weeks 1–2)
 
 **Offer & proof assets**
-- Rewrite the four case studies as one-page peer narratives with numbers (online revenue growth, % of orders self-served, quote turnaround). Get written approval to name clients in outreach and ads — this is the single most valuable asset in the program; a 67-year-old distributor trusts a peer story, not an agency claim.
-- CTA is a **named, low-friction diagnostic** — a "Catalog & ERP eCommerce Assessment" — not "book a demo." Owners take a specific, bounded first step.
+- Rewrite the four case studies as one-page peer narratives with numbers (online revenue growth, % of orders self-served, quote turnaround). Get written approval to name clients in outreach and ads — a 67-year-old distributor trusts a peer story, not an agency claim.
+- CTA is a **named, low-friction diagnostic** — a "Catalog & ERP eCommerce Assessment" — not "book a demo."
+- **The offer must be stated in plain words in every first email.** "You cannot determine whether an offer works if the email you send never says the offer." Every draft passes the read-it-aloud test: if you'd feel ridiculous saying the sentence to a distributor's president at a trade-show booth, it doesn't get sent to 10,000 of them.
+- Decide the risk reversal with the client (assessment free? fee credited against a build? a concrete guarantee?). A strong enough offer carries the email on its own before any personalization is added.
+- Build the **ROI calculator** the client's team will screen-share on assessment calls: inputs = order volume, average order value, % of orders re-keyed, after-hours order share, rep cost; output = payback on the build. (Also doubles as a lead magnet later.)
 - Positioning line to test: *"eCommerce for 50-year-old manufacturers and distributors. We make your ERP sell."*
 
 **Cold email infrastructure**
-- 20 secondary domains (name variants of the agency domain), 3 mailboxes each → 60 mailboxes, expandable to 90.
+- 20 secondary .com domains (name variants), 3 quality Google/Microsoft mailboxes each → 60 mailboxes, expandable to 90. No cheap reseller SMTP, no bargain TLDs — infrastructure failures masquerade as offer failures and corrupt every test downstream.
 - SPF/DKIM/DMARC on every domain; all secondary domains 301-redirect to the main site.
-- Sending platform (Smartlead/Instantly-class, or Apollo sequences) + unified master inbox.
-- Warmup runs 14–21 days before a single real send. Non-negotiable.
+- Sending platform + unified master inbox. Warmup runs 14–21 days before a single real send. Non-negotiable.
 
 **LinkedIn**
 - Optimize 2–4 profiles (founder + senior team; SDR profiles added later). Sales Navigator on each.
-- Founder profile is the content anchor — 3 posts/week (see Phase 2). The carousel-generation pipeline we already run can produce the case-study carousel format directly.
+- Founder profile is the content anchor — 3 posts/week (see Phase 2). The carousel-generation pipeline we already run produces the case-study carousel format directly.
 
 **Pipeline plumbing**
-- CRM stages, routing, Slack alerts on replies, a master suppression list (existing clients, open opportunities, past declines), and a weekly metrics dashboard (defined in §7).
+- CRM with explicit stages (call scheduled → no-show → follow-up → hot list → closed-won/lost) and automations: no-show triggers re-book sequences; reply alerts to Slack; a master suppression list (existing clients, open opportunities, past declines).
 
 ### Phase 1 — Data (Weeks 2–4)
 
-- Build the full TAM account list from Apollo (NAICS + keyword + size + geography), then **layer association member directories** — NAHAD, FPDA, PTDA, NAFEM, FEDA, VMA, STAFDA member lists are public, pre-qualified, and give outreach a credible hook ("fellow NAHAD member companies we work with…").
+- Build the full TAM account list from Apollo (NAICS + keyword + size + geography), then **layer association member directories** — NAHAD, FPDA, PTDA, NAFEM, FEDA, VMA, STAFDA member lists are public, pre-qualified, and give outreach a credible hook.
 - Enrich 3–4 contacts per account; verify every email (target <2% bounce); capture founded year, brands carried, ERP guess, website state as personalization fields.
+- **Validate the audience before anything sends** — Fazio's forensics, institutionalized: ~60% of "cold email doesn't work" cases are targeting failures. Random-sample 25 accounts from every list segment by hand and confirm they're actually ICP before a single send. Segment by *buying motion*, not just industry (a distributor with 22 branches buys differently than a 60-person valve manufacturer — different sequences).
 - **Tier the market:**
-  - **Tier A — 500 dream accounts.** Full account-based treatment: multi-threaded, personalized email, LinkedIn touches, InMail, direct mail if warranted. No automation-sounding copy.
+  - **Tier A — 500 dream accounts.** Full account-based treatment: multi-threaded, personalized email, LinkedIn touches, InMail, direct mail if warranted.
   - **Tier B — ~2,500 strong-fit accounts.** Multi-channel sequences, segment-level personalization.
   - **Tier C — remainder.** Light-touch sequences, trigger-activated only.
 - Score every target website: no cart / legacy cart / modern. "10,000 SKUs and no cart" is the hottest list in the program.
 
 ### Phase 2 — LinkedIn first (Weeks 3–6, then ongoing)
 
-- 80–100 connection requests/week/seat, **no pitch in the invite**. Pitch-free invites to this ICP accept at 25–35%.
-- Conversation-first messaging after acceptance; move to a call or the assessment offer only after signal.
-- Founder content 3×/week: vertical teardowns (*"We looked at 50 fluid power distributor websites; 41 can't show live inventory"*), case-study carousels, ERP-integration explainers. Content converts silently — owners lurk for weeks, then reply to an email "seen your posts."
+- 80–100 connection requests/week/seat, **no pitch in the invite** (25–35% accept for this ICP).
+- Conversation-first messaging after acceptance; move to the assessment offer only after signal.
+- Founder content 3×/week: vertical teardowns (*"We looked at 50 fluid power distributor websites; 41 can't show live inventory"*), case-study carousels, ERP-integration explainers. Content converts silently — owners lurk for weeks, then answer an email with "seen your posts." This is the consumption flywheel: the strongest predictor of whether a prospect shows and buys is how much of your material they've consumed before the call.
 - **InMail is a Tier A weapon only.** 400–800/month across seats, every one hand-written against account research. Open-profile targets cost no credits.
 
 ### Phase 3 — Cold email engine (Weeks 4–8 ramp, then steady state)
 
 - Begin week 4 post-warmup at 20–30 sends/mailbox/day; ramp to 750–1,000 sends/day total by week 8 (~15–20k/month — enough to multi-touch Tier B every quarter without burning TAM).
-- 4-email sequences over ~3 weeks. Plain text, one idea per email, no links in email 1, spec-buyer tone. Every email names a peer client.
-- **Angle bank** (each is a separate sequence, tested independently):
+- 4-email sequences over ~3 weeks. Plain text, one idea per email, no links in email 1, spec-buyer tone, the offer stated outright. Every email names a peer client.
+- **Script velocity:** 3–5 new script variants per week (Fazio prescribes 5–10; the finite TAM argues for slightly fewer, better-researched tests). Every campaign is labeled by its angle so winners are identifiable as *angles*, not as "email 37."
+- **Angle bank** (each a separately labeled campaign):
   1. **Peer proof** — "We took a 67-year-old fluid power distributor with 22 branches online without breaking their counter business."
   2. **ERP pain** — "Your Prophet 21 knows your inventory to the unit. Your website doesn't."
   3. **After-hours revenue** — "Your customers' maintenance crews work nights. Your order desk doesn't."
   4. **Rep math** — "Every re-keyed PO costs $30–50 in labor. How many did your team key last month?"
   5. **Hiring trigger** — "Saw you're hiring an eCommerce manager — here's what their first 90 days looks like with and without a partner."
   6. **Rescue** — for the 145 eCommerce leaders and any visibly stalled replatform.
+- **Book meetings manually — never send a cold responder a form or a bare calendar link.** Positive reply → human answer within the hour, propose times directly. Positive-then-silent → cold call and set the appointment live on the phone. Qualification happens in that conversation, not in a Typeform; unqualified-lead volume is fixed upstream in the list, not downstream in a form.
 - **Trigger queue outranks everything:** job postings, leadership changes, PE acquisitions, and (once the site tracker is installed) companies visiting the agency's website get same-week, hand-finished sends.
 
 ### Phase 4 — Paid layer (Weeks 6–10, then scale with proof)
 
-- **Retargeting first** (Meta + LinkedIn): case-study video and carousel creative against site visitors and LinkedIn engagers. Small budget, outsized assist rate — outbound-sourced buyers Google the agency before replying; retargeting makes sure what they find confirms the story.
-- **LinkedIn matched audiences:** upload Tier A+B account list; run thought-leader ads on the founder's best-performing posts plus case-study creative. This is where incremental paid dollars go first for this ICP.
-- **Meta prospecting** stays on the bench unless retargeting + matched audiences saturate. If activated: lookalikes seeded from the client list, case-study video only, driving to the assessment offer — never a generic lead form.
-- Gate: **no scaling of paid spend until cold email/LinkedIn reply quality proves message-market fit.** Ads amplify a message that's already landing; they can't find one.
+- **Retargeting first** (Meta + LinkedIn): case-study video and carousel creative against site visitors and LinkedIn engagers. Small budget, outsized assist rate — outbound-sourced buyers Google the agency before replying.
+- **LinkedIn matched audiences:** upload the Tier A+B account list; run thought-leader ads on the founder's best posts plus case-study creative. First stop for incremental paid dollars with this ICP.
+- **The case study funnel** is the prospecting play when we scale paid: this agency has exactly the asset the format needs. Ad → named case-study page → assessment application. (Fazio's benchmarks on a good case-study funnel: opt-ins ~$2, booked calls $100–200 — B2B industrial will run higher, but that's the shape.)
+- **Creative volume rule when prospecting starts:** launch ~30 distinct ads per test — different angle, proof, presenter, format — and expect 1–2 winners; a 10-ad test that fails proves nothing. Make each ad hyper-specific to a segment ("If you run a fluid power distributorship with 10+ branches still quoting by fax…"). When a winner emerges, identify the *angle* that won and build a dedicated landing page around that exact angle before raising budget.
+- **Judging paid:** by cost per attended assessment and cost per closed client only — never CTR, CPL, or opt-in rate. Expect B2B ads CAC in the $2,000–4,000 range and treat that as fine against this LTV.
+- Gates, in order: (1) no paid prospecting until cold email/LinkedIn reply quality proves message-market fit — ads amplify a message that's already landing, they can't find one; (2) never cut the profitable outreach channel to fund ads — new channels are added, not swapped; (3) scale by adding funnels at their efficient budgets, not by suffocating one funnel with more spend past its ceiling.
 
-### Phase 5 — Nurture & compounding assets (Month 2 onward)
+### Phase 5 — Owned list & compounding assets (Month 2 onward)
 
-- Every positive-but-not-now reply enters a monthly nurture track (they said *they stay* — the same patience applies pre-sale; these buyers move on their fiscal year, not ours).
-- Quarterly **"State of Distributor eCommerce"** teardown report — a reason to email the entire TAM without pitching, and the retargeting audience builder.
-- Webinar with a client on stage (peer voice beats agency voice), association sponsorships and speaking slots — the long game this ICP actually trusts.
+The email list is the program's permanent asset — the hedge against the demand-capture timing problem in §3.
 
-## 5. What to expect, and when
+- **Everything captures contact info:** assessment applications (with partial-submit capture, so abandoners still join the list), report downloads, webinar registrations, positive-but-not-now replies.
+- **Nurture cadence:** weekly, not daily — Fazio runs 7×/week to a bizopp audience; industrial owners get one excellent operator-grade email a week (teardown, client result, objection answered, "what we're seeing across 40 distributor sites"), plus the quarterly report. His 30/70 rule is the budget justification: most of this program's eventual revenue arrives from people who lurked for 6–12 months — but only if we're still in the inbox when their trigger event lands.
+- Quarterly **"State of Distributor eCommerce"** teardown report — a reason to email the entire TAM without pitching, a lead magnet for trickle ads ($5–10/day per magnet, run indefinitely), and the retargeting audience builder.
+- Webinar with a client on stage (peer voice beats agency voice); association sponsorships and speaking slots — the long game this ICP actually trusts.
+
+### Speed-to-lead SLAs (inbound paths, from week 6)
+
+Once forms and funnels exist, intent decays in minutes, not days:
+- Text within **2–3 minutes**, call within **5–7 minutes** of an assessment application (text first so the caller ID resolves to a name).
+- Abandoned applications (partial or complete-but-unbooked) route to a priority queue: same-day calls, dedicated re-engagement sequence.
+- Show-rate hygiene: add-to-calendar on the thank-you page, SMS + email reminders with reschedule links, and case-study content sent pre-call — consumption before the call is the #1 show/close predictor. Keep booking calendars no more than ~70% full; **"a calendar that is 70% full is operationally 100% full."**
+
+## 7. What to expect, and when
 
 | When | What |
 |---|---|
@@ -150,46 +192,66 @@ The order below is deliberate: **LinkedIn starts first because it needs no warmu
 | Weeks 5–6 | First cold-email-sourced meetings (warmup matures, volume ramps). |
 | Month 2 | 8–12 qualified meetings/month. First read on which angles/verticals convert. |
 | Month 3 | Steady state: **15–25 qualified meetings/month** with all channels live. |
-| Months 4–6 | First closed deals. At a 60–120-day agency sales cycle for six-figure builds, judge the program on meeting quality at month 2, pipeline at month 3, and revenue at months 4–6 — not before. |
+| Months 4–6 | First closed deals. At a 60–120-day cycle for six-figure builds, judge meeting quality at month 2, pipeline at month 3, revenue at months 4–6 — not before. |
 
-**Benchmarks we hold ourselves to** (kill/scale decisions per angle after ~1,000 sends):
-- Cold email: bounce <2%, reply 2–4%, positive reply 0.5–1%, 3–6 meetings per 1,000 sends
+Two sales-cycle warnings from the framework, worth internalizing before the program starts:
+- **Spend runs ahead of closes by design.** Fazio's example: a $6k/month offer burned $20k+ of acquisition spend before the first signing, then CAC settled to ~$3,000 over the following months as earlier leads finished their cycles. Early-window CAC is not real CAC.
+- **"Do not introduce a strategic change to solve statistical noise."** At 8–20 meetings/month, close rates will swing violently week to week. Before reacting: did the offer, list, creative, or closer actually change? Is the sample big enough? Has a full cycle elapsed?
+
+**Benchmarks we hold ourselves to:**
+- Cold email: bounce <2%; base case per Fazio math ~0.8 booked calls per 1,000 sends, target 2–4 with peer-proof angles and manual booking; reply 2–4%, positive 0.5–1%
 - LinkedIn: 25–35% accept, 8–12% reply-to-conversation
 - InMail (Tier A, hand-written): 10–15% reply
-- Meetings → proposal ~40%; proposal → close 25–30% (client's own historical close rate to refine this)
+- Show rate: ≥80% with manual booking + reminder hygiene
+- Meetings → proposal ~40%; proposal → close ~25% (client's historical close rate to refine)
 
-Illustrative math at steady state: 20 meetings/mo × 40% → 8 proposals × 25% → **~2 new clients/month from month 5**. At the client's deal sizes and multi-year retention, one closed deal likely pays for a quarter of the entire program — worth confirming against real ACV/LTV (question 1 below).
+**Judging windows (adapted for finite TAM):** directional reads per angle at 1–2k sends, verdicts at 3–5k (Fazio's 10k-send minimum assumes infinite audience; we compensate for smaller samples by reading raw replies, not just rates — export every campaign's leads, scripts, and responses and analyze the artifacts line by line, per his forensics method). The *offer* gets a minimum 6 weeks of full-effort execution before any strategic verdict. Sub-minimum execution — "sending 17 Loom videos and declaring that personalized outreach doesn't work" — is quitting, not testing.
 
-## 6. Budget shape (for a $15–25k/month program)
+## 8. Budget shape (for a $15–25k/month program)
 
 | Line | Monthly | Notes |
 |---|---|---|
 | Data & enrichment (Apollo/Clay, verification) | $1.5–2.5k | Front-loaded in months 1–2 |
-| Email infrastructure (domains, mailboxes, platform) | $0.7–1.2k | |
+| Email infrastructure (domains, mailboxes, platform) | $0.7–1.2k | Quality inboxes only — cheap infra invalidates every test run through it |
 | LinkedIn (Sales Nav seats, InMail credits) | $0.5–1k | |
-| Paid media | $3–8k | Starts ~$1k retargeting; scales only with proof |
+| Paid media | $3–8k | Starts ~$1k retargeting; scales only past the §6 gates |
 | Copy, content, SDR/inbox management, list ops | remainder | The largest line — by design. Depth per account is the strategy. |
 
-## 7. Reporting
+## 9. Reporting: leading indicators drive, lagging indicators judge
 
-One weekly dashboard: sends & deliverability, replies & positive %, meetings booked & show rate, SQLs, pipeline $ by source and by angle. Every angle and vertical gets a verdict (kill / iterate / scale) on a fixed cadence — no zombie sequences.
+One weekly dashboard, split the way the framework demands:
+- **Leading (controllable, tracked daily/weekly):** sends & deliverability, connection requests, InMails, scripts launched, content posted, triggers actioned, follow-ups made, speed-to-lead SLA compliance.
+- **Lagging (judged on the §7 windows):** replies & positive %, meetings booked, show rate, proposals, closes, pipeline $ and CAC by source *and by angle*.
 
-## 8. Risks and how the design absorbs them
+Every angle and vertical carries a verdict (kill / iterate / scale) reviewed on the judging windows above — no zombie sequences, and no killing winners over one bad week.
+
+## 10. Handoff: what happens after we book the meeting
+
+We generate; the client closes. Three recommendations for their side of the funnel, from the sales-process framework — offered because the program's measured CAC depends on them:
+1. **Diagnose before pitching.** Run the assessment as discovery; anchor ROI with a minimum-bound question ("six months from now, what lift would make this engagement a clear yes?") and the Phase 0 ROI calculator on screen.
+2. **Present the largest appropriate package first** and itemize what every dollar buys (integration scope, catalog build, landing pages, training). Descoping is then the prospect removing ROI, not negotiating price.
+3. **Advance on the call.** Six-figure builds aren't one-call closes, but every call ends with the next step scheduled live — assessment → findings readout → proposal walkthrough, never "we'll send something over."
+
+We will also verify — per question 5 below — that meeting capacity and follow-up ownership exist before we turn the volume up. A booked meeting that nobody works is program cost with no program credit.
+
+## 11. Risks and how the design absorbs them
 
 - **Finite TAM burn** → tiering, volume caps, suppression discipline, quality bar on every send.
-- **Deliverability collapse** → domain rotation, permanent warmup, plain-text copy, per-mailbox caps, third-party inbox-placement monitoring.
+- **Deliverability collapse** → domain rotation, permanent warmup, plain-text copy, per-mailbox caps, quality inboxes, third-party inbox-placement monitoring.
+- **Targeting failure misread as offer failure** → hand-sampling every list segment before launch; campaign forensics on raw replies before any pivot.
 - **Channel-conflict objection** (manufacturers fear upsetting their distributors) → addressed head-on in copy; the Versa story is the proof asset.
 - **IT gatekeeper stall** → ERP-integration proof content built in Phase 0, not improvised on calls.
-- **Long sales cycle misread as failure** → the §5 table is the contract: meeting quality at month 2, revenue at months 4–6.
+- **Long sales cycle misread as failure** → §7 is the contract: meeting quality at month 2, revenue at months 4–6; no strategic changes to fix statistical noise.
 
-## 9. Questions before we start (answers sharpen the build, none block Phase 0)
+## 12. Questions before we start (answers sharpen the build, none block Phase 0)
 
 1. ACV and realistic LTV on the four flagship accounts — sets the CAC ceiling and how hard we can push paid.
 2. May we name the four clients (and use logos/quotes) in outreach and ads?
 3. Which verticals do you *want* more of — and any you'd decline?
 4. Geography: all-US, or regional preference?
-5. Who takes the meetings, and what's real calendar capacity per month?
+5. Who takes the meetings, and what's real calendar capacity per month? Who owns follow-up on no-shows and stalls?
 6. Existing CRM and any past outbound history (suppression data; which lists are already burned)?
 7. Which ERPs do you integrate with best? (Sharpens technographic targeting and the IT-gatekeeper content.)
 8. What platform do you build on (BigCommerce B2B, Shopify Plus, Optimizely…)? Enables tech-swap angles.
 9. Your historical close rate from first meeting → signed — to calibrate the §5 math.
+10. What risk reversal are you willing to stand behind (free assessment, fee credited to the build, a guarantee)? The strength of this answer sets the ceiling on every channel's conversion rate.
