@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>job-ops · leads</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%234f46e5'/%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='32' y2='32'%3E%3Cstop stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%234338ca'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext x='16' y='22' font-family='Arial' font-size='16' font-weight='bold' fill='white' text-anchor='middle'%3Ej%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<!-- Password gate -->
+<div id="gate" class="gate" hidden>
+  <div class="gate__card">
+    <div class="gate__brand">job-ops</div>
+    <p class="gate__hint">Enter the dashboard password.</p>
+    <input id="pw" class="gate__input" type="password" placeholder="Password" autocomplete="current-password">
+    <button class="btn btn--primary btn--block" onclick="submitPw()">Unlock</button>
+    <div id="pwerr" class="gate__err"></div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="topbar">
+  <div class="topbar__brand">job-ops <span class="topbar__sub">leads</span></div>
+  <span id="apollo" class="badge">apollo …</span>
+  <span class="topbar__note">Find LinkedIn = 1 Apollo credit · reveals LinkedIn + email</span>
+</header>
+
+<!-- Tabs -->
+<nav class="tabs">
+  <button id="tab-leads" class="tab tab--active" onclick="showTab('leads')">Leads</button>
+  <button id="tab-yc" class="tab" onclick="showTab('yc')">🚀 YC GTM</button>
+  <button id="tab-recruiters" class="tab" onclick="showTab('recruiters')">🧑‍💼 Recruiters</button>
+  <button id="tab-warm" class="tab" onclick="showTab('warm')">★ Warm</button>
+  <button id="tab-outreach" class="tab" onclick="showTab('outreach')">Outreach</button>
+  <button id="tab-drop" class="tab" onclick="showTab('drop')">📸 Drop</button>
+</nav>
+
+<!-- Outreach tab -->
+<section id="view-outreach" hidden>
+  <div class="outreach">
+    <div class="outreach__card">
+      <h2 class="outreach__title">Draft an outreach email</h2>
+      <p class="outreach__hint">Pick a lead and craft the email in your voice. Edit it below,
+        then save it to your Gmail <b>Drafts</b> under <b>Sendouts</b> — nothing is sent.</p>
+      <label class="outreach__field">Lead
+        <select id="o-lead" class="input input--wide"></select>
+      </label>
+      <label class="outreach__field">Extra context (optional)
+        <textarea id="o-context" class="outreach__context" placeholder="Anything to work in — e.g. 'mention I've run D2C food brands' or 'keep it under 80 words'"></textarea>
+      </label>
+      <button id="o-craft" class="btn btn--primary" onclick="craftEmail()">✍️ Craft email</button>
+      <span id="o-status" class="outreach__status"></span>
+    </div>
+    <div id="o-editor" class="outreach__card outreach__editor" hidden>
+      <div class="outreach__editor-head">
+        <span class="badge">Edit before saving</span>
+        <button class="btn btn--ghost btn--sm" onclick="craftEmail()" title="regenerate a fresh version">↻ Re-craft</button>
+      </div>
+      <label class="outreach__field">To
+        <input id="o-to" class="input input--wide" placeholder="name@company.com" />
+      </label>
+      <label class="outreach__field">Subject
+        <input id="o-subject" class="input input--wide" />
+      </label>
+      <label class="outreach__field">Body
+        <textarea id="o-body" class="outreach__bodyedit" spellcheck="true"></textarea>
+      </label>
+      <button id="o-save" class="btn btn--primary" onclick="saveDraft()">💾 Save to Gmail Drafts</button>
+      <span id="o-save-status" class="outreach__status"></span>
+    </div>
+  </div>
+</section>
+
+<!-- Drop tab: screenshot -> company -> senior tech leaders -> LinkedIn DMs -->
+<section id="view-drop" hidden>
+  <div class="outreach">
+    <div class="outreach__card">
+      <h2 class="outreach__title">Screenshot → LinkedIn outreach <span id="li-today" class="badge ok" hidden></span></h2>
+      <p class="outreach__hint">Drop or paste a job-posting screenshot. It reads the company, finds 4–5 senior tech
+        leaders via Apollo (search only — no credits), and writes connection notes in your voice. Sending stays
+        manual: each person gets a one-click <b>copy&nbsp;note&nbsp;+&nbsp;open&nbsp;profile</b> — you paste and hit
+        send in your own browser. People already touched by other business-hunter processes are excluded automatically.</p>
+      <div id="dz" class="dropzone" tabindex="0" title="Drop, paste, or click to browse">
+        <input id="dz-file" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+        <div id="dz-hint" class="dropzone__hint">📸 Drop a screenshot here, paste (⌘V), or click to browse</div>
+        <img id="dz-preview" class="dropzone__preview" alt="screenshot preview" hidden>
+      </div>
+      <span id="dz-status" class="outreach__status"></span>
+    </div>
+
+    <div id="drop-extract" class="outreach__card" hidden>
+      <h2 class="outreach__title">What I read</h2>
+      <div class="form-grid">
+        <label class="form-field">Company *
+          <input id="x-company" class="input" placeholder="e.g. Kin Health">
+        </label>
+        <label class="form-field">Role
+          <input id="x-title" class="input" placeholder="e.g. Head of AI">
+        </label>
+        <label class="form-field">Location
+          <input id="x-location" class="input" placeholder="Remote / NYC / …">
+        </label>
+        <label class="form-field">Comp
+          <input id="x-comp" class="input" placeholder="$150k / $80/hr">
+        </label>
+        <label class="form-field">Lane
+          <select id="x-lane" class="input">
+            <option value="">—</option>
+            <option value="ai-consultant">AI Consultant</option>
+            <option value="software-architect">Software Architect</option>
+            <option value="gtm-engineer">GTM Engineer</option>
+            <option value="ai-video-editor">AI Video Editor</option>
+            <option value="product-lead">Product Lead</option>
+            <option value="marketing-lead">Marketing Lead</option>
+          </select>
+        </label>
+        <label class="form-field form-field--wide">Summary
+          <textarea id="x-snippet" class="form-textarea" placeholder="what the role / company is about"></textarea>
+        </label>
+      </div>
+      <div class="form-actions">
+        <button id="x-hunt" class="btn btn--primary">🎯 Find senior tech leadership</button>
+        <span id="x-status" class="outreach__status"></span>
+      </div>
+    </div>
+
+    <div id="drop-targets" class="outreach__card" hidden>
+      <h2 class="outreach__title">Targets</h2>
+      <div id="t-overlap"></div>
+      <div id="t-list"></div>
+      <div class="form-actions">
+        <button id="t-craft" class="btn btn--primary">✍️ Craft DMs in my voice</button>
+        <span id="t-status" class="outreach__status"></span>
+      </div>
+    </div>
+
+    <div id="drop-dms" hidden></div>
+  </div>
+</section>
+
+<!-- Leads tab -->
+<section id="view-leads">
+<!-- Find a contact -->
+<div class="finder">
+  <span class="finder__label">Find a contact</span>
+  <input id="find-company" class="input" type="text" placeholder="Company (required)">
+  <input id="find-role" class="input" type="text" placeholder="Role / title (optional)">
+  <select id="find-lane" class="input">
+    <option value="">Auto (leadership)</option>
+    <option value="ai-consultant">AI Consultant</option>
+    <option value="software-architect">Software Architect</option>
+    <option value="gtm-engineer">GTM Engineer</option>
+    <option value="ai-video-editor">AI Video Editor</option>
+  </select>
+  <button id="find-btn" class="btn btn--primary" onclick="findContactSearch()">Find contact</button>
+  <span id="find-status" class="finder__status"></span>
+</div>
+
+<!-- Toolbar -->
+<div class="toolbar">
+  <label class="field">Lane
+    <select id="f-lane" class="input">
+      <option value="">All</option>
+      <option value="ai-consultant">AI Consultant</option>
+      <option value="software-architect">Software Architect</option>
+      <option value="gtm-engineer">GTM Engineer</option>
+      <option value="ai-video-editor">AI Video Editor</option>
+      <option value="product-lead">Product Lead</option>
+      <option value="marketing-lead">Marketing Lead</option>
+      <option value="yc_gtm">YC GTM</option>
+      <option value="lookup">Contact lookup</option>
+    </select>
+  </label>
+  <label class="field">Stage
+    <select id="f-stage" class="input">
+      <option value="">All stages</option>
+      <option value="active">Active (working on)</option>
+      <option value="new">New</option>
+      <option value="wip">Working</option>
+      <option value="reached_out">Reached out</option>
+    </select>
+  </label>
+  <label class="field">Sort
+    <select id="f-sort" class="input">
+      <option value="newest">Newest first</option>
+      <option value="oldest">Oldest first</option>
+      <option value="fit">Best fit</option>
+      <option value="fit_asc">Worst fit</option>
+    </select>
+  </label>
+  <label class="field">Min fit
+    <input id="f-min" class="input input--num" type="number" min="0" max="10" value="0">
+  </label>
+  <label class="field field--check">
+    <input id="f-enriched" type="checkbox"> Only un-revealed
+  </label>
+  <input id="f-q" class="input input--search" type="text" placeholder="Search role or company…">
+  <div class="toolbar__spacer"></div>
+  <span id="count" class="toolbar__count"></span>
+  <button class="btn btn--primary" onclick="openAddLead()">+ Add lead</button>
+  <button class="btn" onclick="load()">Refresh</button>
+  <button class="btn" onclick="logout()">Lock</button>
+</div>
+
+<!-- Table -->
+<div class="table-wrap">
+  <table class="leads">
+    <thead>
+      <tr>
+        <th class="col-star" aria-label="Warm"></th>
+        <th id="th-fit" class="col-fit" title="click to sort by fit">Fit <span id="fit-caret" class="sort-caret"></span></th>
+        <th>Role</th>
+        <th>Company</th>
+        <th id="th-added" class="col-added" title="click to sort by date">Added <span id="added-caret" class="sort-caret"></span></th>
+        <th>Lane</th>
+        <th>Contact</th>
+        <th>Notes</th>
+        <th>Stage</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+</div>
+<div id="empty" class="empty" hidden>No leads match.</div>
+</section>
+
+<div id="toast" class="toast"></div>
+
+<!-- Add lead modal -->
+<div id="addlead" class="modal" hidden>
+  <div id="al-backdrop" class="modal__backdrop"></div>
+  <div class="modal__card" role="dialog" aria-modal="true">
+    <button id="al-close" class="modal__close" aria-label="Close">✕</button>
+    <h2 class="modal__title">Add a lead</h2>
+    <div class="form-grid">
+      <label class="form-field form-field--wide">Role / title *
+        <input id="al-title" class="input" placeholder="e.g. Head of AI">
+      </label>
+      <label class="form-field form-field--wide">Company *
+        <input id="al-company" class="input" placeholder="e.g. Kin Health">
+      </label>
+      <label class="form-field">Lane
+        <select id="al-lane" class="input">
+          <option value="">—</option>
+          <option value="ai-consultant">AI Consultant</option>
+          <option value="software-architect">Software Architect</option>
+          <option value="gtm-engineer">GTM Engineer</option>
+          <option value="ai-video-editor">AI Video Editor</option>
+          <option value="product-lead">Product Lead</option>
+          <option value="marketing-lead">Marketing Lead</option>
+        </select>
+      </label>
+      <label class="form-field">Fit (1–10)
+        <input id="al-fit" class="input" type="number" min="0" max="10" value="7">
+      </label>
+      <label class="form-field form-field--wide">Link to posting
+        <input id="al-url" class="input" placeholder="https://… (optional)">
+      </label>
+      <label class="form-field">Location
+        <input id="al-location" class="input" placeholder="Remote / NYC / …">
+      </label>
+      <label class="form-field">Comp
+        <input id="al-comp" class="input" placeholder="$150k / $80/hr">
+      </label>
+      <label class="form-field form-field--wide">Description
+        <textarea id="al-desc" class="form-textarea" placeholder="paste the job description — shown when you click the role"></textarea>
+      </label>
+      <label class="form-field form-field--wide">Notes
+        <textarea id="al-notes" class="form-textarea" placeholder="your notes on this lead"></textarea>
+      </label>
+    </div>
+    <div class="form-actions">
+      <button id="al-submit" class="btn btn--primary" onclick="submitAddLead()">Add lead</button>
+      <span id="al-status" class="outreach__status"></span>
+    </div>
+  </div>
+</div>
+
+<!-- Role detail modal -->
+<div id="detail" class="modal" hidden>
+  <div id="d-backdrop" class="modal__backdrop"></div>
+  <div class="modal__card" role="dialog" aria-modal="true">
+    <button id="d-close" class="modal__close" aria-label="Close">✕</button>
+    <div id="d-body"></div>
+  </div>
+</div>
+
+<script type="module" src="/app.js"></script>
+</body>
+</html>
