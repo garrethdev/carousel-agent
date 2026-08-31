@@ -97,13 +97,7 @@ Baseline (Fazio): 10,000 emails to ~200 replies to ~40 interested to ~8 meetings
 
 Steady state: ~$260–380 per booked meeting; ~$3–5k per signed client. In-house time to run it: ~15–20 hrs/week (replies, phone booking, hand-written InMails).
 
-## 8. After the meeting is booked
-
-1. **Ask before pitching**, run the assessment as a diagnosis, ROI calculator on screen.
-2. **Show the biggest sensible package first**, itemized, descoping is the prospect removing value, not haggling an expert down.
-3. **End every call with the next call booked**, never "we'll send something over."
-
-## 9. Five questions before we start
+## 8. Five questions before we start
 
 1. What is a client worth to you, first project and over the years?
 2. Can we name your four clients (logos, quotes) in emails and ads?
