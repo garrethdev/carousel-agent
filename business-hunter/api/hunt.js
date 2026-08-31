@@ -8,7 +8,7 @@
 
 const path = require('path');
 const fs = require('fs');
-const { scoreTitle } = require('../lib/score.js');
+const { scoreTitle, PROFILES, DEFAULT_PROFILE } = require('../lib/score.js');
 
 const COMPANIES = JSON.parse(
   fs.readFileSync(path.join(__dirname, '..', 'data', 'companies.json'), 'utf8')
@@ -99,6 +99,7 @@ module.exports = async (req, res) => {
   res.setHeader('Cache-Control', 's-maxage=600, stale-while-revalidate=3600');
 
   const q = req.query || {};
+  const profile = PROFILES[q.profile] ? String(q.profile) : DEFAULT_PROFILE;
   let company = null;
   let source = null;
   let ats = null;
@@ -151,7 +152,7 @@ module.exports = async (req, res) => {
   }
 
   const roles = result.jobs
-    .map((j) => ({ ...j, fit: scoreTitle(j.title, 'new-business-hunter') }))
+    .map((j) => ({ ...j, fit: scoreTitle(j.title, profile) }))
     .sort((a, b) => b.fit.score - a.fit.score);
 
   const strong = roles.filter((r) => r.fit.tier === 'strong');
@@ -170,6 +171,7 @@ module.exports = async (req, res) => {
         }
       : { name: source },
     source,
+    profile: { key: profile, label: PROFILES[profile].label },
     live,
     note,
     totalOpenRoles: result.total,

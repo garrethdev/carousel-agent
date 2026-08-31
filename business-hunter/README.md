@@ -1,15 +1,21 @@
 # Business Hunter
 
-Point it at a company. It tells you which open roles fit a **new-business hunter**.
+Point it at a company. It tells you which open roles fit the profile you're hunting for.
 
 Built as an answer to the LinkedIn question *"What role?"* — enter a target company
 (World Kinect Corporation is the built-in example) and the app pulls the company's
-**live public job board**, scores every open role against a hunter profile
-(client-facing, revenue-generating, new-business roles), and ranks them:
+**live public job board**, scores every open role against the selected fit profile,
+and ranks them into **strong fits**, **possible fits**, and the rest of the board.
 
-- **Strong fits** — sales executive, business development, account executive, territory…
-- **Possible fits** — traders, brokers, client-facing consultants, commercial roles
-- **Rest of the board** — operational / technical / back-office roles, collapsed
+Two profiles ship today (`lib/score.js`):
+
+- **AI / Software Engineering** (default) — software engineers/developers, AI/ML,
+  data, DevOps, security, tech leads rank high
+- **New Business Hunter** — sales executive, business development, account
+  executive, traders, client-facing commercial roles rank high
+
+Operational and back-office roles rank low in both. Select via the UI dropdown or
+`&profile=ai-software-engineering|new-business-hunter` on the API.
 
 ## How it works
 

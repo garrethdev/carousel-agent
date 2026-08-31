@@ -4,11 +4,18 @@ const { scoreTitle } = require('../lib/score.js');
 const seed = require('../data/world-kinect-seed.json');
 const hunt = require('../api/hunt.js');
 
-// 1. Scorer sanity.
-assert.strictEqual(scoreTitle('Sales Executive – New Business').tier, 'strong');
-assert.strictEqual(scoreTitle('Business Development Manager').tier, 'strong');
+// 1. Scorer sanity — AI/SWE profile (default).
+assert.strictEqual(scoreTitle('IT Software Developer III').tier, 'strong');
+assert.strictEqual(scoreTitle('Machine Learning Engineer').tier, 'strong');
+assert.strictEqual(scoreTitle('AI Engineer').tier, 'strong');
+assert.strictEqual(scoreTitle('Lead, IT Software Developer').tier, 'strong');
 assert.strictEqual(scoreTitle('Aircraft Refuelling Operator').tier, 'no-fit');
-assert.strictEqual(scoreTitle('HRIS Payroll Lead - Workday Expert').tier, 'no-fit');
+assert.strictEqual(scoreTitle('Bunker Trader – Marine Fuel').tier, 'no-fit');
+assert.strictEqual(scoreTitle('Aviation Customer Service Specialist').tier, 'no-fit');
+// Hunter profile still works when selected.
+assert.strictEqual(scoreTitle('Sales Executive – New Business', 'new-business-hunter').tier, 'strong');
+assert.strictEqual(scoreTitle('Business Development Manager', 'new-business-hunter').tier, 'strong');
+assert.strictEqual(scoreTitle('IT Software Developer III', 'new-business-hunter').tier, 'no-fit');
 console.log('scorer sanity: OK');
 
 // 2. Seed snapshot ranks sensibly.
@@ -21,8 +28,8 @@ for (const r of ranked.slice(0, 8)) {
 }
 assert.ok(ranked[0].score > 0, 'top role should have a positive score');
 assert.ok(
-  ranked.some((r) => r.tier !== 'no-fit'),
-  'World Kinect board should contain at least one hunter fit'
+  ranked.some((r) => r.tier === 'strong'),
+  'World Kinect board should contain at least one strong AI/SWE fit'
 );
 
 // 3. Run the handler like Vercel would (live fetch, seed fallback).

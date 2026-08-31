@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Business Hunter</title>
-<meta name="description" content="Point it at a company. It tells you which open roles fit a new-business hunter.">
+<meta name="description" content="Point it at a company. It tells you which open roles fit the profile you're hunting for.">
 <style>
   :root {
     color-scheme: light;
@@ -150,7 +150,7 @@
 <div class="wrap">
   <header>
     <h1>Business Hunter <span class="scope">⌖</span></h1>
-    <p class="tag">Point it at a company. It tells you which open roles fit a new-business hunter.</p>
+    <p class="tag">Point it at a company. It tells you which open roles fit the profile you're hunting for.</p>
   </header>
 
   <div class="panel">
@@ -161,6 +161,13 @@
           <select id="target">
             <option value="world-kinect" selected>World Kinect Corporation (NYSE: WKC)</option>
             <option value="__custom">Custom job board…</option>
+          </select>
+        </div>
+        <div>
+          <label for="profile">Fit profile</label>
+          <select id="profile">
+            <option value="ai-software-engineering" selected>AI / Software Engineering</option>
+            <option value="new-business-hunter">New Business Hunter (sales/BD)</option>
           </select>
         </div>
         <button id="go" type="submit">Hunt roles</button>
@@ -213,15 +220,16 @@
     </section>
 
     <details class="rest hidden" id="secRest">
-      <summary>Rest of the board (not a hunter fit)</summary>
+      <summary>Rest of the board (not a fit for this profile)</summary>
       <ul class="roles" id="listRest"></ul>
     </details>
   </div>
 
   <footer>
     Live data from the company's public job board (Workday / Greenhouse / Lever).
-    Fit is scored against a “New Business Hunter” profile — client-facing, revenue-generating,
-    new-business roles rank high; operational and back-office roles rank low.
+    Fit is scored against the selected profile — “AI / Software Engineering” ranks engineering,
+    developer, data, and security roles high; “New Business Hunter” ranks client-facing,
+    revenue-generating roles high. Operational and back-office roles rank low in both.
   </footer>
 </div>
 
@@ -242,6 +250,7 @@
     } else {
       params.set('company', $('target').value);
     }
+    params.set('profile', $('profile').value);
 
     $('go').disabled = true;
     setStatus('Hunting the live job board…');
@@ -269,7 +278,8 @@
   function render(data) {
     const c = data.company || {};
     $('cName').textContent = c.name || 'Company';
-    $('cMeta').textContent = [c.ticker, c.hq, c.domain, 'source: ' + data.source, data.live ? 'live' : 'snapshot']
+    $('cMeta').textContent = [c.ticker, c.hq, c.domain, 'source: ' + data.source,
+      data.profile ? 'profile: ' + data.profile.label : '', data.live ? 'live' : 'snapshot']
       .filter(Boolean).join('  ·  ');
     $('cSummary').textContent = c.summary || '';
 
