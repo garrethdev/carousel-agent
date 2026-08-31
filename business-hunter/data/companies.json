@@ -14,5 +14,53 @@
       "board": "wfscareers"
     },
     "careersUrl": "https://wfscorp.wd5.myworkdayjobs.com/wfscareers"
+  },
+  "motorola-solutions": {
+    "slug": "motorola-solutions",
+    "name": "Motorola Solutions",
+    "aka": ["MSI"],
+    "domain": "motorolasolutions.com",
+    "ticker": "NYSE: MSI",
+    "hq": "Chicago, IL (large Plantation, FL site)",
+    "summary": "Public-safety technology — mission-critical communications, video security, and command-center software.",
+    "ats": {
+      "type": "workday",
+      "host": "motorolasolutions.wd5.myworkdayjobs.com",
+      "tenant": "motorolasolutions",
+      "board": "Careers"
+    },
+    "careersUrl": "https://motorolasolutions.wd5.myworkdayjobs.com/Careers"
+  },
+  "rbi": {
+    "slug": "rbi",
+    "name": "Restaurant Brands International",
+    "aka": ["RBI", "Burger King", "Popeyes", "Tim Hortons", "Firehouse Subs"],
+    "domain": "rbi.com",
+    "ticker": "NYSE: QSR",
+    "hq": "Miami, FL / Toronto",
+    "summary": "Parent of Burger King, Popeyes, Tim Hortons, and Firehouse Subs — ~33,000 restaurants in 120+ countries.",
+    "ats": {
+      "type": "workday",
+      "host": "rbi.wd3.myworkdayjobs.com",
+      "tenant": "rbi",
+      "board": "RBI_External_Career_Site"
+    },
+    "careersUrl": "https://rbi.wd3.myworkdayjobs.com/RBI_External_Career_Site"
+  },
+  "lennar": {
+    "slug": "lennar",
+    "name": "Lennar",
+    "aka": ["Lennar Corporation"],
+    "domain": "lennar.com",
+    "ticker": "NYSE: LEN",
+    "hq": "Miami, FL",
+    "summary": "One of the largest US homebuilders; corporate technology org spans data, AI, and cloud engineering.",
+    "ats": {
+      "type": "workday",
+      "host": "lennar.wd1.myworkdayjobs.com",
+      "tenant": "lennar",
+      "board": "Lennar_Jobs"
+    },
+    "careersUrl": "https://lennar.wd1.myworkdayjobs.com/Lennar_Jobs"
   }
 }

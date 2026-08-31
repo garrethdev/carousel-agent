@@ -17,13 +17,41 @@ Two profiles ship today (`lib/score.js`):
 Operational and back-office roles rank low in both. Select via the UI dropdown or
 `&profile=ai-software-engineering|new-business-hunter` on the API.
 
+## The recruiter gate (`/api/vet`)
+
+Vets an outreach target **before anyone gets emailed** — built because general
+TA recruiters at companies with no real tech hiring were eating the daily
+outreach quota. Three rules:
+
+1. **The company must have live tech demand** — ≥ 1 strong fit and ≥ 3
+   tech-ish openings on its board, scored with the AI/SWE profile.
+2. **The contact must recruit tech** — a recruiter title with tech/GTM scope,
+   or a tech hiring manager. General TA, campus, and hourly recruiters fail.
+   At a tech-first company (dev tools, AI infra) pass `&techFirst=1` and a
+   bare "Recruiter" counts, since all recruiting there is tech recruiting.
+3. **Demand must be fresh** — at least one strong opening posted within 30
+   days (`&freshDays=N` to change).
+
+```
+GET /api/vet?company=world-kinect&titles=Global TA Sr. Recruiter|VP of Engineering
+GET /api/vet?workday=<careers-url>&titles=...&techFirst=1
+```
+
+Returns a `verdict` (pass/reject with per-rule checks and evidence roles) and
+a per-title `contacts` list (approved/rejected with reasons). Same target
+parameters as `/api/hunt`; `verdict.pass=false` means: do not outreach this
+company's recruiters. The UI exposes it as the **Recruiter gate** panel.
+
 ## How it works
 
 ```
 index.html          static UI (light + dark, no framework, no dependencies)
-api/hunt.js         Vercel serverless function
-lib/score.js        role-fit scoring engine ("New Business Hunter" profile)
-data/companies.json company registry (World Kinect preset)
+api/hunt.js         Vercel serverless function — ranked role hunt
+api/vet.js          Vercel serverless function — the recruiter gate
+lib/score.js        role-fit scoring engine (both profiles)
+lib/board.js        shared ATS fetchers + target parsing (SSRF guard)
+lib/vet.js          contact classification + board verdict rules
+data/companies.json company registry (World Kinect, Motorola Solutions, RBI, Lennar)
 data/*-seed.json    snapshot fallback if the live board is unreachable
 ```
 

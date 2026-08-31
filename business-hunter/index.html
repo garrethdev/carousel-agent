@@ -160,6 +160,9 @@
           <label for="target">Target company</label>
           <select id="target">
             <option value="world-kinect" selected>World Kinect Corporation (NYSE: WKC)</option>
+            <option value="motorola-solutions">Motorola Solutions (NYSE: MSI)</option>
+            <option value="rbi">Restaurant Brands International (NYSE: QSR)</option>
+            <option value="lennar">Lennar (NYSE: LEN)</option>
             <option value="__custom">Custom job board…</option>
           </select>
         </div>
@@ -223,6 +226,27 @@
       <summary>Rest of the board (not a fit for this profile)</summary>
       <ul class="roles" id="listRest"></ul>
     </details>
+  </div>
+
+  <div class="panel" id="gatePanel">
+    <h2 style="margin:0 0 2px;font-size:20px">Recruiter gate</h2>
+    <p style="color:var(--ink-2);margin:4px 0 12px;font-size:14px">
+      Vet an outreach batch before anyone gets emailed. Checks the company's live board for real
+      tech demand, then approves or rejects each contact title (general TA and campus recruiters fail).
+    </p>
+    <form id="vetForm">
+      <label for="vetTitles">Contact titles — one per line</label>
+      <textarea id="vetTitles" rows="4" placeholder="Global Talent Acquisition Sr. Recruiter&#10;VP of Engineering"
+        style="width:100%;background:var(--page);color:var(--ink);border:1px solid var(--hairline);border-radius:8px;padding:9px 12px;font:inherit"></textarea>
+      <div style="margin-top:10px;display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+        <button id="vetGo" type="submit">Vet this target</button>
+        <label style="display:flex;align-items:center;gap:6px;margin:0;font-size:13px;color:var(--ink-2)">
+          <input type="checkbox" id="vetTechFirst"> Tech-first company (a bare “Recruiter” counts as tech)
+        </label>
+        <span style="color:var(--muted);font-size:12px">Uses the company/board selected above.</span>
+      </div>
+    </form>
+    <div id="vetOut" class="hidden" style="margin-top:14px"></div>
   </div>
 
   <footer>
@@ -331,6 +355,73 @@
       '</div>' +
       (kws ? '<div class="kw">' + kws + '</div>' : '') +
     '</li>';
+  }
+
+  function targetParams() {
+    const params = new URLSearchParams();
+    if ($('target').value === '__custom') {
+      const v = $('atsValue').value.trim();
+      if (!v) return null;
+      params.set($('atsType').value, v);
+    } else {
+      params.set('company', $('target').value);
+    }
+    return params;
+  }
+
+  $('vetForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const params = targetParams();
+    if (!params) return setStatus('Enter a job-board URL or slug first.', true);
+    const titles = $('vetTitles').value.split('\n').map((s) => s.trim()).filter(Boolean);
+    if (titles.length) params.set('titles', titles.join('|'));
+    if ($('vetTechFirst').checked) params.set('techFirst', '1');
+
+    $('vetGo').disabled = true;
+    $('vetOut').classList.add('hidden');
+    try {
+      const res = await fetch('/api/vet?' + params.toString());
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || ('HTTP ' + res.status));
+      renderVet(data);
+    } catch (err) {
+      $('vetOut').innerHTML = '<div class="note error">Vet failed: ' + esc(err.message) + '</div>';
+      $('vetOut').classList.remove('hidden');
+    } finally {
+      $('vetGo').disabled = false;
+    }
+  });
+
+  function renderVet(d) {
+    const ok = d.verdict.pass;
+    const badge = ok
+      ? '<div class="answer"><div class="q">Company verdict</div><div class="a">✓ PASS — real tech demand</div>'
+      : '<div class="answer" style="background:#f6d5d5;color:#7a1d1d"><div class="q">Company verdict</div>' +
+        '<div class="a">✗ REJECT — do not outreach</div>';
+    const checks = d.verdict.checks
+      .map((c) => '<li>' + (c.pass ? '✓' : '✗') + ' ' + esc(c.detail) + '</li>')
+      .join('');
+    const contacts = d.contacts.length
+      ? '<h3 style="font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin:16px 0 6px">Contacts</h3>' +
+        '<ul style="list-style:none;margin:0;padding:0">' +
+        d.contacts
+          .map((c) =>
+            '<li style="padding:6px 0;border-bottom:1px solid var(--hairline)">' +
+            (c.ok ? '✅ ' : '⛔ ') + '<b>' + esc(c.title) + '</b>' +
+            ' <span style="color:var(--muted);font-size:13px">— ' + esc(c.reason) + '</span></li>'
+          )
+          .join('') +
+        '</ul>'
+      : '';
+    const sample = d.verdict.sample && d.verdict.sample.length
+      ? '<div style="color:var(--ink-2);font-size:13px;margin-top:10px">Evidence: ' +
+        d.verdict.sample.map((r) => esc(r.title)).join(' · ') + '</div>'
+      : '';
+    $('vetOut').innerHTML =
+      badge + '<div class="why">' + esc(d.advice) + '</div></div>' +
+      '<ul style="list-style:none;margin:12px 0 0;padding:0;color:var(--ink-2);font-size:14px">' + checks + '</ul>' +
+      sample + contacts;
+    $('vetOut').classList.remove('hidden');
   }
 
   // Auto-hunt the default target on load.
