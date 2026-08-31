@@ -58,7 +58,6 @@ Three principles from the Fazio framework govern everything below:
 **Firmographics**
 - US-headquartered manufacturer or distributor
 - 50–1,000 employees (sweet spot 50–500); est. revenue $20M–$500M
-- Founded before ~1990 (prefer pre-1980 — the "45–70 years old" pattern)
 - Privately held / family-owned; PE-acquired distributors are a hot sub-segment (roll-ups digitize aggressively)
 
 **Verticals, in priority order** (each anchored by a case study they can name):
@@ -127,8 +126,8 @@ The order is deliberate: **LinkedIn starts first because it needs no warmup; col
 
 ### Phase 1 — Data (Weeks 2–4)
 
-- Build the full TAM account list from Apollo (NAICS + keyword + size + geography) cross-referenced with **Explee AI Search** (semantic search over 105M companies with custom AI-enrichment criteria — e.g. "US distributor founded before 1990, 10k+ SKUs, no cart on the website," which automates much of the website-scoring step below), then **layer association member directories** — NAHAD, FPDA, PTDA, NAFEM, FEDA, VMA, STAFDA member lists are public, pre-qualified, and give outreach a credible hook.
-- Enrich 3–4 contacts per account; verify every email (target <2% bounce); capture founded year, brands carried, ERP guess, website state as personalization fields.
+- Build the full TAM account list from Apollo (NAICS + keyword + size + geography) cross-referenced with **Explee AI Search** (semantic search over 105M companies with custom AI-enrichment criteria — e.g. "US distributor, 10k+ SKUs, no cart on the website," which automates much of the website-scoring step below), then **layer association member directories** — NAHAD, FPDA, PTDA, NAFEM, FEDA, VMA, STAFDA member lists are public, pre-qualified, and give outreach a credible hook.
+- Enrich 3–4 contacts per account; verify every email (target <2% bounce); capture brands carried, ERP guess, website state as personalization fields.
 - **Validate the audience before anything sends** — Fazio's forensics, institutionalized: ~60% of "cold email doesn't work" cases are targeting failures. Random-sample 25 accounts from every list segment by hand and confirm they're actually ICP before a single send. Segment by *buying motion*, not just industry (a distributor with 22 branches buys differently than a 60-person valve manufacturer — different sequences).
 - **Tier the market:**
   - **Tier A — 500 dream accounts.** Full account-based treatment: multi-threaded, personalized email, LinkedIn touches, InMail, direct mail if warranted.
@@ -158,14 +157,15 @@ The order is deliberate: **LinkedIn starts first because it needs no warmup; col
 - **Book meetings manually — never send a cold responder a form or a bare calendar link.** Positive reply → human answer within the hour, propose times directly. Positive-then-silent → cold call and set the appointment live on the phone. Qualification happens in that conversation, not in a Typeform; unqualified-lead volume is fixed upstream in the list, not downstream in a form.
 - **Trigger queue outranks everything:** job postings, leadership changes, PE acquisitions, and (once the site tracker is installed) companies visiting the agency's website get same-week, hand-finished sends.
 
-### Phase 4 — Paid layer (reduced: retargeting-only until the month-3 review)
+### Phase 4 — Paid layer ($3–5k/month, running the proven messaging from the start)
 
-- **Retargeting only at launch, ~$1–1.5k/month** (Meta + LinkedIn): case-study video and carousel creative against site visitors and LinkedIn engagers. Small budget, outsized assist rate — outbound-sourced buyers Google the agency before replying. Everything below this bullet is deferred to the month-3 review and activates only against angles outreach has already proven.
+- The messaging is known — the four client stories and the six tested angles — so ads carry it from launch rather than waiting for a review gate.
+- **Always-on retargeting** (Meta + LinkedIn): case-study video and carousel creative against site visitors and LinkedIn engagers — outbound-sourced buyers Google the agency before replying.
 - **LinkedIn matched audiences:** upload the Tier A+B account list; run thought-leader ads on the founder's best posts plus case-study creative. First stop for incremental paid dollars with this ICP.
-- **The case study funnel** is the prospecting play when we scale paid: this agency has exactly the asset the format needs. Ad → named case-study page → assessment application. (Fazio's benchmarks on a good case-study funnel: opt-ins ~$2, booked calls $100–200 — B2B industrial will run higher, but that's the shape.)
-- **Creative volume rule when prospecting starts:** launch ~30 distinct ads per test — different angle, proof, presenter, format — and expect 1–2 winners; a 10-ad test that fails proves nothing. Make each ad hyper-specific to a segment ("If you run a fluid power distributorship with 10+ branches still quoting by fax…"). When a winner emerges, identify the *angle* that won and build a dedicated landing page around that exact angle before raising budget.
+- **The case study funnel** is the prospecting play: ad → named case-study page → assessment application. (Fazio's benchmarks on a good case-study funnel: opt-ins ~$2, booked calls $100–200 — B2B industrial will run higher, but that's the shape.)
+- **Creative volume:** launch many distinct ads per message — different proof, presenter, format — expect 1–2 winners, keep them, cut the rest. Make each ad hyper-specific to a segment ("If you run a fluid power distributorship with 10+ branches still quoting by fax…"), and build a dedicated landing page around a winning angle before raising its budget.
 - **Judging paid:** by cost per attended assessment and cost per closed client only — never CTR, CPL, or opt-in rate. Expect B2B ads CAC in the $2,000–4,000 range and treat that as fine against this LTV.
-- Gates, in order: (1) no paid prospecting until cold email/LinkedIn reply quality proves message-market fit — ads amplify a message that's already landing, they can't find one; (2) never cut the profitable outreach channel to fund ads — new channels are added, not swapped; (3) scale by adding funnels at their efficient budgets, not by suffocating one funnel with more spend past its ceiling.
+- Never cut the profitable outreach channel to fund ads — new channels are added, not swapped; scale by adding funnels at their efficient budgets, not by pushing one funnel past its ceiling.
 
 ### Phase 5 — Owned list & compounding assets (Month 2 onward)
 
@@ -207,21 +207,17 @@ Two sales-cycle warnings from the framework, worth internalizing before the prog
 
 **Judging windows (adapted for finite TAM):** directional reads per angle at 1–2k sends, verdicts at 3–5k (Fazio's 10k-send minimum assumes infinite audience; we compensate for smaller samples by reading raw replies, not just rates — export every campaign's leads, scripts, and responses and analyze the artifacts line by line, per his forensics method). The *offer* gets a minimum 6 weeks of full-effort execution before any strategic verdict. Sub-minimum execution — "sending 17 Loom videos and declaring that personalized outreach doesn't work" — is quitting, not testing.
 
-## 8. Budget shape (revised — tools-only program, ~$4.5–6k/month)
+## 8. Budget (~$6.5–9.5k/month)
 
-Paid media is held to retargeting-only until the month-3 review; all sending runs through Explee; execution labor (reply handling, manual booking, weekly script writing, list QA, content) is handled in-house and is not a program line — but the work itself does not disappear (see note below).
+| Line | Monthly |
+|---|---|
+| Lead data — Explee AI Search/Database, Apollo, email verification | $1–2k |
+| Email sending — Explee AutoGTM, ~15–20k emails @ ~$0.03 | $0.45–0.6k |
+| LinkedIn — Sales Nav seats + InMail budget | $2k |
+| Ads — retargeting, LinkedIn to the target list, case-study pages | $3–5k |
+| **Total** | **~$6.5–9.5k** |
 
-| Line | Monthly | Notes |
-|---|---|---|
-| Data & enrichment (Apollo + Explee AI Search/Database, verification) | $1–2k | Explee Growth plan is $329/mo; front-loaded pulls in months 1–2 |
-| Explee AutoGTM sending (~15–20k emails @ ~$0.03) | $0.45–0.6k | Pay-as-you-go, no subscription |
-| LinkedIn (Sales Nav seats + expanded InMail budget) | $2k | InMail upgraded to a primary channel for Tier A — several seats plus sponsored message allowance |
-| Paid media — retargeting only | $1–1.5k | Prospecting ads deferred to the month-3 review, funded only by proven angles |
-| **Total** | **~$4.5–6k** | |
-
-Two consequences of this shape, stated plainly:
-- **Explee is now a single point of failure for email.** With no owned sending infrastructure, the pre-launch verification checklist in Phase 0 is a hard gate, not a nice-to-have. If their deliverability answers are weak, the fallback line (~$0.4–0.7k for 10 domains/30 mailboxes) comes back.
-- **The in-house labor still has to happen.** Replies answered within the hour, meetings booked by phone, 3–5 new scripts a week, hand-written InMails, list sampling. Budget roughly 15–20 hours a week of someone's time; if nobody owns it, the meeting math in §5 does not survive contact with reality.
+At steady state (~25 meetings/month) that is roughly $260–380 per booked meeting and, at 2 signed clients/month, $3–5k per client. Execution labor (reply handling within the hour, phone booking, weekly scripts, hand-written InMails — ~15–20 hrs/week) is in-house and not billed to the program.
 
 ## 9. Reporting: leading indicators drive, lagging indicators judge
 
@@ -240,16 +236,7 @@ We generate; the client closes. Three recommendations for their side of the funn
 
 We will also verify — per question 4 below — that meeting capacity and follow-up ownership exist before we turn the volume up. A booked meeting that nobody works is program cost with no program credit.
 
-## 11. Risks and how the design absorbs them
-
-- **Finite TAM burn** → tiering, volume caps, suppression discipline, quality bar on every send.
-- **Deliverability collapse** → domain rotation, permanent warmup, plain-text copy, per-mailbox caps, quality inboxes, third-party inbox-placement monitoring.
-- **Targeting failure misread as offer failure** → hand-sampling every list segment before launch; campaign forensics on raw replies before any pivot.
-- **Channel-conflict objection** (manufacturers fear upsetting their distributors) → addressed head-on in copy; the Versa story is the proof asset.
-- **IT gatekeeper stall** → ERP-integration proof content built in Phase 0, not improvised on calls.
-- **Long sales cycle misread as failure** → §7 is the contract: meeting quality at month 2, revenue at months 4–6; no strategic changes to fix statistical noise.
-
-## 12. Questions before we start (answers sharpen the build, none block Phase 0)
+## 11. Questions before we start (answers sharpen the build, none block Phase 0)
 
 1. ACV and realistic LTV on the four flagship accounts — sets the CAC ceiling and how hard we can push paid.
 2. May we name the four clients (and use logos/quotes) in outreach and ads?
