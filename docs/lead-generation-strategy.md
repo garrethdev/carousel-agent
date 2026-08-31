@@ -238,7 +238,7 @@ We generate; the client closes. Three recommendations for their side of the funn
 2. **Present the largest appropriate package first** and itemize what every dollar buys (integration scope, catalog build, landing pages, training). Descoping is then the prospect removing ROI, not negotiating price.
 3. **Advance on the call.** Six-figure builds aren't one-call closes, but every call ends with the next step scheduled live — assessment → findings readout → proposal walkthrough, never "we'll send something over."
 
-We will also verify — per question 5 below — that meeting capacity and follow-up ownership exist before we turn the volume up. A booked meeting that nobody works is program cost with no program credit.
+We will also verify — per question 4 below — that meeting capacity and follow-up ownership exist before we turn the volume up. A booked meeting that nobody works is program cost with no program credit.
 
 ## 11. Risks and how the design absorbs them
 
@@ -254,10 +254,5 @@ We will also verify — per question 5 below — that meeting capacity and follo
 1. ACV and realistic LTV on the four flagship accounts — sets the CAC ceiling and how hard we can push paid.
 2. May we name the four clients (and use logos/quotes) in outreach and ads?
 3. Which verticals do you *want* more of — and any you'd decline?
-4. Geography: all-US, or regional preference?
-5. Who takes the meetings, and what's real calendar capacity per month? Who owns follow-up on no-shows and stalls?
-6. Existing CRM and any past outbound history (suppression data; which lists are already burned)?
-7. Which ERPs do you integrate with best? (Sharpens technographic targeting and the IT-gatekeeper content.)
-8. What platform do you build on (BigCommerce B2B, Shopify Plus, Optimizely…)? Enables tech-swap angles.
-9. Your historical close rate from first meeting → signed — to calibrate the §5 math.
-10. What risk reversal are you willing to stand behind (free assessment, fee credited to the build, a guarantee)? The strength of this answer sets the ceiling on every channel's conversion rate.
+4. Who takes the meetings, and what's real calendar capacity per month? Who owns follow-up on no-shows and stalls?
+5. Your historical close rate from first meeting → signed — to calibrate the §5 math.
