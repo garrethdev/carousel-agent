@@ -3,7 +3,7 @@
 **Client:** B2B eCommerce agency for established American manufacturers and distributors
 **Prepared:** August 30, 2026 · Rev 8
 **Channels:** InMail · Facebook Ads · Email (Explee) · LinkedIn
-**Budget:** ~$6.5–9.5k/month
+**Budget:** ~$6.5–8k/month
 **Sources:** the four client case studies · live Apollo market data (Aug 30, 2026) · Daniel Fazio's acquisition framework
 
 ---
@@ -85,17 +85,17 @@ Baseline (Fazio): 10,000 emails to ~200 replies to ~40 interested to ~8 meetings
 - **Month 3:** 15 to 25 good meetings a month, steady.
 - **Months 4 to 6:** first clients signed. Owner-sold projects close in 2 to 4 months.
 
-## 7. What it costs (~$6.5–9.5k/month)
+## 7. What it costs (~$6.5–8k/month)
 
 | Line | Monthly |
 |---|---|
 | Lead data: Explee search, Apollo, verification | $1–2k |
 | Email sending: Explee, 15–20k emails | $0.45–0.6k |
 | LinkedIn: Sales Navigator + InMail budget | $2k |
-| Ads: Facebook + landing page traffic | $3–5k |
-| **Total** | **~$6.5–9.5k** |
+| Ads: Facebook + landing page traffic | $3–3.5k |
+| **Total** | **~$6.5–8k** |
 
-Steady state: ~$260–380 per booked meeting; ~$3–5k per signed client. In-house time to run it: ~15–20 hrs/week (replies, phone booking, hand-written InMails).
+Steady state: ~$260–320 per booked meeting; ~$3–4k per signed client. In-house time to run it: ~15–20 hrs/week (replies, phone booking, hand-written InMails).
 
 ## 8. Five questions before we start
 
