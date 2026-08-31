@@ -3,7 +3,7 @@
 **Client:** B2B eCommerce agency for established American manufacturers and distributors
 **Prepared:** August 30, 2026 · Rev 8
 **Channels:** InMail · Facebook Ads · Email (Explee) · LinkedIn
-**Budget:** ~$6.5–8k/month
+**Investment:** $5k–7k/month + media
 **Sources:** the four client case studies · live Apollo market data (Aug 30, 2026) · Daniel Fazio's acquisition framework
 
 ---
@@ -65,37 +65,36 @@ Agencies that get compared are priced. Experts who clearly understand the client
 - These posts are what owners find when they check the agency out after an InMail or email, they convince silently; pre-call content consumption is the #1 predictor of show and close.
 - Best-performing posts become the ad creative, content and campaigns feed each other.
 
-## 5. Working backwards to two clients a month
+## 5. Working backwards to three or four clients a month
 
 | Step | Rate | Needed |
 |---|---|---|
-| New clients / month | goal | **2** |
-| Proposals that close | 1 in 4 | 8 proposals |
-| Meetings that lead to a proposal | 4 in 10 | 20 meetings held |
-| Booked meetings that show | 8 in 10 | 25 booked |
-| From email outreach | 15–20k emails/mo | 12–16 |
-| From InMail, ads and timing triggers | balance | 9–13 |
+| New clients / month | goal | **3–4** |
+| Proposals that close | 1 in 4 | 12–16 proposals |
+| Meetings that lead to a proposal | 4 in 10 | 30–40 meetings held |
+| Booked meetings that show | 8 in 10 | 38–50 booked |
+| From email outreach | 15–20k emails/mo | 15–22 |
+| From InMail, Facebook ads and timing triggers | balance | 23–28 |
 
-Baseline (Fazio): 10,000 emails to ~200 replies to ~40 interested to ~8 meetings to ~2 customers. Targeting should beat it; the plan works even at baseline. Judge on cost per meeting and cost per client only.
+Email carries part of it; the bigger Facebook ad budget and InMail carry the rest to reach three to four. Judge on cost per meeting and cost per client only.
 
 ## 6. When the results show up
 
 - **Weeks 5 to 6:** first meetings booked from outreach.
-- **Month 2:** 8 to 12 good meetings a month.
-- **Month 3:** 15 to 25 good meetings a month, steady.
-- **Months 4 to 6:** first clients signed. Owner-sold projects close in 2 to 4 months.
+- **Month 2:** 15 to 25 good meetings a month.
+- **Month 3:** 38 to 50 good meetings a month, steady.
+- **Months 4 to 6:** three to four clients signed a month. The $7k plan, with our team running the ads, gets here faster.
 
-## 7. What it costs (~$6.5–8k/month)
+## 7. What it costs
 
-| Line | Monthly |
-|---|---|
-| Lead data: Explee search, Apollo, verification | $1–2k |
-| Email sending: Explee, 15–20k emails | $0.45–0.6k |
-| LinkedIn: Sales Navigator + InMail budget | $2k |
-| Ads: Facebook + landing page traffic | $3–3.5k |
-| **Total** | **~$6.5–8k** |
+Two ways to work together:
 
-Steady state: ~$260–320 per booked meeting; ~$3–4k per signed client. In-house time to run it: ~15–20 hrs/week (replies, phone booking, hand-written InMails).
+- **$5k / month:** the full system built and run for you: segments and messaging, custom landing pages, InMail to your top 500 accounts, email outreach at 15–20k/month, and 7–10 LinkedIn leadership posts. Your team runs the Facebook ad campaigns.
+- **$7k / month:** everything in the $5k plan, plus our team members run your Facebook ad campaigns for you, so you can expect to see results faster.
+
+On top of the fee, media and tools run about $6.5–8k/month paid straight to the platforms (Facebook ad spend, Explee and Apollo for data and sending, LinkedIn). Against clients who historically stay for years, one signed client pays that back many times over.
+
+Media and tools breakdown: lead data (Explee, Apollo, verification) $1–2k · email sending (Explee, 15–20k emails) $0.45–0.6k · LinkedIn (Sales Navigator + InMail) $2k · Facebook ad spend $3–3.5k.
 
 ## 8. Five questions before we start
 

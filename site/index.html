@@ -185,6 +185,26 @@
     margin: 40px 0 8px; max-width: 20ch;
   }
   .pullquote .hl { color: var(--accent); }
+
+  /* ---- pricing tiers ---- */
+  .tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 24px 0 10px; }
+  @media (max-width: 620px) { .tiers { grid-template-columns: 1fr; } }
+  .tier { border: 1px solid var(--line-strong); padding: 24px 24px 22px; }
+  .tier.feature { border: 2px solid var(--accent); }
+  .tier-tag {
+    display: inline-block; font-family: var(--mono); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 10px;
+  }
+  .tier-price {
+    font-family: var(--display); font-weight: 700; font-size: clamp(40px, 6.5vw, 62px);
+    line-height: 1; font-variant-numeric: tabular-nums;
+  }
+  .tier-per {
+    font-family: var(--mono); font-size: 12px; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--ink2); margin: 6px 0 16px;
+  }
+  .tier ul { margin: 0; padding-left: 20px; }
+  .tier li { margin-bottom: 8px; }
 </style>
 <style>
   :root { color-scheme: light dark; }
@@ -206,7 +226,7 @@
       <div class="tb-cell"><span class="tb-label">Prepared</span><span class="tb-value">Aug 30, 2026</span></div>
       <div class="tb-cell"><span class="tb-label">Channels</span><span class="tb-value">InMail &middot; FB Ads &middot; Email &middot; LinkedIn</span></div>
       <div class="tb-cell"><span class="tb-label">Proof</span><span class="tb-value">Hydraulic Supply &middot; Versa &middot; Aladdin &middot; ACG</span></div>
-      <div class="tb-cell"><span class="tb-label">Budget</span><span class="tb-value">~$6.5&ndash;8k / month</span></div>
+      <div class="tb-cell"><span class="tb-label">Investment</span><span class="tb-value">$5k&ndash;7k / mo + media</span></div>
     </div>
   </header>
 
@@ -316,19 +336,19 @@
   </section>
 
   <section>
-    <div class="sec-head"><span class="sec-num">SEC 05</span><h2>Working backwards to two clients a month</h2></div>
-    <div class="prose"><p>Start from the goal, two new clients a month, and work back to what has to happen:</p></div>
+    <div class="sec-head"><span class="sec-num">SEC 05</span><h2>Working backwards to three or four clients a month</h2></div>
+    <div class="prose"><p>Start from the goal, three to four new clients a month, and work back to what has to happen:</p></div>
     <div class="tablewrap">
       <table>
         <caption>Steady state &middot; from month 3</caption>
         <thead><tr><th>Step</th><th>Rate</th><th class="num">Needed</th></tr></thead>
         <tbody>
-          <tr><td>New clients / month</td><td>the goal</td><td class="num hot">2</td></tr>
-          <tr><td>Proposals that close</td><td>1 in 4</td><td class="num">8 proposals</td></tr>
-          <tr><td>Meetings that lead to a proposal</td><td>4 in 10</td><td class="num">20 meetings held</td></tr>
-          <tr><td>Booked meetings that show up</td><td>8 in 10</td><td class="num">25 booked</td></tr>
-          <tr><td>From email outreach</td><td>15&ndash;20k emails/mo</td><td class="num">12&ndash;16</td></tr>
-          <tr><td>From InMail, ads and timing triggers</td><td>the rest</td><td class="num">9&ndash;13</td></tr>
+          <tr><td>New clients / month</td><td>the goal</td><td class="num hot">3&ndash;4</td></tr>
+          <tr><td>Proposals that close</td><td>1 in 4</td><td class="num">12&ndash;16 proposals</td></tr>
+          <tr><td>Meetings that lead to a proposal</td><td>4 in 10</td><td class="num">30&ndash;40 meetings held</td></tr>
+          <tr><td>Booked meetings that show up</td><td>8 in 10</td><td class="num">38&ndash;50 booked</td></tr>
+          <tr><td>From email outreach</td><td>15&ndash;20k emails/mo</td><td class="num">15&ndash;22</td></tr>
+          <tr><td>From InMail, Facebook ads and timing triggers</td><td>the rest</td><td class="num">23&ndash;28</td></tr>
         </tbody>
       </table>
     </div>
@@ -338,28 +358,37 @@
     <div class="sec-head"><span class="sec-num">SEC 06</span><h2>When the results show up</h2></div>
     <ul>
       <li><strong>Weeks 5 to 6:</strong> first meetings booked from outreach.</li>
-      <li><strong>Month 2:</strong> 8 to 12 good meetings a month.</li>
-      <li><strong>Month 3:</strong> 15 to 25 good meetings a month, steady.</li>
-      <li><strong>Months 4 to 6:</strong> first clients signed. Owner-sold projects close in 2 to 4 months.</li>
+      <li><strong>Month 2:</strong> 15 to 25 good meetings a month.</li>
+      <li><strong>Month 3:</strong> 38 to 50 good meetings a month, steady.</li>
+      <li><strong>Months 4 to 6:</strong> three to four clients signed a month. The $7k plan, with our team running the ads, gets here faster.</li>
     </ul>
   </section>
 
   <section>
-    <div class="sec-head"><span class="sec-num">SEC 07</span><h2>What it costs &middot; ~$6.5&ndash;8k a month</h2></div>
-    <div class="tablewrap">
-      <table>
-        <thead><tr><th>Line</th><th class="num">Monthly</th></tr></thead>
-        <tbody>
-          <tr><td>Lead data: Explee search, Apollo, email verification</td><td class="num">$1&ndash;2k</td></tr>
-          <tr><td>Email sending: Explee, 15&ndash;20k emails at ~3&cent;</td><td class="num">$0.45&ndash;0.6k</td></tr>
-          <tr><td>LinkedIn: Sales Navigator plus InMail budget</td><td class="num">$2k</td></tr>
-          <tr><td>Ads: Facebook plus landing page traffic</td><td class="num">$3&ndash;3.5k</td></tr>
-          <tr><td><strong>Total</strong></td><td class="num hot">$6.5&ndash;8k</td></tr>
-        </tbody>
-      </table>
+    <div class="sec-head"><span class="sec-num">SEC 07</span><h2>What it costs</h2></div>
+    <div class="prose"><p>Two ways to work together:</p></div>
+    <div class="tiers">
+      <div class="tier">
+        <span class="tier-tag">Build and run</span>
+        <div class="tier-price">$5k</div>
+        <div class="tier-per">per month</div>
+        <ul>
+          <li>The full system built and run for you: segments and messaging, custom landing pages, InMail to your top 500 accounts, email outreach at 15 to 20k a month, and 7 to 10 LinkedIn leadership posts.</li>
+          <li>Your team runs the Facebook ad campaigns.</li>
+        </ul>
+      </div>
+      <div class="tier feature">
+        <span class="tier-tag">Faster results</span>
+        <div class="tier-price">$7k</div>
+        <div class="tier-per">per month</div>
+        <ul>
+          <li>Everything in the $5k plan.</li>
+          <li>Plus our team members run your Facebook ad campaigns for you, so you can expect to see results faster.</li>
+        </ul>
+      </div>
     </div>
     <div class="prose">
-      <p>At steady state, 25 meetings a month, that is roughly <strong>$260 to $320 per booked meeting</strong>, and at 2 signed clients a month, <strong>$3k to $4k per client</strong>, against clients who historically stay for years. In-house time to run it: about 15 to 20 hours a week for replies, phone booking, and hand-written InMails.</p>
+      <p>On top of the fee, media and tools run about $6.5 to $8k a month, paid straight to the platforms: Facebook ad spend, Explee and Apollo for data and sending, and LinkedIn. Against clients who historically stay for years, one signed client pays that back many times over.</p>
     </div>
   </section>
 
