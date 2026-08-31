@@ -1,0 +1,108 @@
+// Role-fit scoring for the New Business Hunter.
+// Scores a job title against a "hunter" profile: client-facing,
+// revenue-generating, new-business roles score high; operational,
+// technical, and back-office roles score low.
+
+const PROFILES = {
+  'new-business-hunter': {
+    label: 'New Business Hunter',
+    strong: [
+      ['business development', 50],
+      ['new business', 50],
+      ['sales executive', 50],
+      ['account executive', 50],
+      ['sales manager', 40],
+      ['sales director', 40],
+      ['head of sales', 40],
+      ['territory', 35],
+      ['account manager', 35],
+      ['commercial manager', 35],
+      ['partnerships', 35],
+      ['revenue', 30],
+      ['growth', 25],
+      ['trader', 40],
+      ['broker', 40],
+      ['sales', 30],
+      ['solutions', 15],
+      ['consultant', 18],
+      ['commercial', 15],
+      ['client', 10],
+      ['customer success', 10],
+      ['marketing', 8],
+    ],
+    seniority: [
+      ['director', 8],
+      ['vp', 8],
+      ['vice president', 8],
+      ['head of', 8],
+      ['lead', 4],
+      ['senior', 4],
+    ],
+    negative: [
+      ['engineer', -30],
+      ['developer', -30],
+      ['technician', -30],
+      ['refuel', -30],
+      ['operator', -30],
+      ['payroll', -30],
+      ['audit', -30],
+      ['tax', -30],
+      ['counsel', -30],
+      ['legal', -30],
+      ['compensation', -25],
+      ['procurement', -25],
+      ['credit', -20],
+      ['controller', -20],
+      ['operations', -18],
+      ['operativo', -18],
+      ['customer service', -15],
+      ['coordinator', -12],
+      ['support', -12],
+      ['analyst', -10],
+      ['it ', -20],
+      ['soc ', -20],
+      ['hris', -25],
+      ['inventory', -20],
+      ['supply', -15],
+    ],
+  },
+};
+
+function scoreTitle(title, profileKey) {
+  const profile = PROFILES[profileKey] || PROFILES['new-business-hunter'];
+  const t = ` ${String(title).toLowerCase()} `;
+  let score = 0;
+  const matched = [];
+  const flags = [];
+
+  for (const [kw, pts] of profile.strong) {
+    if (t.includes(kw)) {
+      score += pts;
+      matched.push(kw);
+    }
+  }
+  // Seniority only boosts a role that already smells client-facing.
+  if (score > 0) {
+    for (const [kw, pts] of profile.seniority) {
+      if (t.includes(kw)) {
+        score += pts;
+        matched.push(kw);
+      }
+    }
+  }
+  for (const [kw, pts] of profile.negative) {
+    if (t.includes(kw)) {
+      score += pts;
+      flags.push(kw.trim());
+    }
+  }
+
+  const bounded = Math.max(0, Math.min(100, score));
+  let tier = 'no-fit';
+  if (bounded >= 50) tier = 'strong';
+  else if (bounded >= 22) tier = 'possible';
+
+  return { score: bounded, tier, matched, flags };
+}
+
+module.exports = { scoreTitle, PROFILES };

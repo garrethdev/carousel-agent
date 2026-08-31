@@ -1,0 +1,18 @@
+{
+  "world-kinect": {
+    "slug": "world-kinect",
+    "name": "World Kinect Corporation",
+    "aka": ["World Fuel", "World Fuel Services", "WKC"],
+    "domain": "world-kinect.com",
+    "ticker": "NYSE: WKC",
+    "hq": "Miami / Doral, FL",
+    "summary": "Global energy management company — aviation, marine, and land fuel distribution plus natural gas, power, and sustainability services in ~190 countries.",
+    "ats": {
+      "type": "workday",
+      "host": "wfscorp.wd5.myworkdayjobs.com",
+      "tenant": "wfscorp",
+      "board": "wfscareers"
+    },
+    "careersUrl": "https://wfscorp.wd5.myworkdayjobs.com/wfscareers"
+  }
+}

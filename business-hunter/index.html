@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Hunter</title>
+<meta name="description" content="Point it at a company. It tells you which open roles fit a new-business hunter.">
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f9f9f7;
+    --surface: #fcfcfb;
+    --ink: #0b0b0b;
+    --ink-2: #52514e;
+    --muted: #898781;
+    --hairline: #e1e0d9;
+    --border: rgba(11, 11, 11, 0.10);
+    --accent: #2a78d6;       /* fit meter / links */
+    --accent-strong: #1c5cab;
+    --meter-track: #e1e0d9;
+    --tier-strong-bg: #cde2fb;
+    --tier-strong-ink: #104281;
+    --chip-bg: #f0efec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --page: #0d0d0d;
+      --surface: #1a1a19;
+      --ink: #ffffff;
+      --ink-2: #c3c2b7;
+      --muted: #898781;
+      --hairline: #2c2c2a;
+      --border: rgba(255, 255, 255, 0.10);
+      --accent: #3987e5;
+      --accent-strong: #86b6ef;
+      --meter-track: #2c2c2a;
+      --tier-strong-bg: #184f95;
+      --tier-strong-ink: #cde2fb;
+      --chip-bg: #383835;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 32px 20px 80px; }
+
+  header h1 { font-size: 28px; margin: 0; letter-spacing: -0.02em; }
+  header h1 .scope { color: var(--accent); }
+  header p.tag { color: var(--ink-2); margin: 6px 0 0; }
+
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 22px;
+  }
+  form .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: end; }
+  label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  select, input[type=text] {
+    background: var(--page);
+    color: var(--ink);
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    padding: 9px 12px;
+    font: inherit;
+    min-width: 230px;
+  }
+  button {
+    background: var(--accent);
+    border: none;
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  button:hover { background: var(--accent-strong); }
+  button[disabled] { opacity: 0.6; cursor: wait; }
+  .custom { display: none; margin-top: 12px; }
+  .custom.show { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .note {
+    margin-top: 14px; padding: 10px 14px; border-radius: 8px;
+    background: var(--chip-bg); color: var(--ink-2); font-size: 13px;
+  }
+  .error { color: #d03b3b; }
+
+  .company h2 { margin: 0 0 2px; font-size: 20px; }
+  .company .meta { color: var(--muted); font-size: 13px; }
+  .company .summary { color: var(--ink-2); margin: 8px 0 0; }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 16px; }
+  .tile {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 14px 16px;
+  }
+  .tile .num { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; }
+  .tile .lbl { color: var(--muted); font-size: 12px; }
+
+  .answer {
+    margin-top: 22px; padding: 18px; border-radius: 12px;
+    background: var(--tier-strong-bg); color: var(--tier-strong-ink);
+  }
+  .answer .q { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.8; }
+  .answer .a { font-size: 21px; font-weight: 700; margin-top: 2px; }
+  .answer .why { font-size: 13px; margin-top: 4px; opacity: 0.9; }
+
+  section.tier { margin-top: 26px; }
+  section.tier > h3 {
+    font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); margin: 0 0 10px; border-bottom: 1px solid var(--hairline);
+    padding-bottom: 6px;
+  }
+  ul.roles { list-style: none; margin: 0; padding: 0; }
+  ul.roles li {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 16px; margin-bottom: 8px;
+  }
+  .role-top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .role-top .title { font-weight: 600; text-decoration: none; color: var(--ink); }
+  .role-top .title:hover { color: var(--accent); text-decoration: underline; }
+  .role-top .score { font-variant-numeric: tabular-nums; color: var(--ink-2); font-size: 13px; white-space: nowrap; }
+  .role-meta { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .meter {
+    height: 4px; border-radius: 4px; background: var(--meter-track);
+    margin-top: 10px; overflow: hidden;
+  }
+  .meter > span { display: block; height: 100%; border-radius: 4px; background: var(--accent); }
+  .kw { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .kw span {
+    background: var(--chip-bg); color: var(--ink-2);
+    font-size: 12px; padding: 2px 8px; border-radius: 999px;
+  }
+  details.rest { margin-top: 26px; }
+  details.rest summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+  details.rest ul { margin-top: 12px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Business Hunter <span class="scope">⌖</span></h1>
+    <p class="tag">Point it at a company. It tells you which open roles fit a new-business hunter.</p>
+  </header>
+
+  <div class="panel">
+    <form id="huntForm">
+      <div class="row">
+        <div>
+          <label for="target">Target company</label>
+          <select id="target">
+            <option value="world-kinect" selected>World Kinect Corporation (NYSE: WKC)</option>
+            <option value="__custom">Custom job board…</option>
+          </select>
+        </div>
+        <button id="go" type="submit">Hunt roles</button>
+      </div>
+      <div class="custom" id="custom">
+        <div>
+          <label for="atsType">Board type</label>
+          <select id="atsType">
+            <option value="workday">Workday (careers URL)</option>
+            <option value="greenhouse">Greenhouse (board slug)</option>
+            <option value="lever">Lever (company slug)</option>
+          </select>
+        </div>
+        <div style="flex:1">
+          <label for="atsValue">URL or slug</label>
+          <input type="text" id="atsValue" placeholder="https://company.wd5.myworkdayjobs.com/careers">
+        </div>
+      </div>
+    </form>
+    <div id="status" class="note hidden"></div>
+  </div>
+
+  <div id="results" class="hidden">
+    <div class="panel company">
+      <h2 id="cName"></h2>
+      <div class="meta" id="cMeta"></div>
+      <p class="summary" id="cSummary"></p>
+    </div>
+
+    <div class="tiles">
+      <div class="tile"><div class="num" id="tTotal">–</div><div class="lbl">Open roles</div></div>
+      <div class="tile"><div class="num" id="tStrong">–</div><div class="lbl">Strong fits</div></div>
+      <div class="tile"><div class="num" id="tPossible">–</div><div class="lbl">Possible fits</div></div>
+    </div>
+
+    <div class="answer hidden" id="answer">
+      <div class="q">What role?</div>
+      <div class="a" id="answerRole"></div>
+      <div class="why" id="answerWhy"></div>
+    </div>
+
+    <section class="tier hidden" id="secStrong">
+      <h3>Strong fits</h3>
+      <ul class="roles" id="listStrong"></ul>
+    </section>
+
+    <section class="tier hidden" id="secPossible">
+      <h3>Possible fits</h3>
+      <ul class="roles" id="listPossible"></ul>
+    </section>
+
+    <details class="rest hidden" id="secRest">
+      <summary>Rest of the board (not a hunter fit)</summary>
+      <ul class="roles" id="listRest"></ul>
+    </details>
+  </div>
+
+  <footer>
+    Live data from the company's public job board (Workday / Greenhouse / Lever).
+    Fit is scored against a “New Business Hunter” profile — client-facing, revenue-generating,
+    new-business roles rank high; operational and back-office roles rank low.
+  </footer>
+</div>
+
+<script>
+  const $ = (id) => document.getElementById(id);
+
+  $('target').addEventListener('change', () => {
+    $('custom').classList.toggle('show', $('target').value === '__custom');
+  });
+
+  $('huntForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const params = new URLSearchParams();
+    if ($('target').value === '__custom') {
+      const v = $('atsValue').value.trim();
+      if (!v) return setStatus('Enter a job-board URL or slug first.', true);
+      params.set($('atsType').value, v);
+    } else {
+      params.set('company', $('target').value);
+    }
+
+    $('go').disabled = true;
+    setStatus('Hunting the live job board…');
+    $('results').classList.add('hidden');
+    try {
+      const res = await fetch('/api/hunt?' + params.toString());
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || ('HTTP ' + res.status));
+      render(data);
+      setStatus(data.note || '', false, !data.note);
+    } catch (err) {
+      setStatus('Hunt failed: ' + err.message, true);
+    } finally {
+      $('go').disabled = false;
+    }
+  });
+
+  function setStatus(msg, isError = false, hide = false) {
+    const el = $('status');
+    el.textContent = msg;
+    el.classList.toggle('hidden', hide || !msg);
+    el.classList.toggle('error', isError);
+  }
+
+  function render(data) {
+    const c = data.company || {};
+    $('cName').textContent = c.name || 'Company';
+    $('cMeta').textContent = [c.ticker, c.hq, c.domain, 'source: ' + data.source, data.live ? 'live' : 'snapshot']
+      .filter(Boolean).join('  ·  ');
+    $('cSummary').textContent = c.summary || '';
+
+    $('tTotal').textContent = data.totalOpenRoles ?? data.roles.length;
+    $('tStrong').textContent = data.counts.strong;
+    $('tPossible').textContent = data.counts.possible;
+
+    const top = data.topFit;
+    $('answer').classList.toggle('hidden', !top);
+    if (top) {
+      $('answerRole').textContent = top.title;
+      $('answerWhy').textContent =
+        (top.location ? top.location + ' — ' : '') +
+        'fit ' + top.fit.score + '/100' +
+        (top.fit.matched.length ? ' (' + top.fit.matched.join(', ') + ')' : '');
+    }
+
+    const tiers = { strong: [], possible: [], 'no-fit': [] };
+    for (const r of data.roles) tiers[r.fit.tier].push(r);
+
+    fillList('Strong', tiers.strong);
+    fillList('Possible', tiers.possible);
+    $('listRest').innerHTML = tiers['no-fit'].map(roleHtml).join('');
+    $('secRest').classList.toggle('hidden', !tiers['no-fit'].length);
+
+    $('results').classList.remove('hidden');
+  }
+
+  function fillList(name, roles) {
+    $('sec' + name).classList.toggle('hidden', !roles.length);
+    $('list' + name).innerHTML = roles.map(roleHtml).join('');
+  }
+
+  function esc(s) {
+    return String(s ?? '').replace(/[&<>"']/g, (ch) =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+  }
+
+  function roleHtml(r) {
+    const kws = r.fit.matched.map((k) => '<span>' + esc(k) + '</span>').join('');
+    return '<li>' +
+      '<div class="role-top">' +
+        '<a class="title" target="_blank" rel="noopener" href="' + esc(r.url) + '">' + esc(r.title) + '</a>' +
+        '<span class="score">' + r.fit.score + '/100</span>' +
+      '</div>' +
+      '<div class="role-meta">' + esc([r.location, r.posted, r.ref].filter(Boolean).join('  ·  ')) + '</div>' +
+      '<div class="meter" role="img" aria-label="Fit score ' + r.fit.score + ' out of 100">' +
+        '<span style="width:' + r.fit.score + '%"></span>' +
+      '</div>' +
+      (kws ? '<div class="kw">' + kws + '</div>' : '') +
+    '</li>';
+  }
+
+  // Auto-hunt the default target on load.
+  $('huntForm').requestSubmit();
+</script>
+</body>
+</html>
