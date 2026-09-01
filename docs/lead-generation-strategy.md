@@ -85,16 +85,33 @@ Email carries part of it; the bigger Facebook ad budget and InMail carry the res
 - **Month 3:** 38 to 50 good meetings a month, steady.
 - **Months 4 to 6:** three to four clients signed a month. The $7k plan, with our team running the ads, gets here faster.
 
-## 7. What it costs
+## 7. What it costs, month by month
 
-Two ways to work together:
+Two ways to work together. Both build and run the full system; the difference is who runs the Facebook ads. Ads only switch on in month 3, so months 1 and 2 are identical apart from the fee. Every figure is all-in (our fee plus the media and tools paid straight to the platforms).
 
-- **$5k / month:** the full system built and run for you: segments and messaging, custom landing pages, InMail to your top 500 accounts, email outreach at 15–20k/month, and 7–10 LinkedIn leadership posts. Your team runs the Facebook ad campaigns.
-- **$7k / month:** everything in the $5k plan, plus our team members run your Facebook ad campaigns for you, so you can expect to see results faster.
+**Option A — build and run · $5,000/month (your team runs the ads)**
 
-On top of the fee, media and tools run about $6.5–8k/month paid straight to the platforms (Facebook ad spend, Explee and Apollo for data and sending, LinkedIn). Against clients who historically stay for years, one signed client pays that back many times over.
+| Line | Month 1 | Month 2 | Month 3 | 90-day |
+|---|---|---|---|---|
+| Consultant fee | $5,000 | $5,000 | $5,000 | $15,000 |
+| LinkedIn (Sales Navigator + InMail) | $2,000 | $2,000 | $2,000 | $6,000 |
+| Lead data (Explee + Apollo) | $2,000 | $1,500 | $1,000 | $4,500 |
+| Email sending (Explee) | $200 | $500 | $600 | $1,300 |
+| Facebook ad spend | $0 | $0 | $3,500 | $3,500 |
+| **Total** | **$9,200** | **$9,000** | **$12,100** | **$30,300** |
 
-Media and tools breakdown: lead data (Explee, Apollo, verification) $1–2k · email sending (Explee, 15–20k emails) $0.45–0.6k · LinkedIn (Sales Navigator + InMail) $2k · Facebook ad spend $3–3.5k.
+**Option B — faster results · $7,000/month (our team runs the ads)**
+
+| Line | Month 1 | Month 2 | Month 3 | 90-day |
+|---|---|---|---|---|
+| Consultant fee | $7,000 | $7,000 | $7,000 | $21,000 |
+| LinkedIn (Sales Navigator + InMail) | $2,000 | $2,000 | $2,000 | $6,000 |
+| Lead data (Explee + Apollo) | $2,000 | $1,500 | $1,000 | $4,500 |
+| Email sending (Explee) | $200 | $500 | $600 | $1,300 |
+| Facebook ad spend | $0 | $0 | $3,500 | $3,500 |
+| **Total** | **$11,200** | **$11,000** | **$14,100** | **$36,300** |
+
+After the first 90 days, steady state runs about $12k/month on Option A and $14k on Option B. Against clients who historically stay for years, one signed client pays that back many times over.
 
 ## 8. Five questions before we start
 
