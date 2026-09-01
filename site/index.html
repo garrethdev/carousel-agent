@@ -61,9 +61,14 @@
     margin-bottom: 64px;
   }
   .tb-main { padding: 36px 32px 28px; border-bottom: 2px solid var(--ink); }
+  .tb-brand {
+    font-family: var(--display); font-weight: 700; font-size: clamp(24px, 3.4vw, 34px);
+    letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent);
+    margin: 0 0 4px; line-height: 1;
+  }
   .tb-kicker {
     font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--accent); margin: 0 0 14px;
+    text-transform: uppercase; color: var(--ink2); margin: 0 0 14px;
   }
   h1 {
     font-family: var(--display); font-weight: 700; font-size: clamp(44px, 7vw, 72px);
@@ -217,7 +222,8 @@
 
   <header class="titleblock">
     <div class="tb-main">
-      <p class="tb-kicker">InteractOne &middot; Lead Generation Plan</p>
+      <p class="tb-brand">InteractOne</p>
+      <p class="tb-kicker">Lead Generation Plan</p>
       <h1>Old Line,<br>New Revenue</h1>
       <p class="tb-sub">A plan to win more clients like your best ones: established American manufacturers and distributors who stay for years, and to position you as the agency that uniquely understands them.</p>
     </div>
