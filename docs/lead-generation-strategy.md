@@ -80,7 +80,7 @@ Email carries part of it; the bigger Facebook ad budget and InMail carry the res
 
 ## 6. When the results show up
 
-- **Weeks 5 to 6:** first meetings booked from outreach.
+- **Weeks 4 to 5:** first meetings booked from outreach.
 - **Month 2:** 15 to 25 good meetings a month.
 - **Month 3:** 38 to 50 good meetings a month, steady.
 - **Months 4 to 6:** three to four clients signed a month. The $7k plan, with our team running the ads, gets here faster.
