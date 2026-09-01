@@ -40,7 +40,7 @@ The goal underneath everything: **position you as the agency that uniquely under
 
 Agencies that get compared are priced. Experts who clearly understand the client's world are hired, at higher rates, with less negotiation. Every asset below sends one message: *we know your business, and we have done this for companies exactly like yours.* The four client stories are proof no competitor can copy.
 
-> **A 67-year-old distributor doesn't trust an agency's promise. They trust a peer's story.**
+> **A seasoned distributor doesn't trust an agency's promise. They trust a peer's story.**
 
 ## 4. What we build
 
