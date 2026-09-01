@@ -1,5 +1,6 @@
 # Lead Generation Plan: Old Line, New Revenue
 
+**Prepared by:** InteractOne
 **Client:** B2B eCommerce agency for established American manufacturers and distributors
 **Prepared:** August 30, 2026 · Rev 8
 **Channels:** InMail · Facebook Ads · Email (Explee) · LinkedIn
