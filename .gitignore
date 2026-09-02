@@ -8,3 +8,7 @@ dist/
 data/virlo/snapshots/
 
 .DS_Store
+
+# Virlo image-library working files (large / image-derived); curated index + gallery are committed
+data/virlo/agents-raw/
+data/virlo/library/panels.jsonl
