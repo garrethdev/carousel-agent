@@ -86,6 +86,7 @@ function renderGallery(all: LibraryPanel[], index: LibraryIndex): string {
 
   const chip = (label: string, attr: string, val: string) =>
     `<button class="chip" data-attr="${attr}" data-val="${esc(val)}">${esc(label)}</button>`;
+  const subjects = Object.keys(index.bySubject).sort((a, b) => index.bySubject[b] - index.bySubject[a]);
 
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Virlo eye-care image library</title>
@@ -116,6 +117,8 @@ function renderGallery(all: LibraryPanel[], index: LibraryIndex): string {
   <div class="bar">
     <strong style="font-size:12px">Category:</strong>
     ${cats.filter((c) => index.byCategory[c]).map((c) => chip(`${CATEGORY_LABEL[c] || c} (${index.byCategory[c]})`, "cat", c)).join("")}
+    <strong style="font-size:12px;margin-left:10px">Subject:</strong>
+    ${subjects.map((s) => chip(`${s} (${index.bySubject[s]})`, "subj", s)).join("")}
     <strong style="font-size:12px;margin-left:10px">Niche:</strong>
     ${niches.map((n) => chip(`${n} (${index.byNiche[n]})`, "niche", n)).join("")}
     <button class="chip" id="reset">reset</button>
@@ -123,13 +126,14 @@ function renderGallery(all: LibraryPanel[], index: LibraryIndex): string {
 </header>
 <main>${sections}</main>
 <script>
-  const state={cat:null,niche:null};
+  const state={cat:null,subj:null,niche:null};
   const chips=[...document.querySelectorAll('.chip[data-attr]')];
   function apply(){
     for(const card of document.querySelectorAll('.card')){
       const okCat=!state.cat||card.dataset.cat===state.cat;
+      const okSubj=!state.subj||card.dataset.subj===state.subj;
       const okNiche=!state.niche||card.dataset.niche===state.niche;
-      card.classList.toggle('hidden',!(okCat&&okNiche));
+      card.classList.toggle('hidden',!(okCat&&okSubj&&okNiche));
     }
     for(const sec of document.querySelectorAll('section')){
       const any=[...sec.querySelectorAll('.card')].some(c=>!c.classList.contains('hidden'));
@@ -142,7 +146,7 @@ function renderGallery(all: LibraryPanel[], index: LibraryIndex): string {
     chips.forEach(c=>{if(c.dataset.attr===a)c.classList.toggle('on',c.dataset.val===state[a])});
     apply();
   }));
-  document.getElementById('reset').addEventListener('click',()=>{state.cat=null;state.niche=null;chips.forEach(c=>c.classList.remove('on'));apply();});
+  document.getElementById('reset').addEventListener('click',()=>{state.cat=null;state.subj=null;state.niche=null;chips.forEach(c=>c.classList.remove('on'));apply();});
 </script>
 </body></html>`;
 }
