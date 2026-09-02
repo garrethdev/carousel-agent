@@ -35,7 +35,7 @@ export interface NicheInsights {
 
 /**
  * OpenRouter model id for the insight pass. Claude Opus 5 via OpenRouter
- * (~$0.10 per niche at current digest sizes); override with VIRLO_INSIGHTS_MODEL.
+ * (measured ~$0.23 per niche incl. thinking tokens); override with VIRLO_INSIGHTS_MODEL.
  * No temperature is sent — Opus 5 rejects sampling parameters.
  */
 export const DEFAULT_INSIGHTS_MODEL = "anthropic/claude-opus-5";

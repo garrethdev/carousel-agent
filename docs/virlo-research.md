@@ -67,8 +67,9 @@ VIRLO_DATA_DIR=./data/virlo
 ```
 
 `OPENROUTER_API_KEY` (already in `.env`) is used for the LLM insight pass, which
-runs on `anthropic/claude-opus-5` through OpenRouter by default (roughly $0.10
-per niche per run).
+runs on `anthropic/claude-opus-5` through OpenRouter by default. Measured cost
+on 2026-09-02: about $0.23 per niche per run (thinking tokens included), so
+roughly $0.70 for all three niches.
 
 ## Commands
 
