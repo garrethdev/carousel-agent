@@ -1,0 +1,10 @@
+# local secrets (never commit)
+.env.local
+
+# build output
+dist/
+
+# raw Virlo pulls are large; reports are committed, snapshots are not
+data/virlo/snapshots/
+
+.DS_Store

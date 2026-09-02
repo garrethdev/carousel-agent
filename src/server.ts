@@ -3,11 +3,13 @@ import express from "express";
 import path from "path";
 import swaggerUi from "swagger-ui-express";
 import { registerCarouselRoutes } from "./api/carouselRoute";
+import { registerVirloRoutes } from "./api/virloRoute";
 import { swaggerSpec } from "./docs/swagger";
 
 const envPath = process.env.DOTENV_CONFIG_PATH || ".env";
 dotenv.config({ path: envPath });
 dotenv.config({ path: "environment.env" });
+dotenv.config({ path: ".env.local" }); // local-only secrets (VIRLO_API_KEY), git-ignored
 
 /**
  * Bootstraps the Express HTTP server for the carousel generator.
@@ -34,6 +36,7 @@ app.get("/", (_req, res) => {
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 registerCarouselRoutes(app);
+registerVirloRoutes(app);
 
 function listenWithFallback(port: number, remainingAttempts: number): void {
   const server = app.listen(port);
