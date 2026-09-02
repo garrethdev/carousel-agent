@@ -16,6 +16,7 @@ import {
   thumbnailCandidates
 } from "../core/virlo/imageLibrary";
 import { buildLibraryOutputs } from "../core/virlo/renderLibrary";
+import { collectBeforeAfterSets, buildBeforeAfterOutputs } from "../core/virlo/beforeAfterLibrary";
 import { virloDataDir } from "../core/virlo/paths";
 
 dotenv.config({ path: process.env.DOTENV_CONFIG_PATH || ".env" });
@@ -29,7 +30,9 @@ dotenv.config({ path: ".env.local" });
  *   npm run virlo:library build    – classify candidates (Qwen3-VL) and render gallery
  *   npm run virlo:library render   – rebuild index + gallery from what's classified
  *
- * Flags: --concurrency=N (default 16), --limit=N, --source=agents|thumbs|all
+ *   npm run virlo:library beforeafter [--all]  - before/after slideshow mini-library
+ *
+ * Flags: --concurrency=N (default 16), --limit=N, --source=agents|thumbs|all, --all (beforeafter: include body niches)
  * Candidate sources:
  *   - agents: panels of already-downloaded agent slideshow JSON in $AGENT_JSON_DIR
  *   - thumbs: cover thumbnails from the three skincare hook-corpus caches
@@ -133,6 +136,19 @@ async function main(): Promise<void> {
     return;
   }
 
+  if (args.command === "beforeafter") {
+    const faceOnly = !process.argv.includes("--all");
+    const sets = collectBeforeAfterSets(agentJsonDir(), { faceOnly });
+    const { jsonFile, htmlFile } = buildBeforeAfterOutputs(sets);
+    const byNiche: Record<string, number> = {};
+    for (const s of sets) byNiche[s.niche] = (byNiche[s.niche] ?? 0) + 1;
+    console.log(
+      `Before/after mini-library: ${sets.length} slideshows (${faceOnly ? "face/skin only; pass --all for body too" : "all"}) → ${htmlFile}, ${jsonFile}`
+    );
+    console.log(JSON.stringify(byNiche, null, 2));
+    return;
+  }
+
   if (args.command === "render") {
     const panels = loadAllPanels();
     const { indexFile, galleryFile, index } = buildLibraryOutputs(panels);
@@ -168,7 +184,7 @@ async function main(): Promise<void> {
     return;
   }
 
-  console.error(`Unknown command "${args.command}". Use: select | build | render`);
+  console.error(`Unknown command "${args.command}". Use: select | build | render | beforeafter`);
   process.exit(2);
 }
 
