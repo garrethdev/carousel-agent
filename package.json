@@ -5,7 +5,15 @@
   "scripts": {
     "dev": "ts-node src/server.ts",
     "test:carousel": "ts-node tests/runSampleCarousel.ts",
-    "test:all": "npm run test:carousel"
+    "test:all": "npm run test:carousel",
+    "virlo:status": "ts-node src/cli/virlo.ts status",
+    "virlo:ensure": "ts-node src/cli/virlo.ts ensure",
+    "virlo:pull": "ts-node src/cli/virlo.ts pull",
+    "virlo:analyze": "ts-node src/cli/virlo.ts analyze",
+    "virlo:run": "ts-node src/cli/virlo.ts run",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "virlo:summary": "ts-node src/cli/virlo.ts summary",
+    "virlo:library": "ts-node src/cli/imageLibrary.ts"
   },
   "dependencies": {
     "dotenv": "^16.6.1",

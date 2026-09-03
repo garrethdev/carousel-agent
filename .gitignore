@@ -1,0 +1,18 @@
+# local secrets (never commit)
+.env.local
+
+# build output
+dist/
+
+# raw Virlo pulls are large; reports are committed, snapshots are not
+data/virlo/snapshots/
+
+.DS_Store
+
+# Virlo image-library working files (large / image-derived); curated index + gallery are committed
+data/virlo/agents-raw/
+data/virlo/library/panels.jsonl
+data/virlo/library/build.log
+
+# local carousel knowledge base (not part of the PR)
+knowledge/

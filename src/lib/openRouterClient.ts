@@ -29,7 +29,9 @@ export async function openRouterChat(req: ORChatRequest): Promise<string> {
     body: JSON.stringify({
       model: req.model,
       messages: req.messages,
-      temperature: req.temperature ?? 0.7,
+      // Newer Anthropic models reject sampling params; only send temperature
+      // when the caller set one explicitly (all legacy callers do).
+      ...(req.temperature !== undefined ? { temperature: req.temperature } : {}),
       max_tokens: req.max_tokens ?? 256
     })
   });
@@ -40,6 +42,10 @@ export async function openRouterChat(req: ORChatRequest): Promise<string> {
   }
 
   const data = (await response.json()) as any;
+  const finishReason = data.choices?.[0]?.finish_reason;
+  if (finishReason === "length") {
+    console.warn(`[openRouterChat] ${req.model} hit max_tokens=${req.max_tokens ?? 256}; output is truncated`);
+  }
   const content = data.choices?.[0]?.message?.content;
   if (typeof content !== "string") {
     throw new Error("OpenRouter response missing content");
