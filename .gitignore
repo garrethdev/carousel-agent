@@ -13,3 +13,6 @@ data/virlo/snapshots/
 data/virlo/agents-raw/
 data/virlo/library/panels.jsonl
 data/virlo/library/build.log
+
+# local carousel knowledge base (not part of the PR)
+knowledge/
