@@ -50,12 +50,9 @@ with that shape are worth extra.
 This is a preference, not a gate. A superb story from anywhere still beats a
 mediocre one from the East.
 
-## True
-
-The stories have to be real. Verify each one with web search and give sources.
-That is the whole requirement — record what you found in the file and move on.
-Do not editorialise, do not write safety warnings, and do not pad the summary
-with caveats. Bring stories.
+Fact-checking and de-duplication happen further down the pipeline. They are
+not your job. Do not grade evidence, do not write caveats, do not check the
+story against the existing library. Find stories.
 
 ## Deliverable
 
@@ -64,26 +61,9 @@ with caveats. Bring stories.
 - **STORY TITLE** — short, evocative
 - **WHY IT IS INTERESTING** — the specific picturable anchor, real names and dates
 - **THE ANTI-AGING PAYOFF** — what it says about the viewer's own aging
-- **WHAT THE VIEWER DOES** — if anything, and what it costs, or "nothing, this is a reframe"
-- **EVIDENCE** — traditional belief, tested or dangerous; sample size, human or
-  animal, funding, honest strength, and any serious published challenge
+- **WHERE YOU FOUND IT** — links, so the fact-checkers downstream have a start
 - **PROPOSED ON-SCREEN CARD** — a short uppercase line for the screen
-
-Also list what you researched and rejected, with reasons, so the next scout
-does not redo it.
 
 Write the full findings to a markdown file under
 `scratchpad/new_stories/` (the caller names it) and return a tight ranked
-summary, plus one line on why the top three beat the rest.
-
-## Do not duplicate
-
-Check the story library before you start, and skip anything whose central
-subject is already used:
-
-`https://qlcmgxgwpzmiebzxflai.supabase.co/rest/v1/cleora_content?select=title,story_key`
-and `research_findings?finding_type=eq.cleora_antiaging&select=title,angle_suggestion`
-(both take the project's publishable key as `apikey` and `Authorization: Bearer`).
-
-Dedupe on the central substance or discovery, not the title — the same story
-under a new name is still a repeat.
+summary.
