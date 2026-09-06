@@ -33,6 +33,34 @@ Workflow: `GrTdGsVVKMHjQvQ0`
 `opening_line` and `first_body_line`. Only voted stories appear — the
 unvoted majority is deliberately absent.
 
+## What the brief contains
+
+`Build Research Brief` assembles the scout prompt in this order. Only the
+last block is data-driven; everything above it is static text in the node.
+
+1. **Who Cleora is** and who the audience is.
+2. **The two tests** — Interesting, Anti-aging. These are the only gates.
+3. **Nothing else disqualifies** — no filtering on evidence strength, cost,
+   or whether the viewer can act on it.
+4. **Preferred flavour** — Eastern mysticism and traditional wellness. A
+   tiebreak, not a gate.
+5. **Where to hunt** — three territories swept every run, with an explicit
+   note that they are places to look rather than extra tests:
+   - Incredible healing — bodies that repaired themselves when they should
+     not have; recoveries the doctors could not explain.
+   - Peptides as secret knowledge — peptides told as withheld or buried
+     wisdom, not as a supplement review.
+   - Mitochondrial healing — what drains the cell's power supply, what
+     restores it, and the specific cases where restoring it turned someone
+     around.
+6. **Not your job** — fact-checking and de-duplication happen downstream.
+7. **Owner taste** — the vote block described below.
+8. **Output contract** — the JSON shape `Parse + Gate + Build Rows` expects.
+
+Adding a territory means editing the `WHERE TO HUNT` block. Keep new ones
+phrased as territories; a territory that reads like a rule quietly becomes
+a third gate and starts cutting good stories.
+
 ## Re-syncing after a voting session
 
 The board keeps votes in its own artifact db. To pull a fresh batch in,
