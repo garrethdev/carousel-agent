@@ -9,7 +9,21 @@ TARGET = int(os.environ.get('TARGET', '20'))
 SHOW   = int(os.environ.get('SHOW', '50'))
 
 rows = json.load(open(src))
-rows = rows[:SHOW]
+
+# Selecting the top SHOW by score would be meaningless: each scout graded its
+# own candidates on its own curve, so a generous scout would crowd out a strict
+# one. Take a round-robin across territories instead - every territory gets its
+# best entries, and the spread is a fact about coverage, not a taste call.
+if len(rows) > SHOW:
+    buckets = {}
+    for c in rows:                      # rows arrive already sorted by score
+        buckets.setdefault(c.get('territory', ''), []).append(c)
+    order, picked = sorted(buckets), []
+    while len(picked) < SHOW and any(buckets[t] for t in order):
+        for t in order:
+            if buckets[t] and len(picked) < SHOW:
+                picked.append(buckets[t].pop(0))
+    rows = picked
 
 TERRITORY = {
  'healing':  'Incredible healing',
