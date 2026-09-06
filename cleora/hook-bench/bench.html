@@ -1,0 +1,772 @@
+<title>Cleora Hook Bench</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&family=Fraunces:opsz,wght@9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Committed dark bench: footage review wants a dark surround, so this page
+   paints one explicitly in every theme rather than borrowing the host ground. */
+:root{
+  --bg:#100c15; --panel:#1a1420; --panel-2:#221a2b; --sunk:#0a070d;
+  --ink:#f4f0f7; --ink-2:#b6a9c2; --ink-3:#7d7188;
+  --line:#2e2439; --line-2:#3d3049;
+  --orb:#a06ede; --orb-dim:#6b3fa0; --gold:#e8b45c;
+  --a:#5ec8a8; --b:#e8845c;
+}
+*{box-sizing:border-box}
+html{color-scheme:dark}
+body{background:var(--bg);color:var(--ink);margin:0;
+  font:400 15px/1.5 "IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:32px 22px 70px}
+header{margin-bottom:22px}
+.eyebrow{font:500 11px/1 "IBM Plex Mono",monospace;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--orb);margin:0 0 10px}
+h1{font:600 32px/1.1 Fraunces,Georgia,serif;margin:0 0 8px;letter-spacing:-.01em}
+.sub{color:var(--ink-2);margin:0;max-width:66ch}
+
+.bench{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:22px;
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:20px;margin:24px 0 30px}
+.stage{background:var(--sunk);border-radius:10px;padding:16px;display:flex;gap:18px;
+  align-items:flex-start;justify-content:center;min-height:440px}
+.screen{position:relative;width:236px;aspect-ratio:9/16;background:#000;border-radius:8px;
+  overflow:hidden;flex:0 0 auto}
+.screen video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transform-origin:center 60%}
+#vB{opacity:0}
+.hookcard{position:absolute;left:13%;width:74%;background:#000;color:#fff;border-radius:6px;
+  font:700 12px/1.25 Arimo,Helvetica,Arial,sans-serif;text-align:center;padding:8px 10px;
+  overflow-wrap:break-word;pointer-events:none}
+.stagemeta{display:flex;flex-direction:column;gap:10px;min-width:158px}
+.slotinfo{background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.slotinfo .tag{font:500 10px/1 "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase}
+.slotinfo.a .tag{color:var(--a)} .slotinfo.b .tag{color:var(--b)}
+.slotinfo .nm{font:500 12.5px/1.3 "IBM Plex Mono",monospace;margin-top:5px;overflow-wrap:anywhere}
+.slotinfo .note{font-size:11px;color:var(--gold);margin-top:6px;line-height:1.35}
+
+.panel h3{font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-3);margin:0 0 10px}
+.panel section{margin-bottom:20px}
+label.f{display:block;font-size:12.5px;color:var(--ink-2);margin-bottom:6px}
+label.f b{color:var(--ink);font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono",monospace}
+input[type=range]{width:100%;accent-color:var(--orb)}
+textarea,input[type=text],input[type=search]{width:100%;background:var(--sunk);color:var(--ink);
+  border:1px solid var(--line-2);border-radius:6px;padding:9px 11px;font:inherit;font-size:13.5px;
+  resize:vertical}
+textarea:focus,input:focus,button:focus-visible,.rescard:focus-visible{outline:2px solid var(--orb);outline-offset:2px}
+.seg{display:flex;border:1px solid var(--line-2);border-radius:6px;overflow:hidden}
+.seg button{flex:1;background:var(--panel-2);color:var(--ink-2);border:0;
+  border-right:1px solid var(--line-2);padding:8px 4px;cursor:pointer;
+  font:500 12px/1 "IBM Plex Sans",sans-serif}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed=true]{background:var(--orb);color:#120c18}
+.btn{width:100%;background:var(--orb);color:#120c18;border:0;border-radius:6px;padding:10px;
+  font:600 13.5px/1 "IBM Plex Sans",sans-serif;cursor:pointer}
+.btn.ghost{background:var(--panel-2);color:var(--ink);border:1px solid var(--line-2)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn+.btn{margin-top:8px}
+.savenote{font-size:12px;color:var(--ink-3);margin:8px 0 0;min-height:1.2em}
+.savenote.ok{color:var(--a)} .savenote.err{color:var(--gold)}
+
+h2{font:600 12px/1 "IBM Plex Mono",monospace;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-3);margin:0 0 14px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+h2 span{color:var(--ink-3);font-weight:400;text-transform:none;letter-spacing:0;font-size:12px}
+
+/* library search */
+.searchbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+.searchbar input[type=search]{flex:1 1 280px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{background:var(--panel-2);color:var(--ink-2);border:1px solid var(--line-2);border-radius:20px;
+  padding:6px 12px;font:500 12px/1 "IBM Plex Sans",sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--orb);color:#120c18;border-color:var(--orb)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(166px,1fr));gap:14px}
+.rescard{background:var(--panel);border:1px solid var(--line);border-radius:9px;overflow:hidden;
+  position:relative;display:flex;flex-direction:column}
+.rescard.inA{border-color:var(--a);box-shadow:0 0 0 1px var(--a)}
+.rescard.inB{border-color:var(--b);box-shadow:0 0 0 1px var(--b)}
+.rescard video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#000}
+.rescard .cap{padding:8px 9px 6px;flex:1}
+.rescard .k{font:500 11.5px/1.3 "IBM Plex Mono",monospace;overflow-wrap:anywhere;display:block}
+.rescard .m{color:var(--ink-3);font-size:10.5px;margin-top:3px;display:block;
+  font-variant-numeric:tabular-nums}
+.rescard .act{color:var(--ink-2);font-size:11px;line-height:1.4;margin-top:6px;display:block}
+.assign{display:flex;gap:0;border-top:1px solid var(--line)}
+.assign button{flex:1;background:var(--panel-2);border:0;border-right:1px solid var(--line);
+  color:var(--ink-2);padding:8px 4px;cursor:pointer;
+  font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.06em}
+.assign button:last-child{border-right:0}
+.assign button.toA:hover{background:var(--a);color:#06251c}
+.assign button.toB:hover{background:var(--b);color:#2b1006}
+.pill{position:absolute;top:7px;left:7px;font:600 10px/1 "IBM Plex Mono",monospace;
+  padding:4px 6px;border-radius:4px;letter-spacing:.08em;z-index:2}
+.pill.a{background:var(--a);color:#06251c} .pill.b{background:var(--b);color:#2b1006}
+.opener{position:absolute;top:7px;right:7px;background:var(--orb-dim);color:#f0e6fb;
+  font:600 9px/1 "IBM Plex Mono",monospace;padding:4px 5px;border-radius:4px;z-index:2}
+
+/* saved edit configs */
+.saved{margin:34px 0 0}
+.slist{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:12px}
+.scfg{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:13px 14px;
+  position:relative;cursor:pointer}
+.scfg:hover{border-color:var(--orb-dim)}
+.scfg .nm{font:600 14px/1.25 "IBM Plex Sans",sans-serif;margin:0 34px 4px 0;overflow-wrap:anywhere}
+.scfg .forv{font-size:11.5px;color:var(--orb);margin:0 0 8px}
+.scfg .pair{font:500 11.5px/1.5 "IBM Plex Mono",monospace;color:var(--ink-2);overflow-wrap:anywhere}
+.scfg .pair .ka{color:var(--a)} .scfg .pair .kb{color:var(--b)}
+.scfg .facts{color:var(--ink-3);font-size:11.5px;margin-top:7px;font-variant-numeric:tabular-nums}
+.scfg .cd{margin-top:9px;background:#000;color:#fff;border-radius:4px;padding:6px 8px;
+  font:700 10.5px/1.3 Arimo,Helvetica,Arial,sans-serif;text-align:center;overflow-wrap:break-word}
+.del{position:absolute;top:9px;right:9px;background:transparent;border:1px solid var(--line-2);
+  color:var(--ink-3);border-radius:5px;width:24px;height:24px;cursor:pointer;line-height:1;
+  font-size:14px;padding:0}
+.del:hover{color:var(--gold);border-color:var(--gold)}
+.empty{color:var(--ink-3);font-size:13.5px;background:var(--panel);border:1px dashed var(--line-2);
+  border-radius:9px;padding:22px;text-align:center}
+
+.out{background:var(--sunk);border:1px solid var(--line);border-radius:8px;padding:14px 16px;
+  margin-top:26px}
+.out pre{margin:0;overflow-x:auto;font:400 11.5px/1.65 "IBM Plex Mono",monospace;color:var(--ink-2);
+  white-space:pre}
+.hint{color:var(--ink-3);font-size:12.5px;margin:10px 0 0}
+
+/* per-clip move controls */
+.mv{background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:11px 12px;
+  margin-bottom:10px}
+.mv .hd{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}
+.mv .who{font:600 10px/1 "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase}
+.mv.a .who{color:var(--a)} .mv.b .who{color:var(--b)}
+.mv .zread{font:500 11px/1 "IBM Plex Mono",monospace;color:var(--ink-3);
+  font-variant-numeric:tabular-nums}
+.mvbody{display:grid;grid-template-columns:1fr 62px;gap:11px;align-items:center}
+.zrow label{display:block;font-size:11.5px;color:var(--ink-2);margin:0 0 3px}
+.zrow label b{color:var(--ink);font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.zrow+.zrow{margin-top:7px}
+.pad{position:relative;width:62px;height:110px;border-radius:5px;background:var(--sunk);
+  border:1px solid var(--line-2);cursor:crosshair;touch-action:none;overflow:hidden}
+.pad::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(var(--line-2),var(--line-2)) 50% 0/1px 100% no-repeat,
+             linear-gradient(var(--line-2),var(--line-2)) 0 50%/100% 1px no-repeat;opacity:.5}
+.dot{position:absolute;width:11px;height:11px;border-radius:50%;transform:translate(-50%,-50%);
+  border:2px solid #120c18;z-index:2}
+.mv.a .dot{background:var(--a)} .mv.b .dot{background:var(--b)}
+.padlbl{font:500 9px/1.3 "IBM Plex Mono",monospace;color:var(--ink-3);text-align:center;margin-top:5px}
+
+/* dual-handle trim slider: pick the IN and OUT point inside the source clip */
+.trim{margin-bottom:16px}
+.trimhd{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:9px}
+.trimhd .who{font:600 10px/1 "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase}
+.trim.a .who{color:var(--a)} .trim.b .who{color:var(--b)}
+.trimhd .rd{font:500 11px/1 "IBM Plex Mono",monospace;color:var(--ink-3);
+  font-variant-numeric:tabular-nums}
+.rail{position:relative;height:30px;cursor:pointer;touch-action:none;user-select:none}
+.rail .bar{position:absolute;top:13px;left:0;right:0;height:4px;border-radius:2px;
+  background:var(--sunk);border:1px solid var(--line-2)}
+.rail .sel{position:absolute;top:13px;height:4px;border-radius:2px}
+.trim.a .sel{background:var(--a)} .trim.b .sel{background:var(--b)}
+.rail .lim{position:absolute;top:8px;width:1px;height:14px;background:var(--gold);opacity:.75}
+.rail .hd{position:absolute;top:7px;width:14px;height:16px;border-radius:4px;margin-left:-7px;
+  border:2px solid #120c18;cursor:grab}
+.rail .hd:active{cursor:grabbing}
+.trim.a .hd{background:var(--a)} .trim.b .hd{background:var(--b)}
+.rail .tick{position:absolute;top:23px;font:400 9px/1 "IBM Plex Mono",monospace;color:var(--ink-3);
+  transform:translateX(-50%)}
+.trimnote{font-size:11px;color:var(--gold);margin:2px 0 0;line-height:1.35}
+.presets{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:11px}
+.pre{background:var(--panel-2);border:1px solid var(--line-2);color:var(--ink-2);border-radius:5px;
+  padding:6px 9px;font:500 11.5px/1 "IBM Plex Sans",sans-serif;cursor:pointer}
+.pre:hover{border-color:var(--orb);color:var(--ink)}
+@media (max-width:900px){.bench{grid-template-columns:1fr}.stage{min-height:0}}
+</style>
+
+<div class="wrap">
+<header>
+  <p class="eyebrow">Madame Cleora &middot; pre-edit bench</p>
+  <h1>Hook Bench</h1>
+  <p class="sub">Build a hook out of two shots. Search the whole clip library by describing what you
+  want, drop shots into A and B, set the cut, and save the pair. Claude reads the saved configs back
+  to cut them for real.</p>
+</header>
+
+<div class="bench">
+  <div class="stage">
+    <div class="screen" id="screen">
+      <video id="vA" muted playsinline></video>
+      <video id="vB" muted playsinline></video>
+      <div class="hookcard" id="hc" style="display:none"></div>
+    </div>
+    <div class="stagemeta">
+      <div class="slotinfo a"><span class="tag">Shot A &middot; into</span>
+        <div class="nm" id="nmA"></div><div class="note" id="noteA" hidden></div></div>
+      <div class="slotinfo b"><span class="tag">Shot B &middot; out of</span>
+        <div class="nm" id="nmB"></div></div>
+      <div class="slotinfo"><span class="tag" style="color:var(--ink-3)">Pair length</span>
+        <div class="nm" id="len">&mdash;</div></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <section>
+      <h3>Join</h3>
+      <div class="seg" id="trans" role="group" aria-label="How A joins B">
+        <button data-t="cut" aria-pressed="true">Hard cut</button>
+        <button data-t="fade" aria-pressed="false">Fade</button>
+      </div>
+    </section>
+    <section>
+      <h3>Moves</h3>
+      <div class="presets" id="presets">
+        <button class="pre" data-p="portal">Portal</button>
+        <button class="pre" data-p="pushA">Push A in</button>
+        <button class="pre" data-p="pullB">Pull B out</button>
+        <button class="pre" data-p="drift">Slow drift</button>
+        <button class="pre" data-p="static">Static</button>
+      </div>
+
+      <div class="mv a" data-slot="A">
+        <div class="hd"><span class="who">Shot A</span><span class="zread" id="zreadA"></span></div>
+        <div class="mvbody">
+          <div>
+            <div class="zrow"><label>Start <b id="lzfA">1.00</b>&times;</label>
+              <input type="range" id="zfA" min="1" max="3" step="0.05" value="1"></div>
+            <div class="zrow"><label>End <b id="lztA">2.40</b>&times;</label>
+              <input type="range" id="ztA" min="1" max="3" step="0.05" value="2.4"></div>
+          </div>
+          <div>
+            <div class="pad" id="padA" role="application" aria-label="Shot A focus point">
+              <span class="dot" id="dotA"></span></div>
+            <p class="padlbl">focus</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mv b" data-slot="B">
+        <div class="hd"><span class="who">Shot B</span><span class="zread" id="zreadB"></span></div>
+        <div class="mvbody">
+          <div>
+            <div class="zrow"><label>Start <b id="lzfB">2.40</b>&times;</label>
+              <input type="range" id="zfB" min="1" max="3" step="0.05" value="2.4"></div>
+            <div class="zrow"><label>End <b id="lztB">1.00</b>&times;</label>
+              <input type="range" id="ztB" min="1" max="3" step="0.05" value="1"></div>
+          </div>
+          <div>
+            <div class="pad" id="padB" role="application" aria-label="Shot B focus point">
+              <span class="dot" id="dotB"></span></div>
+            <p class="padlbl">focus</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h3>Trim</h3>
+      <div class="trim a" data-slot="A">
+        <div class="trimhd"><span class="who">Shot A</span><span class="rd" id="rdA"></span></div>
+        <div class="rail" id="railA">
+          <div class="bar"></div><div class="sel" id="selA"></div>
+          <div class="lim" id="limA" hidden></div>
+          <div class="hd" id="inA"></div><div class="hd" id="outA"></div>
+          <span class="tick" id="tkA0" style="left:0">0</span>
+          <span class="tick" id="tkA1" style="left:100%"></span>
+        </div>
+        <p class="trimnote" id="noteTrimA" hidden></p>
+      </div>
+      <div class="trim b" data-slot="B">
+        <div class="trimhd"><span class="who">Shot B</span><span class="rd" id="rdB"></span></div>
+        <div class="rail" id="railB">
+          <div class="bar"></div><div class="sel" id="selB"></div>
+          <div class="lim" id="limB" hidden></div>
+          <div class="hd" id="inB"></div><div class="hd" id="outB"></div>
+          <span class="tick" id="tkB0" style="left:0">0</span>
+          <span class="tick" id="tkB1" style="left:100%"></span>
+        </div>
+        <p class="trimnote" id="noteTrimB" hidden></p>
+      </div>
+    </section>
+    <section>
+      <h3>Hook card</h3>
+      <textarea id="card" rows="3" placeholder="SIX EMPERORS DIED CHASING THIS ELIXIR"></textarea>
+    </section>
+    <section id="savebox" hidden>
+      <h3>Save this edit</h3>
+      <input type="text" id="cfgname" placeholder="Name this hook" maxlength="70">
+      <input type="text" id="cfgfor" placeholder="For which story / episode (optional)" maxlength="70" style="margin-top:8px">
+      <button class="btn" id="save" style="margin-top:8px">Save edit config</button>
+      <p class="savenote" id="savenote"></p>
+    </section>
+    <section>
+      <button class="btn ghost" id="play">Replay pair</button>
+      <button class="btn ghost" id="swap">Swap A and B</button>
+    </section>
+  </div>
+</div>
+
+<section class="saved">
+  <h2>Saved hooks <span id="scount"></span></h2>
+  <div id="slist"></div>
+</section>
+
+<section style="margin-top:36px">
+  <h2>Shot library <span id="rcount"></span></h2>
+  <div class="searchbar">
+    <input type="search" id="q" placeholder="Describe the shot — green liquid, hands, stern men, burning, eyes, wide room…" aria-label="Search shots">
+    <div class="chips" id="chips" role="group" aria-label="Filter">
+      <button class="chip" data-f="all" aria-pressed="true">All</button>
+      <button class="chip" data-f="open" aria-pressed="false">Openers</button>
+      <button class="chip" data-f="Close-up" aria-pressed="false">Close-up</button>
+      <button class="chip" data-f="Wide" aria-pressed="false">Wide</button>
+      <button class="chip" data-f="Insert &amp; Prop" aria-pressed="false">Insert &amp; Prop</button>
+      <button class="chip" data-f="Hands &amp; Ritual" aria-pressed="false">Hands &amp; Ritual</button>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<div class="out">
+  <h3 style="font:600 11px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);margin:0 0 10px">Build recipe for this pair</h3>
+  <pre id="recipe"></pre>
+  <p class="hint">Saved hooks carry all of this. Ask Claude to cut a saved hook by name.</p>
+</div>
+</div>
+
+<script src="shots_data.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const byKey = k => SHOTS.find(s => s.key === k) || SHOTS[0];
+const OPENERS = SHOTS.filter(s => s.open);
+let A = (OPENERS[3] || SHOTS[0]).key, B = (OPENERS[7] || SHOTS[1]).key, trans = 'cut';
+let filter = 'all';
+
+const TRIM = {                       // IN and OUT point inside each source clip, seconds
+  A:{in:0, out:2.4},
+  B:{in:0, out:2.6}
+};
+const MIN_LEN = 0.4;                 // never let a leg collapse to nothing
+const MOVE = {                       // per-clip zoom + focus, 0-1 focus coords
+  A:{zf:1.00, zt:2.40, fx:0.50, fy:0.60},
+  B:{zf:2.40, zt:1.00, fx:0.50, fy:0.60}
+};
+const PRESETS = {
+  portal:{A:{zf:1,zt:2.4},              B:{zf:2.4,zt:1}},
+  pushA: {A:{zf:1,zt:1.9},              B:{zf:1,zt:1}},
+  pullB: {A:{zf:1,zt:1},                B:{zf:2.2,zt:1}},
+  drift: {A:{zf:1,zt:1.18},             B:{zf:1.18,zt:1}},
+  static:{A:{zf:1,zt:1},                B:{zf:1,zt:1}}
+};
+
+/* ---------- search ---------- */
+function score(s, toks){
+  if (!toks.length) return 1;
+  let n = 0;
+  for (const t of toks){
+    if (s.q.includes(t)) n += s.key.replace(/_/g,' ').includes(t) ? 3 : 1;
+  }
+  return n;
+}
+function results(){
+  const toks = $('q').value.toLowerCase().split(/\s+/).filter(t => t.length > 1);
+  let r = SHOTS.filter(s => filter === 'all' ? true : filter === 'open' ? s.open : s.cat === filter);
+  r = r.map(s => ({s, n: score(s, toks)})).filter(x => x.n > 0);
+  r.sort((x, y) => y.n - x.n || (x.s.open === y.s.open ? 0 : x.s.open ? -1 : 1)
+                            || x.s.key.localeCompare(y.s.key));
+  return r.map(x => x.s);
+}
+function renderGrid(){
+  const r = results();
+  $('rcount').textContent = r.length === SHOTS.length
+    ? `${SHOTS.length} clips` : `${r.length} of ${SHOTS.length}`;
+  if (!r.length){ $('grid').innerHTML = '<p class="empty">No shot matches that description.</p>'; return; }
+  $('grid').innerHTML = r.map(s => `
+    <article class="rescard${s.key===A?' inA':''}${s.key===B?' inB':''}" data-k="${esc(s.key)}">
+      ${s.key===A?'<span class="pill a">A</span>':''}${s.key===B?'<span class="pill b">B</span>':''}
+      ${s.open?'<span class="opener">OPENER</span>':''}
+      <video src="${s.src}" muted loop playsinline autoplay preload="metadata"></video>
+      <span class="cap"><span class="k">${esc(s.key)}</span>
+        <span class="m">${s.dur.toFixed(1)}s · ${esc(s.cat||'—')}</span>
+        ${s.act?`<span class="act">${esc(s.act)}</span>`:''}</span>
+      <span class="assign">
+        <button class="toA" data-slot="A" data-k="${esc(s.key)}">→ A</button>
+        <button class="toB" data-slot="B" data-k="${esc(s.key)}">→ B</button>
+      </span>
+    </article>`).join('');
+}
+$('q').addEventListener('input', renderGrid);
+$('chips').addEventListener('click', e => {
+  const c = e.target.closest('.chip'); if (!c) return;
+  filter = c.dataset.f;
+  [...e.currentTarget.querySelectorAll('.chip')]
+    .forEach(x => x.setAttribute('aria-pressed', String(x === c)));
+  renderGrid();
+});
+$('grid').addEventListener('click', e => {
+  const btn = e.target.closest('[data-slot]'); if (!btn) return;
+  if (btn.dataset.slot === 'A') A = btn.dataset.k; else B = btn.dataset.k;
+  sync();
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+
+/* ---------- controls ---------- */
+$('trans').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  setTrans(b.dataset.t); sync();
+});
+
+/* ---------- per-clip moves ---------- */
+function pushMoveUI(){
+  for (const s of ['A','B']){
+    $('zf'+s).value = MOVE[s].zf; $('zt'+s).value = MOVE[s].zt;
+    $('lzf'+s).textContent = (+MOVE[s].zf).toFixed(2);
+    $('lzt'+s).textContent = (+MOVE[s].zt).toFixed(2);
+    const d = $('dot'+s);
+    d.style.left = (MOVE[s].fx * 100) + '%';
+    d.style.top  = (MOVE[s].fy * 100) + '%';
+    const zf = +MOVE[s].zf, zt = +MOVE[s].zt;
+    $('zread'+s).textContent = Math.abs(zt - zf) < 0.02 ? 'static'
+      : (zt > zf ? 'push in ' : 'pull out ') + zf.toFixed(2) + ' to ' + zt.toFixed(2);
+  }
+}
+for (const s of ['A','B']){
+  $('zf'+s).addEventListener('input', () => { MOVE[s].zf = +$('zf'+s).value; pushMoveUI(); refresh(); });
+  $('zt'+s).addEventListener('input', () => { MOVE[s].zt = +$('zt'+s).value; pushMoveUI(); refresh(); });
+  const pad = $('pad'+s);
+  const place = ev => {
+    const r = pad.getBoundingClientRect();
+    const p = ev.touches ? ev.touches[0] : ev;
+    MOVE[s].fx = Math.min(1, Math.max(0, (p.clientX - r.left) / r.width));
+    MOVE[s].fy = Math.min(1, Math.max(0, (p.clientY - r.top) / r.height));
+    pushMoveUI(); refresh();
+  };
+  let drag = false;
+  pad.addEventListener('pointerdown', e => { drag = true; pad.setPointerCapture(e.pointerId); place(e); });
+  pad.addEventListener('pointermove', e => { if (drag) place(e); });
+  pad.addEventListener('pointerup',   e => { drag = false; try{pad.releasePointerCapture(e.pointerId);}catch(_){} });
+}
+$('presets').addEventListener('click', e => {
+  const b = e.target.closest('.pre'); if (!b) return;
+  const p = PRESETS[b.dataset.p]; if (!p) return;
+  MOVE.A.zf = p.A.zf; MOVE.A.zt = p.A.zt;
+  MOVE.B.zf = p.B.zf; MOVE.B.zt = p.B.zt;
+  pushMoveUI(); refresh();
+});
+$('card').addEventListener('input', () => { drawCard(); $('recipe').textContent = recipe(); });
+$('play').addEventListener('click', run);
+$('swap').addEventListener('click', () => { const t = A; A = B; B = t; sync(); });
+
+/* ---------- trim rails ---------- */
+function span(s){ return byKey(s === 'A' ? A : B).srcDur; }
+function pushTrimUI(){
+  for (const s of ['A','B']){
+    const t = TRIM[s], L = span(s);
+    const pc = v => (Math.max(0, Math.min(L, v)) / L * 100) + '%';
+    $('in'+s).style.left  = pc(t.in);
+    $('out'+s).style.left = pc(t.out);
+    $('sel'+s).style.left = pc(t.in);
+    $('sel'+s).style.width = ((t.out - t.in) / L * 100) + '%';
+    $('rd'+s).textContent = t.in.toFixed(1) + 's to ' + t.out.toFixed(1) + 's  ('
+                          + (t.out - t.in).toFixed(1) + 's)';
+    $('tk'+s+'1').textContent = L.toFixed(1) + 's';
+    // the embedded preview is capped, so mark where it stops showing footage
+    const shown = byKey(s === 'A' ? A : B).dur;
+    const lim = $('lim'+s), note = $('noteTrim'+s);
+    if (shown < L - 0.05){
+      lim.hidden = false; lim.style.left = (shown / L * 100) + '%';
+      const past = t.out > shown + 0.05;
+      note.hidden = !past;
+      if (past) note.textContent = 'Past ' + shown.toFixed(1)
+        + 's the bench preview runs out — the real cut still uses the full clip.';
+    } else { lim.hidden = true; note.hidden = true; }
+  }
+}
+for (const s of ['A','B']){
+  const rail = $('rail'+s);
+  let mode = null;
+  const at = ev => {
+    const r = rail.getBoundingClientRect();
+    const p = ev.touches ? ev.touches[0] : ev;
+    return Math.max(0, Math.min(1, (p.clientX - r.left) / r.width)) * span(s);
+  };
+  rail.addEventListener('pointerdown', e => {
+    const v = at(e), t = TRIM[s];
+    const dIn = Math.abs(v - t.in), dOut = Math.abs(v - t.out);
+    // grabbing between the handles slides the whole window; otherwise take the nearer handle
+    if (v > t.in && v < t.out && Math.min(dIn, dOut) > span(s) * 0.06){
+      mode = {kind:'slide', grab:v, in0:t.in, out0:t.out};
+    } else mode = {kind: dIn <= dOut ? 'in' : 'out'};
+    rail.setPointerCapture(e.pointerId);
+    move(e);
+  });
+  const move = e => {
+    if (!mode) return;
+    const L = span(s), t = TRIM[s], v = at(e);
+    if (mode.kind === 'in')  t.in  = Math.min(v, t.out - MIN_LEN);
+    else if (mode.kind === 'out') t.out = Math.max(v, t.in + MIN_LEN);
+    else {
+      const w = mode.out0 - mode.in0;
+      let ni = Math.max(0, Math.min(L - w, mode.in0 + (v - mode.grab)));
+      t.in = ni; t.out = ni + w;
+    }
+    t.in  = Math.max(0, Math.round(t.in  * 10) / 10);
+    t.out = Math.min(L, Math.round(t.out * 10) / 10);
+    pushTrimUI(); refresh();
+  };
+  rail.addEventListener('pointermove', move);
+  rail.addEventListener('pointerup', e => {
+    mode = null; try{ rail.releasePointerCapture(e.pointerId); }catch(_){}
+  });
+}
+function clampTrim(){
+  for (const s of ['A','B']){
+    const L = span(s), t = TRIM[s];
+    t.in  = Math.max(0, Math.min(t.in,  L - MIN_LEN));
+    t.out = Math.max(t.in + MIN_LEN, Math.min(t.out, L));
+  }
+}
+
+function setTrans(t){
+  trans = (t === 'portal') ? 'cut' : t;   // legacy saved hooks stored the move as the join
+  [...$('trans').querySelectorAll('button')]
+    .forEach(x => x.setAttribute('aria-pressed', String(x.dataset.t === trans)));
+}
+
+function drawCard(){
+  const txt = $('card').value.trim(), el = $('hc'), a = byKey(A);
+  if (!txt){ el.style.display = 'none'; return; }
+  el.style.display = 'block';
+  el.textContent = txt;
+  const band = a.band || [300, 640];   // renderer default when there's no layout entry
+  el.style.top = ((band[0] + 20) / 1920 * 100) + '%';
+}
+
+let timers = [];
+function run(){
+  timers.forEach(clearTimeout); timers = [];
+  const vA = $('vA'), vB = $('vB'), a = byKey(A), b = byKey(B);
+  const tA = TRIM.A.out - TRIM.A.in, tB = TRIM.B.out - TRIM.B.in;
+  const arm = (v, m) => {
+    v.style.transition = 'none';
+    v.style.transformOrigin = (m.fx * 100) + '% ' + (m.fy * 100) + '%';
+    v.style.transform = 'scale(' + m.zf + ')';
+  };
+  const move = (v, m, secs) => requestAnimationFrame(() => {
+    v.style.transition = `transform ${secs}s linear`;
+    v.style.transform = 'scale(' + m.zt + ')';
+  });
+  arm(vA, MOVE.A); arm(vB, MOVE.B);
+  vA.style.opacity = 1; vB.style.opacity = 0;
+  // seek each preview to its IN point (clamped to what the embedded preview holds)
+  const seek = (v, m, clip) => { try { v.currentTime = Math.min(m, Math.max(0, clip.dur - 0.05)); } catch(_){} };
+  seek(vA, TRIM.A.in, a); seek(vB, TRIM.B.in, b);
+  vA.play().catch(()=>{});
+  move(vA, MOVE.A, tA);
+  timers.push(setTimeout(() => {
+    seek(vB, TRIM.B.in, b); vB.play().catch(()=>{});
+    if (trans === 'fade'){
+      vA.style.transition = 'opacity .4s linear';
+      vB.style.transition = 'opacity .4s linear, transform 0s';
+      vA.style.opacity = 0; vB.style.opacity = 1;
+    } else {
+      vA.style.opacity = 0; vB.style.opacity = 1;
+    }
+    move(vB, MOVE.B, tB);
+  }, tA * 1000));
+  timers.push(setTimeout(run, (tA + tB) * 1000 + 450));
+}
+
+function cfg(){
+  const a = byKey(A);
+  return {
+    name: ($('cfgname').value.trim() || (A + ' -> ' + B)),
+    forStory: $('cfgfor').value.trim(),
+    a: A, b: B,
+    inA: +TRIM.A.in.toFixed(2), outA: +TRIM.A.out.toFixed(2),
+    inB: +TRIM.B.in.toFixed(2), outB: +TRIM.B.out.toFixed(2),
+    cutA: +(TRIM.A.out - TRIM.A.in).toFixed(2),
+    cutB: +(TRIM.B.out - TRIM.B.in).toFixed(2),
+    transition: trans,
+    moveA: {...MOVE.A}, moveB: {...MOVE.B},
+    card: $('card').value.trim(),
+    hookY: a.band ? a.band[0] + 20 : 300,
+    hookYIsDefault: !a.band,
+    aDur: a.dur, bDur: byKey(B).dur,
+    created: new Date().toISOString()
+  };
+}
+
+function recipe(){
+  const c = cfg();
+  const leg = (slot, key, ss, secs) => {
+    const m = c[slot], f = Math.max(1, Math.round(secs * 30) - 1);
+    const tag = slot === 'moveA' ? 'A' : 'B';
+    const cut = `-ss ${ss.toFixed(2)} -t ${secs.toFixed(2)} -i ${key}.mp4`;
+    const st = Math.abs(m.zt - m.zf) < 0.02;
+    if (st && Math.abs(m.zf - 1) < 0.02){
+      return [`ffmpeg -y ${cut} -vf "fps=30,scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920" \\`,
+              `  -an -c:v libx264 -crf 18 ${tag}.mp4`];
+    }
+    const d = (m.zt - m.zf).toFixed(3);
+    const z = st ? m.zf.toFixed(3) : `${m.zf.toFixed(3)}${d < 0 ? '-' : '+'}${Math.abs(d)}*on/${f}`;
+    return [`ffmpeg -y ${cut} -vf "fps=30,scale=2160:3840,`,
+            `  zoompan=z='${z}':x='${m.fx.toFixed(2)}*iw-iw/(2*zoom)':y='${m.fy.toFixed(2)}*ih-ih/(2*zoom)':`,
+            `  d=1:s=1080x1920:fps=30" -an -c:v libx264 -crf 18 ${tag}.mp4`];
+  };
+  const desc = m => Math.abs(m.zt - m.zf) < 0.02
+    ? (Math.abs(m.zf - 1) < 0.02 ? 'static' : `held at ${m.zf.toFixed(2)}x`)
+    : `${m.zt > m.zf ? 'push in' : 'pull out'} ${m.zf.toFixed(2)} -> ${m.zt.toFixed(2)}x @ ${m.fx.toFixed(2)}/${m.fy.toFixed(2)}`;
+  const L = [`PAIR   ${c.a}  ->  ${c.b}`,
+             `TRIM A ${c.inA.toFixed(2)}s to ${c.outA.toFixed(2)}s   (${c.cutA.toFixed(2)}s)`,
+             `TRIM B ${c.inB.toFixed(2)}s to ${c.outB.toFixed(2)}s   (${c.cutB.toFixed(2)}s)`,
+             `TOTAL  ${(c.cutA + c.cutB).toFixed(2)}s`,
+             `JOIN   ${c.transition}`,
+             `MOVE A ${desc(c.moveA)}`,
+             `MOVE B ${desc(c.moveB)}`];
+  if (c.card) L.push(`CARD   ${c.card}`);
+  L.push(`HOOK_Y ${c.hookY}${c.hookYIsDefault ? '   << no card band for this shot, renderer default' : ''}`, '');
+  L.push(...leg('moveA', c.a, c.inA, c.cutA));
+  if (c.transition === 'fade') L.push(`  # then: fade=t=out:st=${(c.cutA - 0.4).toFixed(2)}:d=0.4 on A, fade=t=in:st=0:d=0.4 on B`);
+  L.push(...leg('moveB', c.b, c.inB, c.cutB));
+  L.push(`ffmpeg -y -f concat -safe 0 -i list.txt -c copy hook.mp4`);
+  return L.join('\n');
+}
+
+function sync(){
+  const a = byKey(A), b = byKey(B);
+  $('vA').src = a.src; $('vB').src = b.src;
+  $('nmA').textContent = a.key; $('nmB').textContent = b.key;
+  const nA = $('noteA');
+  if (a.band){ nA.hidden = true; }
+  else { nA.hidden = false;
+         nA.textContent = 'No card band for this shot — the card falls back to y=300.'; }
+  clampTrim(); pushTrimUI(); refreshSaveBtn();
+  $('len').textContent = ((TRIM.A.out - TRIM.A.in) + (TRIM.B.out - TRIM.B.in)).toFixed(2) + 's';
+  renderGrid();
+  drawCard();
+  $('recipe').textContent = recipe();
+  run();
+}
+
+/* ---------- saved hooks (db) ---------- */
+let DB = null;
+let SAVED = [];                      // latest snapshot of the configs collection
+const slist = $('slist');
+
+/* One hook per A->B pair, in that order. Saving the same pairing again REPLACES it
+   rather than piling up near-identical variants (which is how hook09/10/11 happened). */
+function existingForPair(){
+  return SAVED.find(d => { const c = d.data() || {}; return c.a === A && c.b === B; }) || null;
+}
+function refreshSaveBtn(){
+  const hit = existingForPair(), btn = $('save');
+  if (!btn) return;
+  if (hit){
+    const nm = (hit.data() || {}).name || 'this pair';
+    btn.textContent = 'Overwrite "' + nm + '"';
+    btn.dataset.mode = 'overwrite';
+  } else {
+    btn.textContent = 'Save edit config';
+    btn.dataset.mode = 'new';
+  }
+}
+slist.innerHTML = '<p class="empty">Saved hooks load when the page connects…</p>';
+
+function renderSaved(docs){
+  SAVED = docs;
+  refreshSaveBtn();
+  $('scount').textContent = docs.length ? `${docs.length} saved` : '';
+  if (!docs.length){
+    slist.innerHTML = '<p class="empty">No saved hooks yet. Build a pair above and hit <b>Save edit config</b>.</p>';
+    return;
+  }
+  slist.innerHTML = '<div class="slist">' + docs.map(d => {
+    const c = d.data() || {};
+    return `<article class="scfg" data-id="${esc(d.id)}">
+      <button class="del" data-del="${esc(d.id)}" title="Delete" aria-label="Delete saved hook">&times;</button>
+      <p class="nm">${esc(c.name)}</p>
+      ${c.forStory?`<p class="forv">${esc(c.forStory)}</p>`:''}
+      <p class="pair"><span class="ka">${esc(c.a)}</span><br>&rarr; <span class="kb">${esc(c.b)}</span></p>
+      <p class="facts">${esc(c.transition)} · ${(+c.cutA||0).toFixed(1)}s + ${(+c.cutB||0).toFixed(1)}s
+        = ${((+c.cutA||0)+(+c.cutB||0)).toFixed(2)}s</p>
+      ${c.card ? `<div class="cd">${esc(c.card)}</div>` : ''}
+    </article>`;
+  }).join('') + '</div>';
+}
+
+slist.addEventListener('click', async e => {
+  const del = e.target.closest('[data-del]');
+  if (del){
+    e.stopPropagation();
+    if (DB){ try { await DB.collection('configs').doc(del.dataset.del).delete(); } catch(_){} }
+    return;
+  }
+  const card = e.target.closest('.scfg'); if (!card || !DB) return;
+  try {
+    const snap = await DB.collection('configs').doc(card.dataset.id).get();
+    const c = snap.data(); if (!c) return;
+    A = c.a; B = c.b;
+    TRIM.A.in  = typeof c.inA === 'number' ? c.inA : 0;
+    TRIM.A.out = typeof c.outA === 'number' ? c.outA : (TRIM.A.in + (+c.cutA || 2.4));
+    TRIM.B.in  = typeof c.inB === 'number' ? c.inB : 0;
+    TRIM.B.out = typeof c.outB === 'number' ? c.outB : (TRIM.B.in + (+c.cutB || 2.6));
+    $('card').value = c.card || '';
+    $('cfgname').value = c.name || '';
+    $('cfgfor').value = c.forStory || '';
+    if (c.moveA) Object.assign(MOVE.A, c.moveA);
+    if (c.moveB) Object.assign(MOVE.B, c.moveB);
+    else if (c.transition === 'portal'){            // legacy hooks: portal was the implied move
+      Object.assign(MOVE.A, {zf:1, zt:2.4}); Object.assign(MOVE.B, {zf:2.4, zt:1});
+    }
+    pushMoveUI();
+    setTrans(c.transition || 'cut');
+    sync();
+    window.scrollTo({top:0, behavior:'smooth'});
+  } catch(_){}
+});
+
+$('save').addEventListener('click', async () => {
+  if (!DB) return;
+  const note = $('savenote'), btn = $('save');
+  btn.disabled = true; note.className = 'savenote'; note.textContent = 'Saving…';
+  try {
+    const hit = existingForPair();
+    const body = cfg();
+    if (hit){
+      const prev = hit.data() || {};
+      // an unnamed save keeps the name the pair already had
+      if (!$('cfgname').value.trim() && prev.name) body.name = prev.name;
+      if (!$('cfgfor').value.trim() && prev.forStory) body.forStory = prev.forStory;
+      body.created = prev.created || body.created;
+      body.updated = new Date().toISOString();
+      await DB.collection('configs').doc(hit.id).set(body);
+      note.className = 'savenote ok';
+      note.textContent = 'Overwrote "' + body.name + '" — one hook per pair.';
+    } else {
+      await DB.collection('configs').add(body);
+      note.className = 'savenote ok'; note.textContent = 'Saved.';
+    }
+    $('cfgname').value = ''; $('cfgfor').value = '';
+  } catch (err) {
+    note.className = 'savenote err';
+    note.textContent = err && err.code === 'not_granted'
+      ? 'You have view-only access, so this cannot be saved.'
+      : 'Could not save: ' + ((err && err.message) || 'unknown error');
+  } finally {
+    btn.disabled = false;
+    setTimeout(() => { if (note.className === 'savenote ok') note.textContent = ''; }, 3000);
+  }
+});
+
+claude.use('db').then(db => {
+  if (!db){
+    slist.innerHTML = '<p class="empty">Saving is not available in this view, so saved hooks cannot be shown. Everything else on the bench works.</p>';
+    return;
+  }
+  DB = db;
+  $('savebox').hidden = false;
+  db.collection('configs').orderBy('created','desc').limit(200)
+    .onSnapshot(snap => renderSaved(snap.docs),
+                () => { slist.innerHTML = '<p class="empty">Lost the connection to saved hooks. Reload to try again.</p>'; });
+}).catch(() => {});
+
+setTrans('cut');
+pushMoveUI();
+clampTrim();
+pushTrimUI();
+$('card').value = 'SIX EMPERORS DIED CHASING THIS ELIXIR';
+sync();
+</script>

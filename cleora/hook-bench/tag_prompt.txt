@@ -1,0 +1,21 @@
+This is a 2-shot HOOK OPENER for a 60-second claymation short. A narrator (Madame Cleora,
+a mystical fortune-teller) tells true buried medical/anti-aging histories to women aged 35-60 who are
+afraid of ageing. This clip is the first ~5 seconds of the video, before any story is told. It is
+SILENT here; voiceover and an on-screen headline card get laid over it.
+
+Your job is to describe it so a DIRECTOR AGENT, which never sees video, can decide which stories this
+hook fits. Watch both shots and the cut between them.
+
+Return ONLY a JSON object, no markdown fence:
+{
+ "shot_a": "one sentence: literally what is on screen in the first shot, and what the camera does",
+ "shot_b": "one sentence: same for the second shot after the cut",
+ "cut_reads_as": "what the cut communicates - e.g. 'revelation', 'travel into another world', 'reaction to what was just seen', 'cause then effect', 'scale change on the same subject'",
+ "emotional_arc": "3-6 words, e.g. 'calm mystery -> alarm'",
+ "energy": "low | medium | high",
+ "subject_of_b": "who or what the second shot is about: cleora | a sick person | a healer | eyes | an object | a room | other",
+ "fits_stories_about": ["3-6 short topic phrases this opener would suit, grounded in what is literally shown"],
+ "avoid_for_stories_about": ["2-4 short phrases where this opener would mislead the viewer"],
+ "card_safe_zone": "where on the frame an overlaid headline card can sit without covering the subject: top | middle | lower-third",
+ "notes": "one sentence of anything a director should know - continuity problems, whether the two shots read as the same place, whether the cut is jarring"
+}

@@ -1,0 +1,5 @@
+# build outputs - regenerate with build_data.py then build.sh
+shots_data.js
+hook_bench.html
+_work/
+_hooks/
