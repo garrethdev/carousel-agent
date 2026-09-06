@@ -50,23 +50,12 @@ with that shape are worth extra.
 This is a preference, not a gate. A superb story from anywhere still beats a
 mediocre one from the East.
 
-## Honesty
+## True
 
-Cleora tells true buried histories, to people, about their own bodies. Getting
-this wrong is the one thing that would sink the channel.
-
-- Verify every candidate with web search. Give real sources.
-- Say plainly what is traditional belief, what has been tested, and what the
-  tests showed — including sample size, human or animal, and who funded it.
-- A single maker-funded study is not proof. Say so.
-- Never present a debunked treatment as if it works. A fraud with something
-  real underneath is often the better story, provided you say which is which.
-- Never repeat a longevity legend as fact. The legend is the story, told as a
-  legend.
-- Flag anything actively dangerous — mercury in traditional elixirs, herbs with
-  documented liver toxicity, heat-shock deaths in hot baths.
-- Where the popular version of a scandal overstates the evidence, say so and
-  give the real version. A true smaller story beats a big false one, always.
+The stories have to be real. Verify each one with web search and give sources.
+That is the whole requirement — record what you found in the file and move on.
+Do not editorialise, do not write safety warnings, and do not pad the summary
+with caveats. Bring stories.
 
 ## Deliverable
 
