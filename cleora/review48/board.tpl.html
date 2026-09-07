@@ -97,10 +97,9 @@ details[open] summary::before{content:"▾ "}
 <div class="wrap">
 <header>
   <h1>Cleora Hook Review</h1>
-  <p class="sub">Second pass. Your twenty-five marks taught two things: a card that names no
-  concrete thing is <em>vagueposting</em>, and a card in the wrong register (&ldquo;bleach&rdquo;)
-  breaks the spell. Eight rewritten on that basis, eight recommended for cutting. Keep going
-  where you left off &mdash; <b>Unreviewed</b> has the rest.</p>
+  <p class="sub">The slate: <b>forty stories</b>, each with a full script, the line Cleora
+  speaks, and the headline burned on screen. The eight with no body outcome for her are cut.
+  Your marks are kept &mdash; <b>Unreviewed</b> picks up where you stopped.</p>
 </header>
 
 <div class="bar">
@@ -108,13 +107,12 @@ details[open] summary::before{content:"▾ "}
   <div class="tally"><b id="no" style="color:var(--cut)">0</b><span>needs work</span></div>
   <div class="tally"><span id="left">48 unreviewed</span></div>
   <div class="chips">
-    <button class="chip" data-f="" aria-pressed="true">All 48</button>
-    <button class="chip" data-f="approved">Your 30</button>
+    <button class="chip" data-f="" aria-pressed="true">All 40</button>
+    <button class="chip" data-f="approved">Your 22</button>
     <button class="chip" data-f="new">New 18</button>
     <button class="chip" data-f="__todo">Unreviewed</button>
     <button class="chip" data-f="__bad">Needs work</button>
-    <button class="chip" data-f="__flag">Recommend cutting</button>
-    <button class="chip" data-f="__fix">Rewritten</button>
+
   </div>
 </div>
 
@@ -184,7 +182,7 @@ function paint(){
   });
   $("ok").textContent = ok;
   $("no").textContent = no;
-  $("left").textContent = (DATA.length - seen) + " unreviewed";
+  $("left").textContent = (DATA.length - seen) + " of " + DATA.length + " unreviewed";
 }
 
 async function save(id){
