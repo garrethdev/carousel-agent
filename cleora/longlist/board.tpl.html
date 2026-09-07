@@ -247,8 +247,16 @@ claude.use("db").then(db => {
     return;
   }
   DB.collection("longlist").onSnapshot(snap => {
+    // QuerySnapshot exposes `docs`, an array - it has no forEach of its own.
+    // Build the next state fully before touching V, so a bad snapshot can
+    // never leave the page with the selections already cleared.
+    const next = Object.create(null);
+    (snap.docs || []).forEach(d => {
+      const r = (d.exists ? d.data() : null) || {};
+      if (r.vote) next[d.id] = r.vote;
+    });
     for (const k in V) delete V[k];
-    snap.forEach(d => { const r = d.data() || {}; if (r.vote) V[d.id] = r.vote; });
+    Object.assign(V, next);
     paint();
   }, err => {
     $("note").textContent = "Live sync stopped (" + (err && err.code || "unknown") +
