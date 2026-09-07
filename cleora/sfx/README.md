@@ -20,23 +20,29 @@ python3 sfx.py --ep ep503 --source /path/to/Ringtone.mp4 --keep 0.2 --at 0.0 --g
 ## What it does
 
 1. **Trim** — keeps the first `keep` of the source, with an 80 ms fade-out so the chop is not a click.
-2. **Timeline** — the episode mix becomes track 0; each `--at` becomes an SFX track delayed to that
-   second. Mixing runs through OpenMontage's `AudioMixer` (`operation: mix`), the same tool that laid
-   down her voice and the music bed, then re-normalises to −14 LUFS for TikTok.
-3. **Remux** — new audio onto the untouched picture, written as `<ep>_sfx.mp4` alongside the original.
-   The original render is never overwritten.
+2. **Timeline** — the effect becomes a **full-length SFX bed**: silence everywhere except the hits.
+   OpenMontage's `AudioMixer` (`operation: extract`) pulls the episode's audio, and `operation: mix`
+   layers the bed under it, then re-normalises to −14 LUFS for TikTok.
+3. **Lay it back on the picture** — OpenMontage's `VideoCompose` (`operation: compose`), the same tool
+   that assembled the episode, takes the finished render as a single cut and the new mix as its audio.
+   Written as `<ep>_sfx.mp4`; the original render is never overwritten.
 4. **Record** — an `audio_tracks` entry naming the original source, the fraction kept, the clip length,
    the gain, and every hit's start/end second.
 
-## Verified
+## Why the bed has to be full length
 
-Tested end to end against a synthetic 1200 Hz stand-in on ep503 with hits at 0s and 30s. Band-limited
-measurement of the finished file against the pre-mix audio: **+14.5 dB at 0s**, **+25.7 dB at 30s**, and
-+3.2 dB at 45s where no hit was placed (that residual is the loudness re-normalisation, not the effect).
-Test artifacts were removed afterwards; ep503's timeline is back to its rendered state.
+`amix` divides every input by the input count and uses `dropout_transition` to ramp the survivors back
+up when a short input ends. A 6 s effect over a 56 s episode therefore ducks her voice by 6 dB for
+**exactly as long as the effect plays** — the duck cancels the effect out, and the finished file measures
+the same at the hit as it does anywhere else. Padding the bed to the episode's length makes the halving
+uniform, which the `loudnorm` stage then undoes.
 
-## Note
+The same trap is already documented in `AudioMixer._segmented_music`, which passes `normalize=0` for this
+reason. `_mix` and `_full_mix` do not. `_full_mix` gets away with it because its two tracks run the same
+length; `_mix` does not, so callers layering a short effect must pad it themselves.
 
-`Ringtone.mp4` is not on this machine — this render container only has what was cloned or generated
-here, and it is not in the owner's Drive either. Get the file onto the box and the command above is the
-whole job.
+## Verified on ep503
+
+Bed measures **−23.9 dB across 0–6 s and −91 dB (silence) after**, so the effect fires only where the
+timeline says. In the finished file, the head window gains **+0.9 dB** against control windows at +0.3
+and +0.5 dB — the ringtone sits about 4 dB under her voice and does not duck it.

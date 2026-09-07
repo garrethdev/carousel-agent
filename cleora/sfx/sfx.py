@@ -48,22 +48,49 @@ def main():
                     stub],check=True)
     print(f'{name}: source {full:.2f}s -> kept {cut:.2f}s (first {int(o.keep*100)}%) -> {stub}')
 
-    # 2. TIMELINE. Episode mix as track 0, one SFX track per placement, delayed to its timeline second.
-    base=f'{B}/sfx/{o.ep}_base.wav'
-    subprocess.run(['ffmpeg','-y','-loglevel','error','-i',vid,'-vn','-ac','2','-ar','48000',base],check=True)
-    vol=10**(o.gain/20.0)
-    tracks=[{'path':base,'role':'speech','volume':1.0}]
-    for t in at: tracks.append({'path':stub,'role':'sfx','volume':round(vol,4),'start_seconds':t})
-    mixed=f'{B}/sfx/{o.ep}_mix.wav'
+    # 2. TIMELINE. Episode mix as track 0, and ONE full-length SFX bed as track 1 - silence everywhere
+    # except the hits. Both tracks must be the SAME LENGTH: amix divides by the input count and uses
+    # dropout_transition to ramp the survivors back up when a short input ends, so a 6s effect over a
+    # 56s episode would duck her voice by 6 dB for exactly as long as the effect plays - cancelling the
+    # effect out. Equal lengths make that halving uniform, which the loudnorm stage then undoes.
     from tools.audio.audio_mixer import AudioMixer
-    res=AudioMixer().execute({'operation':'mix','tracks':tracks,'normalize':True,
-                              'loudnorm_target':-14,'output_path':mixed})
+    from tools.video.video_compose import VideoCompose
+    mixer=AudioMixer()
+    base=f'{B}/sfx/{o.ep}_base.wav'
+    ex=mixer.execute({'operation':'extract','input_path':vid,'output_path':base})
+    assert ex.success, f'AudioMixer extract failed: {ex.error}'
+    epdur=probe(base)
+    bed=f'{B}/sfx/{o.ep}_{name}_bed.wav'
+    vol=10**(o.gain/20.0)
+    ins=[]; chains=[]; labels=''
+    for n,t in enumerate(at):
+        ins += ['-i',stub]
+        chains.append(f"[{n}:a]volume={vol:.4f},adelay={int(t*1000)}|{int(t*1000)}[s{n}]")
+        labels += f'[s{n}]'
+    mixhits = (f"{labels}amix=inputs={len(at)}:duration=longest:normalize=0[hits]"
+               if len(at)>1 else f"{labels}anull[hits]")
+    subprocess.run(['ffmpeg','-y','-loglevel','error']+ins+
+                   ['-filter_complex',';'.join(chains+[mixhits,
+                    f"[hits]apad=whole_dur={epdur:.3f},atrim=0:{epdur:.3f}[bed]"]),
+                    '-map','[bed]','-ac','2','-ar','48000',bed],check=True)
+    tracks=[{'path':base,'role':'speech','volume':1.0},
+            {'path':bed,'role':'sfx','volume':1.0}]
+    mixed=f'{B}/sfx/{o.ep}_mix.wav'
+    res=mixer.execute({'operation':'mix','tracks':tracks,'normalize':True,
+                       'loudnorm_target':-14,'output_path':mixed})
     assert res.success, f'AudioMixer mix failed: {res.error}'
 
-    # 3. REMUX onto the untouched picture.
+    # 3. LAY IT BACK on the picture through OpenMontage's video_compose - the same tool that assembled
+    # the episode - with the finished render as a single cut and the new mix as its audio track.
     out=f'{proj}/renders/{o.ep}_sfx.mp4'
-    subprocess.run(['ffmpeg','-y','-loglevel','error','-i',vid,'-i',mixed,'-map','0:v:0','-map','1:a:0',
-                    '-c:v','copy','-c:a','aac','-b:a','192k','-shortest',out],check=True)
+    vdur=probe(vid,'v')
+    edl_one={'version':'1.0','render_runtime':'ffmpeg','renderer_family':'documentary-montage',
+      'cuts':[{'id':'s01','source':vid,'in_seconds':0.0,'out_seconds':round(vdur,3),'speed':1.0,
+               'layer':'primary','reason':'finished episode, picture untouched'}],'overlays':[],
+      'metadata':{'compose_target':{'width':1080,'height':1920,'fit':'cover'}}}
+    cr=VideoCompose().execute({'operation':'compose','edit_decisions':edl_one,'audio_path':mixed,
+                               'output_path':out,'crf':19,'preset':'veryfast'})
+    assert cr.success, f'VideoCompose compose failed: {cr.error}'
 
     # 4. RECORD it on the timeline document so the placement is not lost in a shell command.
     ed=f'{proj}/artifacts/edit_decisions.json'
