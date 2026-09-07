@@ -32,7 +32,10 @@ def fetch_row(cid):
 row=fetch_row(CID); beats=row['script']['beats']; cuts=row['edl']['cuts']
 if row['edl'].get('music'): be.MUSIC_PICK[EP]=row['edl']['music']; print(f"{EP}: Director assigned music {row['edl']['music']}")
 tts=json.load(open(TTS_JSON))
-body=[b for b in beats if b['slot']=='body']
+# 'verdict' is a body beat that happens to be spoken to camera. It must ride in the reads and the
+# shotmap like any other, or its line is silently dropped from both the voiceover and the captions.
+BODY_SLOTS={'body','verdict'}
+body=[b for b in beats if b['slot'] in BODY_SLOTS]
 turn_at=int(tts.get('turn_at', max(1,int(len(body)*0.6))))
 reads={'hook': beats[0]['vo'],
        'story': ' '.join(b['vo'] for b in body[:turn_at]),
@@ -205,7 +208,7 @@ if _hook.get('shots') == 2 and _hook.get('shot_a_url') and _hook.get('shot_b_url
     print(f"{EP}: hook reason - {_hook.get('reason')}")
 else:
     print(f"{EP}: no hook pair on the EDL - opening on the rotation clip {_ok}")
-bodycuts=[c for c in cuts if c['slot']=='body']
+bodycuts=[c for c in cuts if c['slot'] in BODY_SLOTS]
 closer=[c for c in cuts if c['slot']=='closer']
 final=[]; fvos=[]
 for c in bodycuts:
