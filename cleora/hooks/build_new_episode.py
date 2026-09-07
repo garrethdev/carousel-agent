@@ -146,9 +146,9 @@ if os.path.exists(_lay):
 # ---- 2b. HOOK OPENER. When the Director picked one of the owner's two-shot hooks (edl.hook), the
 # opener is that PAIR, not a single can_open clip. Build it here as one file with the zoom moves baked
 # in and hand it to OPENER_SRC with a flat zoom, so build_episode treats it as an ordinary source.
-# It is built LONGER than any plausible hook read: the renderer never loops, it slows a short source
-# to fill the slot, so an over-long pair is simply trimmed at the end of shot B, while a short one
-# would drag the whole opener into slow motion.
+# The pair is built to the OWNER'S EXACT SPEC - shot A from in_a for cut_a, shot B from in_b for cut_b -
+# and its own length is registered as the opener slot (OPENER_LEN), so nothing downstream decides where
+# the hook cuts: the spoken hook no longer stretches a short pair or overruns a long one.
 _hook = (row.get('edl') or {}).get('hook') or {}
 if _hook.get('shots') == 2 and _hook.get('shot_a_url') and _hook.get('shot_b_url'):
     HK = f'{BATCH}/hook_openers'; os.makedirs(HK, exist_ok=True)
@@ -173,9 +173,9 @@ if _hook.get('shots') == 2 and _hook.get('shot_a_url') and _hook.get('shot_b_url
                         '-pix_fmt','yuv420p',out], check=True)
         return out
     # build_episode speeds every source by 1.1x, so source seconds must be scaled up to survive as
-    # the designed on-screen seconds. Shot B runs long on purpose and gets trimmed by the hook read.
+    # the designed on-screen seconds.
     _aSrc = round(float(_hook.get('cut_a') or 2.4) * 1.1, 3)
-    _bSrc = 14.0
+    _bSrc = round(float(_hook.get('cut_b') or 2.5) * 1.1, 3)
     _pair = f"{HK}/{EP}_{_hook.get('hook_key') or 'pair'}.mp4"
     _inA = float(_hook.get('in_a') or 0)
     _inB = float(_hook.get('in_b') or 0)
@@ -188,10 +188,20 @@ if _hook.get('shots') == 2 and _hook.get('shot_a_url') and _hook.get('shot_b_url
     subprocess.run(['ffmpeg','-y','-loglevel','error','-f','concat','-safe','0','-i',_lst,
                     '-c','copy',_pair], check=True)
     be.OPENER_SRC[EP] = (_pair, '1.0', 0.5, 0.5)
+    # The opener slot IS the pair. Measured, not assumed: a source that runs out before its out-point
+    # would otherwise leave a slot longer than the pair, and the renderer fills by slowing.
+    _pairLen = float(subprocess.run(['ffprobe','-v','error','-show_entries','format=duration',
+                                     '-of','csv=p=0',_pair],
+                                    capture_output=True, text=True, check=True).stdout.strip())
+    be.OPENER_LEN[EP] = _pairLen
+    _want = _aSrc + _bSrc
+    if _pairLen < _want - 0.05:
+        print(f"{EP}: WARNING hook pair is {_pairLen/1.1:.2f}s on screen, short of the designed "
+              f"{_want/1.1:.2f}s - a source clip ran out before its out-point")
     if _hook.get('hook_y'): be.HOOK_Y[EP] = int(_hook['hook_y'])
     print(f"{EP}: HOOK {_hook.get('hook_key')} = {_hook['shot_a']} -> {_hook['shot_b']} "
-          f"({_hook.get('transition')}, A {_inA}s+{_hook.get('cut_a')}s, B {_inB}s+, "
-          f"card y={be.HOOK_Y.get(EP)})")
+          f"({_hook.get('transition')}, A {_inA}s+{_hook.get('cut_a')}s, B {_inB}s+{_hook.get('cut_b')}s, "
+          f"= {_pairLen/1.1:.2f}s on screen, card y={be.HOOK_Y.get(EP)})")
     print(f"{EP}: hook reason - {_hook.get('reason')}")
 else:
     print(f"{EP}: no hook pair on the EDL - opening on the rotation clip {_ok}")

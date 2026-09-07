@@ -56,3 +56,29 @@ against its own cut.
   leg A. Both are the owner's; do not dedupe them.
 - Four of the seven carry `hook_y = 300`, a fallback rather than a
   measured card position.
+
+## The opener slot is the owner's hook pair (fix, 2026-09-07)
+
+The renderer used to build shot B 14 seconds long and let `build_episode` trim the
+concatenated pair to `c1` — the first beat boundary from whisper alignment, i.e. however
+long the spoken hook happened to run. That meant the voiceover decided where the visual
+hook cut, not the owner:
+
+* **ep501 / hook04** — designed 1.8s + 2.0s = 3.8s. Played 5.11s (shot B overran by 1.3s).
+* **ep502 / hook01** — designed 2.4s + 3.0s = 5.45s. Played 3.29s (shot B cut short by 2.2s).
+
+Now:
+
+* `build_new_episode.py` builds shot B from `in_b` for `cut_b`, exactly like shot A already
+  used `in_a`/`cut_a` (both scaled ×1.1 to survive `build_episode`'s global speed-up).
+* It measures the finished pair with ffprobe and registers it as `be.OPENER_LEN[ep]`,
+  warning if a source clip ran out before its out-point.
+* `build_episode.py` ends the opener segment at `OPENER_LEN[ep]` instead of `c1`, clamped to
+  leave the first body shot >= 1.5s. Because the slot now equals the source, the slowdown
+  factor is 1.0 — the pair plays at speed instead of being stretched to fill the read.
+* The hook card is still timed off `c1`, so the headline holds for the whole spoken hook
+  regardless of how long the pair runs.
+
+When the pair is shorter than the read, the first body clip starts under its tail. When it
+is longer, the read finishes and the pair carries into the story line. Both are ordinary
+edits; neither changes the owner's cut.
