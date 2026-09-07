@@ -25,6 +25,10 @@ def main():
     a=argparse.ArgumentParser()
     a.add_argument('--ep',required=True); a.add_argument('--source',required=True)
     a.add_argument('--keep',type=float,default=0.2); a.add_argument('--gain',type=float,default=-8.0)
+    a.add_argument('--seconds',type=float,default=None,
+                   help='absolute clip length in seconds; overrides --keep')
+    a.add_argument('--fade',type=float,default=0.08,
+                   help='fade-out length in seconds, ending at the clip out-point')
     a.add_argument('--at',type=float,action='append',default=[])
     a.add_argument('--name',default=None)
     o=a.parse_args()
@@ -39,14 +43,18 @@ def main():
     name=o.name or os.path.splitext(os.path.basename(o.source))[0].lower()
     at=o.at or [0.0]
 
-    # 1. TRIM. Keep the first `keep` of the source and drop the rest - the ask was "chop off the last 80%".
-    full=probe(o.source); cut=round(full*o.keep,3)
+    # 1. TRIM. Keep the head of the source and drop the rest, fading out into the cut so the effect
+    # LEAVES rather than stopping dead.
+    full=probe(o.source)
+    cut=round(o.seconds if o.seconds else full*o.keep, 3)
+    fade=min(o.fade, cut)                    # a fade longer than the clip would start before it does
     os.makedirs(f'{B}/sfx',exist_ok=True)
-    stub=f'{B}/sfx/{name}_{int(o.keep*100)}pct.wav'
+    stub=f'{B}/sfx/{name}_{cut:g}s.wav'
     subprocess.run(['ffmpeg','-y','-loglevel','error','-t',str(cut),'-i',o.source,'-vn',
-                    '-ac','2','-ar','48000','-af','afade=t=out:st=%.3f:d=0.08'%max(0,cut-0.08),
+                    '-ac','2','-ar','48000',
+                    '-af','afade=t=out:st=%.3f:d=%.3f'%(max(0,cut-fade),fade),
                     stub],check=True)
-    print(f'{name}: source {full:.2f}s -> kept {cut:.2f}s (first {int(o.keep*100)}%) -> {stub}')
+    print(f'{name}: source {full:.2f}s -> kept first {cut:.2f}s, {fade:.2f}s fade out -> {stub}')
 
     # 2. TIMELINE. Episode mix as track 0, and ONE full-length SFX bed as track 1 - silence everywhere
     # except the hits. Both tracks must be the SAME LENGTH: amix divides by the input count and uses

@@ -6,20 +6,26 @@ carries the picture cuts and the hook-card overlay. The placement is data, not a
 vanishes, so it can be reviewed, diffed and re-run.
 
 ```
-python3 sfx.py --ep ep503 --source /path/to/Ringtone.mp4 --keep 0.2 --at 0.0 --gain -8
+python3 sfx.py --ep ep503 --source Ringtone.mp4 --seconds 4 --fade 1.5 --gain -12.4 --at 0.0
 ```
 
 | flag | meaning |
 |------|---------|
 | `--ep` | rendered episode to lay the effect onto |
 | `--source` | the effect file; video or audio, only the audio stream is used |
-| `--keep` | fraction kept **from the start** — `0.2` chops off the last 80% |
+| `--seconds` | absolute clip length kept **from the start** |
+| `--keep` | same thing as a fraction — `0.2` chops off the last 80%. `--seconds` wins if both are given |
+| `--fade` | fade-out length ending at the out-point, so the effect *leaves* instead of stopping dead |
 | `--at` | timeline second to fire it, repeatable for multiple hits |
 | `--gain` | dB relative to the episode mix; negative sits it under her voice |
 
+Volume in dB, since owners think in percentages: **−6 dB is half**, **−4.4 dB is down 40%**,
+**−8 dB is down 60%**. To take an existing placement down 40%, add −4.4 to its current `--gain`.
+
 ## What it does
 
-1. **Trim** — keeps the first `keep` of the source, with an 80 ms fade-out so the chop is not a click.
+1. **Trim** — keeps the head of the source and fades out into the cut, so the effect leaves rather than
+   stopping dead. A `--fade` longer than the clip is clamped to the clip.
 2. **Timeline** — the effect becomes a **full-length SFX bed**: silence everywhere except the hits.
    OpenMontage's `AudioMixer` (`operation: extract`) pulls the episode's audio, and `operation: mix`
    layers the bed under it, then re-normalises to −14 LUFS for TikTok.
@@ -43,6 +49,14 @@ length; `_mix` does not, so callers layering a short effect must pad it themselv
 
 ## Verified on ep503
 
-Bed measures **−23.9 dB across 0–6 s and −91 dB (silence) after**, so the effect fires only where the
-timeline says. In the finished file, the head window gains **+0.9 dB** against control windows at +0.3
-and +0.5 dB — the ringtone sits about 4 dB under her voice and does not duck it.
+Owner's settings: 4.0 s, 1.5 s fade, −12.4 dB.
+
+| bed window | level |
+|---|---|
+| 0–1 s | −29.0 dB |
+| 2–3 s | −29.3 dB |
+| 3–4 s | −39.5 dB (fading) |
+| after 4 s | −91 dB (silence) |
+
+So the effect holds, ramps down across the last 1.5 s and is gone at 4 s. In the finished file the head
+window gains **+0.8 dB** against control windows at +0.5 and +0.6 dB, and her voice does not duck.
