@@ -46,3 +46,46 @@ Do not write them. Flag the story instead.
 3. Does it answer "why do I care" without her watching a second of video?
 
 Three yeses or rewrite it.
+
+---
+
+# What the owner's 25 marks taught
+
+19 good, 5 rejected, 1 flagged. Two failures, both nameable.
+
+## 1. Vagueposting
+
+His word. Both rejects that carried a note name nothing concrete:
+
+- THE DOCTOR NOBODY BELIEVED FOR TWENTY YEARS - *"Vagueposting"*
+- THE VIRUSES THAT EAT WHAT ANTIBIOTICS CANNOT - *"too vague"*
+
+A card built on **the doctor**, **the viruses**, **the animal**, **the
+molecule**, **a body** has no noun she owns. Six more of the forty-eight
+had the same shape and were rewritten before he reached them.
+
+Say the jellyfish, the olive oil, the bird nest, YOUR body.
+
+## 2. Register
+
+- THE PEPTIDE THAT FADES DARK SPOTS BETTER THAN BLEACH
+  *"weird, bleach on the skin. Who talks like that"*
+
+She has a dermatologist, not a laundry. Write the word she would use out
+loud to a friend. Metaphors fail the same way: **repair crew**, **missing
+the mortar** are writing, not speech.
+
+## 3. The disqualifier is not the disease
+
+The earlier note here said nine stories could not be saved because they
+were about disease. He then **approved** one of them:
+
+> THE POISON BEAN THAT GAVE HER MUSCLES BACK
+
+Myasthenia gravis, and it works, because the card names a **body outcome
+she wants**. Muscle loss is hers at fifty.
+
+So the test is not "is this story about aging". It is "does the card name
+something that happens to her body". Eight remain that cannot clear it -
+cancer, yellow fever, malaria, anaesthesia, brain tumours, bacterial
+infection - and five of those eight he had already rejected himself.
