@@ -374,24 +374,12 @@ def build(ep):
         ov=rf"{{\an8\pos(540,1400)\fad(110,90)\fnLilita One\fs60\c&HFFFFFF&\3c&H000000&\bord7\shad0}}"
         lines.append(f"Dialogue: 0,{ts(s)},{ts(e)},Default,,0,0,0,,{ov}{txt}")
     (A/'captions.ass').write_text('\n'.join(lines))
-    # 5. hook card (Option C single box) from hooks.json
-    from PIL import Image, ImageDraw, ImageFont
-    font=ImageFont.truetype(FP,62); img0=Image.new('RGBA',(10,10)); d0=ImageDraw.Draw(img0)
-    def tw(s): b=d0.textbbox((0,0),s,font=font); return b[2]-b[0]
-    wordsH=HOOKS[ep].split(); linesH=[]; cur=''
-    for w in wordsH:
-        tt=(cur+' '+w).strip()
-        if tw(tt)<=800: cur=tt
-        else: linesH.append(cur); cur=w
-    if cur: linesH.append(cur)
-    asc,desc=font.getmetrics(); lh=asc+desc
-    bw=max(tw(l) for l in linesH)+80; bh=len(linesH)*lh+(len(linesH)-1)*4+52
-    card=Image.new('RGBA',(1080,bh),(0,0,0,0)); dr=ImageDraw.Draw(card)
-    x0=(1080-bw)//2
-    dr.rounded_rectangle([x0,0,x0+bw,bh],radius=28,fill=(0,0,0,255))
-    y=26
-    for l in linesH:
-        dr.text(((1080-tw(l))//2,y),l,font=font,fill=(255,255,255,255)); y+=lh+4
+    # 5. hook card (Option C single box). Rendered through hook_card.CardRenderer so an emoji in the
+    #    headline draws as an emoji: the card font carries no emoji glyphs, and Noto Color Emoji is a
+    #    bitmap font PIL will only open at one size, so emoji are cut out, drawn separately and pasted.
+    from hook_card import CardRenderer
+    _cr=CardRenderer(FP,62)
+    card,bw,bh=_cr.render(HOOKS[ep])
     card.save(A/'hook_card.png')
     # COMPOSITION-AWARE PLACEMENT: the card's top edge comes from the opener's face/orb-free band
     # (HOOK_Y, set by the wrapper from opener_layout.json). Captions only start after the hook, so the

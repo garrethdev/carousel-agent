@@ -89,3 +89,69 @@ So the test is not "is this story about aging". It is "does the card name
 something that happens to her body". Eight remain that cannot clear it -
 cancer, yellow fever, malaria, anaesthesia, brain tumours, bacterial
 infection - and five of those eight he had already rejected himself.
+
+---
+
+# How it is typed
+
+Everything above is about *what the card says*. This is about how it looks on screen.
+
+The default is what the slate already uses: **ALL CAPS, no punctuation, no emoji**. It is a headline and
+it reads fast. Keep most of the batch there. The devices below are seasoning — used on **occasional**
+cards, never stacked, never more than one per card.
+
+## Capitalisation
+
+Sentence case instead of caps when the line is a *thought* rather than a headline — when it sounds like
+her saying it to one person rather than a banner shouting at a crowd.
+
+> Your skin isn't ageing. It stopped being told to rebuild.
+
+Caps stay the default for a named thing plus a payoff, where the noun is doing the work:
+
+> THE CHEAP MINERAL YOUR THYROID RUNS ON
+
+Never mid-sentence caps for emphasis. That reads as a scam ad.
+
+## The ellipsis …
+
+One per card at most, and only where the pause is the point — the beat before the turn.
+
+> The $8 anti-aging product with a real trial…
+> They wrote it down. They photographed it. Then they closed the roof…
+
+Not as a trailing-off mannerism, and never at the start.
+
+## Emoji
+
+**Light** means at most one, at the end, on maybe one card in five. It has to be the literal object the
+card names — the same rule the Director follows for shots. Say the thing, show the thing.
+
+| card | emoji | why |
+|---|---|---|
+| THE JELLYFISH THAT TURNS BACK INTO A BABY | 🪼 | it is the jellyfish |
+| The $8 anti-aging product with a real trial | 🧴 | it is the bottle |
+| The vitamin you only get from skin and sun | ☀️ | it is the sun |
+
+No decoration emoji — no ✨ 💫 🔥 💯 on a card whose subject is not sparkle, fire or a score. No emoji
+on a card about illness or death. No emoji in the middle of a line.
+
+Emoji render in full colour on the card; the renderer draws them from Noto Color Emoji and pastes them
+in line, so any single emoji or joined sequence is safe to use.
+
+## Apostrophes
+
+Write contractions the way she would say them out loud — **isn't, doesn't, they'd, your body's**. The
+old cards avoided punctuation entirely, which is what made some of them read as a telegram rather than
+a person talking.
+
+> Your skin isn't failing you. The bottle was.
+> The vitamin your doctor doesn't prescribe any more
+
+Use the typographic apostrophe (') not the straight quote (') — the card font renders both, and the
+curly one does not read as code.
+
+## The limit
+
+One device per card. A sentence-case line with an ellipsis *and* an emoji *and* a contraction is a
+different channel. If a card wants two, it wants neither — cut back to caps and let the noun carry it.
