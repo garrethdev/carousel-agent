@@ -79,3 +79,25 @@ Three ways forward, and the third is the only one that fixes it at the source:
 Also fixed while investigating: the writer's cleanup replaced em-dashes with a comma and **no space**
 (`users,an association`), which both reads badly and defeated the clause splitter. 29 beats across 19
 episodes repaired.
+
+## Second run, after the TODAY section was cut
+
+The owner: *"remove the whole backdrop of forbidden fruit and peptides, that whole section doesn't work
+yet — just get the initial story down."* `drop_today.py` removed every `kind='today'` beat (110 across
+35 episodes) plus the one legacy closer that pivoted to peptides.
+
+It removes the matching EDL cut at the same index rather than re-running the Director: each remaining
+clip was chosen for the beat it still sits on, so the casting stays valid. That mattered because the
+Director was down on its credential — 21 episodes had EDLs in step and kept them; the other 19 were
+already stale from the earlier re-split and still need a re-cast.
+
+| | before the cut | after |
+|---|---|---|
+| renderable episodes clearing the 6s ceiling | 3 of 20 | **8 of 21** |
+| body beats over 6s, whole slate | 29 | 26 |
+
+The slate-wide figure barely moved because most of the long TODAY beats sit in the 19 episodes the
+Director never re-cast — they are still carrying them.
+
+Cutting the section changed the spoken text, so 67 reads went stale. The 35 belonging to renderable
+episodes were regenerated; all 21 now have a complete, current voice set.
