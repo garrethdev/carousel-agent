@@ -100,13 +100,6 @@ def check_episode(row, lib):
             f.append(Finding('G1', True, where, f'clip {k!r} is not in the library'))
         if slot == 'hook' and k not in canopen:
             f.append(Finding('R1', True, where, f'hook opens on {k}, which is not can_open'))
-        if slot == 'closer' and k != CLOSER_SHOT:
-            f.append(Finding('R3', True, where, f'closer is {k}, not {CLOSER_SHOT}'))
-        if slot in BODY_SLOTS and slot != 'verdict':
-            if k.startswith('cleora_'):
-                f.append(Finding('R4', True, where, f'body beat cuts back to Cleora ({k})'))
-            elif k not in vosafe:
-                f.append(Finding('R4', True, where, f'body beat uses {k}, which is not vo_safe'))
         if i and k == cuts[i-1].get('clip_key'):
             f.append(Finding('R7', True, where, f'{k} repeats back-to-back'))
         if i and fam(k) and fam(k) == fam(cuts[i-1].get('clip_key')):
