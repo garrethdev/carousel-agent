@@ -36,15 +36,16 @@ sees video, only the written descriptions.
 |----|------|
 | R1 | **Hook beat** must use a clip with `can_open=true`. Never the vial, never b-roll. |
 | R2 | Other **talk** beats (verdict) use any `talk_capable=true` clip. |
-| R3 | **Closer beat** maps to `the_peptide_vial`. |
+| R3 | **Closer beat** is always `the_peptide_vial`. No judgement call — the show ends on the vial every time. |
 | R4 | **Body beats** use only `vo_safe=true`, and never a `cleora_*` clip — cutting back to her mid-story reads as a loop. Allowed only if no other vo_safe clip depicts the line. |
-| R5 | **Match by meaning.** Pick the clip whose action/beat_role best depicts what the line literally says. This outranks every preference below. |
+| **R5** | **Show what she is talking about.** Every clip carries an `action` field describing what is literally on screen. For each beat, read *that* beat's line and take the clip whose `action` shows that thing — the object named, the place, who is in frame, what they are doing, indoors or out. Literal beats clever. Only when **no** clip depicts the line may the Director fall back to a mood/metaphor match via `beat_role` and `mood`, and that is for lines with nothing to film (an idea, a judgement, the passage of time) — not a style to reach for. **Outranks R8, R9 and R11.** |
+| **R5a** | **One entry per beat, carrying its index `i`.** Same count, same order, no extras, no omissions. |
 | R6 | **Gender casting.** A line about a woman gets female or neutral, never male; about a specific man, male or neutral; objects/wards/crowds are neutral. |
 | **R7** | **Never the same clip in two back-to-back beats.** Consecutive beats must differ. |
 | **R8** | **Reuse is allowed.** A clip may appear more than once in an episode, and reuse is *correct* when that clip is the best depiction of the line. Only adjacency (R7) is banned. Prefer an unused clip on a tie — never downgrade to a worse match to avoid a repeat. |
-| R9 | **Adjacent variety.** Consecutive beats must change setting or subject. Never back-to-back: two ward shots, two book/ledger shots, two coin shots, two basin shots, two portrait shots. |
+| R9 | **Adjacent variety — a tie-breaker only.** Where two clips depict the line equally well, prefer the one that changes setting or subject; two ward shots, two book shots, two coin shots or two portraits in a row read as repeated footage. If the clip that shows the thing shares a setting with the previous beat, it is still used (R5 wins). |
 | R10 | **Pacing.** Every shot holds at least 1.5s, never looped, one clip per beat, never a sub-second flash. |
-| R11 | **Beat-role guide.** substance → `the_offering`/`the_price_tag`; villain → `the_suits`/`the_money_man`; buried → `the_buried_records`/`the_taking`; recovery → `the_healing`; proof → `ultrasound_dissolve`; discovery → `under_the_floor`. |
+| R11 | **Beat-role guide — for the R5 fallback case only,** when nothing depicts the line: substance → `the_offering`/`the_price_tag`; villain → `the_suits`/`the_money_man`; buried → `the_buried_records`/`the_taking`; recovery → `the_healing`; proof → `ultrasound_dissolve`; discovery → `under_the_floor`. |
 | R12 | **Music.** One bed for the whole episode, chosen by dominant mood from the three the owner supplied. |
 
 ## Layer 2 — the code guard (runs after the model, silently rewrites it)
@@ -57,7 +58,9 @@ Node **Build EDL + No-Repeat Guard**.
 | G2 | A clip equal to the previous beat's clip is swapped (enforces R7). |
 | G3 | On body beats, a `cleora_*` clip or a same-`FAMILY` collision is swapped, preferring the same beat_role and matching gender (enforces R4 and R9). Families: `ward, bedside, book, money, basin, portrait, suits, cleora`. |
 | G4 | Preference, not veto: an already-used clip is only avoided when an equally valid unused one exists (enforces R8). |
-| G5 | An unresolved missing clip, or an adjacent repeat that survived, sets `script_status='failed'` and blocks the episode. |
+| G5 | An unresolved missing clip, an adjacent repeat that survived, **or a bad beat-index set** sets `script_status='failed'` and blocks the episode. |
+| G8 | **Clips are placed by the model's beat index `i`, not by list order** (enforces R5a). A missing, duplicated or out-of-range index fails the episode rather than shipping a silent one-beat shift. |
+| G9 | **Closer beats are forced to `the_peptide_vial`** in code (enforces R3). |
 | G6 | A hook is rejected if one of its avoid-phrases appears in the episode **title**; falls back to the single shot `cleora_orb_open_dramatic`. |
 | G7 | Invalid music falls back to a hash of the content_id. |
 
@@ -83,3 +86,16 @@ Node **Build EDL + No-Repeat Guard**.
 3. **Hook clustering.** `hook03`'s `fits_stories_about` ("shocking historical discoveries",
    "uncovering hidden truths") describes essentially every story on this channel, so it was picked
    for 15 of 40 episodes. H1 has no diversity pressure across a batch.
+
+## Fixed, with the evidence that found them
+
+| what | how it showed up |
+|---|---|
+| R8 (reuse) | The old "do not reuse a clip more than once in the episode" was a veto in both the prompt and the guard: 35 of 36 episodes contained zero repeated shots, and late beats held leftovers instead of the clip that depicts the line. |
+| R5 (literal) | CLE-B1-0001 cast `hospital_diorama` on "rows of beds turned to face the light" while `sanatorium_terrace` ("a sanatorium terrace with sun beds") sat unused, and `cleora_tight` on "wheel the dying out onto the roof" while `bed_to_sun` sat unused. |
+| R5a / G8 (indexing) | With R5 in force, every beat from 1 onward got the previous beat's clip — "then the pills arrived" over an ancient book while `pills_counter` sat on "and the rooftops closed". The model returned no beat index and the guard zipped positionally, so one dropped entry shifted the whole episode with nothing detecting it. |
+| R3 / G9 (closer) | Same run ended on `cleora_face`. The rule was prompt-only and simply ignored. |
+
+After all four: beat 1 `sanatorium_terrace`, beat 2 `ancient_book` ("they wrote it down, they
+photographed it"), beat 3 `pills_counter` ("then the pills arrived"), beat 4 `the_door_slam` ("and the
+rooftops closed"), closer `the_peptide_vial`.
