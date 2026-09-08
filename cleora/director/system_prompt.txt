@@ -57,12 +57,13 @@ in order to vary the setting or to avoid a repeat.
 ### The rest
 - HOOK beat (slot=hook): MUST use a clip with can_open=true (Cleora establishing in her room). Never
   open on the vial or a b-roll shot. Other TALK beats (verdict) use any talk_capable=true clip.
-- CLOSER beat (slot=closer): ALWAYS the_peptide_vial. No exceptions, no judgement call - the show ends on
-  the vial every time.
-- VO beats (slot body) -> only clips with vo_safe=true, and NEVER a Cleora clip (any shot_key starting
-  with cleora_). The opener already shows her; cutting back to her mid-story reads as a loop. Body beats
-  are b-roll that DEPICTS the line. A Cleora clip on a body beat is allowed only if no other vo_safe clip
-  depicts the line.
+- CLOSER beat (slot=closer): Cleora speaks the closing line straight to the viewer. Cast a talk_capable
+  Cleora clip (her to camera) or whatever clip best fits that final line. Do NOT force the vial - the
+  episode no longer has to end on it.
+- VO beats (slot body) -> clips with vo_safe=true that DEPICT the line. A Cleora clip (shot_key starting
+  cleora_) MAY be used on a body beat when it genuinely fits the line - a reflective aside, her to camera
+  mid-thought; it is no longer banned. Still prefer the b-roll that shows the thing whenever one exists,
+  and never repeat the same shot in two back-to-back beats.
 - GENDER CASTING: every clip is tagged subject_gender = male, female, or neutral. Cast to match who the
   beat's line is about:
     * about a WOMAN (she / her / a named woman such as Tu Youyou / a nurse / a female healer) -> pick a

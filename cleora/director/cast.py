@@ -248,20 +248,9 @@ def build_edl(p, text):
         is_talk = beat.get('slot') != 'body'
         pool = talk_pool if is_talk else vo_pool
         key = assign[bi] or None
-        # THE SHOW ENDS ON THE VIAL. Prompt-only, this was simply ignored on CLE-B1-0001.
-        if beat.get('slot') == 'closer' and url_map.get(CLOSER_SHOT):
-            if key and key != CLOSER_SHOT:
-                swaps.append(f'{key}->{CLOSER_SHOT} (closer rule)')
-            key = CLOSER_SHOT
-            cuts.append({'slot': beat.get('slot'), 'clip_key': key, 'url': url_map[key],
-                         'secs': float(beat.get('secs') or sec_map.get(key, 5)),
-                         'caption': beat.get('caption') or '', 'vo': beat.get('vo') or ''})
-            used_all.add(key)
-            prev = key
-            continue
         ok = lambda k: bool(k) and bool(url_map.get(k)) and (not pool or k in pool)          # noqa: E731
         fresh = lambda k: k not in used_all                                                   # noqa: E731
-        body_ok = lambda k: is_talk or not is_cleora(k)                                       # noqa: E731
+        body_ok = lambda k: True   # Cleora is allowed on body beats now (R4 relaxed by owner)  # noqa: E731
         if not ok(key):
             key = (next((k for k in pool if k != prev and fresh(k) and body_ok(k)), None)
                    or next((k for k in pool if k != prev and body_ok(k)), None)
@@ -273,7 +262,7 @@ def build_edl(p, text):
                    or next((k for k in pool if k != prev), None))
             if alt:
                 key = alt
-        if (not is_talk) and key and (is_cleora(key) or (prev and fam(key) and fam(key) == fam(prev))):
+        if (not is_talk) and key and (prev and fam(key) and fam(key) == fam(prev)):
             g, r = gender_of.get(key), role_of.get(key)
             base = [k for k in vo_pool
                     if k != prev and not is_cleora(k) and (not prev or fam(k) != fam(prev)) and url_map.get(k)]
