@@ -99,3 +99,24 @@ Node **Build EDL + No-Repeat Guard**.
 After all four: beat 1 `sanatorium_terrace`, beat 2 `ancient_book` ("they wrote it down, they
 photographed it"), beat 3 `pills_counter` ("then the pills arrived"), beat 4 `the_door_slam` ("and the
 rooftops closed"), closer `the_peptide_vial`.
+
+---
+
+# The Writing Agent's rules (upstream of all of this)
+
+`[Cleora] Writing Agent` (`XExs9ffnqdh0Un4i`), node **Write Episode**. It writes the script; the Director
+never sees a clip decision it did not make. Recorded here because two of its rules directly set what the
+Director and renderer can do.
+
+| id | rule |
+|----|------|
+| W1 | **Beat length is shot length.** Body beats are capped at **12 words**. The Director casts one clip per beat and the renderer holds it for the whole beat, so a 25-word beat freezes one picture for nine seconds. The assembly node re-splits anything longer at sentence, then clause, boundaries. |
+| W2 | **Dejargon.** Kill the label, keep the picture. No `fibroblasts`, `glycosaminoglycans`, `epigenetic`, `mitochondrial`, `dermal`, or any molecule's chemical name. At most one proper name per script, no institutions. |
+| W3 | **Shape.** pain → flip → story (5-8) → burial (1-2) → today (2-3) → identity. 120-160 words, 11-16 beats. |
+| W4 | **Banned in a TODAY beat:** `cure`, `guaranteed`, `miracle`, and every GLP-1 brand or molecule name. Enforced in code; a hit fails the episode. |
+| W5 | **On-screen hook content.** Name something she recognises — a cream, a vitamin, a pill, a price, a part of her own body — and say what it does to *her*. Never the subject of the story. Never `the doctor` / `the molecule` / `a body`. |
+| W6 | **On-screen hook style.** ALL CAPS is the default and most cards stay there. **One** device per card, on occasional cards: sentence case, one ellipsis, one trailing emoji (the literal object the card names, roughly one card in five, never decoration, never on illness or death), or contractions. Validated in code: more than one device, more than one emoji, or an emoji not at the end fails the episode. |
+
+The renderer supports W6 through `hook_card.CardRenderer` — the card font carries no emoji glyphs and
+Noto Color Emoji is a bitmap font PIL opens at one size, so emoji are cut out of the string, drawn at
+109 px and resized into the line.
