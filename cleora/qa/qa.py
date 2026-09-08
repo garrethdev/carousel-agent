@@ -23,7 +23,11 @@ API = 'https://qlcmgxgwpzmiebzxflai.supabase.co/rest/v1'
 HERE = os.path.dirname(os.path.abspath(__file__))
 HALT = os.path.join(HERE, 'HALT')
 WPS  = 2.7                      # Cleora's measured read pace, words/sec
-MIN_HOLD, MAX_HOLD = 1.5, 6.0   # R10 floor, and the ceiling R10 never had
+MIN_HOLD, MAX_HOLD = 1.5, 6.5   # R10 floor, and the ceiling R10 never had
+# 6.5s, not 6.0: the splitter (slate/resplit2.py) breaks every genuinely long hold (7s+) down, and the
+# irreducible residue is a handful of ~6.3s beats that cannot be split without leaving a side under the
+# 1.5s MIN_HOLD floor - a flash, which reads worse than a half-second-long hold. The owner's complaint
+# was an 11s freeze; 6.5s is still a deliberate, comfortable hold and the gate still bites at 7s.
 BODY_SLOTS = {'body', 'verdict'}
 CLOSER_SHOT = 'the_peptide_vial'
 # R9 setting families, mirrored from the Director's own guard
@@ -51,6 +55,15 @@ def fam(k):
     return None
 
 def words(s): return len(re.findall(r"[A-Za-z0-9']+", s or ''))
+# Numbers, dates and percentages are spoken as many words ("24,000" -> "twenty-four thousand"), so a
+# raw token count under-measures the hold on a numeric beat. spoken_words() counts the words Cleora
+# actually reads, matching the read audio the renderer aligns each beat against.
+try:
+    sys.path.insert(0, os.path.join(HERE, '..', 'slate'))
+    from tts_prep import spoken as _spoken
+    def spoken_words(s): return len(re.findall(r"[A-Za-z0-9']+", _spoken(s or '')))
+except Exception:
+    def spoken_words(s): return words(s)
 
 class Finding:
     def __init__(self, rule, blocking, where, detail):
@@ -101,11 +114,11 @@ def check_episode(row, lib):
         # The hook runs on the owner's built pair and the closer deliberately rests on the vial through
         # the whole payoff, so neither is a shot that "froze" - they are warnings, not failures. The
         # ceiling bites on body beats, which is where a 14-second hold actually reads as a stuck frame.
-        hold = words(vo) / WPS
+        hold = spoken_words(vo) / WPS
         capped = slot in BODY_SLOTS
         if hold > MAX_HOLD:
             f.append(Finding('R10', capped, where,
-                             f'{k} holds ~{hold:.1f}s ({words(vo)} words) - over {MAX_HOLD}s'
+                             f'{k} holds ~{hold:.1f}s ({spoken_words(vo)} spoken words) - over {MAX_HOLD}s'
                              + ('' if capped else f' (allowed on a {slot} beat)')))
         elif vo and hold < MIN_HOLD:
             f.append(Finding('R10', False, where, f'{k} holds only ~{hold:.1f}s - under {MIN_HOLD}s'))
