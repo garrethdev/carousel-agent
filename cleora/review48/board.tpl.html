@@ -1,0 +1,253 @@
+<title>Cleora Hook Review</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{
+  --ground:#e9ece7; --surface:#fbfcfa; --surface-2:#f1f4ef;
+  --ink:#1b211e; --ink-2:#4a544f; --ink-3:#727d77;
+  --line:#d3d9d2; --line-2:#c0c8bf;
+  --brass:#8a6a1f; --brass-soft:#efe6cd;
+  --keep:#2c6350; --keep-soft:#dcebe4;
+  --cut:#8d3a2c;  --cut-soft:#f2e0dc;
+  --shadow:0 1px 2px rgba(27,33,30,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#111513; --surface:#191e1b; --surface-2:#1f2521;
+    --ink:#e7ece8; --ink-2:#a5b0aa; --ink-3:#7d8a83;
+    --line:#2a312d; --line-2:#3a433d;
+    --brass:#d3a850; --brass-soft:#33291360;
+    --keep:#63b394; --keep-soft:#1b3a2f60;
+    --cut:#d8776a;  --cut-soft:#3d201b60;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#111513; --surface:#191e1b; --surface-2:#1f2521;
+  --ink:#e7ece8; --ink-2:#a5b0aa; --ink-3:#7d8a83;
+  --line:#2a312d; --line-2:#3a433d;
+  --brass:#d3a850; --brass-soft:#33291360;
+  --keep:#63b394; --keep-soft:#1b3a2f60;
+  --cut:#d8776a;  --cut-soft:#3d201b60;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font:400 15px/1.55 "Source Sans 3",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 96px}
+header{padding:38px 0 18px}
+h1{font:600 40px/1.05 "Cormorant Garamond",Georgia,serif;margin:0 0 6px;text-wrap:balance}
+.sub{color:var(--ink-2);max-width:64ch;margin:0}
+.bar{position:sticky;top:0;z-index:20;margin:18px 0 0;background:var(--surface);
+  border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:12px 14px;
+  display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.tally{font:500 13px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.04em;
+  color:var(--ink-2);display:flex;align-items:baseline;gap:7px;white-space:nowrap}
+.tally b{font-size:20px;color:var(--brass);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.chip{font:400 12.5px/1 "Source Sans 3",sans-serif;color:var(--ink-2);background:var(--surface-2);
+  border:1px solid var(--line);padding:6px 10px;border-radius:99px;cursor:pointer}
+.chip:hover{border-color:var(--line-2);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--brass-soft);border-color:var(--brass);color:var(--ink)}
+button:focus-visible,.chip:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+ol{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;
+  box-shadow:var(--shadow)}
+li[data-v="1"]{border-color:var(--keep);background:var(--keep-soft)}
+li[data-v="-1"]{border-color:var(--cut);background:var(--cut-soft)}
+li[hidden]{display:none}
+.top{display:flex;flex-wrap:wrap;align-items:baseline;gap:9px;margin-bottom:10px}
+.eid{font:600 11px/1 "IBM Plex Mono",monospace;color:var(--ink-3);letter-spacing:.05em}
+.tag{font:400 10.5px/1 "Source Sans 3",sans-serif;text-transform:uppercase;letter-spacing:.09em;
+  color:var(--ink-3);border:1px solid var(--line-2);padding:3px 6px;border-radius:4px}
+.tag.flag{color:var(--cut);border-color:var(--cut);background:var(--cut-soft);text-transform:none;
+  letter-spacing:.02em}
+.tag.fix{color:var(--brass);border-color:var(--brass);background:var(--brass-soft);
+  text-transform:none;letter-spacing:.02em}
+h2{font:600 21px/1.2 "Cormorant Garamond",Georgia,serif;margin:0;flex:1;min-width:220px;text-wrap:balance}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:11px}
+.cell{border:1px solid var(--line);border-radius:8px;padding:11px 13px;background:var(--surface-2)}
+.cell .lbl{font:400 10.5px/1 "Source Sans 3",sans-serif;text-transform:uppercase;
+  letter-spacing:.1em;color:var(--ink-3);display:block;margin-bottom:6px}
+.voice{font-style:italic;color:var(--ink);margin:0}
+.osh{font:600 14px/1.35 "IBM Plex Mono",monospace;letter-spacing:.02em;color:var(--brass);margin:0}
+details{margin:0 0 11px}
+summary{cursor:pointer;font-size:13.5px;color:var(--ink-3);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸ ";color:var(--brass)}
+details[open] summary::before{content:"▾ "}
+.beats{margin:9px 0 0;padding:0 0 0 14px;border-left:2px solid var(--line);
+  display:flex;flex-direction:column;gap:7px}
+.beat{display:grid;grid-template-columns:64px 1fr;gap:10px;align-items:baseline}
+.kind{font:500 10px/1.4 "IBM Plex Mono",monospace;text-transform:uppercase;color:var(--ink-3)}
+.beat p{margin:0}
+.beat .cap{font:500 10.5px/1.3 "IBM Plex Mono",monospace;color:var(--ink-3);margin-top:2px}
+.acts{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.acts button{font:600 12.5px/1 "Source Sans 3",sans-serif;letter-spacing:.03em;padding:8px 15px;
+  border-radius:7px;cursor:pointer;background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line)}
+.acts button:hover{border-color:var(--line-2);color:var(--ink)}
+.acts .k[aria-pressed="true"]{background:var(--keep);border-color:var(--keep);color:#fff}
+.acts .x[aria-pressed="true"]{background:var(--cut);border-color:var(--cut);color:#fff}
+.acts input{flex:1;min-width:180px;font:400 13px/1 "Source Sans 3",sans-serif;padding:8px 10px;
+  border-radius:7px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.note{margin:20px 0 0;padding:13px 15px;border-left:2px solid var(--line-2);color:var(--ink-3);font-size:13.5px}
+@media (max-width:680px){.pair{grid-template-columns:1fr}h1{font-size:31px}.chips{margin-left:0;width:100%}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <h1>Cleora Hook Review</h1>
+  <p class="sub">The slate: <b>forty stories</b>, each with a full script, the line Cleora
+  speaks, and the headline burned on screen. The eight with no body outcome for her are cut.
+  Your marks are kept &mdash; <b>Unreviewed</b> picks up where you stopped.</p>
+</header>
+
+<div class="bar">
+  <div class="tally"><b id="ok">0</b><span>good</span></div>
+  <div class="tally"><b id="no" style="color:var(--cut)">0</b><span>needs work</span></div>
+  <div class="tally"><span id="left">48 unreviewed</span></div>
+  <div class="chips">
+    <button class="chip" data-f="" aria-pressed="true">All 40</button>
+    <button class="chip" data-f="approved">Your 22</button>
+    <button class="chip" data-f="new">New 18</button>
+    <button class="chip" data-f="__todo">Unreviewed</button>
+    <button class="chip" data-f="__bad">Needs work</button>
+
+  </div>
+</div>
+
+<ol id="list"></ol>
+<p class="note" id="msg">Marks and notes save as you make them.</p>
+</div>
+
+<script>
+const DATA = /*__DATA__*/;
+const V = Object.create(null);
+const N = Object.create(null);
+let DB = null, filter = "";
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c =>
+  ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
+
+function render(){
+  $("list").innerHTML = DATA.map(function(d){
+    return '<li data-id="' + esc(d.id) + '" data-b="' + esc(d.batch) + '">' +
+      '<div class="top">' +
+        '<span class="eid">' + esc(d.id) + '</span>' +
+        '<h2>' + esc(d.title) + '</h2>' +
+        '<span class="tag">' + (d.batch === "approved" ? "you approved" : "new") + '</span>' +
+        '<span class="tag">' + d.beats.length + ' beats · ' + d.words + 'w</span>' +
+        (d.flag ? '<span class="tag flag">cut: ' + esc(d.flag) + '</span>' : '') +
+        (d.fix ? '<span class="tag fix">rewritten — ' + esc(d.fix) + '</span>' : '') +
+      '</div>' +
+      '<div class="pair">' +
+        '<div class="cell"><span class="lbl">Voice hook — spoken</span>' +
+          '<p class="voice">' + esc(d.voice) + '</p></div>' +
+        '<div class="cell"><span class="lbl">On screen — burned in</span>' +
+          '<p class="osh">' + esc(d.osh) + '</p></div>' +
+      '</div>' +
+      '<details><summary>Full script (' + d.beats.length + ' beats)</summary>' +
+        '<div class="beats">' + d.beats.map(function(b){
+          return '<div class="beat"><span class="kind">' + esc(b.k) + '</span>' +
+            '<div><p>' + esc(b.vo) + '</p>' +
+            (b.cap ? '<p class="cap">' + esc(b.cap) + '</p>' : '') + '</div></div>';
+        }).join("") + '</div></details>' +
+      '<div class="acts">' +
+        '<button class="k" data-vote="1"  aria-pressed="false">Good</button>' +
+        '<button class="x" data-vote="-1" aria-pressed="false">Needs work</button>' +
+        '<input type="text" data-note="' + esc(d.id) + '" placeholder="what is wrong with it, or a rewrite">' +
+      '</div></li>';
+  }).join("");
+  paint();
+}
+
+function paint(){
+  let ok = 0, no = 0, seen = 0;
+  document.querySelectorAll("#list li").forEach(function(li){
+    const id = li.dataset.id, v = V[id] || 0;
+    if (v === 1) ok++; else if (v === -1) no++;
+    if (v) seen++;
+    li.dataset.v = v || "";
+    li.querySelector(".k").setAttribute("aria-pressed", v === 1);
+    li.querySelector(".x").setAttribute("aria-pressed", v === -1);
+    const box = li.querySelector("input");
+    if (document.activeElement !== box) box.value = N[id] || "";
+    let show = true;
+    if (filter === "__todo") show = !v;
+    else if (filter === "__bad") show = v === -1;
+    else if (filter === "__flag") show = !!DATA.find(function(c){ return c.id === id; }).flag;
+    else if (filter === "__fix") show = !!DATA.find(function(c){ return c.id === id; }).fix;
+    else if (filter) show = li.dataset.b === filter;
+    li.hidden = !show;
+  });
+  $("ok").textContent = ok;
+  $("no").textContent = no;
+  $("left").textContent = (DATA.length - seen) + " of " + DATA.length + " unreviewed";
+}
+
+async function save(id){
+  if (!DB) return;
+  const row = DATA.find(function(c){ return c.id === id; });
+  try {
+    if (V[id] || N[id]) {
+      await DB.collection("hookreview").doc(id).set(
+        { id: id, title: row.title, osh: row.osh, vote: V[id] || 0, note: N[id] || "", at: Date.now() });
+    } else {
+      await DB.collection("hookreview").doc(id).delete();
+    }
+  } catch (e) {
+    $("msg").textContent = "That did not save (" + (e && e.code || "unknown") + "). Others are unaffected.";
+  }
+}
+
+document.addEventListener("click", function(e){
+  const chip = e.target.closest(".chip");
+  if (chip){
+    filter = chip.dataset.f;
+    document.querySelectorAll(".chip").forEach(function(c){
+      c.setAttribute("aria-pressed", c === chip); });
+    paint(); return;
+  }
+  const btn = e.target.closest("[data-vote]");
+  if (!btn) return;
+  const id = btn.closest("li").dataset.id, want = Number(btn.dataset.vote);
+  V[id] = V[id] === want ? 0 : want;
+  paint(); save(id);
+});
+
+let timer = null;
+document.addEventListener("input", function(e){
+  const box = e.target.closest("[data-note]");
+  if (!box) return;
+  const id = box.dataset.note;
+  N[id] = box.value;
+  clearTimeout(timer);
+  timer = setTimeout(function(){ save(id); }, 600);
+});
+
+render();
+
+claude.use("db").then(function(db){
+  DB = db;
+  if (!DB){
+    $("msg").textContent = "Working offline — marks show here but are not saved. Tell Claude which ones miss instead.";
+    return;
+  }
+  DB.collection("hookreview").onSnapshot(function(snap){
+    // QuerySnapshot exposes `docs`, an array. Build the next state fully before
+    // replacing the current one, so a bad snapshot cannot clear the marks.
+    const nv = Object.create(null), nn = Object.create(null);
+    (snap.docs || []).forEach(function(d){
+      const r = (d.exists ? d.data() : null) || {};
+      if (r.vote) nv[d.id] = r.vote;
+      if (r.note) nn[d.id] = r.note;
+    });
+    for (const k in V) delete V[k];
+    for (const k in N) delete N[k];
+    Object.assign(V, nv); Object.assign(N, nn);
+    paint();
+  }, function(err){
+    $("msg").textContent = "Live sync stopped (" + (err && err.code || "unknown") + "). Reload to reconnect.";
+  });
+});
+</script>

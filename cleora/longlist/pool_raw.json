@@ -1,0 +1,2313 @@
+[
+ {
+  "title": "The Renegade in the Manor House",
+  "felt_symptom": "Bone-tired by mid-afternoon no matter how much sleep you get, like the body just stopped generating power.",
+  "weird_anchor": "In 1963, biochemist Peter Mitchell was so mocked for his theory of how cells make energy that he quit his university post, bought a half-ruined manor called Glynn House in Cornwall, and rebuilt it by hand into a private laboratory to prove the entire scientific establishment wrong. In 1978 he won the Nobel Prize.",
+  "mechanism": "Mitchell proved that mitochondria, the power plants inside every cell, don't make energy by a direct chemical handoff as everyone assumed. They pump charged particles across a membrane like water behind a dam and release the pressure as usable energy. That pumping mechanism is exactly what runs down with age, leaving cells starved for fuel.",
+  "action": "none",
+  "on_screen_card": "THEY LAUGHED HIM OUT OF THE LAB. HE WAS RIGHT ABOUT HOW YOUR CELLS MAKE ENERGY.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Peter Mitchell \u2013 Biographical, NobelPrize.org",
+    "url": "https://www.nobelprize.org/prizes/chemistry/1978/mitchell/biographical/"
+   },
+   {
+    "title": "Peter D. Mitchell, Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Peter_D._Mitchell"
+   },
+   {
+    "title": "Sandwalk: Nobel Laureate: Peter D. Mitchell",
+    "url": "https://sandwalk.blogspot.com/2007/01/nobel-laureate-peter-d-mitchell.html"
+   }
+  ],
+  "territory": "buried"
+ },
+ {
+  "title": "The Diet Pill That Burned Too Hot",
+  "felt_symptom": "A metabolism that feels like it quietly switched off \u2014 the weight that won't move no matter what you cut.",
+  "weird_anchor": "In the summer of 1933, three Stanford scientists reported that a chemical first noticed decades earlier in French WWI munitions workers, who mysteriously lost weight and ran hot on the job, sped up human metabolism by 30 to 50 percent. It was sold over drugstore counters as a diet pill nationwide until the FDA banned it in 1938.",
+  "mechanism": "DNP gets inside mitochondria and short-circuits them: instead of using food energy to build fuel for the cell, it lets that energy leak straight out as heat, so the body burns fat just to stay warm. It is the most direct proof on record that fat-burning can be forced by tinkering with mitochondria \u2014 it was pulled for going too far, not for being wrong.",
+  "action": "none",
+  "on_screen_card": "IT MADE THE BODY BURN FAT AS HEAT. THEY BANNED IT BEFORE THEY UNDERSTOOD IT.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "The Science And History Of A Pesticide-Turned-Diet Pill, Popular Science",
+    "url": "https://www.popsci.com/article/science/science-and-history-pesticide-turned-diet-pill/"
+   },
+   {
+    "title": "Dinitrophenol and obesity: an early twentieth-century regulatory dilemma, PubMed",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/17475379/"
+   },
+   {
+    "title": "The Depression Era's Magic Bullet For Weight Loss, New Republic",
+    "url": "https://newrepublic.com/article/133751/depression-eras-magic-bullet-weight-loss"
+   }
+  ],
+  "territory": "buried"
+ },
+ {
+  "title": "The Glow on the Scan They Called a Mistake",
+  "felt_symptom": "Always cold, metabolism gone quiet, weight creeping on despite eating the same as always.",
+  "weird_anchor": "For decades, radiologists running full-body cancer scans kept seeing a strange symmetrical glow lighting up patients' necks and shoulders and were trained to write it off as a scanning artifact. Only in 2009 did three separate research teams, publishing simultaneously in the New England Journal of Medicine, confirm the glow was real: a kind of fat adults were assumed not to have anymore.",
+  "mechanism": "Unlike ordinary fat, which stores energy, this brown fat is packed with mitochondria whose only job is to burn fuel and throw off heat instead of hoarding it. It is the same tissue that keeps a newborn warm, and some adults are still quietly carrying working reserves of it. It sat mislabeled as a scanning error for over a decade before anyone asked what it actually was.",
+  "action": "none",
+  "on_screen_card": "FOR YEARS THEY CALLED THE GLOW ON THE SCAN A MISTAKE. IT WAS FAT THAT BURNS ITSELF FOR HEAT.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Imaging of Brown Adipose Tissue: State of the Art, Radiology",
+    "url": "https://pubs.rsna.org/doi/full/10.1148/radiol.2016150390"
+   },
+   {
+    "title": "PET/CT confirms presence of brown fat in adults, AuntMinnie",
+    "url": "https://www.auntminnie.com/clinical-news/molecular-imaging/nuclear-medicine/article/15590773/pet-ct-confirms-presence-of-brown-fat-in-adults"
+   },
+   {
+    "title": "Study of 50,000 people finds brown fat may protect against many diseases, Rockefeller University",
+    "url": "https://www.rockefeller.edu/news/29798-study-50000-people-finds-brown-fat-may-protect-many-diseases/"
+   }
+  ],
+  "territory": "buried"
+ },
+ {
+  "title": "The Hungarian's Rats That Wouldn't Stop",
+  "felt_symptom": "The fog, the flatness \u2014 that dimmer switch on drive and vitality nobody warns you comes with age.",
+  "weird_anchor": "In 1988, Hungarian pharmacologist Joseph Knoll published a rat study showing that a Parkinson's drug called deprenyl didn't just treat symptoms: it stretched the remaining lifespan of two-year-old rats by nearly 40 percent, from 36 months to 50, and restored full sexual activity in aged males that had lost it entirely. Knoll reportedly took the drug himself daily for over a decade.",
+  "mechanism": "Deprenyl protects the brain's dopamine-producing cells and appears to reduce the oxidative damage that piles up in aging brain mitochondria over time. Because the drug was already old and off-patent by the time Knoll's data appeared, no company had a financial reason to fund the massive human trials needed to prove a life-extension claim, so the finding largely sat unexploited for decades.",
+  "action": "none",
+  "on_screen_card": "OLD RATS ON THE DRUG ACTED YOUNG AGAIN. NO ONE OWNED THE PATENT TO PROVE IT ON PEOPLE.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Can Deprenyl (Selegiline) Extend Human Lifespan?, Ben Best",
+    "url": "https://www.benbest.com/lifeext/deprenyl.html"
+   },
+   {
+    "title": "Geroprotection in the future. In memoriam of Joseph Knoll: The selegiline story continues, ScienceDirect",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0014299919307459"
+   },
+   {
+    "title": "Longevity study with low doses of selegiline/(-)-deprenyl, ScienceDirect",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0024320516306257"
+   }
+  ],
+  "territory": "buried"
+ },
+ {
+  "title": "The Soccer-Ball Molecule in a Bottle of Olive Oil",
+  "felt_symptom": "Creeping exhaustion, the sense the body is rusting quietly from the inside.",
+  "weird_anchor": "In 2012, French researchers dissolved a carbon molecule shaped like a tiny soccer ball, the C60 buckyball that had won its discoverers a Nobel Prize just for finding it, into ordinary olive oil and fed tiny doses to rats for the rest of their lives. Rats on the mixture lived nearly twice as long as untreated ones. The paper ran in the journal Biomaterials and drew almost no serious follow-up funding for the better part of a decade.",
+  "mechanism": "C60 is thought to act as an extraordinarily powerful antioxidant, soaking up the free radicals that mitochondria throw off as exhaust while producing energy, the same wear-and-tear byproducts tied to aging. Because the molecule was hard to patent in a form a drug company wanted, real research funding never arrived, and it slid into the gray market as an underground supplement instead of a studied medicine.",
+  "action": "none",
+  "on_screen_card": "ONE MOLECULE IN OLIVE OIL. RATS LIVED NEARLY TWICE AS LONG. NOBODY FOLLOWED UP.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "The prolongation of the lifespan of rats by repeated oral administration of [60]fullerene, PubMed",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22498298/"
+   },
+   {
+    "title": "Carbon 60 in olive oil nearly doubles the lifespan of laboratory rats",
+    "url": "https://carbon60oliveoil.com.au/article/carbon-60-doubles-rat-lifespan/"
+   },
+   {
+    "title": "Further Confirming Data on the Failure of Fullerenes in Olive Oil to Extend Life in Rodents, Fight Aging!",
+    "url": "https://www.fightaging.org/archives/2021/04/further-confirming-data-on-the-failure-of-fullerenes-in-olive-oil-to-extend-life-in-rodents/"
+   }
+  ],
+  "territory": "buried"
+ },
+ {
+  "title": "Eight People Locked in a Glass Dome",
+  "felt_symptom": "Weight that sits stubborn no matter what, and a sense the body's engine is running down.",
+  "weird_anchor": "In 1991, gerontologist Roy Walford sealed himself inside Biosphere 2, a giant glass-and-steel dome in the Arizona desert, along with seven other people, for two full years. When their crops failed, the crew was forced onto a diet of under 2,000 calories a day, and Walford turned the accident into the most extreme human calorie-restriction study ever run.",
+  "mechanism": "The crew lost 10 to 18 percent of their body weight, and their blood pressure, cholesterol, blood sugar, and inflammation markers all dropped to levels normally seen only in lab animals deliberately underfed to extend their lives. It mirrored decades of animal data showing that eating less, without malnutrition, is the most reliable known way to slow biological aging.",
+  "action": "Reduce daily caloric intake while maintaining full nutrition",
+  "on_screen_card": "THE FOOD RAN OUT BY ACCIDENT. THEIR BODIES AGED IN REVERSE.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Calorie Restriction in Biosphere 2, Journals of Gerontology",
+    "url": "https://academic.oup.com/biomedgerontology/article/57/6/B211/564317"
+   },
+   {
+    "title": "Roy Walford, Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Roy_Walford"
+   },
+   {
+    "title": "Energy metabolism after 2 y of energy restriction: the Biosphere 2 experiment, AJCN",
+    "url": "https://ajcn.nutrition.org/article/S0002-9165(23)06805-3/fulltext"
+   }
+  ],
+  "territory": "buried"
+ },
+ {
+  "title": "The Cornell Professor Who Starved His Rats On Purpose",
+  "felt_symptom": "The sense that time is moving faster through the body than it used to.",
+  "weird_anchor": "In 1935, Cornell nutrition professor Clive McCay put lab rats on a diet with barely enough calories to survive but every vitamin and mineral they needed, and watched them live a third longer than well-fed rats, the equivalent of well over a hundred human years. The finding sat almost entirely unexplored for nearly fifty years before anyone picked it back up.",
+  "mechanism": "McCay had stumbled onto what remains the single most reproducible way to extend lifespan in a lab animal, restricting calories without starving the body of nutrients, but with no drug to sell and no mechanism anyone could explain at the time, his 1935 paper was treated as a curiosity rather than a discovery until researchers revived it in the 1980s.",
+  "action": "none",
+  "on_screen_card": "HE STARVED HIS RATS ON PURPOSE. THEY LIVED A THIRD LONGER. NOBODY ASKED WHY FOR 50 YEARS.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Honoring Clive McCay and 75 Years of Calorie Restriction Research, Journal of Nutrition",
+    "url": "https://jn.nutrition.org/article/S0022-3166(22)13227-X/fulltext"
+   },
+   {
+    "title": "Clive McCay, Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Clive_McCay"
+   },
+   {
+    "title": "Is Restricting Calories the Key to a Longer Life?, Psychology Today",
+    "url": "https://www.psychologytoday.com/us/blog/the-new-old-age/201907/is-restricting-calories-the-key-longer-life"
+   }
+  ],
+  "territory": "buried"
+ },
+ {
+  "title": "The Cancer Company's Other Discovery",
+  "felt_symptom": "Cells that no longer seem to renew \u2014 hair, skin, and energy all feeling used up.",
+  "weird_anchor": "In the 1990s, biotech company Geron patented a compound extracted from astragalus root, an herb used in Chinese medicine for centuries to tonify the body's qi, because it appeared to switch on telomerase, the enzyme that rebuilds the protective caps on the ends of chromosomes. Geron never sold it as an anti-aging pill itself; it sold off the rights in 2013, because the same switch that resets old cells is also the switch that can fuel cancer.",
+  "mechanism": "Every time a cell divides, the telomere caps on its chromosomes get a little shorter, a countdown clock tied to visible aging. This herb-derived compound seemed capable of running the clock backward, but the company that discovered it walked away from its most powerful potential use out of fear of what flipping that switch too far might unleash.",
+  "action": "none",
+  "on_screen_card": "A CHINESE ROOT THAT MIGHT RESET THE CLOCK. THE COMPANY THAT FOUND IT WALKED AWAY.",
+  "score_interesting": 2,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "TA-65, Alzheimer's Drug Discovery Foundation Cognitive Vitality",
+    "url": "https://www.alzdiscovery.org/uploads/cognitive_vitality_media/TA-65-Cognitive-Vitality-For-Researchers.pdf"
+   },
+   {
+    "title": "What is cycloastragenol?, ChemicalBook",
+    "url": "https://www.chemicalbook.com/article/what-is-cycloastragenol.htm"
+   },
+   {
+    "title": "Functional Assessment of Pharmacological Telomerase Activators in Human T cells, PMC",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3972662/"
+   }
+  ],
+  "territory": "buried"
+ },
+ {
+  "title": "The Weed They Fed to Cattle",
+  "felt_symptom": "Extra weight that settles in and won't leave, the sense the body now stores everything it's given.",
+  "weird_anchor": "Medieval European healers used a purple-flowered weed called French lilac to treat the thirst and wasting of diabetes. In 1918 chemists isolated its active compound, but it was too toxic and got shelved when insulin arrived. It sat for nearly forty years until Parisian doctor Jean Sterne revived it in 1957, and even then U.S. regulators refused to approve it until 1994, spooked by a chemical cousin that had killed patients in clinical trials.",
+  "mechanism": "The descendant compound acts on the liver and on mitochondria to stop the body from overproducing sugar and to change how cells burn fuel, one of the few drugs on record with real data behind it for slowing aging itself rather than just treating a disease. It sat unapproved in America for four decades over fear of guilt by association with a different, more dangerous drug.",
+  "action": "none",
+  "on_screen_card": "A WEED FARMERS FED TO CATTLE. BURIED FOR 40 YEARS BY A DRUG THAT WASN'T EVEN THE SAME ONE.",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Metformin: historical overview, Diabetologia",
+    "url": "https://link.springer.com/article/10.1007/s00125-017-4318-z"
+   },
+   {
+    "title": "Weekly Dose: metformin, the diabetes drug developed from French lilac, The Conversation",
+    "url": "https://theconversation.com/weekly-dose-metformin-the-diabetes-drug-developed-from-french-lilac-64430"
+   },
+   {
+    "title": "Metformin as Anti-Aging Therapy: Is It for Everyone?, PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6779524/"
+   }
+  ],
+  "territory": "buried"
+ },
+ {
+  "title": "The Colonel Who Came Back Young",
+  "felt_symptom": "Morning stiffness, the sense the body has quietly downgraded itself.",
+  "weird_anchor": "In a 1939 pamphlet, an author named Peter Kelder claimed a retired British colonel had gone searching the Himalayas for a lost monastery and returned years later looking so much younger, unwrinkled and dark-haired, that his own friend didn't recognize him. The colonel said the monks guarded one secret: five simple movements, done daily. The pamphlet went out of print and stayed obscure for decades before quietly resurfacing.",
+  "mechanism": "The five rites are said to work through a short daily sequence of spinning and stretching movements described as stimulating the body's energy centers, said by modern practitioners to loosen joints, improve balance and circulation, and slow the visible signs of aging.",
+  "action": "Practice the five-movement sequence daily",
+  "on_screen_card": "FIVE MOVEMENTS. ONE MONASTERY. A MAN WHO CAME BACK YOUNG.",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Five Tibetan Rites, Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Five_Tibetan_Rites"
+   },
+   {
+    "title": "The Eye of Revelation, Jerry's Rare Books",
+    "url": "https://jr-books.com/EoR-Article-081203-Origins.html"
+   },
+   {
+    "title": "The Eye of Revelation, full text PDF",
+    "url": "https://www.robmcbride.net/pdf/the_eye_of_the_revelation.pdf"
+   }
+  ],
+  "territory": "buried"
+ },
+ {
+  "title": "The Injection Every Dictator Wanted",
+  "felt_symptom": "Joints that ache more, skin that's lost its spring, the low mood that arrived along with the wrinkles.",
+  "weird_anchor": "In 1956, Romanian physician Ana Aslan opened a state-sponsored clinic outside Bucharest offering injections of a modified novocaine she called Gerovital H3, claiming it slowed aging. Behind the Iron Curtain, world leaders and film stars quietly traveled to communist Romania for the shots for decades.",
+  "mechanism": "Aslan's formula was procaine, the same numbing drug used at the dentist, modified so it broke down slowly in the body into compounds with mild antioxidant and mood-lifting effects. American regulators dismissed the claims and banned its import in 1982, but for three decades it remained the aging elite's most persistent open secret.",
+  "action": "none",
+  "on_screen_card": "BEHIND THE IRON CURTAIN, THE WORLD'S POWERFUL LINED UP FOR HER INJECTION.",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Gerovital, Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Gerovital"
+   },
+   {
+    "title": "Ana Aslan, Founder of the First Institute of Geriatrics, Mayo Clinic Proceedings",
+    "url": "https://www.mayoclinicproceedings.org/article/S0025-6196(11)63390-9/fulltext"
+   },
+   {
+    "title": "The Reappearance of Procaine Hydrochloride (Gerovital H3) for Antiaging, Journal of the American Geriatrics Society",
+    "url": "https://agsjournals.onlinelibrary.wiley.com/doi/10.1111/jgs.12278"
+   }
+  ],
+  "territory": "buried"
+ },
+ {
+  "title": "The 72-Year-Old Who Injected Himself With Gland Extract",
+  "felt_symptom": "Strength leaving the body, stamina and drive quietly draining out with age.",
+  "weird_anchor": "On June 1, 1889, one of the most respected physiologists in Europe, 72-year-old Charles-Edouard Brown-Sequard, stood before the Societe de Biologie in Paris and announced he had been injecting himself with a crushed liquid extract of dog and guinea pig testicles. He reported his strength, urine stream, and mental sharpness had all improved so much he felt thirty years younger. The medical establishment mocked him for the rest of his life.",
+  "mechanism": "Modern testing of what was actually in Brown-Sequard's mixture found almost no active hormone in it at all, meaning his rejuvenation was likely a placebo effect. But the insight underneath it, that hormone levels fall with age and that restoring them changes how old the body feels, was correct, and it took mainstream medicine decades to circle back to it as legitimate hormone therapy.",
+  "action": "none",
+  "on_screen_card": "A 72-YEAR-OLD SCIENTIST INJECTED HIMSELF WITH GLAND EXTRACT. THEY MOCKED HIM. HE WASN'T WRONG.",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "The rejuvenation of testosterone: philosopher's stone or Brown-Sequard Elixir?, PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3474613/"
+   },
+   {
+    "title": "Brown-Sequard revisited: a lesson from history on the placebo effect of androgen treatment, MJA",
+    "url": "https://www.mja.com.au/journal/2002/177/11/brown-sequard-revisited-lesson-history-placebo-effect-androgen-treatment"
+   },
+   {
+    "title": "The Brown-Sequard Elixir, PMC",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10075532/"
+   }
+  ],
+  "territory": "buried"
+ },
+ {
+  "title": "The Serum Stalin Kept in His Fridge",
+  "felt_symptom": "The slow fade of vitality, the sense something in the body has simply stopped repairing itself.",
+  "weird_anchor": "In 1934, Soviet scientist Alexander Bogomolets developed a serum made from the blood of horses and rabbits that had been injected with human spleen and bone marrow tissue, claiming it could add decades to human life. Stalin, obsessed with his own mortality, made Bogomolets a national hero and reportedly took the shots himself. When Bogomolets died at 65 in 1946, Stalin is said to have snapped, 'the swindler, he deceived us all.'",
+  "mechanism": "Bogomolets believed the serum stimulated the body's connective tissue system to repair and regenerate itself faster, priming it to resist the wear of aging. His institute in Kyiv kept manufacturing and studying the serum for years even as Western scientists dismissed the whole idea as Soviet propaganda.",
+  "action": "none",
+  "on_screen_card": "STALIN TOOK HIS SERUM FOR YEARS. THEN THE MAN WHO MADE IT DIED FIRST.",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "The Life and Death of a Soviet-Era Search for Longevity, McGill Office for Science and Society",
+    "url": "https://www.mcgill.ca/oss/article/medical-history/life-and-death-soviet-era-search-longevity"
+   },
+   {
+    "title": "Antireticular cytotoxic serum, Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Antireticular_cytotoxic_serum"
+   },
+   {
+    "title": "The Serum Stalin Took for Longevity, Neatorama",
+    "url": "https://www.neatorama.com/2024/09/22/The-Serum-Stalin-Took-for-Longevity/"
+   }
+  ],
+  "territory": "buried"
+ },
+ {
+  "title": "The Nobel Winner Who Ate Sour Milk Every Day",
+  "felt_symptom": "Fatigue and puffiness that seem to start in the gut before anywhere else.",
+  "weird_anchor": "Russian Nobel laureate Elie Metchnikoff studied Bulgarian villages around 1900 and noticed an unusual number of residents living past 100, all of them drinking large quantities of soured milk daily. He became so convinced fermented milk held the key to aging that he began eating it himself every day for the rest of his life, and by 1905 Parisians were lining up at a new yogurt shop believing it was the secret to eternal youth.",
+  "mechanism": "Metchnikoff's theory was that toxins produced by putrefying bacteria in the gut leak out and poison the rest of the body over time, aging it from the inside, and that beneficial bacteria from fermented milk could crowd the harmful ones out. Mainstream science dismissed the theory by the 1920s, only for modern gut microbiome research to circle back to almost exactly what he proposed.",
+  "action": "Eat fermented milk or yogurt with live active cultures daily",
+  "on_screen_card": "HE WON A NOBEL PRIZE, THEN ATE SOUR MILK EVERY DAY FOR THE REST OF HIS LIFE.",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Ilya Metchnikoff: Yogurt, Aging and Auto-Intoxication, Dr. Gabe Mirkin",
+    "url": "https://drmirkin.com/histories-and-mysteries/ilya-metchnikoffs-theory-of-autointoxication.html"
+   },
+   {
+    "title": "A Science Lecture Accidentally Sparked a Global Craze for Yogurt, Smithsonian Magazine",
+    "url": "https://www.smithsonianmag.com/science-nature/science-lecture-accidentally-sparked-global-craze-yogurt-180958700/"
+   },
+   {
+    "title": "Metchnikoff, the 1908 Bulgarian yoghurt reform, Alimentarium",
+    "url": "https://www.alimentarium.org/en/magazine/nutrition/metchnikoff-the-1908-bulgarian-yoghurt-reform"
+   }
+  ],
+  "territory": "buried"
+ },
+ {
+  "title": "The Monks Who Ran 24,000 Miles to Never Grow Tired",
+  "felt_symptom": "climbing a flight of stairs and noticing you're winded, the sense your body's engine just doesn't have what it used to have",
+  "weird_anchor": "Tendai Buddhist monks on Mount Hiei near Kyoto perform kaihogyo: running and walking roughly 24,000 miles across 1,000 non-consecutive days spread over 7 years, stopping to pray at some 260 shrines each circuit. Only 46 monks have completed it since 1885. Each carries a rope and a short blade, traditionally meant to end his own life if he cannot finish.",
+  "mechanism": "Sustained daily movement over years, paired with fasting and prayer, was treated as training the body's engine itself so it simply does not run down the way an ordinary body does.",
+  "action": "none",
+  "on_screen_card": "1,000 DAYS. 24,000 MILES. A KNIFE IN CASE HE FAILED.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "The Marathon Monks of Mount Hiei",
+    "url": "https://www.trailrunnermag.com/people/culture-people/the-marathon-monks-of-mount-hiei/"
+   },
+   {
+    "title": "The Marathon Monks: 1000 Days Of Running",
+    "url": "https://marathonhandbook.com/the-marathon-monks/"
+   },
+   {
+    "title": "Kaih\u014dgy\u014d \u2013 The Thousand Day 'Marathon' of the Mount Hiei Monks",
+    "url": "https://www.drishtikone.com/kaihogyo-the-thousand-day-marathon-of-the-mount-hiei-monks/"
+   }
+  ],
+  "territory": "eastern"
+ },
+ {
+  "title": "The Emperor's Elixir of Virgin Blood",
+  "felt_symptom": "waking up and feeling like the mirror looks older than you feel inside, willing to try almost anything that promises to stop it",
+  "weird_anchor": "China's Jiajing Emperor (r. 1521-1567) kept hundreds of girls aged 13-14 in the palace, fed only mulberry leaves and dew to keep their blood 'pure,' and had their first menstrual blood collected to brew an elixir called 'red lead,' meant to restore his youth. In October 1542, sixteen of his abused palace maids tried to strangle him in his sleep \u2014 the Renyin Palace Plot. He survived; they and ten of their relatives were executed.",
+  "mechanism": "Taoist court alchemists believed a girl's first, untouched blood carried the purest concentrated yin essence, capable of replenishing an aging emperor's depleted vitality and halting his physical decline.",
+  "action": "none",
+  "on_screen_card": "THE ANTI-AGING POTION THAT GOT HIM STRANGLED IN HIS SLEEP",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Palace plot of Renyin year",
+    "url": "https://en.wikipedia.org/wiki/Palace_plot_of_Renyin_year"
+   },
+   {
+    "title": "The palace plot of Renyin year",
+    "url": "https://www.vaginamuseum.co.uk/the-palace-plot"
+   },
+   {
+    "title": "When Concubines Fought Back",
+    "url": "https://www.ancient-origins.net/history-famous-people/when-concubines-fought-back-plot-eliminate-mad-and-sadistic-emperor-009468"
+   }
+  ],
+  "territory": "eastern"
+ },
+ {
+  "title": "The Alchemist, the Disciple, and the Dog",
+  "felt_symptom": "the quiet fear that any anti-aging remedy might do more harm than good before anyone finds out",
+  "weird_anchor": "Han-dynasty alchemist Wei Boyang, credited as author of China's earliest alchemical text, the Zhouyi Cantong Qi (2nd century CE), reportedly tested his homemade immortality pill on a dog first. It died. To prove his faith, he swallowed it himself and dropped dead beside one loyal disciple. The two skeptical disciples fled to buy coffins \u2014 and once they'd left, Wei Boyang revived, poured elixir into the dead disciple's and the dog's mouths, and all three rose again.",
+  "mechanism": "The elixir, built from cinnabar and lead, was believed to give the body the same incorruptible permanence as gold and mercury \u2014 matter that does not rot, rust, or age.",
+  "action": "none",
+  "on_screen_card": "THE DOG DIED FIRST. THEN THE MASTER DRANK IT TOO.",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Wei Boyang Uses Immortality Pills to Test His Disciples' Faith",
+    "url": "https://en.minghui.org/html/articles/2015/7/20/151632.html"
+   },
+   {
+    "title": "Two Biographies of Wei Boyang",
+    "url": "https://www.goldenelixir.com/jindan/ctq_wei_boyang.html"
+   },
+   {
+    "title": "Zhouyi cantong qi",
+    "url": "http://www.chinaknowledge.de/Literature/Daoists/zhouyicantongqi.html"
+   }
+  ],
+  "territory": "eastern"
+ },
+ {
+  "title": "The Empress Who Showed No Sign of Age at 68",
+  "felt_symptom": "staring at new lines in the mirror and wondering if anything could really turn back what shows on the skin",
+  "weird_anchor": "Wu Zetian, China's only reigning empress (624-705 CE), was recorded in the official history Xin Tang Shu as showing no visible sign of aging at 68. The Tang-era medical text Waitai Miyao records her nightly ritual: powdered pearl mixed with egg white, applied to the face before sleep.",
+  "mechanism": "Pearl, ground fine enough to sink into the skin, was believed to carry a cooling, moistening yin essence that countered the drying, heating effect traditional theory blamed for wrinkles and age spots.",
+  "action": "crushed pearl powder mixed with egg white, applied to the face nightly",
+  "on_screen_card": "AT 68, THE HISTORIANS SAID SHE SHOWED NO SIGN OF AGE",
+  "score_interesting": 2,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Secrets of Traditional Oriental Skincare",
+    "url": "https://www.newhanfu.com/82549.html"
+   },
+   {
+    "title": "Looking for Natural Skin Care Tips? Ancient Chinese Empresses and Concubines Share Their Recipes",
+    "url": "https://antiquitynow.org/2014/09/11/looking-for-natural-skin-care-tips-ancient-chinese-empresses-and-concubines-share-their-recipes/"
+   },
+   {
+    "title": "Wu Zetian",
+    "url": "https://en.wikipedia.org/wiki/Wu_Zetian"
+   }
+  ],
+  "territory": "eastern"
+ },
+ {
+  "title": "The Dessert That Ate a Turtle Species Toward Extinction",
+  "felt_symptom": "skin that doesn't bounce back the way it used to, a dryness no lotion seems to touch",
+  "weird_anchor": "Guilinggao, a bitter black jelly sold in Chinese herbal shops, was traditionally made from the ground shell of one specific animal: the golden coin turtle, Cuora trifasciata. Demand for this single dessert has been so relentless that the IUCN now lists the species as critically endangered.",
+  "mechanism": "Turtle shell was believed to hold a deep reserve of cooling 'yin,' replenishing what the body's aging, overheated systems burn away \u2014 showing up, in the tradition's own terms, as more hydrated, resilient skin.",
+  "action": "none (modern commercial versions use herb-only powder, no turtle)",
+  "on_screen_card": "THIS DESSERT ALMOST ERASED A SPECIES FOR YOUNGER SKIN",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Guilinggao, The Traditional Chinese Medicine That Moonlights As A Well-Known Dessert",
+    "url": "https://www.tastingtable.com/stories/guilinggao-the-traditional-chinese-medicine-that-moonlights-as-a-well-known-dessert/"
+   },
+   {
+    "title": "Guilinggao",
+    "url": "https://en.wikipedia.org/wiki/Guilinggao"
+   },
+   {
+    "title": "Golden coin turtle",
+    "url": "https://en.wikipedia.org/wiki/Golden_coin_turtle"
+   }
+  ],
+  "territory": "eastern"
+ },
+ {
+  "title": "The 800-Year-Old Man Who Clacked His Teeth Every Morning",
+  "felt_symptom": "waking up stiff, low energy that coffee doesn't touch, the sense vitality just leaks out year by year",
+  "weird_anchor": "Peng Zu, a legendary court advisor said to have lived over 800 years during the Shang dynasty (c. 1600-1046 BCE), left behind a daily routine recorded in Taoist texts: clack the upper and lower teeth together on waking, swallow the saliva that pools in the mouth, hold specific breaths, and restrain sexual release to 'return the essence and nourish the brain.'",
+  "mechanism": "Taoist yangsheng theory held that a fixed store of vital essence (jing) depletes with age unless actively conserved and circulated through small daily rituals rather than spent all at once.",
+  "action": "morning teeth-clacking and saliva-swallowing ritual",
+  "on_screen_card": "HE CLACKED HIS TEETH EVERY MORNING FOR 800 YEARS",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Peng Zu\u2014the 800-year-old longevity expert",
+    "url": "https://taomyth.com/blogs/knowledge-popularization/peng-zu-the-800-year-old-longevity-expert"
+   },
+   {
+    "title": "Peng Zu",
+    "url": "https://longevity-myths.fandom.com/wiki/Peng_Zu"
+   },
+   {
+    "title": "Peng zu Culture of Daoism and Sex",
+    "url": "https://www.chinaexploration.com/ChineseCulture/Religion-and-temples/peng-zu-sex-culture.html"
+   }
+  ],
+  "territory": "eastern"
+ },
+ {
+  "title": "The Jewel Pills Made From Poison",
+  "felt_symptom": "the felt drag of getting older \u2014 joints, memory, energy all at once \u2014 wanting one fix instead of ten habits",
+  "weird_anchor": "Tibetan 'precious pills' (rinchen rilbu), still made today, combine up to 160 plants and minerals with gold, silver, pearl, coral, turquoise and a purified mercury-sulfide ash called tsotel \u2014 a substance poisonous in its raw state, refined over weeks through secret ritual processing before monks bless it. The Dalai Lama's own 'Mani Pills' are consecrated with mantra at his monastery in India.",
+  "mechanism": "Properly detoxified mercury was believed, in Tibetan medicine, to let a person live out a full lifespan in excellent physical and mental capacity \u2014 not by fighting decay directly but by neutralizing the poisons the body accumulates over a lifetime.",
+  "action": "none",
+  "on_screen_card": "THE PILL IS PART POISON, PART PRAYER, PART GOLD",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Tibetan Precious Pills as Therapeutics and Rejuvenating Longevity Tonics",
+    "url": "https://journals.library.ualberta.ca/hssa/index.php/hssa/article/view/15"
+   },
+   {
+    "title": "Precious Pills",
+    "url": "https://mentseekhang.org/precious-pills/"
+   },
+   {
+    "title": "On Mercury in Tibetan 'Precious Pills'",
+    "url": "https://www.wisdomlib.org/hinduism/book/journal-of-the-european-ayurvedic-society/d/doc1474877.html"
+   }
+  ],
+  "territory": "eastern"
+ },
+ {
+  "title": "The God Built From Nine Poisons",
+  "felt_symptom": "watching the mirror for the first grey hair, the first wrinkle, wanting to know if it can be stopped rather than just covered",
+  "weird_anchor": "In the Palani Hills of Tamil Nadu, the Siddha alchemist Bogar \u2014 one of the tradition's 18 legendary masters \u2014 is said to have cast the temple idol of Palani Murugan out of 'navapashanam,' nine substances including mercury, arsenic and sulphur, each poisonous alone, fused through a secret alchemical process Siddhas call Kaya Kalpa: methods explicitly aimed at living without going grey or wrinkled.",
+  "mechanism": "Siddha alchemy treated raw poison and the body's own decay as the same problem to solve: purify the poison correctly and it flips from toxin to tonic, arresting the visible signs the tradition blamed on aging.",
+  "action": "none",
+  "on_screen_card": "THE STATUE IS MADE OF NINE POISONS. IT'S SUPPOSED TO STOP AGING.",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Bogar: The Mystical Siddhar Who Bridged Alchemy, Spirituality, and Divine Worship",
+    "url": "https://www.velmont.org/post/bogar-the-mystical-siddhar-who-bridged-alchemy-spirituality-and-divine-worship"
+   },
+   {
+    "title": "The Story of Navapashanam",
+    "url": "https://navapashanam.co.in/the-story-of-navapashanam/"
+   },
+   {
+    "title": "Bogar Siddhar \u2013 Navapashanam Creator & Palani Murugan Saint",
+    "url": "https://arunraj.org/siddhar/bogar/"
+   }
+  ],
+  "territory": "eastern"
+ },
+ {
+  "title": "The 2,168-Year-Old Diet Found in a Tomb",
+  "felt_symptom": "a stomach that won't stop holding onto weight no matter what's cut, hunger that never seems satisfied",
+  "weird_anchor": "In 1973, archaeologists opened Tomb 3 at Mawangdui in Hunan, China \u2014 sealed in 168 BCE for the family of the Marquise of Dai \u2014 and found a silk manuscript titled 'Quegu Shiqi' (Eliminating Grain and Eating Qi), the oldest known grain-avoidance diet manual, instructing practitioners to drop the five grains entirely and live on breath plus a specific fern root.",
+  "mechanism": "Taoist theory held that grain fed 'three worms' living in the gut that caused decay, hunger, and aging; starving them by cutting grain was believed to lighten the body and slow its decline.",
+  "action": "none",
+  "on_screen_card": "BURIED 168 BC: THE DIET THAT SAID STOP EATING GRAIN",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Mawangdui Silk Texts",
+    "url": "https://www.historyofinformation.com/detail.php?id=2494"
+   },
+   {
+    "title": "Bigu (grain avoidance)",
+    "url": "https://en.wikipedia.org/wiki/Bigu_(grain_avoidance)"
+   },
+   {
+    "title": "The Daoyintu And The Mawangdui Texts",
+    "url": "https://gwongzaukungfu.com/en/daoyintu-and-mawangdui-texts/"
+   }
+  ],
+  "territory": "eastern"
+ },
+ {
+  "title": "The Hunters Who Shout at Mountains for a $100,000 Root",
+  "felt_symptom": "exhaustion that sleep doesn't fix, a body that feels like it's running on empty by mid-afternoon",
+  "weird_anchor": "Korea's simmani \u2014 professional wild ginseng hunters \u2014 still perform mountain-spirit rites before climbing, abstain from meat and sex during the hunt, and when they find a root shout 'Sim bwatta!' three times. Wild ginseng, believed to be 200-300 years old by the time it's found, can sell for up to $100,000 a root.",
+  "mechanism": "Wild ginseng, grown slowly under wild stress over centuries rather than farmed in a season, was believed to concentrate far more restorative qi than a cultivated root \u2014 a direct transfer of the mountain's decades of stored vitality into the person who eats it.",
+  "action": "none",
+  "on_screen_card": "A ROOT 300 YEARS OLD. A SHOUT. $100,000.",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Wild ginseng hunters in a modern world",
+    "url": "https://www.korea.net/NewsFocus/Culture/view?articleId=144082"
+   },
+   {
+    "title": "South Korea - The simmanis",
+    "url": "https://universvoyage.com/en/south-korea-simmanis/"
+   },
+   {
+    "title": "All about wild ginseng",
+    "url": "https://www.koreatimes.co.kr/lifestyle/travel-food/20120726/all-about-wild-ginseng"
+   }
+  ],
+  "territory": "eastern"
+ },
+ {
+  "title": "The Doctor Who Said Old Age Is a Lamp Running Out of Oil",
+  "felt_symptom": "the sense that energy just isn't what it was, that something inside is running down no matter how much you sleep or eat",
+  "weird_anchor": "The 11th-century Persian physician Ibn Sina (Avicenna), in his Canon of Medicine, formalized the theory of 'radical moisture' \u2014 an inborn, non-renewable reserve he compared explicitly to the oil in a lamp, slowly consumed by the body's own inner heat until the flame simply runs out at death. He devoted a specific section, later studied as his 'regimen of old age,' to slowing that burn.",
+  "mechanism": "Aging, in this model, wasn't damage to repair \u2014 it was a fixed fuel supply burning down, meaning old age was managed by lowering the flame (smaller meals, gentler routines, oil massage) rather than trying to refill a tank that could not be refilled.",
+  "action": "smaller, more frequent meals in later life; warm oil massage after bathing",
+  "on_screen_card": "OLD AGE, HE WROTE, IS A LAMP RUNNING OUT OF OIL",
+  "score_interesting": 2,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "The Concept of Innate Heat in Avicenna's Canon Medicinae",
+    "url": "https://link.springer.com/chapter/10.1007/978-3-031-84556-7_10"
+   },
+   {
+    "title": "Avicenna and his regimen of old age",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/3551552/"
+   },
+   {
+    "title": "Radical Moisture",
+    "url": "https://www.researchgate.net/publication/320536189_Radical_Moisture"
+   }
+  ],
+  "territory": "eastern"
+ },
+ {
+  "title": "The Gold They Burned in Cow-Dung Fire to Slow Age",
+  "felt_symptom": "fatigue no coffee fixes, joints that complain, a sense the body's spark is dimming",
+  "weird_anchor": "Swarna Bhasma ('gold ash'), described across Ayurveda's foundational texts \u2014 the Charaka Samhita, Sushruta Samhita, and Astanga Hridaya \u2014 is made by wrapping pure gold leaf and incinerating it repeatedly over cow-dung-fed furnace fires, alternated with soaks in sesame oil, buttermilk and aloe juice, until the metal is reduced to a fine ash small enough to enter the bloodstream.",
+  "mechanism": "Gold does not rust, tarnish or decay; rasayana theory held that reducing it to an absorbable ash let the body borrow some of that same permanence, taken specifically as a rejuvenation drug against old age.",
+  "action": "none",
+  "on_screen_card": "THEY BURNED GOLD IN COW-DUNG FIRE TO SLOW AGE",
+  "score_interesting": 2,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Nanostructured gold in ancient Ayurvedic calcined drug 'swarnabhasma'",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8642718/"
+   },
+   {
+    "title": "Comparative study on cellular entry of incinerated ancient gold particles (Swarna Bhasma)",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5587722/"
+   },
+   {
+    "title": "Swarna Bhasma (Gold Ash): Benefits, Uses & Side Effects",
+    "url": "https://pharmeasy.in/blog/ayurveda-benefits-side-effects-of-swarna-bhasma/"
+   }
+  ],
+  "territory": "eastern"
+ },
+ {
+  "title": "The Man Who Lived 212 Years and Invented Tai Chi",
+  "felt_symptom": "joints that ache on cold mornings, a body that feels like it's fighting itself instead of moving with ease",
+  "weird_anchor": "Zhang Sanfeng, a Taoist priest of the Wudang Mountains first recorded in the official Ming History (Ming Shi), is said to have lived from 1247 to as late as 1459 \u2014 up to 212 years \u2014 while developing the slow, internal martial art that became Tai Chi as an expression of Taoist neidan (internal alchemy).",
+  "mechanism": "Instead of hard, exhausting exercise, neidan practice used slow, continuous movement paired with breath to circulate internal energy (qi) gently, sparing the body's reserves rather than burning through them.",
+  "action": "slow, continuous movement practice (Tai Chi-style)",
+  "on_screen_card": "HE ALLEGEDLY LIVED 212 YEARS. HIS EXERCISE IS STILL TAUGHT.",
+  "score_interesting": 2,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Chang San Feng (Zhang Sanfeng), Taoist Grandmaster and Sage",
+    "url": "https://www.egreenway.com/taichichuan/chang1.htm"
+   },
+   {
+    "title": "Zhang Sanfeng",
+    "url": "https://en.wikipedia.org/wiki/Zhang_Sanfeng"
+   },
+   {
+    "title": "the immortal zhang sanfeng",
+    "url": "https://www.pureinsight.org/node/5952"
+   }
+  ],
+  "territory": "eastern"
+ },
+ {
+  "title": "The 900-Year-Old Paste Still on the Pharmacy Shelf",
+  "felt_symptom": "feeling worn down after illness or stress, like the body needs rebuilding rather than just resting",
+  "weird_anchor": "First recorded in 1170 CE in the Song-dynasty text Hong Shi Ji Yan Fang as 'Qiong Yu Gao' (Jade Paste) \u2014 fresh rehmannia root, ginseng, poria mushroom and honey, simmered together over days into a thick paste \u2014 the formula was carried into Korea's 1610 medical encyclopedia Donguibogam as 'Gyeongokgo,' and is still manufactured and sold today in Korean pharmacies as 'Kyung-Ok-Ko.'",
+  "mechanism": "The four ingredients were chosen to replenish what the tradition called yin and jing \u2014 the body's deep reserves \u2014 after they'd been drained by age, illness or overwork, rebuilding from the inside rather than treating one symptom.",
+  "action": "the commercial paste is still sold and taken as a restorative tonic",
+  "on_screen_card": "A 900-YEAR-OLD RECIPE, STILL ON THE PHARMACY SHELF",
+  "score_interesting": 2,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Gyeongokgo (\u74ca\u7389\u818f)",
+    "url": "https://geummaek.com/en/programs/gyeongokgo"
+   },
+   {
+    "title": "Hematologic and Serological Investigation of Effect on Gyeongokgo",
+    "url": "https://koreascience.kr/article/JAKO201928951542867.pdf"
+   },
+   {
+    "title": "Kyung-ok-ko",
+    "url": "https://en.wikipedia.org/wiki/Kyung-ok-ko"
+   }
+  ],
+  "territory": "eastern"
+ },
+ {
+  "title": "The Brain That Cleared Overnight",
+  "felt_symptom": "The nagging fear that a serious diagnosis after fifty is a life sentence \u2014 that the body no longer has the fight left in it to come back from real damage.",
+  "weird_anchor": "In August 2015, at age 90, former U.S. President Jimmy Carter was diagnosed with metastatic melanoma that had spread to four separate spots in his brain. By December 2015, after radiation and four rounds of the immunotherapy drug pembrolizumab (Keytruda), scans showed all four tumors gone. He lived another nine years, dying in 2024 at 100.",
+  "mechanism": "The cancer had been hiding from his immune system by pressing a molecular 'off switch' (PD-1) on his own immune cells. The drug pried that switch back open, and his 90-year-old immune system \u2014 still fully capable \u2014 went in and cleared the tumors itself.",
+  "action": "none",
+  "on_screen_card": "AT 90, HIS OWN IMMUNE SYSTEM ERASED FOUR BRAIN TUMORS",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Jimmy Carter says brain cancer is gone following treatment",
+    "url": "https://www.statnews.com/2015/12/06/jimmy-carter-brain-cancer/"
+   },
+   {
+    "title": "Remission of Jimmy Carter's Melanoma Shows Potential of Immunotherapy for Cancer \u2014 Dana-Farber",
+    "url": "https://blog.dana-farber.org/insight/2015/12/remission-of-jimmy-carters-melanoma-shows-potential-of-immunotherapy-for-cancer/"
+   },
+   {
+    "title": "President Carter Celebrates 100th Birthday: A Testament to the Power of Immunotherapy",
+    "url": "https://www.cancerresearch.org/blog/october-2024/president-carter-celebrates-100th-birthday-a-testament-to-the-power-of-immunotherapy"
+   }
+  ],
+  "territory": "healing"
+ },
+ {
+  "title": "The Heart Attack Babies Walk Away From",
+  "felt_symptom": "Getting winded on stairs that used to be nothing, and the quiet dread that the heart is thinning out and won't fully bounce back from a real hit.",
+  "weird_anchor": "Documented case reports, published in Circulation Research, describe newborn infants who suffered a full myocardial infarction (heart attack) in their first weeks of life. On follow-up MRI, their hearts showed completely normal structure and function \u2014 no scar tissue at all, functionally as if the attack had never happened.",
+  "mechanism": "In a newborn's heart, the clean-up cells that arrive after damage (macrophages) release a signal chemical that tells the surviving heart muscle to divide and replace what was lost. In an adult heart, those same clean-up cells barely produce that signal, so the same injury heals as permanent scar instead of new muscle.",
+  "action": "none",
+  "on_screen_card": "A NEWBORN'S HEART SURVIVED A HEART ATTACK WITHOUT A SINGLE SCAR",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Functional Recovery of a Human Neonatal Heart After Severe Myocardial Infarction \u2014 Circulation Research",
+    "url": "https://www.ahajournals.org/doi/10.1161/circresaha.115.307017"
+   },
+   {
+    "title": "Born to heal: Why babies recover after heart damage, but adults do not",
+    "url": "https://healthcare-in-europe.com/en/news/born-heal-baby-recovery-after-heart-damage.html"
+   },
+   {
+    "title": "Why babies recover, but adults scar, after heart damage \u2014 Northwestern University",
+    "url": "https://news.northwestern.edu/stories/2025/02/born-to-heal-why-babies-recover-but-adults-scar-after-heart-damage?fj=1"
+   }
+  ],
+  "territory": "healing"
+ },
+ {
+  "title": "The Finger That Grew Itself Back",
+  "felt_symptom": "Small cuts and scrapes that used to vanish in days now leave a mark for good, and take longer to close than they used to.",
+  "weird_anchor": "Surgeon Cynthia Illingworth of Sheffield Children's Hospital documented, in a 1974 paper, hundreds of cases of children under age eleven who lost a fingertip in an accident. Left alone under a simple non-stick dressing instead of being surgically closed, the tips regrew completely \u2014 bone, nail, nerves and fingerprint \u2014 within about three months.",
+  "mechanism": "Below a certain age, the stump still carries a pocket of blank, all-purpose cells that can rebuild whatever tissue is missing, the way the finger was built the first time in the womb. That pocket closes for good once the child's skeleton finishes forming, so an adult stump can only scar over.",
+  "action": "none",
+  "on_screen_card": "CHILDREN UNDER 11 CAN REGROW A FINGERTIP, BONE AND ALL",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Trapped fingers and amputated finger tips in children \u2014 Journal of Pediatric Surgery, 1974",
+    "url": "https://www.jpedsurg.org/article/S0022-3468(74)80220-4/abstract"
+   },
+   {
+    "title": "Medicine: The Regenerative Finger \u2014 TIME archive",
+    "url": "https://time.com/archive/6847176/medicine-the-regenerative-finger/"
+   },
+   {
+    "title": "Children regrow fingertips \u2014 Weird Universe",
+    "url": "https://www.weirduniverse.net/blog/comments/children_regrow_fingertips"
+   }
+  ],
+  "territory": "healing"
+ },
+ {
+  "title": "The Mouse Ears That Closed Without a Scar",
+  "felt_symptom": "Old scars, a bad knee, a joint that clicks \u2014 all the little permanent damage the body just left behind instead of fully repairing.",
+  "weird_anchor": "In 1996 at Philadelphia's Wistar Institute, immunologist Ellen Heber-Katz found that identifying holes her lab had punched in the ears of a strain of mice (MRL mice) to mark them had disappeared. The cartilage, skin and hair follicles had rebuilt themselves completely within about 30 days \u2014 with no scar at all.",
+  "mechanism": "This mouse strain never fully switches off the rebuilding genes an embryo uses to construct its own body; most mammals silence those genes permanently after birth. Later research found faint traces of the same dormant genes in ordinary mice \u2014 and possibly in people.",
+  "action": "none",
+  "on_screen_card": "A MOUSE'S PUNCHED EAR GREW BACK WHOLE IN THIRTY DAYS",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "The Incredible Regenerating Mouse \u2014 Singularity Hub",
+    "url": "https://singularityhub.com/2010/05/11/the-incredible-regenerating-mouse/"
+   },
+   {
+    "title": "Genetic analysis of a mammalian wound-healing trait \u2014 PNAS, 1998",
+    "url": "https://www.pnas.org/doi/full/10.1073/pnas.95.20.11792"
+   },
+   {
+    "title": "Regrowing nerves and healing without scars? \u2014 Philadelphia Inquirer",
+    "url": "https://www.inquirer.com/health/lankenau-medical-research-ellen-heber-katz-20231126.html"
+   }
+  ],
+  "territory": "healing"
+ },
+ {
+  "title": "The Jellyfish That Turned Back Into a Baby",
+  "felt_symptom": "The private, half-joking wish for an actual reset button on the body, instead of just slowing down the damage.",
+  "weird_anchor": "In 1988, marine biology student Christian Sommer was studying a tiny jellyfish, Turritopsis dohrnii, in a lab tank in Rapallo, Italy. Instead of the adults dying as expected, he found the tank full of infant polyps again. When damaged or starved, the jellyfish's adult cells collapse and reorganize themselves back into their infant stage, then regrow into a new, genetically identical adult.",
+  "mechanism": "Its mature cells never lock permanently into one final identity the way an aging animal's cells do. When injured, they revert to a blank, youthful state and rebuild the whole body from scratch \u2014 resetting its own biological clock instead of just repairing the damage.",
+  "action": "none",
+  "on_screen_card": "THIS JELLYFISH, DAMAGED, TURNS BACK INTO A BABY AND STARTS OVER",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "The \u2018Immortal\u2019 Jellyfish That Resets When Damaged \u2014 AMNH",
+    "url": "https://www.amnh.org/explore/news-blogs/immortal-jellyfish"
+   },
+   {
+    "title": "Immortal jellyfish: The secret to cheating death \u2014 Natural History Museum",
+    "url": "https://www.nhm.ac.uk/discover/immortal-jellyfish-secret-to-cheating-death.html"
+   },
+   {
+    "title": "An \u2018Immortal\u2019 Jellyfish Offers Clues into Biological Aging \u2014 The Scientist",
+    "url": "https://www.the-scientist.com/an-immortal-jellyfish-offers-clues-into-biological-aging-73346"
+   }
+  ],
+  "territory": "healing"
+ },
+ {
+  "title": "The Wound That Left No Mark, Before Birth",
+  "felt_symptom": "Every visible line, wrinkle and old scar in the mirror as proof the body used to heal clean, and doesn't anymore.",
+  "weird_anchor": "Stanford surgeon-researcher Michael Longaker documented that a cut made on a fetus early in pregnancy heals completely invisibly \u2014 no scar, full skin structure restored. The exact same cut, made just weeks later once the third trimester begins, scars for life, in every human being who has ever lived.",
+  "mechanism": "Early fetal skin builds itself using a different set of instructions that regenerate original tissue rather than patch it. A genetic switch that flips late in pregnancy permanently swaps those instructions for the faster, cruder scar-forming system used for the rest of a lifetime.",
+  "action": "none",
+  "on_screen_card": "EVERY PERSON ALIVE COULD ONCE HEAL WITHOUT A SCAR \u2014 IN THE WOMB",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Scarless wound healing: Transitioning from fetal research to regenerative healing \u2014 PubMed",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29316315/"
+   },
+   {
+    "title": "Wound Healing Research at the Hagey Laboratory for Pediatric Regenerative Medicine \u2014 Stanford (PMC)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6080091/"
+   }
+  ],
+  "territory": "healing"
+ },
+ {
+  "title": "The Rat That Forgot How To Age",
+  "felt_symptom": "The sense that somewhere past fifty the body quietly flips from holding steady to slowly failing \u2014 joints, bones, hormones all drifting downward together.",
+  "weird_anchor": "Biologist Rochelle Buffenstein has tracked colonies of naked mole rats for decades and found they live past 30 years \u2014 roughly nine times longer than a similarly sized mouse \u2014 without their risk of death ever rising with age. They keep working bones, hearts and fertile ovaries into their fourth decade, then often die with almost no warning at all.",
+  "mechanism": "Their cells run unusually thorough error-correction and protein-repair systems and resist the molecular 'junk' buildup that piles up year after year in other mammals, so their bodies never enter the long, gradual decline other species experience as old age.",
+  "action": "none",
+  "on_screen_card": "THIS RODENT LIVES 30 YEARS AND NEVER SHOWS ITS AGE",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Naked mole-rat mortality rates defy Gompertzian laws by not increasing with age \u2014 eLife",
+    "url": "https://elifesciences.org/articles/31157"
+   },
+   {
+    "title": "Does the naked mole rat hold the secret to a long life? \u2014 National Geographic",
+    "url": "https://www.nationalgeographic.com/animals/article/naked-mole-rat-slow-aging-disease"
+   },
+   {
+    "title": "Negligible senescence in the longest living rodent, the naked mole-rat \u2014 Journal of Comparative Physiology B",
+    "url": "https://link.springer.com/article/10.1007/s00360-007-0237-5"
+   }
+  ],
+  "territory": "healing"
+ },
+ {
+  "title": "The Antler That Outraces Cancer",
+  "felt_symptom": "Wanting the fast bounce-back and raw vitality the body had in its twenties instead of the slow rebuild recovery takes now.",
+  "weird_anchor": "A stag's antler is the only organ in any mammal that regrows completely every single year \u2014 from bare bone to a full rack in about four months, with its growing tip lengthening nearly an inch a day and its cells dividing faster than most cancer cells do. For over 2,000 years, Chinese medicine has harvested that soft, blood-filled 'velvet' antler as a kidney-yang tonic to restore vitality and slow the signs of age.",
+  "mechanism": "The stem cells at the antler's base stay switched on year after year the way an embryo's do, rebuilding a limb-sized organ from scratch each spring. Traditional medicine held that consuming the tissue at its most active growth phase passed some of that same rebuilding vitality to the person taking it.",
+  "action": "Deer antler velvet taken as a traditional tonic supplement.",
+  "on_screen_card": "THIS ORGAN REGROWS COMPLETELY EVERY YEAR \u2014 FASTER THAN CANCER",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Deer antler extract facilitates cartilage growth and regeneration \u2014 PMC",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7983396/"
+   },
+   {
+    "title": "Deer Velvet Uses, Benefits & Side Effects \u2014 Drugs.com",
+    "url": "https://www.drugs.com/npc/deer-velvet.html"
+   },
+   {
+    "title": "Deer Antler Velvet: The Science Behind the Supplement",
+    "url": "https://toegrips.com/deer-antler-velvet/"
+   }
+  ],
+  "territory": "healing"
+ },
+ {
+  "title": "The Century-Old Harpoon Still In Its Side",
+  "felt_symptom": "The hope that the body can take a serious hit in middle age and still have decades of strong life left in it afterward.",
+  "weird_anchor": "In 2007, Inupiat whalers off Alaska caught a bowhead whale with a fragment of an exploding harpoon lodged near its neck \u2014 a weapon design manufactured in New Bedford, Massachusetts and last used around 1880. The whale had carried the fully healed wound for more than a century, making it at least 115 to 130 years old, among the oldest mammals ever documented.",
+  "mechanism": "Bowhead whales carry an unusually large set of extra DNA-repair and tumor-suppressing genes compared with other mammals, letting their cells correct damage and resist cancer far longer before wearing out \u2014 the same repair system that sealed the harpoon wound just kept running for another hundred years.",
+  "action": "none",
+  "on_screen_card": "A WHALE HEALED AN 1880s HARPOON WOUND AND LIVED A CENTURY MORE",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Meet The Longest-Living Mammal \u2014 Forbes",
+    "url": "https://www.forbes.com/sites/scotttravers/2024/09/19/meet-the-longest-living-mammal-hint-its-been-found-alive-with-an-1880s-era-harpoon-in-its-side/"
+   },
+   {
+    "title": "Whale found with 145-year-old harpoon embedded in head",
+    "url": "https://www.newbedfordguide.com/130-year-old-whale-found-explosive-harpoon-1880s-new-bedford-embedded-head/2025/08/10"
+   },
+   {
+    "title": "A 100-Year-Old Harpoon Was Found Embedded In The World's Longest-Living Mammal \u2014 IFLScience",
+    "url": "https://www.iflscience.com/a-100-year-old-harpoon-was-found-embedded-in-the-worlds-longest-living-mammal-81037"
+   }
+  ],
+  "territory": "healing"
+ },
+ {
+  "title": "The Nobel Scientist Who Dosed Her Own Eyes With Youth",
+  "felt_symptom": "The fear of the mind slowing first \u2014 names slipping, memory thinning \u2014 before the body ever shows its age.",
+  "weird_anchor": "Neurologist Rita Levi-Montalcini discovered nerve growth factor, work that won her the 1986 Nobel Prize, and afterward put drops made from her own discovery into her own eyes daily for years. She kept working full research days into her second century of life and died at 103, saying at 100 that her mind felt sharper than it had at 20.",
+  "mechanism": "Nerve growth factor is the chemical signal that tells nerve cells to survive, branch and keep firing. By dosing the nerve-rich tissue of her own eyes daily, she theorized she was topping up a signal that otherwise thins with age, keeping those cells active instead of withering.",
+  "action": "none",
+  "on_screen_card": "SHE DOSED HER OWN EYES WITH HER NOBEL DISCOVERY AND STAYED SHARP TO 103",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Rita Levi-Montalcini \u2014 Nobel Prize official stories",
+    "url": "https://www.nobelprize.org/stories/women-who-changed-science/rita-levi-montalcini/"
+   },
+   {
+    "title": "Dr. Rita Levi-Montalcini was a Centenarian Gonzo Biohacker \u2014 Adafruit",
+    "url": "https://blog.adafruit.com/2017/11/13/dr-rita-levi-montalcini-was-a-centenarian-gonzo-biohacker/"
+   },
+   {
+    "title": "Celebrating life with Rita Levi-Montalcini: A hundred years and more \u2014 PMC",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3354834/"
+   }
+  ],
+  "territory": "healing"
+ },
+ {
+  "title": "The Worm Cut Into 279 Pieces",
+  "felt_symptom": "Running on fumes by the afternoon \u2014 the feeling that the body's once-bottomless reserve of energy and repair is now being spent down for good.",
+  "weird_anchor": "In 1898, biologist Thomas Hunt Morgan sliced a single flatworm into as many as 279 fragments. Nearly every piece, some no bigger than a crumb, rebuilt itself into a complete, fully functioning new worm within about two weeks.",
+  "mechanism": "A flatworm's entire body is packed with a reserve of blank, all-purpose stem cells that never stop renewing, so any surviving fragment has enough spare parts to rebuild the whole animal. Mammals are born with the same kind of reserve, but spend it down over a lifetime until, in old age, little is left to draw on.",
+  "action": "none",
+  "on_screen_card": "CUT INTO 279 PIECES IN 1898 \u2014 EVERY PIECE GREW BACK A WHOLE WORM",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Regeneration, by Thomas Hunt Morgan \u2014 Project Gutenberg",
+    "url": "https://www.gutenberg.org/files/57198/57198-h/57198-h.htm"
+   },
+   {
+    "title": "Forgotten classics \u2014 T. H. Morgan and planarian regeneration \u2014 the Node",
+    "url": "https://thenode.biologists.com/forgotten-classics-t-h-morgan-planarian-regeneration/research/"
+   },
+   {
+    "title": "Planarians and Regeneration: Facts and Possible Applications \u2014 Owlcation",
+    "url": "https://owlcation.com/stem/planarians-and-recent-discoveries"
+   }
+  ],
+  "territory": "healing"
+ },
+ {
+  "title": "The Drug Waking Up a Third Set of Teeth",
+  "felt_symptom": "Missing teeth and receding gums \u2014 the particular unglamorous proof of age that a smile can't hide.",
+  "weird_anchor": "Dentist-researcher Katsu Takahashi found that hidden beneath adult human gums, everyone still carries the dormant buds of a third generation of teeth the body never uses. In autumn 2024, his team began dosing 30 adult men, aged 30 to 65 and missing at least one tooth, at Kyoto University Hospital with an antibody drug (TRG-035) designed to release the one protein holding those buds shut.",
+  "mechanism": "A protein called USAG-1 acts as a permanent brake, stopping the body's spare tooth buds from ever growing in. The new antibody blocks that single protein, and in animal trials the dormant buds grew into complete, fully functioning new teeth without surgery.",
+  "action": "Experimental antibody drug in human trials, not yet available; nothing to do tonight but worth watching.",
+  "on_screen_card": "EVERYONE HAS A HIDDEN THIRD SET OF TEETH \u2014 THIS DRUG WAKES THEM UP",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Japanese researchers test pioneering drug to regrow teeth \u2014 Medical Xpress",
+    "url": "https://medicalxpress.com/news/2024-12-japanese-drug-regrow-teeth.html"
+   },
+   {
+    "title": "Japanese dentists test drug to help people with missing teeth regrow new ones \u2014 Oral Health Group",
+    "url": "https://www.oralhealthgroup.com/oral-health/japanese-dentists-test-drug-to-help-people-with-missing-teeth-grow-new-ones-1003983219/"
+   },
+   {
+    "title": "Dr. Katsu Takahashi: Latest Clinical Trials for Tooth Regrowth Drug",
+    "url": "https://www.dentinova.co.uk/2025/07/01/dr-katsu-takahashi-latest-clinical-trials-for-tooth-regrowth-drug/"
+   }
+  ],
+  "territory": "healing"
+ },
+ {
+  "title": "The Old Rats Who Danced The Macarena In Berkeley",
+  "felt_symptom": "forgetful, low-energy, feels like the body's engine has already given up decades before the mind wants to quit",
+  "weird_anchor": "Berkeley biochemist Bruce Ames fed elderly rats (24-28 months old, the rat equivalent of a 75-80 year old person) two molecules, acetyl-L-carnitine and alpha-lipoic acid, for one month. Ames's own quote, published with the 2002 PNAS study: 'these old rats got up and did the Macarena.'",
+  "mechanism": "The two molecules recharge old, leaky mitochondria directly, restoring the voltage across the mitochondrial membrane and letting the cell's power plants burn fuel and produce energy the way they did when the rat was young.",
+  "action": "acetyl-L-carnitine and alpha-lipoic acid, taken together as supplements",
+  "on_screen_card": "THE OLD RATS GOT UP AND DID THE MACARENA \u2014 BERKELEY, 2002",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Dietary Supplements Make Old Rats Youthful, According To UC Berkeley Study",
+    "url": "https://sciencedaily.com/releases/2002/02/020219075823.htm"
+   },
+   {
+    "title": "Feeding acetyl-l-carnitine and lipoic acid to old rats significantly improves metabolic function while decreasing oxidative stress (PNAS)",
+    "url": "https://www.pnas.org/doi/abs/10.1073/pnas.261708898"
+   },
+   {
+    "title": "Bruce Ames at UC Berkeley in PNAS",
+    "url": "https://grg.org/BAmes.htm"
+   }
+  ],
+  "territory": "mito"
+ },
+ {
+  "title": "The Monks Who Dried Wet Sheets In The Snow",
+  "felt_symptom": "always cold, sluggish, the internal furnace that used to run hot now barely simmers",
+  "weird_anchor": "Starting in 1981, Harvard cardiologist Herbert Benson was given rare permission to study Tibetan Buddhist monks in the Himalayas practicing g Tum-mo ('inner fire') meditation. Sitting in a 40\u00b0F room, monks were wrapped in 3x6 foot sheets soaked in 49\u00b0F water and dried three of them, one after another, over several hours using body heat alone, raising the temperature of their fingers and toes by up to 17 degrees Fahrenheit.",
+  "mechanism": "The breath and visualization technique switches on brown fat, tissue whose mitochondria are wired to burn fuel directly into heat instead of storing it as energy reserves \u2014 the same furnace that keeps infants warm and that quietly shuts down in most people as they age.",
+  "action": "slow, forceful breath-holding practice (tummo-style breathing) combined with cold exposure",
+  "on_screen_card": "SEVENTEEN DEGREES OF BODY HEAT, MADE BY BREATH ALONE",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Meditation dramatically changes body temperatures \u2014 Harvard Gazette",
+    "url": "https://news.harvard.edu/gazette/story/2002/04/meditation-dramatically-changes-body-temperatures/"
+   },
+   {
+    "title": "How Tibetan Monks Use Meditation to Raise Their Peripheral Body Temperature 16-17 Degrees | Open Culture",
+    "url": "https://www.openculture.com/2021/01/how-tibetan-monks-use-meditation-to-raise-their-peripheral-body-temperature-16-17-degrees.html"
+   },
+   {
+    "title": "Neurocognitive and Somatic Components of Temperature Increases during g-Tummo Meditation (PMC)",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3612090/"
+   }
+  ],
+  "territory": "mito"
+ },
+ {
+  "title": "The Sage Who Was Made Young Again By The Twin Physicians",
+  "felt_symptom": "frail, weak, used up before their time, worried the body has aged faster than it should have",
+  "weird_anchor": "In the Charaka Samhita, the ancient rishi Chyavana grows old and frail meditating for years beneath an anthill. His wife Sukanya begs the Ashwini Kumaras, the twin physician-gods, to help him. They blend a paste built around amla (Indian gooseberry) with dozens of herbs, and Chyavana's youth and vigor return. The formula, called Chyawanprash, is still eaten daily by millions in India today.",
+  "mechanism": "Amla and the Chyawanprash herb blend are dense in compounds now studied for driving mitochondrial antioxidant defenses and prompting cells to build fresh mitochondria \u2014 the same 'recharge the cell's furnace' idea, told as myth long before anyone had a microscope.",
+  "action": "eating amla (Indian gooseberry) or Chyawanprash paste",
+  "on_screen_card": "THE GODS' OWN DOCTORS MADE AN OLD MAN YOUNG WITH A SPOONFUL OF FRUIT",
+  "score_interesting": 2,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Chyawanprash: Unveiling the Mythical Origins of an Ayurvedic Elixir of Health - Dhaara",
+    "url": "https://dhaaramagazine.in/2024/07/12/chyawanprash-unveiling-the-mythical-origins-of-an-ayurvedic-elixir-of-health/"
+   },
+   {
+    "title": "Chyavana: The Sage Who Defied Time - Natalia Suri",
+    "url": "https://www.nataliasuri.com/chyavana-the-sage-who-defied-time/"
+   },
+   {
+    "title": "The Legend of Chyawanprash - Yogi Jam",
+    "url": "https://www.bioveda.com.au/blogs/news/the-legend-of-chyawanprash-yogi-jam"
+   }
+  ],
+  "territory": "mito"
+ },
+ {
+  "title": "The Japanese Doctor Who Froze The Pain Away In Oita",
+  "felt_symptom": "joints stiff and inflamed, moving slower and creakier than the person used to",
+  "weird_anchor": "In 1978 in Oita, Japan, Dr. Toshima Yamaguchi (also transliterated Toshiro Yamauchi) built the first whole-body cryotherapy chamber, plunging rheumatoid arthritis patients into air chilled to roughly minus 166 degrees Fahrenheit for a few minutes at a time to fight their pain and inflammation.",
+  "mechanism": "A brief, brutal blast of cold is a controlled shock that forces mitochondria and cells into a defensive repair-and-renew mode, a hormetic stress that triggers anti-inflammatory signaling and pushes cells to build sturdier mitochondria to withstand the next shock.",
+  "action": "cold exposure: cold showers, ice baths, or cryotherapy chambers",
+  "on_screen_card": "MINUS ONE HUNDRED SIXTY-SIX DEGREES, ON PURPOSE, IN OITA, 1978",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "The History of Cryotherapy",
+    "url": "https://www.cryobuilt.com/post/the-history-of-cryotherapy"
+   },
+   {
+    "title": "When Was Cryotherapy Invented? The History of Cold Therapy",
+    "url": "https://coldshowersuccess.com/when-was-cryotherapy-invented/"
+   },
+   {
+    "title": "The History of Cryotherapy - \u00b0CRYO",
+    "url": "https://cryo.com/the-history-of-cryotherapy/"
+   }
+  ],
+  "territory": "mito"
+ },
+ {
+  "title": "The Finnish Men Of Kuopio And Their Sauna Clock",
+  "felt_symptom": "heart feels weaker than it used to, quiet fear of a sudden cardiac event",
+  "weird_anchor": "Cardiologist Jari Laukkanen tracked over 2,300 middle-aged men in Kuopio, Finland for more than two decades (published JAMA Internal Medicine, 2015). Men who used the sauna 4 to 7 times a week had a 63% lower risk of sudden cardiac death than men who went just once a week.",
+  "mechanism": "Repeated intense heat forces cells to produce heat-shock proteins that repair damaged proteins and prompt mitochondria to multiply and run more efficiently, mimicking much of the cardiovascular training effect of exercise.",
+  "action": "regular sauna use, several times a week",
+  "on_screen_card": "FOUR SAUNAS A WEEK, SIXTY-THREE PERCENT FEWER SUDDEN DEATHS",
+  "score_interesting": 2,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Inflammation, sauna bathing, and all-cause mortality in middle-aged and older Finnish men: a cohort study",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9792415/"
+   },
+   {
+    "title": "What Finnish Research Tells Us About Heat Exposure and Lifespan",
+    "url": "https://superpower.com/guides/sauna-and-longevity-what-finnish-research-tells-us-about-heat-exposure-and-lifespan"
+   },
+   {
+    "title": "Heat Shock Proteins and Sauna: Hormesis and Longevity",
+    "url": "https://peaksaunas.com/blogs/wellness/heat-shock-proteins-sauna"
+   }
+  ],
+  "territory": "mito"
+ },
+ {
+  "title": "The Herbalist Who Claimed Two Hundred Fifty Years",
+  "felt_symptom": "time feels like it's speeding up, running out of breath and out of years",
+  "weird_anchor": "Li Ching-Yuen, a Chinese herbalist and martial arts teacher, died in Kai County, Sichuan on May 6, 1933. His New York Times obituary ran under the headline 'Li Ching-Yun Dead; Gave His Age as 197,' with a sub-headline noting an inquiry that put him at 256. His one repeated, lifelong practice was slow, quiet breathing: 'keep a quiet heart, sit like a tortoise, walk sprightly like a pigeon, sleep like a dog.'",
+  "mechanism": "Slow, deep, diaphragmatic breathing \u2014 the core of the Chinese qigong tradition Li taught \u2014 increases how efficiently the lungs deliver oxygen to the mitochondria, reducing the cellular stress that comes from the fast, shallow breathing most adults default to.",
+  "action": "slow diaphragmatic breathing practice",
+  "on_screen_card": "THE NEW YORK TIMES, 1933: HE GAVE HIS AGE AS 197",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Li Ching-Yuen - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Li_Ching-Yuen"
+   },
+   {
+    "title": "Fact Check: Chinese Herbalist DID NOT Live To The Age Of 256 - Lead Stories",
+    "url": "https://korean.leadstories.com/hoax-alert/2023/05/fact-check-chinese-herbalist-did-not-die-at-256.html"
+   },
+   {
+    "title": "Li Ching-Yuen, The Amazing 250 Year-Old Man",
+    "url": "https://www.martialdevelopment.com/li-ching-yuen-the-amazing-250-year-old-man/"
+   }
+  ],
+  "territory": "mito"
+ },
+ {
+  "title": "The Chamber That Lengthened Telomeres In Ninety Days",
+  "felt_symptom": "cells feel worn out, worried about aging faster on the inside than it shows on the outside",
+  "weird_anchor": "In Tel Aviv in 2020, Dr. Shai Efrati put 35 healthy adults aged 64 and over through 60 sessions of hyperbaric oxygen therapy (pressurized, oxygen-rich chambers originally built for deep-sea divers with decompression sickness) across 90 days. Blood tests afterward showed telomeres lengthened by up to 38%, and the number of aged 'senescent' cells dropped by up to 37%.",
+  "mechanism": "Brief bursts of very high oxygen pressure act as a controlled stress that pushes mitochondria to ramp up energy production and trigger the body's own repair and regeneration systems, rather than simply flooding cells with extra oxygen.",
+  "action": "hyperbaric oxygen therapy sessions",
+  "on_screen_card": "NINETY DAYS IN A PRESSURE CHAMBER, TELOMERES UP THIRTY-EIGHT PERCENT",
+  "score_interesting": 2,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Hyperbaric oxygen treatment: Clinical trial reverses two biological processes associated with aging in human cells - ScienceDaily",
+    "url": "https://www.sciencedaily.com/releases/2020/11/201120150728.htm"
+   },
+   {
+    "title": "Hyperbaric oxygen therapy increases telomere length and decreases immunosenescence in isolated blood cells: a prospective trial - Aging",
+    "url": "https://www.aging-us.com/article/202188/text"
+   },
+   {
+    "title": "Shai Efrati - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Shai_Efrati"
+   }
+  ],
+  "territory": "mito"
+ },
+ {
+  "title": "The Cancer Scans That Found A Hidden Furnace",
+  "felt_symptom": "can't stay warm, metabolism feels broken, weight creeps on with no change in diet",
+  "weird_anchor": "In April 2009, three papers published simultaneously in the New England Journal of Medicine explained a mystery radiologists kept seeing on PET/CT scans meant to hunt for tumors: a glow behind the collarbones and along the spine. Biopsies confirmed it was brown fat, found active in 7.5% of women and 3.1% of men scanned, and it showed up far more often in patients scanned during cold winter months.",
+  "mechanism": "Brown fat is packed with mitochondria (that density is what gives it its color), and its only job is to burn fuel directly into heat instead of storing it. Cold exposure appears to switch this tissue back on in adults, decades after doctors had assumed it disappeared after infancy.",
+  "action": "regular cold exposure (cold showers, cool rooms) to reactivate brown fat",
+  "on_screen_card": "THE TUMOR SCAN THAT FOUND A FURNACE INSTEAD",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Identification and Importance of Brown Adipose Tissue in Adult Humans - NEJM",
+    "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa0810780"
+   },
+   {
+    "title": "PET/CT confirms presence of brown fat in adults - AuntMinnie",
+    "url": "https://www.auntminnie.com/clinical-news/molecular-imaging/nuclear-medicine/article/15590773/pet-ct-confirms-presence-of-brown-fat-in-adults"
+   },
+   {
+    "title": "The secrets of brown fat: a completely new way to tackle weight loss - BBC Science Focus",
+    "url": "https://www.sciencefocus.com/the-human-body/secrets-brown-fat-tackle-weight-loss"
+   }
+  ],
+  "territory": "mito"
+ },
+ {
+  "title": "The Microscope And The Crystal In The Semen",
+  "felt_symptom": "cells feel clogged with junk, sluggish, run-down in a way that wasn't there a decade ago",
+  "weird_anchor": "In 1678 in Delft, the Dutch lens-grinder Antonie van Leeuwenhoek peered through one of his handmade microscopes at his own semen and spotted strange needle-shaped crystals \u2014 later named spermine and spermidine after where he found them. Three centuries later, biochemist Frank Madeo in Graz, Austria showed the same molecule extends lifespan in yeast, worms, flies and mice.",
+  "mechanism": "Spermidine switches on autophagy, the cell's internal cleanup crew, which clears out damaged, worn-out mitochondria and lets fresh ones take their place.",
+  "action": "eating spermidine-rich foods (wheat germ, aged cheese, natto, mushrooms) or supplementing",
+  "on_screen_card": "A DUTCHMAN NAMED IT AFTER WHERE HE FOUND IT: 1678",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Spermidine: a novel autophagy inducer and longevity elixir - PubMed",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/20110777/"
+   },
+   {
+    "title": "Full article: Spermidine: a physiological autophagy inducer acting as an anti-aging vitamin in humans?",
+    "url": "https://www.tandfonline.com/doi/full/10.1080/15548627.2018.1530929"
+   },
+   {
+    "title": "Spermidine delays aging in humans (PMC)",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6128428/"
+   }
+  ],
+  "territory": "mito"
+ },
+ {
+  "title": "The Rodent That Survives Eighteen Minutes Without Air",
+  "felt_symptom": "brain fog, feeling slow and dull, quiet fear of losing mental sharpness",
+  "weird_anchor": "Thomas Park (University of Illinois Chicago) and Gary Lewin (Max Delbruck Center, Berlin) placed naked mole rats in a chamber with zero oxygen (published in Science, 2017). A mouse in the same chamber died in under a minute. The naked mole rat's heart rate dropped from 200 to 50 beats per minute, it lost consciousness \u2014 and after 18 minutes it walked away with no brain damage. The same animal lives past 30 years, roughly ten times longer than a similarly sized mouse, without developing cancer.",
+  "mechanism": "The naked mole rat's cells switch fuel under stress, running on fructose instead of glucose, keeping just enough energy flowing to its mitochondria to keep brain cells alive through total oxygen starvation \u2014 a trick tied to the same damage-resistant mitochondria behind its unusually long, cancer-free lifespan.",
+  "action": "none",
+  "on_screen_card": "EIGHTEEN MINUTES WITHOUT AIR, THEN IT WALKED AWAY",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Naked mole rats can survive 18 minutes without oxygen. Here's how they do it - Science/AAAS",
+    "url": "https://www.science.org/content/article/naked-mole-rats-can-survive-18-minutes-without-oxygen-here-s-how-they-do-it"
+   },
+   {
+    "title": "Fructose-driven glycolysis supports anoxia resistance in the naked mole-rat - Science",
+    "url": "https://www.science.org/doi/10.1126/science.aab3896"
+   },
+   {
+    "title": "Naked Mole-Rats Can Survive for 18 Minutes Without Oxygen - Smithsonian",
+    "url": "https://www.smithsonianmag.com/smart-news/naked-mole-rats-can-survive-18-minutes-without-oxygen-180963002/"
+   }
+  ],
+  "territory": "mito"
+ },
+ {
+  "title": "The French Lilac In The Medieval Hedge",
+  "felt_symptom": "constant exhaustion and thirst, the sense that the body's engine is quietly failing",
+  "weird_anchor": "Galega officinalis, known as French lilac or goat's rue, was used across medieval Europe to treat the frequent urination of what is now called diabetes. In 1918 chemists isolated its active compound, guanidine, and by 1922 had synthesized it into the drug now known as metformin, approved in the UK in 1958. Decades later it became the subject of the TAME trial, the first clinical trial ever designed to test whether a drug can slow aging itself.",
+  "mechanism": "Metformin nudges a cell's fuel-sensing switch (AMPK) as though the cell believes it is running low on energy, prompting mitochondria to become more efficient and to multiply, echoing some of the same signal sent by caloric restriction.",
+  "action": "none (prescription drug; illustrative)",
+  "on_screen_card": "A HEDGE WEED FROM THE MIDDLE AGES BECAME THE WORLD'S ANTI-AGING TRIAL DRUG",
+  "score_interesting": 2,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "The blooming of the French lilac - JCI",
+    "url": "https://www.jci.org/content/vol108/page1105"
+   },
+   {
+    "title": "Metformin History - News-Medical",
+    "url": "https://www.news-medical.net/health/Metformin-History.aspx"
+   },
+   {
+    "title": "History of Metformin: Origins, Development, and Uses Today - GoodRx",
+    "url": "https://www.goodrx.com/metformin/history"
+   }
+  ],
+  "territory": "mito"
+ },
+ {
+  "title": "The Women Of Upper Mustang Who Breathe Thin Air Best",
+  "felt_symptom": "winded climbing stairs, feeling like the body can't keep up with its own demand for energy anymore",
+  "weird_anchor": "Anthropologist Cynthia Beall (Case Western Reserve University) studied 417 Tibetan women, aged 46 to 86, living between 12,000 and 14,000 feet in Upper Mustang, Nepal (published in PNAS, 2024). The women who had borne the most children and lived the longest had blood that delivered oxygen more efficiently without needing to thicken it, unlike lowlanders forced to adapt to altitude by overproducing red blood cells.",
+  "mechanism": "Generations spent at extreme altitude selected for mitochondria and blood chemistry that squeeze more usable energy out of each breath of oxygen, an efficiency upgrade rather than a brute-force one \u2014 the same principle behind altitude training and breathwork.",
+  "action": "none (breathwork and altitude training are the closest human parallels some cite)",
+  "on_screen_card": "TWELVE THOUSAND FEET UP, HER BLOOD LEARNED TO WASTE NOTHING",
+  "score_interesting": 2,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Evolution in action: How ethnic Tibetan women thrive in thin oxygen at high altitudes - ScienceDaily",
+    "url": "https://www.sciencedaily.com/releases/2024/10/241021170358.htm"
+   },
+   {
+    "title": "Cynthia Beall - Center for Research on Tibet, Case Western Reserve University",
+    "url": "https://case.edu/artsci/tibet/about-us/staff/cynthia-beall"
+   }
+  ],
+  "territory": "mito"
+ },
+ {
+  "title": "The Old Mouse That Grew Its Fur Back In Ten Days",
+  "felt_symptom": "hair gone thin and patchy, skin that doesn't bounce back, the general sense that the body has stopped repairing itself",
+  "weird_anchor": "In 2017 at Erasmus University Medical Center in Rotterdam, biologist Peter de Keizer built a peptide called FOXO4-DRI. He gave it to old lab mice with dull, balding, patchy coats. Within ten days of injections, the mice grew back a full, glossy coat of fur.",
+  "mechanism": "As you age, some of your cells stop working but refuse to die -- they just sit there leaking inflammation into everything around them, which is a real part of why skin sags, hair thins, and joints stiffen. De Keizer's peptide found the exact handshake between two proteins, FOXO4 and p53, that these 'zombie' cells use to protect themselves, and pried it apart so the cells finally got the order to self-destruct.",
+  "action": "none",
+  "on_screen_card": "THE OLD MOUSE GREW BACK ITS FUR IN TEN DAYS",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Targeted Apoptosis of Senescent Cells Restores Tissue Homeostasis in Response to Chemotoxicity and Aging (Cell, 2017)",
+    "url": "https://www.cell.com/cell/fulltext/s0092-8674(17)30246-5"
+   },
+   {
+    "title": "Peptide targeting senescent cells restores stamina, fur, and kidney function in old mice",
+    "url": "https://www.eurekalert.org/news-releases/606548"
+   },
+   {
+    "title": "This New Treatment Has Successfully Increased Stamina And Reversed Hair Loss",
+    "url": "https://www.sciencealert.com/scientists-have-reversed-hair-loss-and-other-signs-of-ageing-in-mice"
+   },
+   {
+    "title": "Cleara Biotech senolytic candidate FOXO4-DRI",
+    "url": "https://www.lifespan.io/road-maps/the-rejuvenation-roadmap/cleara-biotech-foxo4-dri"
+   }
+  ],
+  "territory": "peptides"
+ },
+ {
+  "title": "The Mouse Named After The Fate Who Cuts The Thread",
+  "felt_symptom": "bones that feel thinner, arteries that feel stiffer, skin that has lost its spring, a sense that the whole body is aging at once rather than one part at a time",
+  "weird_anchor": "In 1997, Japanese researcher Makoto Kuro-o stumbled on a mutant mouse that aged catastrophically within weeks -- osteoporosis, hardened arteries, wrinkled skin, shrunken organs, all at once. He traced it to one broken gene and named the protein it made Klotho, after the Greek goddess who spins the thread of a person's life.",
+  "mechanism": "Klotho is a hormone your own kidneys make, and it appears to hold the whole aging process together rather than fixing one part of it. Mice engineered to make extra Klotho lived up to 30 percent longer than normal; mice with none of it fell apart in weeks. In people, blood levels of Klotho quietly fall starting around age 40 -- the same stretch of life where all those small failures start arriving together.",
+  "action": "none",
+  "on_screen_card": "THEY NAMED IT AFTER THE FATE WHO DECIDES HOW LONG YOU LIVE",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Significance of the anti-aging protein Klotho",
+    "url": "https://www.tandfonline.com/doi/full/10.3109/09687688.2013.837518"
+   },
+   {
+    "title": "This Rare Anti-Aging Protein Promotes Longer Living. Here's How.",
+    "url": "https://robbreport.com/lifestyle/health-wellness/klotho-anti-aging-protein-1238504026/"
+   },
+   {
+    "title": "Klotho: The Longevity Factor",
+    "url": "https://www.ibl-america.com/blog/klotho-the-longevity-factor/"
+   }
+  ],
+  "territory": "peptides"
+ },
+ {
+  "title": "The Peptide Hidden Inside What Scientists Called Junk DNA",
+  "felt_symptom": "the thickening waistline and afternoon energy crash that no amount of willpower seems to fix anymore",
+  "weird_anchor": "In 2015, USC researchers Changhan David Lee and Pinchas Cohen found a 16-amino-acid peptide called MOTS-c encoded in a loop of mitochondrial DNA that had been written off as noise for over forty years -- the part of the genome scientists assumed only made three kinds of housekeeping molecules and nothing else.",
+  "mechanism": "Your mitochondria have apparently been quietly manufacturing this molecule your entire life, and it acts like a message telling your cells to burn fuel and stay sensitive to insulin the way they did decades ago. A version of the gene common in Japanese populations, including centenarian studies out of Okinawa, has been linked by some researchers to unusually long life, though the peptide itself declines with ordinary aging.",
+  "action": "none",
+  "on_screen_card": "A MESSAGE HIDDEN IN YOUR OWN DNA SINCE BIRTH, ONLY READ IN 2015",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "A Powerhouse of Innovation - USC Leonard Davis School of Gerontology",
+    "url": "https://gero.usc.edu/2024/11/25/mitochondria-microproteins-cohen-usc/"
+   },
+   {
+    "title": "MOTS-c: A promising mitochondrial-derived peptide for therapeutic exploitation",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9905433/"
+   },
+   {
+    "title": "The mitochondrial-derived peptide MOTS-c: a player in exceptional longevity?",
+    "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/acel.12389"
+   }
+  ],
+  "territory": "peptides"
+ },
+ {
+  "title": "The Jelly That Turns A Worker Into A Queen",
+  "felt_symptom": "the sense of running out of road faster than the years alone should account for",
+  "weird_anchor": "Two honeybee larvae hatch with identical genes. Feed one ordinary food and it becomes a worker that lives thirty to sixty days. Feed the other nothing but royal jelly and it becomes a queen that can live for years -- up to 2,000 days. In 2011, Japanese researcher Masaki Kamakura of Toyama Prefectural University isolated the single protein responsible and named it royalactin.",
+  "mechanism": "Royalactin appears to flip switches inside the larva's cells that change growth, reproduction, and lifespan all at once -- the same genome running on a completely different timetable. Kamakura's lab fed it to fruit flies and found it extended their lifespan too, which is what made the story travel beyond bees.",
+  "action": "none",
+  "on_screen_card": "SAME GENES, SAME HIVE -- ONE LIVES 2,000 DAYS LONGER",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Secret of royal jelly's super-sizing effect on queen bees appears to be special protein royalactin",
+    "url": "https://phys.org/news/2011-04-secret-royal-jelly-super-sizing-effect.html"
+   },
+   {
+    "title": "ACTIVE COMPONENT IN HONEYBEES' ROYAL JELLY DISCOVERED",
+    "url": "https://journals.biologists.com/jeb/article/214/15/iv/10412/ACTIVE-COMPONENT-IN-HONEYBEES-ROYAL-JELLY"
+   },
+   {
+    "title": "Honey bee Royalactin unlocks conserved pluripotency pathway in mammals",
+    "url": "https://www.nature.com/articles/s41467-018-06256-4"
+   }
+  ],
+  "territory": "peptides"
+ },
+ {
+  "title": "The Two Mice Sewn Into One",
+  "felt_symptom": "a heart and muscles that feel like they belong to someone older than the calendar says",
+  "weird_anchor": "Using a surgical technique called parabiosis, first performed in 1864 by French physiologist Paul Bert, Harvard's Amy Wagers and cardiologist Richard Lee joined the circulatory systems of an old mouse and a young mouse in 2013. Within weeks the old mouse's thickened, failing heart shrank back toward a younger size. They traced the effect to a blood protein called GDF11, which falls as mice age.",
+  "mechanism": "When researchers simply injected old mice with GDF11 -- no surgery required -- the same reversal of heart thickening showed up, along with improvements in old mice's exercise capacity and brain blood vessel growth. The finding suggested a single circulating factor could be part of what 'young blood' does that 'old blood' no longer does, though a later 2015 paper disputed the assay used and the debate has never fully settled.",
+  "action": "none",
+  "on_screen_card": "THEY SEWED AN OLD MOUSE TO A YOUNG ONE AND ITS HEART GOT YOUNGER",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Making old hearts younger - HSCI researchers find protein that reverses some effects of aging in mice",
+    "url": "https://www.hsci.harvard.edu/news/making-old-hearts-younger-hsci-researchers-find-protein-reverses-some-effects-aging-mice"
+   },
+   {
+    "title": "Functioning of aged brains and muscles in mice made younger",
+    "url": "https://www.hsci.harvard.edu/news/functioning-aged-brains-and-muscles-mice-made-younger"
+   },
+   {
+    "title": "Doubts cast on 'rejuvenating' protein",
+    "url": "https://www.sciencemag.org/news/2015/05/doubts-cast-rejuvenating-protein"
+   }
+  ],
+  "territory": "peptides"
+ },
+ {
+  "title": "The Cuddle Hormone That Rebuilt Old Muscle",
+  "felt_symptom": "muscle that heals slower and rebuilds smaller after every strain or fall than it used to",
+  "weird_anchor": "In 2014, Christian Elabd and Wendy Cousin in Irina Conboy's lab at UC Berkeley measured oxytocin -- the so-called trust or cuddle hormone, best known for childbirth and bonding -- in the blood of young and old mice. Young mice had roughly three times as much circulating oxytocin as old mice. When the team injected old mice with oxytocin, their muscle stem cells started dividing and repairing damage again like a much younger animal's.",
+  "mechanism": "Oxytocin receptors sit directly on muscle stem cells, and both the hormone and the receptor numbers decline with age -- one of the quiet reasons a torn muscle heals fast at twenty-five and slow at fifty-five. Restoring the hormone alone was enough to wake the old stem cells back up in the study.",
+  "action": "none",
+  "on_screen_card": "THE BONDING HORMONE WOKE UP OLD MUSCLE THAT HAD STOPPED HEALING",
+  "score_interesting": 2,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "'Trust hormone' oxytocin helps old muscle work like new, study finds",
+    "url": "https://vcresearch.berkeley.edu/news/trust-hormone-oxytocin-helps-old-muscle-work-new-study-finds"
+   },
+   {
+    "title": "Oxytocin is an age-specific circulating hormone that is necessary for muscle maintenance and regeneration (Nature Communications)",
+    "url": "https://www.nature.com/articles/ncomms5082"
+   }
+  ],
+  "territory": "peptides"
+ },
+ {
+  "title": "The Peptide The Soviet Navy Grew In A Locked Institute",
+  "felt_symptom": "catching every cold that goes around, and taking twice as long to shake it off as you used to",
+  "weird_anchor": "Starting in the 1970s, Soviet scientist Vladimir Khavinson extracted short peptides from the organs of young calves inside a closed military-linked institute in Leningrad, built to help submariners and soldiers withstand the accelerated aging effects of radiation and long isolation. One of them, a thymus peptide called Thymalin, was later given to 266 elderly and senile patients in a clinical study running six to eight years -- and the treated group showed a significantly lower death rate than the untreated group.",
+  "mechanism": "The thymus, the gland that trains your immune system, starts shrinking and filling with fat right after puberty and is nearly gone by old age -- which is a real part of why infections get harder to shake off as the decades pass. Khavinson's peptide was designed to mimic signals the thymus itself stops sending as it withers.",
+  "action": "none",
+  "on_screen_card": "266 ELDERLY PATIENTS, ONE HIDDEN SOVIET PEPTIDE, SIX YEARS OF WATCHING",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Peptides of pineal gland and thymus prolong human life (Khavinson & Morozov)",
+    "url": "https://www.researchgate.net/publication/9069142_Peptides_of_pineal_gland_and_thymus_prolong_human_life"
+   },
+   {
+    "title": "Khavinson Peptide Bioregulators: Russian Research",
+    "url": "https://rethinkpeptides.com/articles/khavinson-peptide-bioregulators-the-russian-anti-aging-tradition"
+   },
+   {
+    "title": "Neuroendocrinology Letters, Khavinson & Morozov 2003 (PDF)",
+    "url": "https://khavinson.info/assets/files/skan/2003-khavinson_morozov1.pdf"
+   }
+  ],
+  "territory": "peptides"
+ },
+ {
+  "title": "The Message Found Inside The Neurons That Refused To Die",
+  "felt_symptom": "the quiet fear of forgetting -- names, words, whole afternoons -- that arrives well before any diagnosis does",
+  "weird_anchor": "In 2001, researchers screening brain tissue from an Alzheimer's patient found something strange: a handful of neurons that should have died from the disease's toxic protein buildup had survived. Inside them was a previously unknown 24-amino-acid peptide encoded in mitochondrial DNA. They named it humanin.",
+  "mechanism": "Humanin appears to be a survival signal your own mitochondria produce to stop brain cells from self-destructing under stress. Levels fall as people age -- except in centenarians and their children, who tend to run higher levels of it in their blood than everyone else their age, which is part of why some researchers now treat it as a marker of unusually graceful aging.",
+  "action": "none",
+  "on_screen_card": "THE NEURONS THAT SHOULD HAVE DIED WERE MAKING A MOLECULE NO ONE HAD SEEN",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "The mitochondrial derived peptide humanin is a regulator of lifespan and healthspan",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7343442/"
+   },
+   {
+    "title": "Humanin: Mitochondrial-Derived Peptide Research",
+    "url": "https://superpower.com/guides/peptides/humanin"
+   },
+   {
+    "title": "Humanin variant P3S is associated with longevity in APOE4 carriers",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11258485/"
+   }
+  ],
+  "territory": "peptides"
+ },
+ {
+  "title": "The Molecule Hiding In The Longest-Lived Rodent Alive",
+  "felt_symptom": "skin and joints that have gone stiff, the sense that the body has started to 'set' like something left out too long",
+  "weird_anchor": "In 1900, at Kharkov University in Ukraine, chemists Vladimir Gulewitsch and Sergei Amiradzibi were analyzing plain meat extract when they isolated a small molecule they called carnosine. More than a century later, researchers studying the naked mole rat -- a rodent that lives past thirty years, roughly ten times longer than a mouse its size -- found unusually high concentrations of it packed into the animal's tissue.",
+  "mechanism": "Carnosine appears to block glycation, the process by which sugar molecules quietly glue themselves onto proteins in your skin, arteries and joints over the decades, stiffening tissue that used to be flexible. It's one of the more concrete molecular reasons an animal built to defy its size class's normal lifespan is loaded with it.",
+  "action": "found naturally concentrated in muscle meat; also sold as a supplement",
+  "on_screen_card": "A RODENT THAT LIVES TEN TIMES LONGER THAN IT SHOULD IS PACKED WITH IT",
+  "score_interesting": 2,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Glycation, ageing and carnosine: Are carnivorous diets beneficial?",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0047637405001193"
+   },
+   {
+    "title": "Physiology and Pathophysiology of Carnosine",
+    "url": "https://journals.physiology.org/doi/pdf/10.1152/physrev.00039.2012"
+   },
+   {
+    "title": "The metabolomic signature of extreme longevity: naked mole rats versus mice",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6682510/"
+   }
+  ],
+  "territory": "peptides"
+ },
+ {
+  "title": "The Empress Who Ate Cave Spit Every Morning",
+  "felt_symptom": "skin that has lost its plumpness and no longer looks rested no matter how much sleep you get",
+  "weird_anchor": "For over a thousand years, harvesters have climbed sheer limestone cliffs in caves across Southeast Asia to gather the nests that swiftlet birds build almost entirely out of their own hardened saliva. Reserved for the Chinese imperial court, the delicacy was reportedly eaten by the Qing dynasty's Empress Dowager Cixi as part of a beauty routine credited with helping preserve her famously youthful appearance into old age.",
+  "mechanism": "The nests are rich in sialic-acid-linked glycopeptides -- protein fragments studded with sugar molecules -- of a kind the body uses in skin repair and cell signaling. The tradition treated a bird's building material as a beauty ingredient centuries before anyone had a word for 'peptide.'",
+  "action": "none",
+  "on_screen_card": "AN EMPRESS ATE A BIRD'S NEST MADE OF SPIT TO KEEP HER FACE YOUNG",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Why Empress Dowager Cixi and people in ancient China used animal faeces in beauty routines (context on Cixi's beauty regimen)",
+    "url": "https://www.scmp.com/news/people-culture/trending-china/article/3348550/why-empress-dowager-cixi-and-people-ancient-china-used-animal-faeces-beauty-routines"
+   },
+   {
+    "title": "An Asian Secret for Beauty: Bird's Nest",
+    "url": "https://www.beautyandfashiontech.com/an-asian-secret-for-beauty-birds-nest/"
+   },
+   {
+    "title": "Feasting With The Last Empress: Cixi's Culinary Extravagance",
+    "url": "https://www.chineasy.com/feasting-with-the-last-empress-cixis-culinary-extravagance/"
+   }
+  ],
+  "territory": "peptides"
+ },
+ {
+  "title": "The Venom That Freezes A Wrinkle Like Botox",
+  "felt_symptom": "the crease between the eyebrows and the crow's feet that show up even at rest, not just when you smile",
+  "weird_anchor": "The temple viper of Southeast Asia, Tropidolaemus wagleri, produces a venom peptide called waglerin-1 that paralyzes the muscle of anything it bites. Swiss researchers at Pentapharm isolated the peptide's action and built a shorter, synthetic copy of it, which they named Syn-Ake.",
+  "mechanism": "Waglerin-1 blocks the same nerve-muscle signal that Botox blocks, just through a different molecular door -- it stops tiny facial muscles from repeatedly contracting, which is what carves an expression line into skin over decades. Applied topically, the synthetic version relaxes those same micro-contractions instead of freezing the whole muscle with an injection.",
+  "action": "look for Syn-Ake / tripeptide-3 listed in topical skincare",
+  "on_screen_card": "A SNAKE THAT CAN PARALYZE PREY IS NOW SOLD IN A WRINKLE CREAM",
+  "score_interesting": 2,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Viper Venom and Synthetic Peptides: Emerging Active Ingredients in Anti-Ageing Cosmeceuticals",
+    "url": "https://www.mdpi.com/2076-3417/15/8/4501"
+   },
+   {
+    "title": "Snake-Venom Skincare: A Bite Can Be Fatal, but Can a Bit Be Beautiful?",
+    "url": "https://melmagazine.com/en-us/story/snake-venom-skincare-a-bite-can-be-fatal-but-can-a-bit-be-beautiful"
+   },
+   {
+    "title": "Does Snake Venom Smooth Out Wrinkles?",
+    "url": "https://www.beautifulwithbrains.com/snake-venom-smooth-wrinkles/"
+   }
+  ],
+  "territory": "peptides"
+ },
+ {
+  "title": "The Only Organ That Regrows Itself Every Single Year",
+  "felt_symptom": "the sense that the body has simply stopped repairing itself the way it once did -- cuts that scar, joints that don't bounce back",
+  "weird_anchor": "A deer's antler is the only complete organ known in any mammal that fully regrows from scratch every year, and while growing it is among the fastest-growing tissue in nature, adding as much as an inch a day. For over two thousand years, Chinese and Korean medicine has harvested this soft, blood-rich 'velvet' antler -- lu rong, nokyong -- as a premier tonic for vitality in aging bodies.",
+  "mechanism": "The velvet is unusually rich in insulin-like growth factor and other growth peptides that drive the antler's extreme regeneration -- the same class of growth signal that declines in human joints, skin and bone with age. Traditional medicine reached for the fastest-regenerating tissue in nature specifically to treat the slowing of the body's own regeneration.",
+  "action": "sold as deer velvet extract in traditional Chinese and Korean medicine shops",
+  "on_screen_card": "IT REGROWS AN ENTIRE ORGAN EVERY YEAR -- AND THEY DRANK ITS BLOOD FOR IT",
+  "score_interesting": 2,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Data of small molecule compounds and IGF-1 detected in Deer Antler Velvet",
+    "url": "https://www.sciencedirect.com/science/article/pii/S2352340925010534"
+   },
+   {
+    "title": "Deer Velvet Uses, Benefits & Dosage",
+    "url": "https://www.drugs.com/npp/deer-velvet.html"
+   },
+   {
+    "title": "Transcriptomic analysis of different tissue layers in antler growth center in Sika Deer",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6402185/"
+   }
+  ],
+  "territory": "peptides"
+ },
+ {
+  "title": "The Gila Monster's Spit",
+  "felt_symptom": "That hunger that never fully switches off, even right after a full meal \u2014 the sense that your appetite has no 'enough' setting anymore.",
+  "weird_anchor": "In the early 1990s, VA researcher Dr. John Eng learned the Gila monster \u2014 a venomous desert lizard that eats only three or four times a year and can go months between meals without losing muscle or crashing its blood sugar \u2014 carried something unusual in its saliva. He ordered dried venom by mail from a Utah reptile supplier and, working largely on his own funding, isolated a hormone he named exendin-4.",
+  "mechanism": "The lizard's spit hormone tells its brain 'you're full' for months at a stretch. A synthetic copy of that exact hormone became exenatide, the first of today's GLP-1 drugs \u2014 and for three years after Eng found it, no drug company would touch a diabetes treatment derived from lizard venom.",
+  "action": "none",
+  "on_screen_card": "A LIZARD'S SPIT TURNS OFF HUNGER FOR MONTHS. ONE MAN SPENT YEARS PROVING IT.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Exendin-4: From lizard to laboratory...and beyond | National Institute on Aging",
+    "url": "https://www.nia.nih.gov/news/exendin-4-lizard-laboratory-and-beyond"
+   },
+   {
+    "title": "From Lizard Venom to Ozempic: How VA Research Changed Medicine",
+    "url": "https://www.military.com/benefits/veterans-health-care/lizard-venom-ozempic-how-va-research-changed-medicine.html"
+   },
+   {
+    "title": "2013: Diabetes Medication \u2014 The Golden Goose Award",
+    "url": "https://www.goldengooseaward.org/01awardees/diabetes-medication"
+   },
+   {
+    "title": "Exenatide & the Gila Monster: How GLP-1 Drugs Began | Uplevel Bio",
+    "url": "https://www.uplevel.bio/articles/exenatide-gila-monster"
+   }
+  ],
+  "territory": "weight"
+ },
+ {
+  "title": "The Bomb Buried In Your Fat Cells",
+  "felt_symptom": "The sense that no matter what you do, the fat that settled in over the years just won't leave \u2014 as if your body decided on a number long ago and locked it in.",
+  "weird_anchor": "Between 1955 and 1963, aboveground nuclear bomb tests spiked a radioactive carbon isotope, carbon-14, into the atmosphere worldwide. In 2008, Karolinska Institutet scientist Kirsty Spalding realized every fat cell in every human body still carries that Cold War fingerprint in its DNA, and used it to carbon-date human fat for the first time, publishing in Nature.",
+  "mechanism": "Reading the bomb-test carbon locked inside fat cells showed the total number of fat cells a person carries is set for life in youth \u2014 about 10% are swapped out each year, but the total count barely moves afterward. Losing weight shrinks the cells; it does not remove them.",
+  "action": "none",
+  "on_screen_card": "COLD WAR BOMB TESTS LET SCIENTISTS DATE YOUR FAT. THE COUNT IS SET FOR LIFE.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "Dynamics of fat cell turnover in humans | Nature",
+    "url": "https://www.nature.com/articles/nature06902"
+   },
+   {
+    "title": "Fat cell number is set in childhood and stays constant in adulthood | National Geographic",
+    "url": "https://www.nationalgeographic.com/science/article/fat-cell-number-is-set-in-childhood-and-stays-constant-in-adulthood"
+   },
+   {
+    "title": "And the Fat Goes On | Science | AAAS",
+    "url": "https://www.science.org/content/article/and-fat-goes"
+   },
+   {
+    "title": "Kirsty Spalding | Karolinska Institutet",
+    "url": "https://ki.se/en/people/kirsty-spalding"
+   }
+  ],
+  "territory": "weight"
+ },
+ {
+  "title": "The Mice Joined At The Hip",
+  "felt_symptom": "The feeling that some people just never got a working 'stop eating' signal \u2014 like the appetite switch itself is broken while everyone else's works fine.",
+  "weird_anchor": "In 1969, at the Jackson Laboratory in Bar Harbor, Maine, researcher Douglas Coleman surgically joined pairs of mice at the skin so they shared a single blood supply, a technique called parabiosis. When he fused a genetically obese mouse to a normal mouse, the normal mouse stopped eating entirely and starved to death.",
+  "mechanism": "Coleman had proved the obese mouse's blood carried a 'you've had enough' signal so potent it starved its neighbor to death \u2014 while the obese mouse's own brain simply couldn't hear that signal. The hormone turned out to be leptin, identified twenty-five years later in 1994.",
+  "action": "none",
+  "on_screen_card": "SURGEONS FUSED TWO MICE TOGETHER. ONE STARVED. IT REVEALED THE HORMONE THAT TELLS YOU YOU'RE FULL.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "A historical perspective on leptin | Nature Medicine (Lasker Foundation PDF)",
+    "url": "https://laskerfoundation.org/wp-content/uploads/2021/01/2010_b_coleman.pdf"
+   },
+   {
+    "title": "Douglas L. Coleman \u2014 Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Douglas_L._Coleman"
+   },
+   {
+    "title": "Leptin, a hormone that regulates appetite and body weight - Lasker Foundation",
+    "url": "https://laskerfoundation.org/winners/leptin-a-hormone-that-regulates-appetite-and-body-weight/"
+   },
+   {
+    "title": "Effects of parabiosis of normal with genetically diabetic mice \u2014 Coleman & Hummel (Jackson Lab archive)",
+    "url": "https://mouseion.jax.org/stfb1960_1969/778/"
+   }
+  ],
+  "territory": "weight"
+ },
+ {
+  "title": "The Prisoners Paid To Get Fat",
+  "felt_symptom": "The frustration of fighting to lose the last stubborn pounds while the body seems to actively work to put them back on.",
+  "weird_anchor": "In 1967, University of Vermont physician Ethan Sims paid inmates at the Vermont State Prison to deliberately overeat \u2014 some consuming upward of 10,000 calories a day for 200 straight days. Most struggled to gain more than 20-25 pounds, and their own metabolic rates sped up as if defending their original weight.",
+  "mechanism": "When Sims let the men eat normally again, they shed the gained weight within about ten weeks without trying. It was some of the earliest evidence of a body 'set point' \u2014 a defended weight the metabolism fights to return to in both directions.",
+  "action": "none",
+  "on_screen_card": "PRISONERS WERE PAID TO EAT 10,000 CALORIES A DAY. THEIR BODIES FOUGHT BACK ANYWAY.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "The OverFeeding Paradox \u2014 The Body Fat Thermostat Part 6",
+    "url": "https://fung.substack.com/p/the-overfeeding-paradox-the-body"
+   },
+   {
+    "title": "Ethan Allen Sims (1916\u20132010) \u2014 Obesity journal obituary",
+    "url": "https://onlinelibrary.wiley.com/doi/full/10.1038/oby.2010.334"
+   },
+   {
+    "title": "Ideal Body Weights: The Vermont Prison Overfeeding Study",
+    "url": "http://idealbodyweights.blogspot.com/2009/08/vermont-prison-overfeeding-study.html"
+   },
+   {
+    "title": "The pain of weight gain: self-experimentation with overfeeding",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0002916522009686"
+   }
+  ],
+  "territory": "weight"
+ },
+ {
+  "title": "The Munitions Girls Who Turned Yellow And Thin",
+  "felt_symptom": "The fantasy of a pill that just melts weight off with no diet or exercise required \u2014 and a wariness about what a shortcut like that actually costs the body.",
+  "weird_anchor": "In 1915, French factory workers near Avignon and Marseille packing artillery shells with the explosive chemical dinitrophenol (DNP) began sweating, running fevers as high as 110\u00b0F, and losing weight rapidly; some died from the heat their own bodies generated. By 1933, Stanford researchers Windsor Cutting and Maurice Tainter had turned the same chemical into an over-the-counter American diet pill.",
+  "mechanism": "DNP does not suppress appetite \u2014 it jams the switch inside every cell's mitochondria that stores energy as fat, forcing the body to burn calories off as raw heat instead. It worked so well it is still sold illegally online today, decades after thousands of cases of blindness led to a 1938 U.S. ban.",
+  "action": "none",
+  "on_screen_card": "A WWI EXPLOSIVE MADE FACTORY WORKERS THIN AND FEVERISH. BY 1933 IT WAS A DIET PILL.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "The Science And History Of A Pesticide-Turned-Diet Pill \u2014 Popular Science",
+    "url": "https://www.popsci.com/article/science/science-and-history-pesticide-turned-diet-pill/"
+   },
+   {
+    "title": "DNP, the Deadly Internet Diet Drug That Cooks People Alive \u2014 The Daily Beast",
+    "url": "https://www.thedailybeast.com/dnp-the-deadly-internet-diet-drug-that-cooks-people-alive/"
+   },
+   {
+    "title": "2,4 Dinitrophenol as Medicine \u2014 PMC",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6468406/"
+   },
+   {
+    "title": "DNP: the dangerous diet pill pharmacists should know about \u2014 Pharmaceutical Journal",
+    "url": "https://pharmaceutical-journal.com/article/feature/dnp-the-dangerous-diet-pill-pharmacists-should-know-about"
+   }
+  ],
+  "territory": "weight"
+ },
+ {
+  "title": "The Undertaker's Letter",
+  "felt_symptom": "Middle-age spread that crept on for no obvious reason and resisted every fad tried against it.",
+  "weird_anchor": "In August 1862, London undertaker William Banting weighed 202 pounds, was going deaf, and could not bend down to tie his own shoes. On the advice of his ear surgeon, William Harvey, he cut out bread, butter, sugar, beer and potatoes. By May 1863 he weighed 167 pounds and self-published a pamphlet, 'Letter on Corpulence, Addressed to the Public,' laying out exactly how.",
+  "mechanism": "Banting's letter sold in the tens of thousands across Britain, Europe and beyond, and 'to bant' entered the Oxford English Dictionary as a verb for dieting that lasted a century \u2014 the first mass-market case for what today would be called a low-carbohydrate diet, made by a man with no medical training at all.",
+  "action": "Cut out bread, sugar, beer, and potatoes; eat meat, greens, and fruit instead.",
+  "on_screen_card": "A LONDON UNDERTAKER LOST 35 POUNDS AND GAVE THE WORLD ITS FIRST DIET BOOK. 1863.",
+  "score_interesting": 2,
+  "score_aging": 3,
+  "sources": [
+   {
+    "title": "William Banting, Early Champion of the Low-Carb Diet \u2014 Mental Floss",
+    "url": "https://www.mentalfloss.com/article/83944/william-banting-early-champion-low-carb-diet"
+   },
+   {
+    "title": "Low-Carb Lessons from An Undertaker? \u2014 McGill Office for Science and Society",
+    "url": "https://www.mcgill.ca/oss/article/health-and-nutrition/low-carb-lessons-undertaker"
+   },
+   {
+    "title": "Letter on Corpulence, Addressed to the Public \u2014 Selene River Press",
+    "url": "https://www.seleneriverpress.com/historical/letter-on-corpulence-addressed-to-the-public/"
+   },
+   {
+    "title": "Do you Bant? \u2014 Royal College of Surgeons",
+    "url": "https://www.rcseng.ac.uk/library-and-publications/library/blog/do-you-bant/"
+   }
+  ],
+  "territory": "weight"
+ },
+ {
+  "title": "The Grain-Avoiding Immortals",
+  "felt_symptom": "The heaviness and sluggishness of a lifetime of full plates \u2014 the sense that food itself has turned into the enemy of a lighter, younger body.",
+  "weird_anchor": "Taoist hermits fleeing political turmoil into the mountains of ancient China developed bigu \u2014 'grain avoidance' \u2014 surviving instead on foraged herbs and minerals. By the 4th century, the alchemist Ge Hong catalogued more than 100 different bigu methods in his text Baopuzi, describing fasts meant to starve out the 'Three Corpses,' parasitic spirit-worms believed to live in the gut, feed on grain, and shorten a person's life.",
+  "mechanism": "Practitioners believed cutting off grain literally starved the corpse-demons responsible for aging and disease \u2014 an early, mystical version of the idea that restricting certain foods lightens and prolongs the body.",
+  "action": "none",
+  "on_screen_card": "TAOIST HERMITS FASTED TO STARVE THE GRAIN-EATING DEMONS THEY BELIEVED LIVED IN THEIR GUT.",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "The low-carb diet is no recent fad. China's version dates back over 2,000 years \u2014 South China Morning Post",
+    "url": "https://www.scmp.com/magazines/post-magazine/short-reads/article/3172398/low-carb-diet-no-recent-fad-chinas-version"
+   },
+   {
+    "title": "Bigu (grain avoidance) \u2014 Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Bigu_(grain_avoidance)"
+   },
+   {
+    "title": "Bigu \u2013 Daoist Fasting | Daoist Gate",
+    "url": "https://daoistgate.com/bigu-daoist-fasting/"
+   },
+   {
+    "title": "Taoist diet \u2014 Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Taoist_diet"
+   }
+  ],
+  "territory": "weight"
+ },
+ {
+  "title": "The Emperor's Herb That Killed A Pitcher",
+  "felt_symptom": "Wanting a metabolism-revving shortcut that feels safe because it's ancient and traditional, not synthetic.",
+  "weird_anchor": "Ma huang, or ephedra, appears in the Divine Farmer's Materia Medica, a Chinese pharmacology text traditionally credited to Emperor Shennong roughly 2,000 years ago, used sparingly and briefly for breathing ailments. In February 2003, 23-year-old Baltimore Orioles pitcher Steve Bechler died of heatstroke after taking an ephedra-based weight-loss supplement, a death that helped trigger the FDA's nationwide ban on ephedra in 2004.",
+  "mechanism": "The same stimulant compound that opens airways also revs up metabolism and blunts appetite. Traditional Chinese medicine used it in small, short-term doses for respiratory illness; the 1990s American diet industry stripped it out, concentrated it, and sold it by the bottle.",
+  "action": "none",
+  "on_screen_card": "A 2,000-YEAR-OLD CHINESE HERB FOR BREATHING BECAME A DIET PILL. IN 2003 IT KILLED A PITCHER.",
+  "score_interesting": 3,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "What Is Ma Huang & Why Is It Often Misused? \u2014 Pacific College",
+    "url": "https://www.pacificcollege.edu/news/blog/2014/07/07/ma-huang-herb-misused-and-abused"
+   },
+   {
+    "title": "The dangers of the herb ephedra \u2014 Harvard Health",
+    "url": "https://www.health.harvard.edu/staying-healthy/the-dangers-of-the-herb-ephedra"
+   },
+   {
+    "title": "Baseball player's death renews debate over ephedra \u2014 SFGate",
+    "url": "https://www.sfgate.com/sports/article/Baseball-player-s-death-renews-debate-over-2632726.php"
+   },
+   {
+    "title": "The Ephedra Controversy: How Chinese Medicine uses Ephedra safely \u2014 Blue Ridge Acupuncture Clinic",
+    "url": "https://www.blueridgeclinic.com/the-ephedra-controversy-how-chinese-medicine-uses-ephedra-safely/"
+   }
+  ],
+  "territory": "weight"
+ },
+ {
+  "title": "Eat Until Eighty Percent",
+  "felt_symptom": "The lifelong habit of finishing every plate out of pure reflex \u2014 the extra bite each night that quietly adds a pound a year for decades.",
+  "weird_anchor": "In 1713, Japanese scholar Kaibara Ekken \u2014 writing in his own eighties \u2014 published Y\u014dj\u014dkun ('Precepts for Health'), instructing readers to stop eating at hara hachi bu, roughly 80% full. The phrase became daily practice on Okinawa, whose traditional diet ran close to 1,800-1,900 calories a day and produced some of the longest-lived, leanest elders on Earth.",
+  "mechanism": "It takes the brain roughly twenty minutes to register fullness after the stomach already has \u2014 stopping deliberately at 80% builds in the lag time before the body's own 'enough' signal has a chance to catch up.",
+  "action": "Stop eating at roughly 80% full, before the plate is finished.",
+  "on_screen_card": "IN 1713, A JAPANESE SCHOLAR WROTE THE RULE: STOP AT 80% FULL. OKINAWA STILL LIVES BY IT.",
+  "score_interesting": 2,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Don't Eat Until You're Full \u2014 Instead, Mind Your Hara Hachi Bu Point \u2014 Cleveland Clinic",
+    "url": "https://health.clevelandclinic.org/dont-eat-until-youre-full-instead-mind-your-hara-hachi-bu-point"
+   },
+   {
+    "title": "Hara hachi bun me \u2014 Grokipedia",
+    "url": "https://grokipedia.com/page/Hara_hachi_bun_me"
+   },
+   {
+    "title": "What is Hara Hachi Bu? \u2014 Layer Origin Nutrition",
+    "url": "https://layerorigin.com/blogs/blog-layer-origin-nutrition/what-is-hara-hachi-bu"
+   },
+   {
+    "title": "Hara Hachi Bu: The Okinawan 80% Rule for Weight Loss & Longevity",
+    "url": "https://bodevolvebariatric.com/hara-hachi-bu/"
+   }
+  ],
+  "territory": "weight"
+ },
+ {
+  "title": "The Flower They Shelved For Forty Years",
+  "felt_symptom": "Stubborn weight and a sluggish appetite switch that seems to run in the family no matter how carefully you eat.",
+  "weird_anchor": "French lilac, or goat's rue (Galega officinalis), was used across medieval Europe for centuries \u2014 noted in Culpeper's 1653 herbal and prescribed in 1772 by physician John Hill for the 'frequent urination' now recognized as a diabetes symptom. Chemists isolated its active compound, guanidine, in 1918, and a lab derivative was synthesized in 1922 \u2014 then set aside for 35 years after the discovery of insulin in 1921 made it seem unnecessary.",
+  "mechanism": "That shelved 1922 compound was metformin. French physician Jean Sterne finally revived it in 1957; it is now one of the most-prescribed drugs on Earth, and one of its most consistent side effects is a curbed appetite and modest weight loss.",
+  "action": "none",
+  "on_screen_card": "A MEDIEVAL FLOWER'S DRUG WAS SYNTHESIZED IN 1922 \u2014 AND SHELVED FOR 35 YEARS.",
+  "score_interesting": 2,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Weekly Dose: metformin, the diabetes drug developed from French lilac \u2014 The Conversation",
+    "url": "https://theconversation.com/weekly-dose-metformin-the-diabetes-drug-developed-from-french-lilac-64430"
+   },
+   {
+    "title": "Metformin: historical overview \u2014 Diabetologia (Springer)",
+    "url": "https://link.springer.com/article/10.1007/s00125-017-4318-z"
+   },
+   {
+    "title": "Galega officinalis \u2014 ScienceDirect Topics",
+    "url": "https://www.sciencedirect.com/topics/medicine-and-dentistry/galega-officinalis"
+   },
+   {
+    "title": "French Lilac \u2014 UNC Medicinal Gardens",
+    "url": "https://medicinalgardens.web.unc.edu/french-lilac/"
+   }
+  ],
+  "territory": "weight"
+ },
+ {
+  "title": "The Tea That Cuts The Mutton Fat",
+  "felt_symptom": "The heaviness after a rich meal that used to pass in an hour and now sits in the stomach for the rest of the day.",
+  "weird_anchor": "For over a thousand years, along the Ancient Tea Horse Road running from Yunnan into Tibet, traders on foot and muleback carried compressed bricks of fermented pu-erh tea into a region living almost entirely on yak butter, milk, and meat with almost no vegetables. During the Song Dynasty (960-1279), the Chinese state traded tea for Tibetan war horses, an exchange so vital it was simply called 'tea for horses.'",
+  "mechanism": "Fermented pu-erh was the one plant food a butter-and-meat diet could not do without, prized specifically for cutting through and moving dietary grease and fat through the body \u2014 a folk role modern research links to compounds formed during the tea's microbial fermentation.",
+  "action": "Drink fermented pu-erh tea with or after a fatty meal.",
+  "on_screen_card": "TIBET TRADED HORSES FOR THIS FERMENTED TEA \u2014 TO SURVIVE A DIET OF PURE BUTTER AND MEAT.",
+  "score_interesting": 2,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Exploring the Ancient Tea Horse Road and Pu-erh Health Benefits \u2014 Puerh Craft",
+    "url": "https://puerhcraft.com/blogs/pu-erh-tea-news/exploring-the-ancient-tea-horse-road-unveiling-the-health-benefits-and-8-historic-routes-of-pu-erh"
+   },
+   {
+    "title": "Pu-erh Tea - Digestive Chinese Tea | Dr D'Alberto",
+    "url": "https://www.attiliodalberto.com/chinese-food-therapy/teas/pu-erh.php"
+   },
+   {
+    "title": "Pu Erh Tea and Its Role in Traditional Chinese Medicine \u2014 Cspuerh",
+    "url": "https://cspuerh.com/blogs/tea-101/pu-erh-tea-and-its-role-in-traditional-chinese-medicine"
+   },
+   {
+    "title": "Pu-erh & Tibetan Tea: Health, Brewing, and Sustainability \u2014 Kucha Tea",
+    "url": "https://www.kuchatea.com/blog/fermented-tea-puerh-tibetan-tea/"
+   }
+  ],
+  "territory": "weight"
+ },
+ {
+  "title": "The Bitter Root Called Golden Thread",
+  "felt_symptom": "A metabolism that feels like it has slowed to a crawl no matter how little is eaten.",
+  "weird_anchor": "Huang lian, the rhizome of the plant Coptis chinensis, is one of the bitterest substances in the Chinese pharmacopoeia, first recorded in the Divine Farmer's Materia Medica around the Han Dynasty (25-220 AD) and used for two thousand years under the proverb 'bitter medicine cures the disease.'",
+  "mechanism": "Its active compound, berberine, switches on an energy sensor inside cells called AMPK \u2014 the same switch flipped by fasting and hard exercise \u2014 which is why it resurfaced widely online in recent years under the nickname 'nature's Ozempic.'",
+  "action": "none",
+  "on_screen_card": "A 2,000-YEAR-OLD BITTER ROOT FLIPS THE SAME METABOLIC SWITCH AS FASTING.",
+  "score_interesting": 2,
+  "score_aging": 2,
+  "sources": [
+   {
+    "title": "Huanglian \u2014 Memorial Sloan Kettering Cancer Center",
+    "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/huanglian"
+   },
+   {
+    "title": "The Antihyperglycemic Effects of Rhizoma Coptidis and Mechanism of Actions \u2014 PMC",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4003828/"
+   },
+   {
+    "title": "Berberine and Huang Lian in Asian Medicine \u2014 Kan Herb",
+    "url": "https://kanherb.com/resources/wonder-golden-unveiling-the-power-of-huang-lian-and-berberine-in-tcm/"
+   },
+   {
+    "title": "Rhizoma Coptidis: A Potential Cardiovascular Protective Agent \u2014 PMC",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5054023/"
+   }
+  ],
+  "territory": "weight"
+ },
+ {
+  "title": "The Polyamine In The Wheat Germ",
+  "weird_anchor": "University of Graz, 2009 \u2014 Frank Madeo and colleagues publish in Nature Cell Biology that a molecule called spermidine, found in highest concentration in wheat germ, extends the lifespan of yeast, flies, worms, and human immune cells in a single experiment; the molecule the body stops making as it ages was sitting in the grain humans have been milling for eight thousand years",
+  "mechanism": "Spermidine triggers autophagy \u2014 the cellular self-cleaning process also switched on by fasting. Its concentration inside the body declines steadily from middle age onwards. Restoring it through wheat germ or supplementation appears to restart the cleanup machinery that removes the protein clutter now understood to drive skin ageing, memory decline, and cardiovascular disease",
+  "felt_symptom": "A slow accumulation of cellular debris \u2014 the feeling of carrying years inside the cells, not just on the face",
+  "action": "Wheat germ is the richest food source; 1-3 mg/day spermidine from wheat germ extract has been used in clinical trials without adverse effects",
+  "on_screen_card": "2009. A MOLECULE IN WHEAT GERM. IT EXTENDS LIFE ACROSS FIVE SPECIES.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "url": "https://www.researchgate.net/publication/26868216_Induction_of_autophagy_by_spermidine_promotes_longevity",
+    "title": "Induction of Autophagy by Spermidine Promotes Longevity \u2014 ResearchGate/Nature Cell Biology"
+   },
+   {
+    "url": "https://www.nature.com/articles/s43587-022-00322-9",
+    "title": "Mechanisms of Spermidine-Induced Autophagy \u2014 Nature Aging"
+   },
+   {
+    "url": "https://superpower.com/guides/longevity-supplements/spermidine-benefits",
+    "title": "Spermidine Benefits: What the Science Says \u2014 Superpower"
+   }
+  ],
+  "territory": "workflow"
+ },
+ {
+  "title": "The Compound In The Stomach Juice",
+  "weird_anchor": "Zagreb, 1993 \u2014 Croatian researcher Predrag Sikiri\u0107 and his team isolate a peptide from human gastric juice and name it Body Protection Compound-157; for thirty years it heals tendons, gut lining, and nerves in animal studies without a single human trial reaching completion, while WADA bans it in 2022 and the FDA restricts it in 2023",
+  "mechanism": "BPC-157 appears to promote the growth of new blood vessels and activate healing signals in tissue \u2014 the same pathways that work efficiently at twenty-five but stall at fifty. It sits in a strange gap: too cheap to patent commercially, too promising to ignore, too unproven in humans to prescribe",
+  "felt_symptom": "A body that feels slower to heal, slower to recover, as if the internal maintenance crew has quietly handed in its notice",
+  "action": "No approved human use; available through compounding pharmacies in some jurisdictions \u2014 the regulatory status is itself part of the story",
+  "on_screen_card": "FOUND IN STOMACH JUICE. HEALS IN RATS. BANNED BY WADA. NEVER TRIALLED IN HUMANS.",
+  "score_interesting": 2,
+  "score_aging": 2,
+  "sources": [
+   {
+    "url": "https://www.incarenow.com/7-key-moments-in-bpc-157-history-you-should-know/",
+    "title": "7 Key Moments in BPC-157 History \u2014 InCare"
+   },
+   {
+    "url": "https://wellfounded.health/insights/bpc-157-and-the-difference-between-an-evidence-gap-and-a-cover-up",
+    "title": "BPC-157 and the Difference Between Evidence Gap and Cover-Up \u2014 WellFounded"
+   },
+   {
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11859134/",
+    "title": "BPC 157 Multifunctionality Review \u2014 PubMed/PMC"
+   }
+  ],
+  "territory": "workflow"
+ },
+ {
+  "title": "The Dirt Under The Statues",
+  "weird_anchor": "Easter Island, 1964 \u2014 Canadian microbiologist Georges N\u00f3gr\u00e1dy scrapes soil near the moai statues; the compound found inside, rapamycin, is later shown to extend maximum lifespan in mammals by up to 38 percent",
+  "mechanism": "A bacterium in the soil produces a molecule that dials down a cellular switch called mTOR \u2014 the switch that, when left running, accelerates the body's ageing programme. Turning it down appears to buy cells more time",
+  "felt_symptom": "Feeling like the body has simply stopped renewing itself \u2014 slower healing, less energy, the sense that cells are stuck",
+  "action": "Rapamycin (sirolimus) is FDA-approved for other uses and is now prescribed off-label for longevity by some clinicians; topical rapamycin for skin is an emerging protocol",
+  "on_screen_card": "EASTER ISLAND DIRT. 1964. THE COMPOUND THAT SLOWS THE CLOCK.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "url": "https://bigthink.com/health/unlucky-history-rapamycin-anti-aging/",
+    "title": "Rapamycin: Unlucky history of the most powerful anti-aging drug \u2014 Big Think"
+   },
+   {
+    "url": "https://www.gethealthspan.com/research/article/rapamycin-discovery-history",
+    "title": "Rapamycin Was Discovered in Easter Island Dirt \u2014 GetHealthspan"
+   },
+   {
+    "url": "https://www.science.org/content/article/fountain-youth-easter-island",
+    "title": "Fountain of Youth on Easter Island? \u2014 Science/AAAS"
+   }
+  ],
+  "territory": "workflow"
+ },
+ {
+  "title": "The Goddess Who Spins The Thread",
+  "weird_anchor": "Tokyo, 1997 \u2014 scientist Makoto Kuro-o accidentally destroys a gene in a mouse no one had named before; the mouse ages at catastrophic speed, developing brittle bones, hardened arteries, and shrunken skin within weeks. He names the gene Klotho \u2014 after the Greek goddess who spins the thread of life \u2014 spelling it with a K, as a quiet nod to his own name",
+  "mechanism": "Klotho is a protein the body makes that appears to police the pace of ageing. When mice are robbed of it they age visibly within months; when given extra copies they age measurably more slowly. In humans, Klotho levels fall with age and low levels track with accelerated biological decline",
+  "felt_symptom": "Brittle joints, skin going papery, the mirror showing ten years older than you feel inside",
+  "action": "Vitamin D and exercise both support Klotho expression; injectable Klotho therapies are in early human trials",
+  "on_screen_card": "1997. TOKYO. A BROKEN GENE THAT MADE MICE OLD BEFORE THEIR TIME.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "url": "https://medium.com/@biohackerlab/time-genes-and-other-small-matters-b57c3384ebfd",
+    "title": "Klotho: The Anti-Aging Protein Explained \u2014 Medium / Biohacker Lab"
+   },
+   {
+    "url": "https://robbreport.com/lifestyle/health-wellness/klotho-anti-aging-protein-1238504026/",
+    "title": "Klotho discovery \u2014 Robb Report"
+   },
+   {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/9363890/",
+    "title": "Mutation of the mouse klotho gene \u2014 PubMed"
+   }
+  ],
+  "territory": "workflow"
+ },
+ {
+  "title": "The Nobel Prize The Fasting Monks Already Knew",
+  "weird_anchor": "Tokyo Institute of Technology, 1988 \u2014 Yoshinori Ohsumi stared into a microscope at starving yeast cells and watched them eat their own insides in an orderly, purposeful way; in 2016 he received the Nobel Prize for what Buddhist monks and Ramadan fasters had practised for centuries without knowing the word for it",
+  "mechanism": "When the body goes without food for twelve or more hours, cells activate a self-cleaning programme that breaks down damaged proteins, worn organelles, and toxic debris accumulated over decades. This process \u2014 autophagy \u2014 slows down with age, and its slowdown is now seen as one of the central drivers of how we become visibly old",
+  "felt_symptom": "The sense that the body is accumulating something \u2014 stiffness, heaviness, a feeling of cellular clutter that sleep does not clear",
+  "action": "Fasting windows of 16-24 hours appear to trigger measurable autophagy in humans; Ramadan-scale fasting has been used for this purpose across Islamic tradition for fourteen centuries",
+  "on_screen_card": "1988. STARVING YEAST CELLS. THE BODY'S OWN CLEANUP SYSTEM.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "url": "https://www.nobelprize.org/prizes/medicine/2016/advanced-information/",
+    "title": "Nobel Prize 2016 Advanced Information \u2014 NobelPrize.org"
+   },
+   {
+    "url": "https://www.bluezones.com/2018/10/fasting-for-health-and-longevity-nobel-prize-winning-research-on-cell-aging/",
+    "title": "Fasting for Health and Longevity \u2014 Blue Zones"
+   },
+   {
+    "url": "https://ceylonpublicaffairs.com/yoshinori-ohsumi-nobel-prize-discovery/",
+    "title": "Yoshinori Ohsumi's Nobel Prize Discovery \u2014 Ceylon Public Affairs"
+   }
+  ],
+  "territory": "workflow"
+ },
+ {
+  "title": "The Mushroom Reserved For Emperors",
+  "weird_anchor": "China, circa 400 BCE \u2014 near-mythic herbalist Shen Nong classifies the red-varnished kidney-shaped mushroom Ling Zhi as a Superior Herb, writing that it 'makes your body light and young, lengthens your life.' For two thousand years it is so valued it is kept exclusively for emperors; commoners are forbidden it",
+  "mechanism": "Reishi (Ganoderma lucidum) contains beta-glucans and triterpenes shown to enhance immune function and reduce chronic inflammation \u2014 one of the central biological engines of visible ageing, now called inflammaging. Modern research supports its role in modulating the same pathways the Taoist court physicians were targeting",
+  "felt_symptom": "A body that tires faster, recovers more slowly, feels less defended against time",
+  "action": "Reishi is available as a supplement and tea decoction; simmer dried slices for 30-45 minutes \u2014 the traditional preparation method",
+  "on_screen_card": "2,400 YEARS OLD. FORBIDDEN TO COMMONERS. THE EMPERORS' MUSHROOM OF IMMORTALITY.",
+  "score_interesting": 2,
+  "score_aging": 2,
+  "sources": [
+   {
+    "url": "https://blog.acuatlanta.net/anti-aging-and-traditional-chinese-herbs/",
+    "title": "Anti-Aging and Traditional Chinese Herbs \u2014 AcuAtlanta"
+   },
+   {
+    "url": "https://1stchineseherbs.com/ancient-wisdom-in-modern-times-15-timeless-herbal-remedies-rediscovered/",
+    "title": "15 Timeless Herbal Remedies Rediscovered \u2014 1st Chinese Herbs"
+   },
+   {
+    "url": "https://www.taoofwellness.com/antiaging",
+    "title": "Taoist Anti-Aging Medicine \u2014 Tao of Wellness"
+   }
+  ],
+  "territory": "workflow"
+ },
+ {
+  "title": "The Imperial Court's Secret Of The Face",
+  "weird_anchor": "Imperial China, multiple dynasties \u2014 Taoist physicians employed permanently at the court developed formulas combining herbs such as He Shou Wu, Ling Zhi, Gou Qi Zi (goji), and Ren Shen (ginseng) specifically to keep emperors, empresses, and concubines visibly young; these formulas were state knowledge, not shared with the population, and were reconstructed only when the court libraries were opened to scholars in the twentieth century",
+  "mechanism": "The imperial formulas combined herbs now understood to reduce oxidative stress, modulate inflammation, nourish the liver and kidneys (which in Chinese medicine govern hair and skin), and activate the adaptogen response \u2014 the body's capacity to resist the physical effects of stress and time. Each herb targeted a different visible sign of ageing simultaneously",
+  "felt_symptom": "Watching the face change decade by decade, knowing something is being lost from the inside out rather than the outside in",
+  "action": "Individual herbs (reishi, goji, ginseng, astragalus, He Shou Wu) are available; traditional practitioners still compound them in individualised formulas",
+  "on_screen_card": "IMPERIAL CHINA. STATE SECRET FORMULAS. KEPT THE COURT YOUNG FOR TWO THOUSAND YEARS.",
+  "score_interesting": 2,
+  "score_aging": 2,
+  "sources": [
+   {
+    "url": "https://taoofmedicine.com/anti-aging-and-longevity-in-oriental-medicine/",
+    "title": "Anti-Aging and Longevity in TCM \u2014 Tao of Medicine"
+   },
+   {
+    "url": "https://www.taoofwellness.com/antiaging",
+    "title": "Taoist Anti-Aging Medicine \u2014 Tao of Wellness"
+   },
+   {
+    "url": "https://blog.acuatlanta.net/anti-aging-and-traditional-chinese-herbs/",
+    "title": "Anti-Aging and Traditional Chinese Herbs \u2014 AcuAtlanta"
+   }
+  ],
+  "territory": "workflow"
+ },
+ {
+  "title": "The Young Blood He Found In A Dish",
+  "weird_anchor": "Dr. Loren Pickart, University of California San Francisco, 1973 \u2014 while studying liver tissue, he placed old liver cells in blood serum from young donors and watched the aged cells begin behaving like young ones; he spent the next three years isolating the single molecule responsible",
+  "mechanism": "A tiny three-amino-acid peptide called GHK-Cu circulates in blood and tells skin cells to rebuild collagen and elastin. It measures around 200 ng/mL at age twenty and falls to roughly 80 ng/mL by age sixty \u2014 a 60 percent drop that maps almost exactly onto the slowdown in skin repair most people notice in their forties",
+  "felt_symptom": "Skin that heals more slowly, loses its firmness, no longer bounces back the way it did at thirty",
+  "action": "GHK-Cu is available in topical serums; penetration is the key variable \u2014 look for formulations designed to cross the skin barrier",
+  "on_screen_card": "1973. OLD CELLS BATHED IN YOUNG BLOOD. A PEPTIDE THAT TELLS SKIN TO REBUILD.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "url": "https://www.evenskyn.com/blogs/skin-beautyarticles/ghk-cu-copper-peptides-50-year-research-translated",
+    "title": "GHK-Cu Copper Peptides: The 50-Year Research Trail \u2014 EvenSkyn"
+   },
+   {
+    "url": "https://www.peptidejournal.org/peptides/ghk-cu-the-copper-peptide-science-guide",
+    "title": "GHK-Cu: The Copper Peptide Science Guide \u2014 PeptideJournal"
+   },
+   {
+    "url": "https://www.asterwood.co/blogs/skincare/copper-peptides-guide-2026",
+    "title": "Copper Peptides (GHK-Cu) for Skin \u2014 Asterwood"
+   }
+  ],
+  "territory": "workflow"
+ },
+ {
+  "title": "The Man With White Hair Who Turned Black",
+  "weird_anchor": "Tang Dynasty China, circa 800 CE \u2014 a man named He Neng, aged 58 and grey-haired, reportedly discovered a vine root in a forest; after consuming it, tradition records his hair returning to black and his vitality restoring. He lived to 160 according to the legend, and the root was named for him: He Shou Wu, 'the hair of Mr. He'",
+  "mechanism": "He Shou Wu (Polygonum multiflorum) contains stilbene compounds that appear to reduce oxidative stress \u2014 the same oxidative damage that is now understood to drive premature greying by depleting melanocyte stem cells in the hair follicle. The processed (cooked) root has over a thousand years of continuous use in Taoist longevity practice",
+  "felt_symptom": "Hair greying and thinning, a visible sign of biological age that no cream addresses at the root",
+  "action": "Processed (prepared) He Shou Wu is available as a supplement; the raw root carries liver toxicity risk \u2014 preparation method is the critical variable",
+  "on_screen_card": "TANG DYNASTY. ONE MAN. HIS GREY HAIR TURNED BLACK. THE ROOT CARRIES HIS NAME.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "url": "https://www.metacenterchicago.com/2023/03/22/he-shou-wu-the-ancient-herb-of-immortality-and-vitality/",
+    "title": "He Shou Wu: The Ancient Herb of Immortality \u2014 MetaCenter Chicago"
+   },
+   {
+    "url": "https://1stchineseherbs.com/the-ancient-chinese-herb-that-fascinates-everyone-he-shou-wu-fo-ti-root-explained/",
+    "title": "He Shou Wu Explained \u2014 1st Chinese Herbs"
+   },
+   {
+    "url": "https://www.jadastudios.com/jadablog/secret-herbs-longevity",
+    "title": "Secret Herbs for Longevity \u2014 JADA Studios"
+   }
+  ],
+  "territory": "workflow"
+ },
+ {
+  "title": "The Lawsuit That Buried The Molecule",
+  "weird_anchor": "New York and Iowa, 2016-2021 \u2014 two companies, ChromaDex and Elysium Health (co-founded by an MIT professor), go to war over the patent on nicotinamide riboside (NR), the molecule that rebuilds NAD+ in human cells. A federal court invalidates ChromaDex's patents in 2021; a jury orders Elysium to pay $3 million. During the five years of litigation, the compound that could have reached millions of ageing people sits in a courtroom",
+  "mechanism": "NR is the most direct route found to date for raising NAD+ \u2014 the molecule that fuels mitochondria and declines by fifty percent by middle age. A 40 percent sustained increase in blood NAD+ was confirmed in a 120-person human trial in 2017. The legal battle did not change the biology",
+  "felt_symptom": "Suspicion that something that could help has been kept just out of reach \u2014 by money, by legal fights, by the machinery of commerce",
+  "action": "NR supplements are now widely available; ChromaDex's Tru Niagen and Elysium's Basis are the two principal branded products",
+  "on_screen_card": "MIT. A COURTROOM. FIVE YEARS OF WAR OVER THE MOLECULE THAT REBUILDS CELLULAR ENERGY.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "url": "https://cen.acs.org/business/consumer-products/Firms-feud-over-Niagen-purported/96/i33",
+    "title": "Firms Feud Over Purported Age-Fighting Molecule \u2014 C&EN"
+   },
+   {
+    "url": "https://drglorioso.substack.com/p/nad-and-sirtuins-for-brain-health",
+    "title": "NAD+ and Sirtuins \u2014 Substack / Dr Glorioso"
+   },
+   {
+    "url": "https://www.elysiumhealth.com/blogs/aging101/the-history-of-nad-and-basis",
+    "title": "The History of NAD+ and Basis \u2014 Elysium Health"
+   }
+  ],
+  "territory": "workflow"
+ },
+ {
+  "title": "The Monks Who Dried The Sheets",
+  "weird_anchor": "Northern India, 1981 \u2014 Harvard cardiologist Herbert Benson, with the Dalai Lama's blessing, travels to a remote monastery and places cold wet sheets around monks meditating in a room at 40\u00b0F; steam rises from the sheets within minutes. Published in Nature in 1982, the study shows one monk raising his peripheral body temperature by 8.3\u00b0C through meditation alone",
+  "mechanism": "G-Tummo, the Tibetan psychic heat practice, activates the same brown fat and mitochondrial thermogenesis that cold exposure stimulates \u2014 but from the inside, using breath and focused attention rather than ice. Tibetan tradition holds that mastery of inner heat reverses the cold, dry fading that marks old age in the body",
+  "felt_symptom": "The cold that settles into the body after fifty \u2014 the sense that internal heat, and with it vitality, is leaving",
+  "action": "The vase-breathing component of g-Tummo has been taught to non-meditators with measurable temperature results; forms the spiritual template behind the Wim Hof Method",
+  "on_screen_card": "1981. HIMALAYAN MONASTERY. STEAM FROM WET SHEETS. HARVARD TAKES THE TEMPERATURE.",
+  "score_interesting": 2,
+  "score_aging": 2,
+  "sources": [
+   {
+    "url": "https://news.harvard.edu/gazette/story/2002/04/meditation-changes-temperatures",
+    "title": "Meditation Changes Temperatures \u2014 Harvard Gazette"
+   },
+   {
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3612090/",
+    "title": "G-Tummo Meditation: Legend and Reality \u2014 PubMed/PMC"
+   },
+   {
+    "url": "https://mindmatters.ai/2019/09/tibetan-monks-can-change-their-metabolism/",
+    "title": "Tibetan Monks Can Change Their Metabolism \u2014 Mind Matters"
+   }
+  ],
+  "territory": "workflow"
+ },
+ {
+  "title": "The Wiring That Fails At Fifty",
+  "weird_anchor": "Dartmouth College, 2004 \u2014 biochemist Charles Brenner, studying a fungal enzyme, accidentally finds a third pathway the body uses to make NAD+, discovers it exists in cow's milk, and publishes in Cell; by middle age human NAD+ levels have already halved, and the mechanism that was supposed to top them up has quietly failed",
+  "mechanism": "NAD+ is the molecule that powers the mitochondria \u2014 the cell's energy factory. When it drops by fifty percent, the factory runs at half capacity. Every sign of ageing that feels like a power failure \u2014 fatigue, slower skin repair, poorer sleep \u2014 traces in part to this collapse",
+  "felt_symptom": "A tiredness that has nothing to do with sleep \u2014 an energy deficit that sits inside the cells themselves",
+  "action": "Nicotinamide riboside (NR) and NMN are oral precursors shown to raise NAD+ levels in blood; human trials exist for NR with a 40 percent sustained increase demonstrated",
+  "on_screen_card": "YOUR NAD+ IS HALF WHAT IT WAS AT TWENTY. CHARLES BRENNER FOUND THE SWITCH.",
+  "score_interesting": 2,
+  "score_aging": 2,
+  "sources": [
+   {
+    "url": "https://drglorioso.substack.com/p/nad-and-sirtuins-for-brain-health",
+    "title": "NAD+ and Sirtuins for Brain Health and Longevity \u2014 Substack / Dr Glorioso"
+   },
+   {
+    "url": "https://longevity.technology/news/how-nad-and-niagen-are-shaping-the-future-of-healthy-aging-insights-from-dr-charles-brenner/",
+    "title": "How NAD+ and Niagen Are Shaping Healthy Aging \u2014 Longevity.Technology"
+   },
+   {
+    "url": "https://www.elysiumhealth.com/blogs/aging101/the-history-of-nad-and-basis",
+    "title": "The History of NAD+ and Basis \u2014 Elysium Health"
+   }
+  ],
+  "territory": "workflow"
+ },
+ {
+  "title": "The Researcher Who Kept It In His Freezer",
+  "weird_anchor": "Surendra Sehgal, Ayerst Pharmaceuticals, 1982 \u2014 when his company prepared to destroy the rapamycin programme, Sehgal removed the frozen vials and stored them in his home freezer for years, personally saving the compound",
+  "mechanism": "Rapamycin suppresses the mTOR pathway, the cell's gas pedal for growth and ageing. When the company shelved the project Sehgal believed so strongly he kept it alive in his kitchen, leading directly to its revival and eventual proof of lifespan extension",
+  "felt_symptom": "The helpless feeling that time is moving faster than you can fight it, and the things that should work simply do not",
+  "action": "None required \u2014 the story is the revelation",
+  "on_screen_card": "ONE SCIENTIST. HIS HOME FREEZER. THE COMPOUND THAT EXTENDS LIFE.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "url": "https://www.gethealthspan.com/research/article/rapamycin-discovery-history",
+    "title": "Rapamycin Was Discovered in Easter Island Dirt \u2014 GetHealthspan"
+   },
+   {
+    "url": "https://spacedaily.com/d-the-most-effective-anti-aging-drug-ever-tested-on-a-mammal-was-discovered-by-accident-in-1964-in-a-soil-sample-collected-from-the-volcanic-ground-of-easter-island-and-the-chemical-now-calle/",
+    "title": "The most effective anti-aging drug \u2014 SpaceDaily"
+   }
+  ],
+  "territory": "workflow"
+ },
+ {
+  "title": "The Ice That Wakes The Factory",
+  "weird_anchor": "A 2014 twin study published in PLOS ONE measures Wim Hof's brown fat at 35 percent in cold conditions \u2014 higher than the average for young adults \u2014 in a man in his mid-fifties; brown fat, packed with mitochondria, falls with age and almost vanishes by fifty in people who live in warm rooms",
+  "mechanism": "Cold stress forces the body to create new mitochondria in brown fat \u2014 the only fat the body burns for heat rather than storage. More mitochondria means more cellular energy. The same cells that drive metabolism also maintain skin, muscle, and the immune system",
+  "felt_symptom": "Feeling permanently sluggish, as if the energy that used to be automatic now has to be forced",
+  "action": "Ten consecutive days of mild cold (15-16\u00b0C) shown to activate brown fat; 30-second cold showers appear to begin the process",
+  "on_screen_card": "YOUR BROWN FAT VANISHED WITH AGE. COLD WAKES IT BACK UP.",
+  "score_interesting": 2,
+  "score_aging": 2,
+  "sources": [
+   {
+    "url": "https://www.researchgate.net/publication/263863040_Frequent_Extreme_Cold_Exposure_and_Brown_Fat_and_Cold-Induced_Thermogenesis_A_Study_in_a_Monozygotic_Twin",
+    "title": "Frequent Extreme Cold Exposure and Brown Fat \u2014 ResearchGate/PLOS ONE"
+   },
+   {
+    "url": "https://blog.plunj.co/cold-exposure-and-longevity-what-science-says-about-living-longer-through-temperature-stress/",
+    "title": "Cold Exposure and Longevity \u2014 PLUNJ"
+   },
+   {
+    "url": "https://www.wimhofmethod.com/brown-fat",
+    "title": "Brown Fat \u2014 Wim Hof Method"
+   }
+  ],
+  "territory": "workflow"
+ },
+ {
+  "title": "The Chinese Herb The Biotech Company Patented In The Year 2000",
+  "weird_anchor": "Year 2000 \u2014 Geron Corporation screens traditional Chinese medicine extracts and finds that cycloastragenol, a molecule hiding inside the thousand-year-old herb Astragalus membranaceus, switches on the enzyme telomerase, which rebuilds the protective caps on chromosomes that shorten with every cell division. They patent it and sell it as TA-65 from 2008. A 2024 randomised controlled trial confirms it measurably lengthens telomeres in people over fifty",
+  "mechanism": "Telomeres are the protective end-caps on chromosomes; they shorten every time a cell divides and their length is a direct clock of cellular age. Telomerase rebuilds them. Astragalus appears to switch on that rebuilding enzyme \u2014 the same process that keeps certain cells, including cancer cells, permanently young",
+  "felt_symptom": "A creeping certainty that the cells themselves are running out of time \u2014 not just looking old but being old at the deepest level",
+  "action": "TA-65 (cycloastragenol) is sold as an oral supplement; astragalus root has been used in Chinese medicine for over a thousand years and is available in tea and powder form",
+  "on_screen_card": "AN ANCIENT CHINESE HERB. PATENTED IN 2000. IT REBUILDS THE ENDS OF YOUR CHROMOSOMES.",
+  "score_interesting": 3,
+  "score_aging": 3,
+  "sources": [
+   {
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5178008/",
+    "title": "A Natural Product Telomerase Activator Lengthens Telomeres in Humans \u2014 PMC"
+   },
+   {
+    "url": "https://www.scientificamerican.com/article/anti-aging-pill-targets-telomeres/",
+    "title": "Anti-Aging Pill Targets Telomeres \u2014 Scientific American"
+   },
+   {
+    "url": "https://newlifelongevity.com/astragalus-ashwagandha-longevity-and-our-telomeres-what-the-latest-research-says/",
+    "title": "Astragalus, Ashwagandha, Longevity and Telomeres \u2014 New Life Longevity"
+   }
+  ],
+  "territory": "workflow"
+ }
+]
